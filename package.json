@@ -1,0 +1,44 @@
+{
+  "name": "metapak-nfroidure",
+  "description": "A metapak module for my open source projects.",
+  "version": "0.0.0",
+  "metapak": {
+    "data": {
+      "testsFiles": "src/**/*.mocha.js",
+      "files": "src/**/*.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nfroidure/metapak-nfroidure.git"
+  },
+  "scripts": {
+    "cli": "env NODE_ENV=${NODE_ENV:-cli}",
+    "test": "mocha src/**/*.mocha.js",
+    "coveralls": "istanbul cover _mocha --report lcovonly -- src/**/*.mocha.js -R spec -t 5000 && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
+    "cover": "istanbul cover _mocha --report html -- src/**/*.mocha.js -R spec -t 5000",
+    "lint": "eslint src/**/*.js",
+    "preversion": "npm t && npm run lint && npm run compile",
+    "postinstall": "metapak"
+  },
+  "author": "Nicolas Froidure",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "1.0.0"
+  },
+  "engines": {
+    "node": ">=4.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/nfroidure/metapak-nfroidure/issues"
+  },
+  "homepage": "https://github.com/nfroidure/metapak-nfroidure#readme",
+  "devDependencies": {
+    "coveralls": "2.11.15",
+    "istanbul": "0.4.5",
+    "mocha": "3.2.0",
+    "eslint": "3.4.0",
+    "eslint-config-simplifield": "4.1.1",
+    "mocha-lcov-reporter": "1.2.0"
+  }
+}
