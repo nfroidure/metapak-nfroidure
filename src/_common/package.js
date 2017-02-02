@@ -58,7 +58,7 @@ module.exports = (packageConf) => {
   if(packageConf.repository && 'git' === packageConf.repository.type) {
     const [, userName, repositoryName] = GITHUB_REPOSITORY_REGEXP.exec(
       packageConf.repository.url
-    );
+    ) || [];
     if(userName && repositoryName) {
       packageConf.bugs = packageConf.bugs || {
         url: 'https://github.com/' + userName + '/' + repositoryName + '/issues',
