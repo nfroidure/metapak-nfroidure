@@ -18,14 +18,14 @@
     "coveralls": "istanbul cover _mocha --report lcovonly -- src/**/*.mocha.js -R spec -t 5000 && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
     "cover": "istanbul cover _mocha --report html -- src/**/*.mocha.js -R spec -t 5000",
     "lint": "eslint src/**/*.js",
-    "preversion": "npm t && npm run lint && npm run compile",
+    "preversion": "npm t && npm run lint",
     "postinstall": "metapak"
   },
   "author": "Nicolas Froidure",
   "license": "MIT",
   "dependencies": {
     "debug": "1.0.0",
-    "metapak": "0.0.0"
+    "metapak": "0.0.1"
   },
   "engines": {
     "node": ">=4.2.0"

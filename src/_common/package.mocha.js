@@ -26,7 +26,7 @@ describe('Package transformer', () => {
         license: 'MIT',
         scripts: {
           cli: 'env NODE_ENV=${NODE_ENV:-cli}',
-          preversion: 'npm t && npm run lint && npm run compile',
+          preversion: 'npm t && npm run lint',
         },
         version: '0.0.0',
       }

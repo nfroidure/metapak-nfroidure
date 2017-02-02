@@ -33,7 +33,7 @@ module.exports = (packageConf) => {
     packageConf.scripts.lint = 'eslint ' + packageConf.metapak.data.files;
   }
   // No tests, no version
-  packageConf.scripts.preversion = 'npm t && npm run lint && npm run compile';
+  packageConf.scripts.preversion = 'npm t && npm run lint';
 
   // Add the post install hook for metapak modules
   if(packageConf.name && packageConf.name.startsWith('metapak-')) {
