@@ -35,11 +35,6 @@ module.exports = (packageConf) => {
   // No tests, no version
   packageConf.scripts.preversion = 'npm t && npm run lint';
 
-  // Add the post install hook for metapak modules
-  if(packageConf.name && packageConf.name.startsWith('metapak-')) {
-    packageConf.scripts.postinstall = 'metapak';
-  }
-
   // Add the MUST HAVE dependencies
   packageConf.dependencies = packageConf.dependencies || {};
   packageConf.dependencies.debug = '1.0.0';
