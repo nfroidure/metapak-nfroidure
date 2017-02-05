@@ -4,6 +4,10 @@ const GITHUB_REPOSITORY_REGEXP =
   /git\+https:\/\/github.com\/([a-zA-Z0-9\-]+)\/([a-zA-Z0-9\-]+)\.git/;
 
 module.exports = (packageConf) => {
+  const metapakData = packageConf.metapak && packageConf.metapak.data ?
+    packageConf.metapak.data :
+    {};
+
   // Looks like i am the author of all my modules ;)
   packageConf.author = 'Nicolas Froidure';
 
@@ -18,25 +22,39 @@ module.exports = (packageConf) => {
 
   // Let's add my handy scripts
   packageConf.scripts = packageConf.scripts || {};
+
+  // I like this, it enable me to run arbitrary npm binary
+  // without having global modules
   packageConf.scripts.cli = 'env NODE_ENV=${NODE_ENV:-cli}';
-  if(packageConf.metapak && packageConf.metapak.data && packageConf.metapak.data.testsFiles) {
-    packageConf.scripts.test = 'mocha ' + packageConf.metapak.data.testsFiles;
-    packageConf.scripts.coveralls = 'istanbul cover _mocha --report lcovonly -- ' +
-      packageConf.metapak.data.testsFiles +
-      ' -R spec -t 5000 && cat ./coverage/lcov.info |' +
-      ' coveralls && rm -rf ./coverage';
-    packageConf.scripts.cover = 'istanbul cover _mocha --report html -- ' +
-      packageConf.metapak.data.testsFiles +
-      ' -R spec -t 5000';
+
+  // If testsFiles are declared, this set up the whole code
+  // quality measuring tools
+  if(metapakData.testsFiles) {
+    packageConf.scripts.test = 'mocha ' + metapakData.testsFiles;
+    packageConf.scripts.coveralls =
+      'istanbul cover _mocha --report lcovonly' +
+      ' -- ' + metapakData.testsFiles + ' -R spec -t 5000' +
+      ' && cat ./coverage/lcov.info | coveralls' +
+      ' && rm -rf ./coverage';
+    packageConf.scripts.cover =
+      'istanbul cover _mocha --report html' +
+      ' -- ' + metapakData.testsFiles + ' -R spec -t 5000';
   }
-  if(packageConf.metapak && packageConf.metapak.data && packageConf.metapak.data.files) {
-    packageConf.scripts.lint = 'eslint ' + packageConf.metapak.data.files;
+
+  // Linting every declared files
+  if(metapakData.files) {
+    packageConf.scripts.lint = 'eslint ' + metapakData.files;
   }
-  // No tests, no version
+
+  // No tests, no version: Even when there is no test files
+  // i should never create versions without tests, this acts
+  // like a reminder
   packageConf.scripts.preversion = 'npm t && npm run lint';
 
-  // Add the MUST HAVE dependencies
+  // Add the MUST HAVE dependencies:
   packageConf.dependencies = packageConf.dependencies || {};
+  // debug is really nice, all my modules should use it,
+  // it makes debugging so simple
   packageConf.dependencies.debug = '1.0.0';
 
   // Add the MUST HAVE dev dependencies
@@ -48,8 +66,8 @@ module.exports = (packageConf) => {
   packageConf.devDependencies.coveralls = '2.11.15';
   packageConf.devDependencies.istanbul = '0.4.5';
 
-  // This job is already done by NPM, but once, adding to do it on
-  // old repositories
+  // This job is already done by NPM, but once,.
+  // This allows to do it on old repositories
   if(packageConf.repository && 'git' === packageConf.repository.type) {
     const [, userName, repositoryName] = GITHUB_REPOSITORY_REGEXP.exec(
       packageConf.repository.url
