@@ -27,6 +27,9 @@ module.exports = (packageConf) => {
       ' -R spec -t 5000';
   }
 
+  // Adding Babel compile script
+  packageConf.scripts.compile = 'babel src --out-dir=dist';
+
   // We have to compile with Babel before pushing a version
   packageConf.scripts.preversion = 'npm t && npm run lint && npm run compile';
 
