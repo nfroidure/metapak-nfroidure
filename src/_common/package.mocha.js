@@ -21,7 +21,7 @@ describe('Package transformer', () => {
           'mocha-lcov-reporter': '1.2.0',
         },
         engines: {
-          node: '>=4.2.0',
+          node: '>=6.9.5',
         },
         license: 'MIT',
         scripts: {

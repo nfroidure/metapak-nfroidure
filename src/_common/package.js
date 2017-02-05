@@ -1,5 +1,7 @@
 'use strict';
 
+const config = require('../config.js');
+
 const GITHUB_REPOSITORY_REGEXP =
   /git\+https:\/\/github.com\/([a-zA-Z0-9\-]+)\/([a-zA-Z0-9\-]+)\.git/;
 
@@ -18,7 +20,7 @@ module.exports = (packageConf) => {
   packageConf.version = packageConf.version || '0.0.0';
 
   // Supporting Node LTS version only
-  packageConf.engines = { node: '>=4.2.0' };
+  packageConf.engines = { node: '>=' + config.lastNodeLTS };
 
   // Let's add my handy scripts
   packageConf.scripts = packageConf.scripts || {};

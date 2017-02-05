@@ -28,7 +28,7 @@
     "debug": "1.0.0"
   },
   "engines": {
-    "node": ">=4.2.0"
+    "node": ">=6.9.5"
   },
   "bugs": {
     "url": "https://github.com/nfroidure/metapak-nfroidure/issues"
