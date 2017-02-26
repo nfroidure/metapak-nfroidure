@@ -3,6 +3,7 @@
   "description": "A metapak module for my open source projects.",
   "version": "0.1.0",
   "metapak": {
+    "configs": ["readme"],
     "data": {
       "testsFiles": "src/**/*.mocha.js",
       "files": "src/**/*.js"
@@ -39,8 +40,9 @@
     "eslint": "3.4.0",
     "eslint-config-simplifield": "4.1.1",
     "istanbul": "0.4.5",
-    "metapak": "0.0.16",
+    "metapak": "0.0.18",
     "mocha": "3.2.0",
-    "mocha-lcov-reporter": "1.2.0"
+    "mocha-lcov-reporter": "1.2.0",
+    "sinon": "^1.17.7"
   }
 }
