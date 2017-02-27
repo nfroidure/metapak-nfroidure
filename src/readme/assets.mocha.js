@@ -7,12 +7,15 @@ const assetsTransformer = require('./assets');
 describe('Assets transformer for www configs', () => {
   it('should build the README.md file', (done) => {
     const fs = {
-      readFileAsync: sinon.stub().returns(Promise.resolve('## Usage\nJust require me\n')),
+      readFileAsync: sinon.stub(),
     };
     const PROJECT_DIR = '/lol/';
     const log = {
       error: sinon.stub,
     };
+
+    fs.readFileAsync.onFirstCall().returns(Promise.resolve('## Usage\nJust require me\n'));
+    fs.readFileAsync.onSecondCall().returns(Promise.resolve(''));
 
     assetsTransformer({
       name: 'README.md',
