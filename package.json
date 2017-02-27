@@ -1,9 +1,11 @@
 {
   "name": "metapak-nfroidure",
   "description": "A metapak module for my open source projects.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "metapak": {
-    "configs": ["readme"],
+    "configs": [
+      "readme"
+    ],
     "data": {
       "testsFiles": "src/**/*.mocha.js",
       "files": "src/**/*.js"
