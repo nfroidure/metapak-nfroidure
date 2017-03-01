@@ -29,6 +29,13 @@ describe('Package transformer', () => {
           preversion: 'npm t && npm run lint',
         },
         version: '0.0.0',
+        greenkeeper: {
+          ignore: [
+            'debug',
+            'eslint', 'eslint-config-simplifield', 'mocha',
+            'mocha-lcov-reporter', 'coveralls', 'istanbul',
+          ],
+        },
       }
     );
   });

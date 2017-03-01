@@ -68,6 +68,15 @@ module.exports = (packageConf) => {
   packageConf.devDependencies.coveralls = '2.11.15';
   packageConf.devDependencies.istanbul = '0.4.5';
 
+  // Avoid GreenKeeper to update automatically added modules
+  packageConf.greenkeeper = {
+    ignore: [
+      'debug',
+      'eslint', 'eslint-config-simplifield', 'mocha',
+      'mocha-lcov-reporter', 'coveralls', 'istanbul',
+    ],
+  };
+
   // This job is already done by NPM, but once,.
   // This allows to do it on old repositories
   if(packageConf.repository && 'git' === packageConf.repository.type) {

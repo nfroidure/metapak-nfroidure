@@ -12,6 +12,9 @@ describe('Package transformer for jsdocs', () => {
             files: 'yolo.js',
           },
         },
+        greenkeeper: {
+          ignore: [],
+        },
       }),
       {
         metapak: {
@@ -26,6 +29,9 @@ describe('Package transformer for jsdocs', () => {
           doc: 'mkdir -p .readme;' +
             ' echo "# API" > .readme/API.md;' +
             ' jsdoc2md yolo.js >> .readme/API.md',
+        },
+        greenkeeper: {
+          ignore: ['jsdoc-to-markdown'],
         },
       }
     );

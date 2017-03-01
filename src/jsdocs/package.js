@@ -15,5 +15,10 @@ module.exports = (packageConf) => {
   packageConf.devDependencies = packageConf.devDependencies || {};
   packageConf.devDependencies['jsdoc-to-markdown'] = '^2.0.1';
 
+  // Avoid GreenKeeper to update automatically added modules
+  packageConf.greenkeeper.ignore = packageConf.greenkeeper.ignore.concat([
+    'jsdoc-to-markdown',
+  ]);
+
   return packageConf;
 };
