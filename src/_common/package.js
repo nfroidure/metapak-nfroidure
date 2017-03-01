@@ -29,6 +29,9 @@ module.exports = (packageConf) => {
   // without having global modules
   packageConf.scripts.cli = 'env NODE_ENV=${NODE_ENV:-cli}';
 
+  // Lets use commitizen
+  packageConf.scripts.cz = 'env NODE_ENV=${NODE_ENV:-cli} git cz';
+
   // If testsFiles are declared, this set up the whole code
   // quality measuring tools
   if(metapakData.testsFiles) {
@@ -67,13 +70,16 @@ module.exports = (packageConf) => {
   packageConf.devDependencies['mocha-lcov-reporter'] = '1.2.0';
   packageConf.devDependencies.coveralls = '2.11.15';
   packageConf.devDependencies.istanbul = '0.4.5';
+  packageConf.devDependencies.commitizen = '^2.9.6';
+  packageConf.devDependencies['cz-conventional-changelog'] = '^2.0.0';
 
   // Avoid GreenKeeper to update automatically added modules
   packageConf.greenkeeper = {
     ignore: [
       'debug',
       'eslint', 'eslint-config-simplifield', 'mocha',
-      'mocha-lcov-reporter', 'coveralls', 'istanbul',
+      'mocha-lcov-reporter', 'commitizen', 'cz-conventional-changelog',
+      'coveralls', 'istanbul',
     ],
   };
 
