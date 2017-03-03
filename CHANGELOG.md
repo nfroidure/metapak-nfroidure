@@ -1,3 +1,14 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/nfroidure/metapak-nfroidure/compare/v0.2.0...v0.3.0) (2017-03-03)
+
+
+### Features
+
+* **_common configuration:** Add commitizen ([5002e26](https://github.com/nfroidure/metapak-nfroidure/commit/5002e26))
+* **Adding changelogs:** Adds the various scripts needed to build the changelog and adapt git hooks ([91360a6](https://github.com/nfroidure/metapak-nfroidure/commit/91360a6))
+
+
+
 
 ### v0.2.0 (2017/02/27 14:03 +00:00)
 - [7737eee](https://github.com/nfroidure/metapak-nfroidure/commit/7737eee123c8e973d8808babbba4332f7c68f99d) 0.2.0 (@nfroidure)
