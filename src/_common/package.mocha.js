@@ -13,6 +13,7 @@ describe('Package transformer', () => {
           debug: '1.0.0',
         },
         devDependencies: {
+          'conventional-changelog-cli': '^1.2.0',
           commitizen: '^2.9.6',
           'cz-conventional-changelog': '^2.0.0',
           coveralls: '2.11.15',
@@ -30,6 +31,8 @@ describe('Package transformer', () => {
           cli: 'env NODE_ENV=${NODE_ENV:-cli}',
           cz: 'env NODE_ENV=${NODE_ENV:-cli} git cz',
           preversion: 'npm t && npm run lint',
+          version: 'npm run changelog && git add CHANGELOG.md',
+          changelog: 'conventional-changelog -p angular -i CHANGELOG.md -s',
         },
         version: '0.0.0',
         greenkeeper: {
@@ -37,7 +40,7 @@ describe('Package transformer', () => {
             'debug',
             'eslint', 'eslint-config-simplifield', 'mocha',
             'mocha-lcov-reporter', 'commitizen', 'cz-conventional-changelog',
-            'coveralls', 'istanbul',
+            'coveralls', 'istanbul', 'conventional-changelog-cli',
           ],
         },
       }

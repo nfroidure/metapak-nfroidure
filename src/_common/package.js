@@ -32,6 +32,10 @@ module.exports = (packageConf) => {
   // Lets use commitizen
   packageConf.scripts.cz = 'env NODE_ENV=${NODE_ENV:-cli} git cz';
 
+  // Add the changelog stuffs
+  packageConf.scripts.changelog = 'conventional-changelog -p angular -i CHANGELOG.md -s';
+  packageConf.scripts.version = 'npm run changelog && git add CHANGELOG.md';
+
   // If testsFiles are declared, this set up the whole code
   // quality measuring tools
   if(metapakData.testsFiles) {
@@ -72,6 +76,7 @@ module.exports = (packageConf) => {
   packageConf.devDependencies.istanbul = '0.4.5';
   packageConf.devDependencies.commitizen = '^2.9.6';
   packageConf.devDependencies['cz-conventional-changelog'] = '^2.0.0';
+  packageConf.devDependencies['conventional-changelog-cli'] = '^1.2.0';
 
   // Avoid GreenKeeper to update automatically added modules
   packageConf.greenkeeper = {
@@ -79,7 +84,7 @@ module.exports = (packageConf) => {
       'debug',
       'eslint', 'eslint-config-simplifield', 'mocha',
       'mocha-lcov-reporter', 'commitizen', 'cz-conventional-changelog',
-      'coveralls', 'istanbul',
+      'coveralls', 'istanbul', 'conventional-changelog-cli',
     ],
   };
 

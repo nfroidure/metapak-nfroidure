@@ -1,7 +1,7 @@
 {
   "name": "metapak-nfroidure",
   "description": "A metapak module for my open source projects.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "metapak": {
     "configs": [
       "readme"
@@ -16,6 +16,7 @@
     "url": "git+https://github.com/nfroidure/metapak-nfroidure.git"
   },
   "scripts": {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "cli": "env NODE_ENV=${NODE_ENV:-cli}",
     "cover": "istanbul cover _mocha --report html -- src/**/*.mocha.js -R spec -t 5000",
     "coveralls": "istanbul cover _mocha --report lcovonly -- src/**/*.mocha.js -R spec -t 5000 && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
@@ -24,7 +25,8 @@
     "metapak": "metapak || echo 'Please `npm install --save-dev metapak`' && exit 0",
     "postinstall": "npm run metapak --silent",
     "preversion": "npm t && npm run lint",
-    "test": "mocha src/**/*.mocha.js"
+    "test": "mocha src/**/*.mocha.js",
+    "version": "npm run changelog && git add CHANGELOG.md"
   },
   "author": "Nicolas Froidure",
   "license": "MIT",
@@ -40,6 +42,7 @@
   "homepage": "https://github.com/nfroidure/metapak-nfroidure#readme",
   "devDependencies": {
     "commitizen": "^2.9.6",
+    "conventional-changelog-cli": "^1.2.0",
     "coveralls": "2.11.15",
     "cz-conventional-changelog": "^2.0.0",
     "eslint": "3.4.0",
@@ -57,8 +60,11 @@
       "eslint-config-simplifield",
       "mocha",
       "mocha-lcov-reporter",
+      "commitizen",
+      "cz-conventional-changelog",
       "coveralls",
-      "istanbul"
+      "istanbul",
+      "conventional-changelog-cli"
     ]
   },
   "config": {
