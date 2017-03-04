@@ -79,14 +79,18 @@ module.exports = (packageConf) => {
   packageConf.devDependencies['conventional-changelog-cli'] = '^1.2.0';
 
   // Avoid GreenKeeper to update automatically added modules
-  packageConf.greenkeeper = {
-    ignore: [
-      'debug',
-      'eslint', 'eslint-config-simplifield', 'mocha',
-      'mocha-lcov-reporter', 'commitizen', 'cz-conventional-changelog',
-      'coveralls', 'istanbul', 'conventional-changelog-cli',
-    ],
-  };
+  // except for this module so that we still benefit from
+  // greenkeeper but once to avoid PR spam ;)
+  if('metapak-nfroidure' !== packageConf.name) {
+    packageConf.greenkeeper = {
+      ignore: [
+        'debug',
+        'eslint', 'eslint-config-simplifield', 'mocha',
+        'mocha-lcov-reporter', 'commitizen', 'cz-conventional-changelog',
+        'coveralls', 'istanbul', 'conventional-changelog-cli',
+      ],
+    };
+  }
 
   // This job is already done by NPM, but once,.
   // This allows to do it on old repositories

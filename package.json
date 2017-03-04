@@ -53,20 +53,6 @@
     "mocha-lcov-reporter": "1.2.0",
     "sinon": "^1.17.7"
   },
-  "greenkeeper": {
-    "ignore": [
-      "debug",
-      "eslint",
-      "eslint-config-simplifield",
-      "mocha",
-      "mocha-lcov-reporter",
-      "commitizen",
-      "cz-conventional-changelog",
-      "coveralls",
-      "istanbul",
-      "conventional-changelog-cli"
-    ]
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
