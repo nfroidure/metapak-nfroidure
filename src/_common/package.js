@@ -31,6 +31,11 @@ module.exports = (packageConf) => {
 
   // Lets use commitizen
   packageConf.scripts.cz = 'env NODE_ENV=${NODE_ENV:-cli} git cz';
+  packageConf.config = {
+    commitizen: {
+      path: './node_modules/cz-conventional-changelog',
+    },
+  };
 
   // Add the changelog stuffs
   packageConf.scripts.changelog = 'conventional-changelog -p angular -i CHANGELOG.md -s';

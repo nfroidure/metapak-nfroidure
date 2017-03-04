@@ -12,6 +12,11 @@ describe('Package transformer', () => {
         dependencies: {
           debug: '2.6.1',
         },
+        config: {
+          commitizen: {
+            path: './node_modules/cz-conventional-changelog',
+          },
+        },
         devDependencies: {
           'conventional-changelog-cli': '^1.2.0',
           commitizen: '^2.9.6',
