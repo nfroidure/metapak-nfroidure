@@ -1,3 +1,13 @@
+<a name="0.4.1"></a>
+## [0.4.1](https://github.com/nfroidure/metapak-nfroidure/compare/v0.4.0...v0.4.1) (2017-03-04)
+
+
+### Bug Fixes
+
+* **_common configuration:** Add the forgotten commitizen config ([2ab1a89](https://github.com/nfroidure/metapak-nfroidure/commit/2ab1a89))
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/nfroidure/metapak-nfroidure/compare/v0.3.0...v0.4.0) (2017-03-04)
 
