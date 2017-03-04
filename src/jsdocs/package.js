@@ -13,7 +13,7 @@ module.exports = (packageConf) => {
 
   // Add doc deps
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies['jsdoc-to-markdown'] = '^2.0.1';
+  packageConf.devDependencies['jsdoc-to-markdown'] = '^3.0.0';
 
   // Avoid GreenKeeper to update automatically added modules
   if('metapak-nfroidure' !== packageConf.name) {

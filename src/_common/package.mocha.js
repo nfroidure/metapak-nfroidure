@@ -10,18 +10,18 @@ describe('Package transformer', () => {
       {
         author: 'Nicolas Froidure',
         dependencies: {
-          debug: '1.0.0',
+          debug: '2.6.1',
         },
         devDependencies: {
           'conventional-changelog-cli': '^1.2.0',
           commitizen: '^2.9.6',
           'cz-conventional-changelog': '^2.0.0',
           coveralls: '2.11.15',
-          eslint: '3.4.0',
+          eslint: '3.16.0',
           'eslint-config-simplifield': '4.1.1',
           istanbul: '0.4.5',
           mocha: '3.2.0',
-          'mocha-lcov-reporter': '1.2.0',
+          'mocha-lcov-reporter': '1.3.0',
         },
         engines: {
           node: '>=6.9.5',

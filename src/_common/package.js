@@ -64,14 +64,14 @@ module.exports = (packageConf) => {
   packageConf.dependencies = packageConf.dependencies || {};
   // debug is really nice, all my modules should use it,
   // it makes debugging so simple
-  packageConf.dependencies.debug = '1.0.0';
+  packageConf.dependencies.debug = '2.6.1';
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.eslint = '3.4.0';
+  packageConf.devDependencies.eslint = '3.16.0';
   packageConf.devDependencies['eslint-config-simplifield'] = '4.1.1';
   packageConf.devDependencies.mocha = '3.2.0';
-  packageConf.devDependencies['mocha-lcov-reporter'] = '1.2.0';
+  packageConf.devDependencies['mocha-lcov-reporter'] = '1.3.0';
   packageConf.devDependencies.coveralls = '2.11.15';
   packageConf.devDependencies.istanbul = '0.4.5';
   packageConf.devDependencies.commitizen = '^2.9.6';
