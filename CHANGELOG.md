@@ -1,3 +1,21 @@
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/nfroidure/metapak-nfroidure/compare/v0.3.0...v0.4.0) (2017-03-04)
+
+
+### Features
+
+* **_common configuration:** Keep greenkeeper on the metapak module ([41c390d](https://github.com/nfroidure/metapak-nfroidure/commit/41c390d))
+
+
+* build(Update dependencies): ([e474cec](https://github.com/nfroidure/metapak-nfroidure/commit/e474cec))
+
+
+### BREAKING CHANGES
+
+* Potentially breaks everything due to major dependencies bump, apply with care.
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/nfroidure/metapak-nfroidure/compare/v0.2.0...v0.3.0) (2017-03-03)
 
