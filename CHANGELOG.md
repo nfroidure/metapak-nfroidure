@@ -1,3 +1,13 @@
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/nfroidure/metapak-nfroidure/compare/v0.4.1...v0.5.0) (2017-03-13)
+
+
+### Features
+
+* **jsarch:** Add jsarch config ([f4bbac6](https://github.com/nfroidure/metapak-nfroidure/commit/f4bbac6))
+
+
+
 <a name="0.4.1"></a>
 ## [0.4.1](https://github.com/nfroidure/metapak-nfroidure/compare/v0.4.0...v0.4.1) (2017-03-04)
 
