@@ -23,15 +23,13 @@ describe('Package transformer for jsdocs', () => {
           },
         },
         devDependencies: {
-          mermaid: '^7.0.0',
-          phantomjs: '^2.1.7',
           jsarch: '1.1.1',
         },
         scripts: {
           architecture: 'jsarch yolo.js > ARCHITECTURE.md',
         },
         greenkeeper: {
-          ignore: ['mermaid', 'phantomjs', 'jsarch'],
+          ignore: ['jsarch'],
         },
       }
     );
