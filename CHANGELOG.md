@@ -1,3 +1,13 @@
+<a name="0.5.1"></a>
+## [0.5.1](https://github.com/nfroidure/metapak-nfroidure/compare/v0.5.0...v0.5.1) (2017-03-13)
+
+
+### Bug Fixes
+
+* **jsarch config:** Remove unecessary dependencies ([3b8918b](https://github.com/nfroidure/metapak-nfroidure/commit/3b8918b))
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/nfroidure/metapak-nfroidure/compare/v0.4.1...v0.5.0) (2017-03-13)
 
