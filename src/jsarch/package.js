@@ -10,7 +10,7 @@ module.exports = (packageConf) => {
   packageConf.scripts.architecture = 'jsarch ' + metapakData.files + ' > ARCHITECTURE.md';
   // Add doc deps
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jsarch = '1.1.1';
+  packageConf.devDependencies.jsarch = '1.2.1';
 
   // Avoid GreenKeeper to update automatically added modules
   if('metapak-nfroidure' !== packageConf.name) {
