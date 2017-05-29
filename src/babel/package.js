@@ -36,6 +36,14 @@ module.exports = (packageConf) => {
   // Istanbul needs a specific version to work with babel
   packageConf.devDependencies = packageConf.devDependencies || {};
   packageConf.devDependencies.istanbul = '^1.0.0-alpha.2';
+  packageConf.devDependencies['babel-cli'] = '^6.9.0';
+  packageConf.devDependencies['babel-eslint'] = '^7.1.0';
+  packageConf.devDependencies['babel-plugin-transform-async-to-module-method'] = '^6.8.0';
+  packageConf.devDependencies['babel-plugin-transform-es2015-modules-systemjs'] = '^6.9.0';
+  packageConf.devDependencies['babel-plugin-transform-object-rest-spread'] = '^6.23.0';
+  packageConf.devDependencies['babel-preset-es2015'] = '^6.9.0';
+  packageConf.devDependencies['babel-register'] = '^6.9.0';
+
 
   return packageConf;
 };
