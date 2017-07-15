@@ -1,3 +1,18 @@
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/nfroidure/metapak-nfroidure/compare/v0.6.0...v0.7.0) (2017-07-15)
+
+
+### Bug Fixes
+
+* **Assets:** Avoid using OS to define line endings ([a5269c9](https://github.com/nfroidure/metapak-nfroidure/commit/a5269c9)), closes [#8](https://github.com/nfroidure/metapak-nfroidure/issues/8)
+
+
+### Features
+
+* **GitHooks:** Run Metapak before committing to avoid bad commits ([c692293](https://github.com/nfroidure/metapak-nfroidure/commit/c692293))
+
+
+
 <a name="0.6.0"></a>
 # [0.6.0](https://github.com/nfroidure/metapak-nfroidure/compare/v0.5.2...v0.6.0) (2017-05-29)
 
