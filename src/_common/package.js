@@ -69,7 +69,7 @@ module.exports = (packageConf) => {
   packageConf.dependencies = packageConf.dependencies || {};
   // debug is really nice, all my modules should use it,
   // it makes debugging so simple
-  packageConf.dependencies.debug = '2.6.1';
+  packageConf.dependencies.debug = packageConf.dependencies.debug || '2.6.1';
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
