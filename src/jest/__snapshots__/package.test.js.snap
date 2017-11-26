@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mocha Package transformer should work with some files 1`] = `
+Object {
+  "devDependencies": Object {
+    "coveralls": "2.11.15",
+    "istanbul": "0.4.5",
+    "jest": "^20.0.4",
+  },
+  "greenkeeper": Object {
+    "ignore": Array [
+      "jest",
+      "coveralls",
+      "istanbul",
+    ],
+  },
+  "metapak": Object {
+    "data": Object {
+      "testFiles": "src/*.js src/**/*.js",
+    },
+  },
+  "scripts": Object {
+    "cover": "jest --config=.jest.config.js --coverage",
+    "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
+    "test": "jest --config=.jest.config.js",
+  },
+}
+`;

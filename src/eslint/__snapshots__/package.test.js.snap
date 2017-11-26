@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`eslint Package transformer should work with some files 1`] = `
+Object {
+  "devDependencies": Object {
+    "eslint": "3.16.0",
+    "eslint-config-simplifield": "4.1.1",
+  },
+  "greenkeeper": Object {
+    "ignore": Array [
+      "eslint",
+      "eslint-config-simplifield",
+    ],
+  },
+  "metapak": Object {
+    "data": Object {
+      "files": "src/*.js src/**/*.js",
+    },
+  },
+  "scripts": Object {
+    "lint": "eslint src/*.js src/**/*.js",
+  },
+}
+`;

@@ -4,6 +4,11 @@ const path = require('path');
 const USERNAME = 'nfroidure';
 
 module.exports = (file, packageConf, { PROJECT_DIR, glob, fs, log }) => {
+  const metapakConfigs = packageConf.metapak &&
+    packageConf.metapak.configs ?
+    packageConf.metapak.configs :
+    [{}];
+
   // Add www to ignored files
   if('README.md' === file.name) {
     // Header
@@ -17,11 +22,13 @@ module.exports = (file, packageConf, { PROJECT_DIR, glob, fs, log }) => {
     file.data += '[![NPM version](https://badge.fury.io/js/' +
       packageConf.name + '.svg)](https://npmjs.org/package/' +
       packageConf.name + ')\n';
-    file.data += '[![Build status](https://secure.travis-ci.org/' +
-      USERNAME + '/' + packageConf.name +
-      '.svg)](https://travis-ci.org/' +
-      USERNAME + '/' + packageConf.name +
-      ')\n';
+    if(metapakConfigs.includes('travis')) {
+      file.data += '[![Build status](https://secure.travis-ci.org/' +
+        USERNAME + '/' + packageConf.name +
+        '.svg)](https://travis-ci.org/' +
+        USERNAME + '/' + packageConf.name +
+        ')\n';
+    }
     file.data += '[![Dependency Status](https://david-dm.org/' +
       USERNAME + '/' + packageConf.name +
       '.svg)](https://david-dm.org/' +
@@ -39,11 +46,13 @@ module.exports = (file, packageConf, { PROJECT_DIR, glob, fs, log }) => {
         USERNAME + '/' + packageConf.name +
         '?branch=master)\n';
     }
-    file.data += '[![Code Climate](https://codeclimate.com/github/' +
-      USERNAME + '/' + packageConf.name +
-      '.svg)](https://codeclimate.com/github/' +
-      USERNAME + '/' + packageConf.name +
-      ')\n';
+    if(metapakConfigs.includes('codeclimate')) {
+      file.data += '[![Code Climate](https://codeclimate.com/github/' +
+        USERNAME + '/' + packageConf.name +
+        '.svg)](https://codeclimate.com/github/' +
+        USERNAME + '/' + packageConf.name +
+        ')\n';
+    }
     file.data += '[![Dependency Status](https://dependencyci.com/github/' +
       USERNAME + '/' + packageConf.name +
       '/badge)](https://dependencyci.com/github/' +

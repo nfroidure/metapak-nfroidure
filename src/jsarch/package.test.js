@@ -23,7 +23,7 @@ describe('Package transformer for jsdocs', () => {
           },
         },
         devDependencies: {
-          jsarch: '1.2.1',
+          jsarch: '1.2.3',
         },
         scripts: {
           architecture: 'jsarch yolo.js > ARCHITECTURE.md',

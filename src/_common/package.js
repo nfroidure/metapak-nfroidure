@@ -6,10 +6,6 @@ const GITHUB_REPOSITORY_REGEXP =
   /git\+https:\/\/github.com\/([a-zA-Z0-9\-]+)\/([a-zA-Z0-9\-]+)\.git/;
 
 module.exports = (packageConf) => {
-  const metapakData = packageConf.metapak && packageConf.metapak.data ?
-    packageConf.metapak.data :
-    {};
-
   // Looks like i am the author of all my modules ;)
   packageConf.author = 'Nicolas Froidure';
 
@@ -41,44 +37,17 @@ module.exports = (packageConf) => {
   packageConf.scripts.changelog = 'conventional-changelog -p angular -i CHANGELOG.md -s';
   packageConf.scripts.version = 'npm run changelog && git add CHANGELOG.md';
 
-  // If testsFiles are declared, this set up the whole code
-  // quality measuring tools
-  if(metapakData.testsFiles) {
-    packageConf.scripts.test = 'mocha ' + metapakData.testsFiles;
-    packageConf.scripts.coveralls =
-      'istanbul cover _mocha --report lcovonly' +
-      ' -- ' + metapakData.testsFiles + ' -R spec -t 5000' +
-      ' && cat ./coverage/lcov.info | coveralls' +
-      ' && rm -rf ./coverage';
-    packageConf.scripts.cover =
-      'istanbul cover _mocha --report html' +
-      ' -- ' + metapakData.testsFiles + ' -R spec -t 5000';
+  if(!packageConf.scripts.test) {
+    packageConf.scripts.test = 'echo "WARNING: No tests specified"';
+  }
+  if(!packageConf.scripts.lint) {
+    packageConf.scripts.lint = 'echo "WARNING: No linter specified"';
   }
 
-  // Linting every declared files
-  if(metapakData.files) {
-    packageConf.scripts.lint = 'eslint ' + metapakData.files;
-  }
-
-  // No tests, no version: Even when there is no test files
-  // i should never create versions without tests, this acts
-  // like a reminder
-  packageConf.scripts.preversion = 'npm t && npm run lint';
-
-  // Add the MUST HAVE dependencies:
-  packageConf.dependencies = packageConf.dependencies || {};
-  // debug is really nice, all my modules should use it,
-  // it makes debugging so simple
-  packageConf.dependencies.debug = packageConf.dependencies.debug || '2.6.1';
+  packageConf.scripts.preversion = 'npm t && npm run lint && npm run metapak -s';
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.eslint = '3.16.0';
-  packageConf.devDependencies['eslint-config-simplifield'] = '4.1.1';
-  packageConf.devDependencies.mocha = '3.2.0';
-  packageConf.devDependencies['mocha-lcov-reporter'] = '1.3.0';
-  packageConf.devDependencies.coveralls = '2.11.15';
-  packageConf.devDependencies.istanbul = '0.4.5';
   packageConf.devDependencies.commitizen = '^2.9.6';
   packageConf.devDependencies['cz-conventional-changelog'] = '^2.0.0';
   packageConf.devDependencies['conventional-changelog-cli'] = '^1.2.0';
@@ -89,10 +58,8 @@ module.exports = (packageConf) => {
   if('metapak-nfroidure' !== packageConf.name) {
     packageConf.greenkeeper = {
       ignore: [
-        'debug',
-        'eslint', 'eslint-config-simplifield', 'mocha',
-        'mocha-lcov-reporter', 'commitizen', 'cz-conventional-changelog',
-        'coveralls', 'istanbul', 'conventional-changelog-cli',
+        'commitizen', 'cz-conventional-changelog',
+        'conventional-changelog-cli',
       ],
     };
   }

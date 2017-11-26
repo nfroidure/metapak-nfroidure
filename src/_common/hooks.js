@@ -14,7 +14,7 @@ fi`;
 const PRE_COMMIT_QUALITY_CHECK = `
 npm run test && npm run lint || exit 1`;
 const PRE_COMMIT_METAPAK_RUN = `
-npm run metapak || exit 1`;
+npm run metapak -- -s || exit 1`;
 
 module.exports = (hooks) => {
   hooks['pre-commit'] = hooks['pre-commit'] || [];
