@@ -34,9 +34,6 @@
   },
   "author": "Nicolas Froidure",
   "license": "MIT",
-  "dependencies": {
-    "debug": "2.6.1"
-  },
   "peerDependencies": {
     "metapak": "^1.0.0"
   },
