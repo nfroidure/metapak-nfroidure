@@ -1,3 +1,13 @@
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/nfroidure/metapak-nfroidure/compare/v1.0.0...v1.0.1) (2017-12-02)
+
+
+### Bug Fixes
+
+* **Scripts:** Remove forgotten postintall script ([ccb31ee](https://github.com/nfroidure/metapak-nfroidure/commit/ccb31ee))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v0.7.0...v1.0.0) (2017-12-01)
 
