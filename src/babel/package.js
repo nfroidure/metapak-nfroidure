@@ -12,7 +12,7 @@ module.exports = packageConf => {
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.cli = 'env NODE_ENV=${NODE_ENV:-cli}';
   if (packageConf.metapak.configs.includes('jsdocs')) {
-    packageConf.devDependencies['jsdoc-to-markdown'] = 'next';
+    packageConf.devDependencies['jsdoc-to-markdown'] = '^3.1.0-0';
   }
   if (packageConf.metapak.configs.includes('mocha')) {
     packageConf.scripts.mocha =

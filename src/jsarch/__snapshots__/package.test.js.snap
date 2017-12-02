@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Package transformer for jsdocs should work with an empty package.json 1`] = `
+Object {
+  "devDependencies": Object {
+    "jsarch": "^1.2.5",
+  },
+  "greenkeeper": Object {
+    "ignore": Array [
+      "jsarch",
+    ],
+  },
+  "metapak": Object {
+    "data": Object {
+      "files": "yolo.js",
+    },
+  },
+  "scripts": Object {
+    "architecture": "jsarch yolo.js > ARCHITECTURE.md",
+  },
+}
+`;

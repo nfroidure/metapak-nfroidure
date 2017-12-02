@@ -3,7 +3,7 @@
 exports[`mocha Package transformer should work with some files 1`] = `
 Object {
   "devDependencies": Object {
-    "coveralls": "^2.11.15",
+    "coveralls": "^2.13.3",
     "istanbul": "^0.4.5",
     "jest": "^20.0.4",
   },

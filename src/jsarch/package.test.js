@@ -1,11 +1,10 @@
 'use strict';
 
-const assert = require('assert');
 const packageTransformer = require('./package');
 
 describe('Package transformer for jsdocs', () => {
   it('should work with an empty package.json', () => {
-    assert.deepEqual(
+    expect(
       packageTransformer({
         metapak: {
           data: {
@@ -15,23 +14,7 @@ describe('Package transformer for jsdocs', () => {
         greenkeeper: {
           ignore: [],
         },
-      }),
-      {
-        metapak: {
-          data: {
-            files: 'yolo.js',
-          },
-        },
-        devDependencies: {
-          jsarch: '^1.2.3',
-        },
-        scripts: {
-          architecture: 'jsarch yolo.js > ARCHITECTURE.md',
-        },
-        greenkeeper: {
-          ignore: ['jsarch'],
-        },
-      }
-    );
+      })
+    ).toMatchSnapshot();
   });
 });
