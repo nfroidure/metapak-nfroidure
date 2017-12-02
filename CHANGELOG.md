@@ -1,3 +1,13 @@
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/nfroidure/metapak-nfroidure/compare/v2.0.0...v2.0.1) (2017-12-02)
+
+
+### Bug Fixes
+
+* **JSDocs:** Fix the docs generation when used with ES7 ([7b97834](https://github.com/nfroidure/metapak-nfroidure/commit/7b97834))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v1.0.2...v2.0.0) (2017-12-02)
 
