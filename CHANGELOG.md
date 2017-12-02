@@ -1,3 +1,16 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v1.0.2...v2.0.0) (2017-12-02)
+
+
+* feat(Add prettier to the eslint config): ([eb408df](https://github.com/nfroidure/metapak-nfroidure/commit/eb408df))
+
+
+### BREAKING CHANGES
+
+* Will break old configurations
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/nfroidure/metapak-nfroidure/compare/v1.0.1...v1.0.2) (2017-12-02)
 

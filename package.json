@@ -1,7 +1,7 @@
 {
   "name": "metapak-nfroidure",
   "description": "A metapak module for my open source projects.",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "metapak": {
     "configs": [
       "readme",
