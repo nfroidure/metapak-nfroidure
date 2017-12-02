@@ -27,7 +27,6 @@
     "cz": "env NODE_ENV=${NODE_ENV:-cli} git cz",
     "lint": "eslint src/**/*.js",
     "metapak": "metapak",
-    "postinstall": "npm run metapak --silent || echo 'This package must be used with metapak'",
     "preversion": "npm t && npm run lint && npm run metapak -s",
     "test": "jest --config=.jest.config.js",
     "version": "npm run changelog && git add CHANGELOG.md"
