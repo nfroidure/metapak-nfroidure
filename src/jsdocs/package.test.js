@@ -26,7 +26,8 @@ describe('Package transformer for jsdocs', () => {
           'jsdoc-to-markdown': '^3.0.2',
         },
         scripts: {
-          doc: 'mkdir -p .readme;' +
+          doc:
+            'mkdir -p .readme;' +
             ' echo "# API" > .readme/API.md;' +
             ' jsdoc2md yolo.js >> .readme/API.md',
         },

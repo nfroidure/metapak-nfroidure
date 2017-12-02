@@ -6,10 +6,13 @@ const assetsTransformer = require('./assets');
 describe('Assets transformer for www configs', () => {
   it('should add www to ignored files', () => {
     assert.deepEqual(
-      assetsTransformer({
-        name: '.gitignore',
-        data: 'node_modules\n',
-      }, {}),
+      assetsTransformer(
+        {
+          name: '.gitignore',
+          data: 'node_modules\n',
+        },
+        {}
+      ),
       {
         name: '.gitignore',
         data: 'node_modules\nwww\n',
@@ -19,10 +22,13 @@ describe('Assets transformer for www configs', () => {
 
   it('should let pass other files', () => {
     assert.deepEqual(
-      assetsTransformer({
-        name: 'YOLO',
-        data: 'Carpe diem\n',
-      }, {}),
+      assetsTransformer(
+        {
+          name: 'YOLO',
+          data: 'Carpe diem\n',
+        },
+        {}
+      ),
       {
         name: 'YOLO',
         data: 'Carpe diem\n',

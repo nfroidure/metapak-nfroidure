@@ -3,13 +3,15 @@
 exports[`eslint Package transformer should work with some files 1`] = `
 Object {
   "devDependencies": Object {
-    "eslint": "3.16.0",
-    "eslint-config-simplifield": "4.1.1",
+    "eslint": "^4.12.1",
+    "eslint-plugin-prettier": "^2.3.1",
+    "prettier": "^1.8.2",
   },
   "greenkeeper": Object {
     "ignore": Array [
       "eslint",
-      "eslint-config-simplifield",
+      "eslint-config-prettier",
+      "prettier",
     ],
   },
   "metapak": Object {
@@ -19,6 +21,7 @@ Object {
   },
   "scripts": Object {
     "lint": "eslint src/*.js src/**/*.js",
+    "prettier": "prettier --write src/*.js src/**/*.js",
   },
 }
 `;

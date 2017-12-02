@@ -2,10 +2,9 @@
 
 const config = require('../config.js');
 
-const GITHUB_REPOSITORY_REGEXP =
-  /git\+https:\/\/github.com\/([a-zA-Z0-9\-]+)\/([a-zA-Z0-9\-]+)\.git/;
+const GITHUB_REPOSITORY_REGEXP = /git\+https:\/\/github.com\/([a-zA-Z0-9-]+)\/([a-zA-Z0-9-]+)\.git/;
 
-module.exports = (packageConf) => {
+module.exports = packageConf => {
   // Looks like i am the author of all my modules ;)
   packageConf.author = 'Nicolas Froidure';
 
@@ -34,17 +33,19 @@ module.exports = (packageConf) => {
   };
 
   // Add the changelog stuffs
-  packageConf.scripts.changelog = 'conventional-changelog -p angular -i CHANGELOG.md -s';
+  packageConf.scripts.changelog =
+    'conventional-changelog -p angular -i CHANGELOG.md -s';
   packageConf.scripts.version = 'npm run changelog && git add CHANGELOG.md';
 
-  if(!packageConf.scripts.test) {
+  if (!packageConf.scripts.test) {
     packageConf.scripts.test = 'echo "WARNING: No tests specified"';
   }
-  if(!packageConf.scripts.lint) {
+  if (!packageConf.scripts.lint) {
     packageConf.scripts.lint = 'echo "WARNING: No linter specified"';
   }
 
-  packageConf.scripts.preversion = 'npm t && npm run lint && npm run metapak -s';
+  packageConf.scripts.preversion =
+    'npm t && npm run lint && npm run metapak -s';
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
@@ -55,10 +56,11 @@ module.exports = (packageConf) => {
   // Avoid GreenKeeper to update automatically added modules
   // except for this module so that we still benefit from
   // greenkeeper but once to avoid PR spam ;)
-  if('metapak-nfroidure' !== packageConf.name) {
+  if ('metapak-nfroidure' !== packageConf.name) {
     packageConf.greenkeeper = {
       ignore: [
-        'commitizen', 'cz-conventional-changelog',
+        'commitizen',
+        'cz-conventional-changelog',
         'conventional-changelog-cli',
       ],
     };
@@ -66,16 +68,17 @@ module.exports = (packageConf) => {
 
   // This job is already done by NPM, but once,.
   // This allows to do it on old repositories
-  if(packageConf.repository && 'git' === packageConf.repository.type) {
-    const [, userName, repositoryName] = GITHUB_REPOSITORY_REGEXP.exec(
-      packageConf.repository.url
-    ) || [];
-    if(userName && repositoryName) {
+  if (packageConf.repository && 'git' === packageConf.repository.type) {
+    const [, userName, repositoryName] =
+      GITHUB_REPOSITORY_REGEXP.exec(packageConf.repository.url) || [];
+    if (userName && repositoryName) {
       packageConf.bugs = packageConf.bugs || {
-        url: 'https://github.com/' + userName + '/' + repositoryName + '/issues',
+        url:
+          'https://github.com/' + userName + '/' + repositoryName + '/issues',
       };
-      packageConf.homepage = packageConf.homepage ||
-      'https://github.com/' + userName + '/' + repositoryName + '#readme';
+      packageConf.homepage =
+        packageConf.homepage ||
+        'https://github.com/' + userName + '/' + repositoryName + '#readme';
     }
   }
 

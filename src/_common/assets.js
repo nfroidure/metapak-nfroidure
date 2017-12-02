@@ -2,22 +2,20 @@
 
 const config = require('../config.js');
 
-module.exports = (file, packageConf) => {
+module.exports = file => {
   // Rename dot files the right way
-  if(file.name.startsWith('_dot_')) {
+  if (file.name.startsWith('_dot_')) {
     file.name = file.name.replace('_dot_', '.');
   }
 
   // Add author to the license
-  if('LICENSE' === file.name) {
-    file.data = file.data.replace(/<copyright holders>/mg, 'Nicolas Froidure');
+  if ('LICENSE' === file.name) {
+    file.data = file.data.replace(/<copyright holders>/gm, 'Nicolas Froidure');
   }
 
   // Add NodeJS LTS where needed
-  if([
-    '.github/ISSUE_TEMPLATE',
-  ].includes(file.name)) {
-    file.data = file.data.replace(/<lastNodeLTS>/mg, config.lastNodeLTS);
+  if (['.github/ISSUE_TEMPLATE'].includes(file.name)) {
+    file.data = file.data.replace(/<lastNodeLTS>/gm, config.lastNodeLTS);
   }
 
   return file;
