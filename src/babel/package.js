@@ -11,6 +11,9 @@ module.exports = packageConf => {
   // Adapting script to work with Babel
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.cli = 'env NODE_ENV=${NODE_ENV:-cli}';
+  if (packageConf.metapak.configs.includes('jsdocs')) {
+    packageConf.devDependencies['jsdoc-to-markdown'] = 'next';
+  }
   if (packageConf.metapak.configs.includes('mocha')) {
     packageConf.scripts.mocha =
       'mocha --compilers js:babel-register' + ' ' + metapakData.testsFiles;
