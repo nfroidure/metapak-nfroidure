@@ -1,5 +1,7 @@
 'use strict';
 
+const MOCHA_COMMAND = 'npm run mocha';
+
 module.exports = (packageConf) => {
   const metapakData = packageConf.metapak && packageConf.metapak.data ?
     packageConf.metapak.data :
@@ -10,7 +12,12 @@ module.exports = (packageConf) => {
   }
 
   packageConf.scripts = packageConf.scripts || {};
-  packageConf.scripts.test = 'mocha ' + metapakData.testsFiles;
+
+  packageConf.scripts.mocha = 'mocha ' + metapakData.testsFiles;
+  packageConf.scripts.test =
+    packageConf.scripts.test.includes(MOCHA_COMMAND) ?
+    packageConf.scripts.test :
+    packageConf.scripts.test + ' && ' + MOCHA_COMMAND;
   packageConf.scripts.coveralls =
     'istanbul cover _mocha --report lcovonly' +
     ' -- ' + metapakData.testsFiles + ' -R spec -t 5000' +

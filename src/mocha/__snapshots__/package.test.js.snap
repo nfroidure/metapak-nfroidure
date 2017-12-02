@@ -24,7 +24,8 @@ Object {
   "scripts": Object {
     "cover": "istanbul cover _mocha --report html -- src/*.js src/**/*.js -R spec -t 5000",
     "coveralls": "istanbul cover _mocha --report lcovonly -- src/*.js src/**/*.js -R spec -t 5000 && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
-    "test": "mocha src/*.js src/**/*.js",
+    "mocha": "mocha src/*.js src/**/*.js",
+    "test": " && npm run mocha",
   },
 }
 `;

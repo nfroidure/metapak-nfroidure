@@ -7,6 +7,9 @@ describe('mocha', () => {
     it('should work with some files', () => {
       expect(
         packageTransformer({
+          scripts: {
+            test: '',
+          },
           metapak: {
             data: {
               testsFiles: 'src/*.js src/**/*.js',

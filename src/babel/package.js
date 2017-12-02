@@ -1,5 +1,7 @@
 'use strict';
 
+const COMPILE_COMMAND = 'npm run compile';
+
 module.exports = (packageConf) => {
   const metapakData = packageConf.metapak && packageConf.metapak.data ?
     packageConf.metapak.data :
@@ -8,8 +10,8 @@ module.exports = (packageConf) => {
   // Adapting script to work with Babel
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.cli = 'env NODE_ENV=${NODE_ENV:-cli}';
-  if(metapakData.testsFiles) {
-    packageConf.scripts.test =
+  if(packageConf.metapak.configs.includes('mocha')) {
+    packageConf.scripts.mocha =
       'mocha --compilers js:babel-register' +
       ' ' + metapakData.testsFiles;
     packageConf.scripts.coveralls =
@@ -25,13 +27,17 @@ module.exports = (packageConf) => {
       ' --compilers js:babel-register' +
       ' ' + metapakData.testsFiles +
       ' -R spec -t 5000';
+    packageConf.devDependencies.istanbul = '^1.0.0-alpha.2';
   }
 
   // Adding Babel compile script
   packageConf.scripts.compile = 'babel src --out-dir=dist';
 
   // We have to compile with Babel before pushing a version
-  packageConf.scripts.preversion = 'npm t && npm run lint && npm run compile';
+  packageConf.scripts.preversion =
+    packageConf.scripts.preversion.includes(COMPILE_COMMAND) ?
+    packageConf.scripts.preversion :
+    packageConf.scripts.preversion + ' && ' + COMPILE_COMMAND;
 
   // Istanbul needs a specific version to work with babel
   packageConf.devDependencies = packageConf.devDependencies || {};
@@ -42,7 +48,6 @@ module.exports = (packageConf) => {
   packageConf.devDependencies['babel-plugin-transform-object-rest-spread'] = '^6.26.0';
   packageConf.devDependencies['babel-preset-env'] = '^1.6.1';
   packageConf.devDependencies['babel-register'] = '^6.9.0';
-
 
   return packageConf;
 };
