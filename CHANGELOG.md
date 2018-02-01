@@ -1,3 +1,13 @@
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v2.0.2...v3.0.0) (2018-02-01)
+
+
+### Features
+
+* **Dependencies:** Update plugins dependencies ([0e27170](https://github.com/nfroidure/metapak-nfroidure/commit/0e27170))
+
+
+
 <a name="2.0.2"></a>
 ## [2.0.2](https://github.com/nfroidure/metapak-nfroidure/compare/v2.0.1...v2.0.2) (2017-12-02)
 
