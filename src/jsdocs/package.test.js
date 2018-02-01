@@ -23,7 +23,7 @@ describe('Package transformer for jsdocs', () => {
           },
         },
         devDependencies: {
-          'jsdoc-to-markdown': '^3.0.2',
+          'jsdoc-to-markdown': '^4.0.1',
         },
         scripts: {
           doc:

@@ -50,8 +50,8 @@ module.exports = packageConf => {
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
   packageConf.devDependencies.commitizen = '^2.9.6';
-  packageConf.devDependencies['cz-conventional-changelog'] = '^2.0.0';
-  packageConf.devDependencies['conventional-changelog-cli'] = '^1.3.5';
+  packageConf.devDependencies['cz-conventional-changelog'] = '^2.1.0';
+  packageConf.devDependencies['conventional-changelog-cli'] = '^1.3.8';
 
   // Avoid GreenKeeper to update automatically added modules
   // except for this module so that we still benefit from

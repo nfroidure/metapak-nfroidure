@@ -18,9 +18,9 @@ module.exports = packageConf => {
   }
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.karma = '^1.7.0';
+  packageConf.devDependencies.karma = '^2.0.0';
   packageConf.devDependencies['karma-chrome-launcher'] = '^2.2.0';
-  packageConf.devDependencies['karma-firefox-launcher'] = '^1.0.1';
+  packageConf.devDependencies['karma-firefox-launcher'] = '^1.1.0';
 
   if (packageConf.metapak.configs.includes('mocha')) {
     packageConf.devDependencies['karma-mocha'] = '^1.3.0';

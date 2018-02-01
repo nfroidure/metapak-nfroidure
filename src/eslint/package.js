@@ -16,10 +16,10 @@ module.exports = packageConf => {
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.eslint = '^4.12.1';
+  packageConf.devDependencies.eslint = '^4.16.0';
   delete packageConf.devDependencies['eslint-config-simplifield'];
-  packageConf.devDependencies.prettier = '^1.8.2';
-  packageConf.devDependencies['eslint-plugin-prettier'] = '^2.3.1';
+  packageConf.devDependencies.prettier = '^1.10.2';
+  packageConf.devDependencies['eslint-plugin-prettier'] = '^2.5.0';
 
   if ('metapak-nfroidure' !== packageConf.name) {
     packageConf.greenkeeper = {

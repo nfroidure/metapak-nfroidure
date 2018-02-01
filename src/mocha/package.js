@@ -32,9 +32,9 @@ module.exports = packageConf => {
     ' -R spec -t 5000';
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.mocha = '^3.5.3';
+  packageConf.devDependencies.mocha = '^5.0.0';
   packageConf.devDependencies['mocha-lcov-reporter'] = '^1.3.0';
-  packageConf.devDependencies.coveralls = '^2.13.3';
+  packageConf.devDependencies.coveralls = '^3.0.0';
   packageConf.devDependencies.istanbul = '^0.4.5';
 
   if ('metapak-nfroidure' !== packageConf.name) {

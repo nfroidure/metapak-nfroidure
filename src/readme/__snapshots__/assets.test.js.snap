@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Assets transformer for www configs should build the README.md file 1`] = `
+Object {
+  "data": "<!-- something -->
+# module
+> A great module!
+
+[![NPM version](https://badge.fury.io/js/module.svg)](https://npmjs.org/package/module)
+[![Dependency Status](https://david-dm.org/nfroidure/module.svg)](https://david-dm.org/nfroidure/module)
+[![devDependency Status](https://david-dm.org/nfroidure/module/dev-status.svg)](https://david-dm.org/nfroidure/module#info=devDependencies)
+[![Dependency Status](https://dependencyci.com/github/nfroidure/module/badge)](https://dependencyci.com/github/nfroidure/module)
+
+## Usage
+Just require me
+
+# License
+[MIT](https://github.com/nfroidure/module/blob/master/LICENSE)
+",
+  "name": "README.md",
+}
+`;

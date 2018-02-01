@@ -37,29 +37,7 @@ describe('Assets transformer for www configs', () => {
       }
     )
       .then(file => {
-        assert.deepEqual(file, {
-          name: 'README.md',
-          data:
-            '<!-- something -->\n' +
-            '# module\n' +
-            '> A great module!\n\n' +
-            '[![NPM version](https://badge.fury.io/js/module.svg)]' +
-            '(https://npmjs.org/package/module)\n' +
-            '[![Build status](https://secure.travis-ci.org/nfroidure/module.svg)]' +
-            '(https://travis-ci.org/nfroidure/module)\n' +
-            '[![Dependency Status](https://david-dm.org/nfroidure/module.svg)]' +
-            '(https://david-dm.org/nfroidure/module)\n' +
-            '[![devDependency Status](https://david-dm.org/nfroidure/module/dev-status.svg)]' +
-            '(https://david-dm.org/nfroidure/module#info=devDependencies)\n' +
-            '[![Code Climate](https://codeclimate.com/github/nfroidure/module.svg)]' +
-            '(https://codeclimate.com/github/nfroidure/module)\n' +
-            '[![Dependency Status](https://dependencyci.com/github/nfroidure/module/badge)]' +
-            '(https://dependencyci.com/github/nfroidure/module)\n\n' +
-            '## Usage\n' +
-            'Just require me\n\n' +
-            '# License\n' +
-            '[MIT](https://github.com/nfroidure/module/blob/master/LICENSE)\n',
-        });
+        expect(file).toMatchSnapshot();
       })
       .then(done)
       .catch(done);
