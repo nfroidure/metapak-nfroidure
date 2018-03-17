@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mocha Package transformer should work with some files 1`] = `
+Object {
+  "devDependencies": Object {
+    "karma": "^2.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-firefox-launcher": "^1.1.0",
+  },
+  "metapak": Object {
+    "configs": Array [],
+    "data": Object {
+      "testsFiles": "src/*.js src/**/*.js",
+    },
+  },
+  "scripts": Object {
+    "karma": "karma start karma.conf.js",
+    "test": " && npm run karma",
+  },
+}
+`;

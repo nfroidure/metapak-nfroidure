@@ -4,8 +4,7 @@ exports[`mocha Package transformer should work with some files 1`] = `
 Object {
   "devDependencies": Object {
     "coveralls": "^3.0.0",
-    "istanbul": "^0.4.5",
-    "jest": "^22.1.4",
+    "jest": "^22.4.2",
   },
   "greenkeeper": Object {
     "ignore": Array [
