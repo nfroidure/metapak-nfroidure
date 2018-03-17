@@ -1,3 +1,20 @@
+<a name="4.0.0"></a>
+# [4.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v3.0.0...v4.0.0) (2018-03-17)
+
+
+### Features
+
+* **Dependencies:** Update dependencies ([df9790a](https://github.com/nfroidure/metapak-nfroidure/commit/df9790a))
+* **Readme config:** Better README.md templating ([4e07b4c](https://github.com/nfroidure/metapak-nfroidure/commit/4e07b4c)), closes [#10](https://github.com/nfroidure/metapak-nfroidure/issues/10)
+
+
+### BREAKING CHANGES
+
+* **Readme config:** Updating to this version will require to remove the `.contents` folder and run `npm
+run metapak` once then remove extra contents from the readme file.
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v2.0.2...v3.0.0) (2018-02-01)
 
