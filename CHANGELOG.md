@@ -1,3 +1,13 @@
+<a name="4.0.1"></a>
+## [4.0.1](https://github.com/nfroidure/metapak-nfroidure/compare/v4.0.0...v4.0.1) (2018-03-17)
+
+
+### Bug Fixes
+
+* **Readme config:** Move API docs out of the README contents ([2dfb195](https://github.com/nfroidure/metapak-nfroidure/commit/2dfb195))
+
+
+
 <a name="4.0.0"></a>
 # [4.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v3.0.0...v4.0.0) (2018-03-17)
 
