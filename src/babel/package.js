@@ -50,8 +50,9 @@ module.exports = packageConf => {
   packageConf.devDependencies.istanbul = '^1.0.0-alpha.2';
   packageConf.devDependencies['babel-cli'] = '^6.26.0';
   packageConf.devDependencies['babel-eslint'] = '^8.2.2';
-  packageConf.devDependencies['babel-plugin-transform-async-to-module-method'] =
-    '^6.24.1';
+  delete packageConf.devDependencies[
+    'babel-plugin-transform-async-to-module-method'
+  ];
   packageConf.devDependencies['babel-plugin-transform-object-rest-spread'] =
     '^6.26.0';
   packageConf.devDependencies['babel-preset-env'] = '^1.6.1';

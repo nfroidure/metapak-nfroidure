@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`mocha Package transformer should work with some files 1`] = `
+exports[`Karma Package transformer should work with some files 1`] = `
 Object {
   "devDependencies": Object {
     "karma": "^2.0.0",

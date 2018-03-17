@@ -2,13 +2,14 @@
 
 const packageTransformer = require('./package');
 
-describe('Karma', () => {
+describe('Babel', () => {
   describe('Package transformer', () => {
     it('should work with some files', () => {
       expect(
         packageTransformer({
           scripts: {
             test: '',
+            preversion: '',
           },
           metapak: {
             data: {

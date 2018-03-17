@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Babel Package transformer should work with some files 1`] = `
+Object {
+  "devDependencies": Object {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "istanbul": "^1.0.0-alpha.2",
+  },
+  "metapak": Object {
+    "configs": Array [],
+    "data": Object {
+      "testsFiles": "src/*.js src/**/*.js",
+    },
+  },
+  "scripts": Object {
+    "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
+    "compile": "babel src --out-dir=dist",
+    "preversion": " && npm run compile",
+    "test": "",
+  },
+}
+`;
