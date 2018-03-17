@@ -32,13 +32,21 @@ Just require me
 
 [//]: # (::contents:end)
 
+
+# API
+\`\`\`
+toto.lol()
+\`\`\`
+
 # License
 [MIT](https://github.com/nfroidure/module/blob/master/LICENSE)
-",
-"name": "README.md",
-}
 `;
-const PROJECT_API_CONTENTS = '';
+const PROJECT_API_CONTENTS = `
+# API
+\`\`\`
+toto.lol()
+\`\`\`
+`;
 
 describe('Assets transformer for www configs', () => {
   it('should build the README.md file', done => {

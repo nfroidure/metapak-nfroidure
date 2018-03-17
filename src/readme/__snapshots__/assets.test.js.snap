@@ -25,6 +25,12 @@ Just require me
 
 [//]: # (::contents:end)
 
+
+# API
+\`\`\`
+toto.lol()
+\`\`\`
+
 # License
 [MIT](https://github.com/nfroidure/module/blob/master/LICENSE)
 ",

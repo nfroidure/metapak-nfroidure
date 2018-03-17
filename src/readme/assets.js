@@ -103,10 +103,10 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
       if (readme) {
         file.data += readme + '\n';
       }
+      file.data += '\n' + README_CONTENTS_END_TAG + '\n\n';
       if (api) {
         file.data += api + '\n';
       }
-      file.data += '\n' + README_CONTENTS_END_TAG + '\n\n';
       file.data +=
         '# License\n' +
         '[' +
