@@ -1,5 +1,7 @@
 'use strict';
 
+const { apiPath } = require('../config.js');
+
 module.exports = packageConf => {
   const metapakData =
     packageConf.metapak && packageConf.metapak.data
@@ -8,12 +10,9 @@ module.exports = packageConf => {
 
   // Adding documentation generation script
   packageConf.scripts = packageConf.scripts || {};
-  packageConf.scripts.doc =
-    'mkdir -p .readme;' +
-    ' echo "# API" > .readme/API.md;' +
-    ' jsdoc2md ' +
-    metapakData.files +
-    ' >> .readme/API.md';
+  packageConf.scripts.doc = `echo "# API" > ${apiPath}; jsdoc2md ${
+    metapakData.files
+  } >> ${apiPath}`;
 
   // Add doc deps
   packageConf.devDependencies = packageConf.devDependencies || {};

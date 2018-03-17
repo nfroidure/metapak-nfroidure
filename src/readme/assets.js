@@ -1,7 +1,11 @@
 'use strict';
 
 const path = require('path');
+const { apiPath } = require('../config.js');
 const USERNAME = 'nfroidure';
+const README_CONTENTS_START_TAG = `[//]: # (::contents:start)`;
+const README_CONTENTS_END_TAG = `[//]: # (::contents:end)`;
+const README_REGEXP = /^(?:[^]*)\[\/\/\]: # \(::contents:start\)\r?\n\r?\n([^]*)\r?\n\r?\n\[\/\/\]: # \(::contents:end\)(?:[^]*)$/gm;
 
 module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
   const metapakConfigs =
@@ -9,7 +13,7 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
       ? packageConf.metapak.configs
       : [{}];
 
-  // Add www to ignored files
+  // Simple README templating system
   if ('README.md' === file.name) {
     // Header
     file.data += '# ' + packageConf.name + '\n';
@@ -92,11 +96,17 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
       packageConf.name +
       ')\n';
     return Promise.all([
-      file.data,
       _getReadmeContents({ PROJECT_DIR, fs, log }),
       _getAPIContents({ PROJECT_DIR, fs, log }),
-    ]).then(chunks => {
-      file.data = chunks.filter(_identity).join('\n') + '\n';
+    ]).then(([readme, api]) => {
+      file.data += '\n\n' + README_CONTENTS_START_TAG + '\n\n';
+      if (readme) {
+        file.data += readme + '\n';
+      }
+      if (api) {
+        file.data += api + '\n';
+      }
+      file.data += '\n' + README_CONTENTS_END_TAG + '\n\n';
       file.data +=
         '# License\n' +
         '[' +
@@ -114,25 +124,26 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
 };
 
 function _getReadmeContents({ PROJECT_DIR, fs, log }) {
-  const filePath = path.join(PROJECT_DIR, '.readme', 'contents.md');
+  const filePath = path.join(PROJECT_DIR, 'README.md');
 
-  return fs.readFileAsync(filePath, 'utf8').catch(err => {
-    log('error', 'Cannot read the README.md file contents:', filePath);
-    log('stack', err.stack);
-    throw err;
-  });
+  return fs
+    .readFileAsync(filePath, 'utf8')
+    .catch(err => {
+      log('error', 'Cannot read the README.md file contents:', filePath);
+      log('stack', err.stack);
+      throw err;
+    })
+    .then(contents => {
+      return contents.replace(README_REGEXP, '$1');
+    });
 }
 
 function _getAPIContents({ PROJECT_DIR, fs, log }) {
-  const filePath = path.join(PROJECT_DIR, '.readme', 'API.md');
+  const filePath = path.join(PROJECT_DIR, apiPath);
 
   return fs.readFileAsync(filePath, 'utf8').catch(err => {
     log('debug', 'Cannot read the API.md file contents:', filePath);
     log('debug', err.stack);
     return '';
   });
-}
-
-function _identity(me) {
-  return me;
 }

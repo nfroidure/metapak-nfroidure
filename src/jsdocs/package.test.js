@@ -1,11 +1,10 @@
 'use strict';
 
-const assert = require('assert');
 const packageTransformer = require('./package');
 
 describe('Package transformer for jsdocs', () => {
   it('should work with an empty package.json', () => {
-    assert.deepEqual(
+    expect(
       packageTransformer({
         metapak: {
           data: {
@@ -15,26 +14,7 @@ describe('Package transformer for jsdocs', () => {
         greenkeeper: {
           ignore: [],
         },
-      }),
-      {
-        metapak: {
-          data: {
-            files: 'yolo.js',
-          },
-        },
-        devDependencies: {
-          'jsdoc-to-markdown': '^4.0.1',
-        },
-        scripts: {
-          doc:
-            'mkdir -p .readme;' +
-            ' echo "# API" > .readme/API.md;' +
-            ' jsdoc2md yolo.js >> .readme/API.md',
-        },
-        greenkeeper: {
-          ignore: ['jsdoc-to-markdown'],
-        },
-      }
-    );
+      })
+    ).toMatchSnapshot();
   });
 });
