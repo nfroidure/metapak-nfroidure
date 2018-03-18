@@ -1,12 +1,31 @@
 'use strict';
 
+const config = require('../config.js');
 const COMPILE_COMMAND = 'npm run compile';
+const DEFAULT_BABEL_CONFIG = {
+  presets: [
+    [
+      'env',
+      {
+        targets: {
+          node: config.lastNodeLTS,
+        },
+      },
+    ],
+  ],
+  plugins: ['transform-object-rest-spread'],
+};
 
 module.exports = packageConf => {
   const metapakData =
     packageConf.metapak && packageConf.metapak.data
       ? packageConf.metapak.data
       : {};
+
+  // Add Babel config
+  packageConf.babel = packageConf.babel
+    ? packageConf.babel
+    : DEFAULT_BABEL_CONFIG;
 
   // Adapting script to work with Babel
   packageConf.scripts = packageConf.scripts || {};
@@ -45,18 +64,28 @@ module.exports = packageConf => {
     ? packageConf.scripts.preversion
     : packageConf.scripts.preversion + ' && ' + COMPILE_COMMAND;
 
-  // Istanbul needs a specific version to work with babel
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.istanbul = '^1.0.0-alpha.2';
-  packageConf.devDependencies['babel-cli'] = '^6.26.0';
-  packageConf.devDependencies['babel-eslint'] = '^8.2.2';
   delete packageConf.devDependencies[
     'babel-plugin-transform-async-to-module-method'
   ];
+
+  // Istanbul needs a specific version to work with babel
+  if (
+    packageConf.devDependencies.istanbul ||
+    (metapakData.configs || []).includes('mocha')
+  ) {
+    packageConf.devDependencies.istanbul = '^1.0.0-alpha.2';
+  } else if ((metapakData.configs || []).includes('jest')) {
+    delete packageConf.devDependencies.istanbul;
+  }
+
+  packageConf.devDependencies['babel-cli'] = '^6.26.0';
+  packageConf.devDependencies['babel-core'] = '^6.26.0';
+  packageConf.devDependencies['babel-register'] = '^6.26.0';
+  packageConf.devDependencies['babel-preset-env'] = '^1.6.1';
   packageConf.devDependencies['babel-plugin-transform-object-rest-spread'] =
     '^6.26.0';
-  packageConf.devDependencies['babel-preset-env'] = '^1.6.1';
-  packageConf.devDependencies['babel-register'] = '^6.26.0';
+  packageConf.devDependencies['babel-eslint'] = '^8.2.2';
 
   return packageConf;
 };
