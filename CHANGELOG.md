@@ -1,3 +1,14 @@
+<a name="4.3.0"></a>
+# [4.3.0](https://github.com/nfroidure/metapak-nfroidure/compare/v4.2.0...v4.3.0) (2018-03-18)
+
+
+### Features
+
+* **Common config:** Allow to add .gitignore files to the base asset ([6b786e8](https://github.com/nfroidure/metapak-nfroidure/commit/6b786e8))
+* **Private config:** Allow to use `metapak-nfroidure` for private projects ([7e1f547](https://github.com/nfroidure/metapak-nfroidure/commit/7e1f547))
+
+
+
 <a name="4.2.0"></a>
 # [4.2.0](https://github.com/nfroidure/metapak-nfroidure/compare/v4.1.0...v4.2.0) (2018-03-18)
 
