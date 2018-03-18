@@ -1,3 +1,13 @@
+<a name="5.0.0"></a>
+# [5.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v4.3.0...v5.0.0) (2018-03-18)
+
+
+### Features
+
+* **Jest config:** Fix Jest config idempotency ([87fd7a7](https://github.com/nfroidure/metapak-nfroidure/commit/87fd7a7))
+
+
+
 <a name="4.3.0"></a>
 # [4.3.0](https://github.com/nfroidure/metapak-nfroidure/compare/v4.2.0...v4.3.0) (2018-03-18)
 
