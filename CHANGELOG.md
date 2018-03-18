@@ -1,3 +1,13 @@
+<a name="4.2.0"></a>
+# [4.2.0](https://github.com/nfroidure/metapak-nfroidure/compare/v4.1.0...v4.2.0) (2018-03-18)
+
+
+### Features
+
+* **Babel config:** Put the babel config in the package.json file instead ([a2f30a6](https://github.com/nfroidure/metapak-nfroidure/commit/a2f30a6))
+
+
+
 <a name="4.1.0"></a>
 # [4.1.0](https://github.com/nfroidure/metapak-nfroidure/compare/v4.0.2...v4.1.0) (2018-03-18)
 
