@@ -12,6 +12,9 @@ describe('mocha', () => {
               testFiles: 'src/*.js src/**/*.js',
             },
           },
+          scripts: {
+            test: '',
+          },
         })
       ).toMatchSnapshot();
     });

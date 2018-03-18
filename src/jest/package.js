@@ -1,10 +1,16 @@
 'use strict';
 
+const JEST_COMMAND = 'npm run jest';
+
 module.exports = packageConf => {
   // Let's add test scripts
   packageConf.scripts = packageConf.scripts || {};
-  packageConf.scripts.test = 'jest --config=.jest.config.js';
-  packageConf.scripts.cover = 'jest --config=.jest.config.js --coverage';
+  packageConf.scripts.jest = 'NODE_ENV=test jest --config=.jest.config.js';
+  packageConf.scripts.test = packageConf.scripts.test.includes(JEST_COMMAND)
+    ? packageConf.scripts.test
+    : (packageConf.scripts.test ? packageConf.scripts.test + ' && ' : '') +
+      JEST_COMMAND;
+  packageConf.scripts.cover = `npm run jest -- --coverage`;
   packageConf.scripts.coveralls =
     'npm run cover && cat ./coverage/lcov.info | coveralls' +
     ' && rm -rf ./coverage';

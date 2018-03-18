@@ -22,14 +22,15 @@
   "scripts": {
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "cli": "env NODE_ENV=${NODE_ENV:-cli}",
-    "cover": "jest --config=.jest.config.js --coverage",
+    "cover": "npm run jest -- --coverage",
     "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
     "cz": "env NODE_ENV=${NODE_ENV:-cli} git cz",
+    "jest": "NODE_ENV=test jest --config=.jest.config.js",
     "lint": "eslint src/**/*.js",
     "metapak": "metapak",
     "prettier": "prettier --write src/**/*.js",
     "preversion": "npm t && npm run lint && npm run metapak -s",
-    "test": "jest --config=.jest.config.js",
+    "test": "npm run jest",
     "version": "npm run changelog && git add CHANGELOG.md"
   },
   "author": "Nicolas Froidure",
