@@ -1,3 +1,19 @@
+<a name="6.0.0"></a>
+# [6.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v5.0.0...v6.0.0) (2018-03-24)
+
+
+### Bug Fixes
+
+* **Common config:** Do not assert any dist in gitignore content ([d41bf1a](https://github.com/nfroidure/metapak-nfroidure/commit/d41bf1a))
+* **Readme config:** Fix the markdown comment in the readme config ([977c91d](https://github.com/nfroidure/metapak-nfroidure/commit/977c91d))
+
+
+### Features
+
+* **Jest config:** Put Jest configuration in package.json ([73fc66d](https://github.com/nfroidure/metapak-nfroidure/commit/73fc66d))
+
+
+
 <a name="5.0.0"></a>
 # [5.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v4.3.0...v5.0.0) (2018-03-18)
 
