@@ -5,7 +5,7 @@ const JEST_COMMAND = 'npm run jest';
 module.exports = packageConf => {
   // Let's add test scripts
   packageConf.scripts = packageConf.scripts || {};
-  packageConf.scripts.jest = 'NODE_ENV=test jest --config=.jest.config.js';
+  packageConf.scripts.jest = 'NODE_ENV=test jest';
   packageConf.scripts.test = packageConf.scripts.test.includes(JEST_COMMAND)
     ? packageConf.scripts.test
     : (packageConf.scripts.test ? packageConf.scripts.test + ' && ' : '') +
@@ -27,6 +27,11 @@ module.exports = packageConf => {
       ).concat(['jest', 'coveralls', 'istanbul']),
     };
   }
+
+  packageConf.jest = packageConf.jest || {
+    coverageReporters: ['lcov'],
+    testPathIgnorePatterns: ['/node_modules/'],
+  };
 
   return packageConf;
 };

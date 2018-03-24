@@ -13,6 +13,14 @@ Object {
       "istanbul",
     ],
   },
+  "jest": Object {
+    "coverageReporters": Array [
+      "lcov",
+    ],
+    "testPathIgnorePatterns": Array [
+      "/node_modules/",
+    ],
+  },
   "metapak": Object {
     "data": Object {
       "testFiles": "src/*.js src/**/*.js",
@@ -21,7 +29,7 @@ Object {
   "scripts": Object {
     "cover": "npm run jest -- --coverage",
     "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
-    "jest": "NODE_ENV=test jest --config=.jest.config.js",
+    "jest": "NODE_ENV=test jest",
     "test": "npm run jest",
   },
 }
