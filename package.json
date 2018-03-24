@@ -11,8 +11,8 @@
       "codeclimate"
     ],
     "data": {
-      "testsFiles": "src/**/*.mocha.js",
-      "files": "src/**/*.js"
+      "testsFiles": "'src/**/*.mocha.js'",
+      "files": "'src/**/*.js'"
     }
   },
   "repository": {
@@ -26,9 +26,9 @@
     "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
     "cz": "env NODE_ENV=${NODE_ENV:-cli} git cz",
     "jest": "NODE_ENV=test jest",
-    "lint": "eslint src/**/*.js",
+    "lint": "eslint 'src/**/*.js'",
     "metapak": "metapak",
-    "prettier": "prettier --write src/**/*.js",
+    "prettier": "prettier --write 'src/**/*.js'",
     "preversion": "npm t && npm run lint && npm run metapak -s",
     "test": "npm run jest",
     "version": "npm run changelog && git add CHANGELOG.md"
@@ -52,11 +52,9 @@
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.19.0",
     "eslint-plugin-prettier": "^2.6.0",
-    "istanbul": "^0.4.5",
     "jest": "^22.4.2",
     "metapak": "^1.0.3",
-    "prettier": "^1.11.1",
-    "sinon": "^1.17.7"
+    "prettier": "^1.11.1"
   },
   "config": {
     "commitizen": {

@@ -10,7 +10,6 @@ Object {
     "ignore": Array [
       "jest",
       "coveralls",
-      "istanbul",
     ],
   },
   "jest": Object {

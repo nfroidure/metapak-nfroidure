@@ -24,7 +24,7 @@ module.exports = packageConf => {
       ignore: (packageConf.greenkeeper && packageConf.greenkeeper.ignore
         ? packageConf.greenkeeper.ignore
         : []
-      ).concat(['jest', 'coveralls', 'istanbul']),
+      ).concat(['jest', 'coveralls']),
     };
   }
 
