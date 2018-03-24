@@ -31,6 +31,7 @@ module.exports = (file, packageConf) => {
   ) {
     file.data =
       file.data +
+      '\n' +
       '# Project custom ignored file\n' +
       metapakData.ignore.join('\n') +
       '\n';
