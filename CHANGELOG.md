@@ -1,3 +1,13 @@
+<a name="6.1.0"></a>
+# [6.1.0](https://github.com/nfroidure/metapak-nfroidure/compare/v6.0.0...v6.1.0) (2018-05-06)
+
+
+### Features
+
+* **Config:** Add Node 10 support ([5e2f7ef](https://github.com/nfroidure/metapak-nfroidure/commit/5e2f7ef))
+
+
+
 <a name="6.0.0"></a>
 # [6.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v5.0.0...v6.0.0) (2018-03-24)
 
