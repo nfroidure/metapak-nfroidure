@@ -16,8 +16,8 @@ module.exports = packageConf => {
     ' && rm -rf ./coverage';
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jest = '^22.4.2';
-  packageConf.devDependencies.coveralls = '^3.0.0';
+  packageConf.devDependencies.jest = '^23.6.0';
+  packageConf.devDependencies.coveralls = '^3.0.2';
 
   if ('metapak-nfroidure' !== packageConf.name) {
     packageConf.greenkeeper = {
