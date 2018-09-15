@@ -68,6 +68,14 @@ module.exports = packageConf => {
   delete packageConf.devDependencies[
     'babel-plugin-transform-async-to-module-method'
   ];
+  delete packageConf.devDependencies['babel-cli'];
+  delete packageConf.devDependencies['babel-core'];
+  delete packageConf.devDependencies['babel-register'];
+  delete packageConf.devDependencies['babel-preset-env'];
+  delete packageConf.devDependencies[
+    'babel-plugin-transform-object-rest-spread'
+  ];
+  delete packageConf.devDependencies['babel-eslint'];
 
   // Istanbul needs a specific version to work with babel
   if (
@@ -94,15 +102,6 @@ module.exports = packageConf => {
   packageConf.devDependencies['@babel/plugin-proposal-object-rest-spread'] =
     '^6.26.0';
   packageConf.devDependencies['babel-eslint'] = '^9.0.0';
-
-  delete packageConf.devDependencies['babel-cli'];
-  delete packageConf.devDependencies['babel-core'];
-  delete packageConf.devDependencies['babel-register'];
-  delete packageConf.devDependencies['babel-preset-env'];
-  delete packageConf.devDependencies[
-    'babel-plugin-transform-object-rest-spread'
-  ];
-  delete packageConf.devDependencies['babel-eslint'];
 
   return packageConf;
 };

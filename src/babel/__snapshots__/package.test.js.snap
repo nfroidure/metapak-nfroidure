@@ -23,6 +23,7 @@ Object {
     "@babel/plugin-proposal-object-rest-spread": "^6.26.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/register": "^7.0.0",
+    "babel-eslint": "^9.0.0",
   },
   "metapak": Object {
     "configs": Array [],
