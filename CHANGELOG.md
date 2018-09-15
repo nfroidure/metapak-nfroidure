@@ -1,3 +1,13 @@
+<a name="6.1.4"></a>
+## [6.1.4](https://github.com/nfroidure/metapak-nfroidure/compare/v6.1.3...v6.1.4) (2018-09-15)
+
+
+### Bug Fixes
+
+* **Jest config:** Fixing the metapak config read ([8f78206](https://github.com/nfroidure/metapak-nfroidure/commit/8f78206))
+
+
+
 <a name="6.1.3"></a>
 ## [6.1.3](https://github.com/nfroidure/metapak-nfroidure/compare/v6.1.2...v6.1.3) (2018-09-15)
 
