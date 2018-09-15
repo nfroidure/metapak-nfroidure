@@ -1,3 +1,8 @@
+<a name="6.1.1"></a>
+## [6.1.1](https://github.com/nfroidure/metapak-nfroidure/compare/v6.1.0...v6.1.1) (2018-09-15)
+
+
+
 <a name="6.1.0"></a>
 # [6.1.0](https://github.com/nfroidure/metapak-nfroidure/compare/v6.0.0...v6.1.0) (2018-05-06)
 
