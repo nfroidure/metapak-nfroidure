@@ -17,10 +17,10 @@ const DEFAULT_BABEL_CONFIG = {
 };
 
 module.exports = packageConf => {
-  const metapakData =
-    packageConf.metapak && packageConf.metapak.data
-      ? packageConf.metapak.data
-      : {};
+  const metapak = Object.assign(
+    { data: {}, configs: [] },
+    packageConf.metapak || {}
+  );
 
   // Add Babel config
   packageConf.babel = packageConf.babel
@@ -30,17 +30,17 @@ module.exports = packageConf => {
   // Adapting script to work with Babel
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.cli = 'env NODE_ENV=${NODE_ENV:-cli}';
-  if (packageConf.metapak.configs.includes('jsdocs')) {
+  if (metapak.configs.includes('jsdocs')) {
     packageConf.devDependencies['jsdoc-to-markdown'] = '^3.1.0-0';
   }
-  if (packageConf.metapak.configs.includes('mocha')) {
+  if (metapak.configs.includes('mocha')) {
     packageConf.scripts.mocha =
-      'mocha --compilers js:babel-register' + ' ' + metapakData.testsFiles;
+      'mocha --compilers js:babel-register' + ' ' + metapak.data.testsFiles;
     packageConf.scripts.coveralls =
       'istanbul cover _mocha --report lcovonly --' +
       ' --compilers js:babel-register' +
       ' ' +
-      metapakData.testsFiles +
+      metapak.data.testsFiles +
       ' -R spec -t 5000' +
       ' && cat ./coverage/lcov.info' +
       ' | coveralls' +
@@ -49,7 +49,7 @@ module.exports = packageConf => {
       'istanbul cover _mocha --report html --' +
       ' --compilers js:babel-register' +
       ' ' +
-      metapakData.testsFiles +
+      metapak.data.testsFiles +
       ' -R spec -t 5000';
     packageConf.devDependencies.istanbul = '^1.0.0-alpha.2';
   }
@@ -80,18 +80,15 @@ module.exports = packageConf => {
   // Istanbul needs a specific version to work with babel
   if (
     packageConf.devDependencies.istanbul ||
-    (metapakData.configs || []).includes('mocha')
+    metapak.configs.includes('mocha')
   ) {
     packageConf.devDependencies.istanbul = '^1.0.0-alpha.2';
-  } else if ((metapakData.configs || []).includes('jest')) {
+  } else if (metapak.configs.includes('jest')) {
     delete packageConf.devDependencies.istanbul;
   }
 
   // Jest needs an additionnal module to work with babel
-  if (
-    packageConf.devDependencies.istanbul ||
-    (metapakData.configs || []).includes('mocha')
-  ) {
+  if (metapak.configs.includes('jest')) {
     packageConf.devDependencies['babel-core'] = '^7.0.0-0';
   }
 

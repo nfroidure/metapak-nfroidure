@@ -1,5 +1,94 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Babel Package transformer should work with jest config 1`] = `
+Object {
+  "babel": Object {
+    "plugins": Array [
+      "transform-object-rest-spread",
+    ],
+    "presets": Array [
+      Array [
+        "env",
+        Object {
+          "targets": Object {
+            "node": "6.9.5",
+          },
+        },
+      ],
+    ],
+  },
+  "devDependencies": Object {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-core": "^7.0.0-0",
+    "babel-eslint": "^9.0.0",
+  },
+  "metapak": Object {
+    "configs": Array [
+      "jest",
+    ],
+    "data": Object {
+      "testsFiles": "src/*.js src/**/*.js",
+    },
+  },
+  "scripts": Object {
+    "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
+    "compile": "babel src --out-dir=dist",
+    "preversion": " && npm run compile",
+    "test": "",
+  },
+}
+`;
+
+exports[`Babel Package transformer should work with mocha config 1`] = `
+Object {
+  "babel": Object {
+    "plugins": Array [
+      "transform-object-rest-spread",
+    ],
+    "presets": Array [
+      Array [
+        "env",
+        Object {
+          "targets": Object {
+            "node": "6.9.5",
+          },
+        },
+      ],
+    ],
+  },
+  "devDependencies": Object {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "^9.0.0",
+    "istanbul": "^1.0.0-alpha.2",
+  },
+  "metapak": Object {
+    "configs": Array [
+      "mocha",
+    ],
+    "data": Object {
+      "testsFiles": "src/*.js src/**/*.js",
+    },
+  },
+  "scripts": Object {
+    "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
+    "compile": "babel src --out-dir=dist",
+    "cover": "istanbul cover _mocha --report html -- --compilers js:babel-register src/*.js src/**/*.js -R spec -t 5000",
+    "coveralls": "istanbul cover _mocha --report lcovonly -- --compilers js:babel-register src/*.js src/**/*.js -R spec -t 5000 && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
+    "mocha": "mocha --compilers js:babel-register src/*.js src/**/*.js",
+    "preversion": " && npm run compile",
+    "test": "",
+  },
+}
+`;
+
 exports[`Babel Package transformer should work with some files 1`] = `
 Object {
   "babel": Object {
