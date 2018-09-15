@@ -79,13 +79,30 @@ module.exports = packageConf => {
     delete packageConf.devDependencies.istanbul;
   }
 
-  packageConf.devDependencies['babel-cli'] = '^6.26.0';
-  packageConf.devDependencies['babel-core'] = '^6.26.0';
-  packageConf.devDependencies['babel-register'] = '^6.26.0';
-  packageConf.devDependencies['babel-preset-env'] = '^1.6.1';
-  packageConf.devDependencies['babel-plugin-transform-object-rest-spread'] =
+  // Jest needs an additionnal module to work with babel
+  if (
+    packageConf.devDependencies.istanbul ||
+    (metapakData.configs || []).includes('mocha')
+  ) {
+    packageConf.devDependencies['babel-core'] = '^7.0.0-0';
+  }
+
+  packageConf.devDependencies['@babel/cli'] = '^7.0.0';
+  packageConf.devDependencies['@babel/core'] = '^7.0.1';
+  packageConf.devDependencies['@babel/register'] = '^7.0.0';
+  packageConf.devDependencies['@babel/preset-env'] = '^7.0.0';
+  packageConf.devDependencies['@babel/plugin-proposal-object-rest-spread'] =
     '^6.26.0';
-  packageConf.devDependencies['babel-eslint'] = '^8.2.2';
+  packageConf.devDependencies['babel-eslint'] = '^9.0.0';
+
+  delete packageConf.devDependencies['babel-cli'];
+  delete packageConf.devDependencies['babel-core'];
+  delete packageConf.devDependencies['babel-register'];
+  delete packageConf.devDependencies['babel-preset-env'];
+  delete packageConf.devDependencies[
+    'babel-plugin-transform-object-rest-spread'
+  ];
+  delete packageConf.devDependencies['babel-eslint'];
 
   return packageConf;
 };

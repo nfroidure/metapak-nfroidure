@@ -18,12 +18,11 @@ Object {
     ],
   },
   "devDependencies": Object {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.2",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-register": "^6.26.0",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.1",
+    "@babel/plugin-proposal-object-rest-spread": "^6.26.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
   },
   "metapak": Object {
     "configs": Array [],
