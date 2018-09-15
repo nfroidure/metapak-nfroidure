@@ -100,7 +100,7 @@ module.exports = packageConf => {
   packageConf.devDependencies['@babel/register'] = '^7.0.0';
   packageConf.devDependencies['@babel/preset-env'] = '^7.0.0';
   packageConf.devDependencies['@babel/plugin-proposal-object-rest-spread'] =
-    '^6.26.0';
+    '^7.0.0';
   packageConf.devDependencies['babel-eslint'] = '^9.0.0';
 
   return packageConf;
