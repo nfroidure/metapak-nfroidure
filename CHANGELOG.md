@@ -1,3 +1,13 @@
+<a name="6.1.2"></a>
+## [6.1.2](https://github.com/nfroidure/metapak-nfroidure/compare/v6.1.1...v6.1.2) (2018-09-15)
+
+
+### Bug Fixes
+
+* **Babel + Jest config:** Ensure Jest special config is not overriden ([7120cf3](https://github.com/nfroidure/metapak-nfroidure/commit/7120cf3))
+
+
+
 <a name="6.1.1"></a>
 ## [6.1.1](https://github.com/nfroidure/metapak-nfroidure/compare/v6.1.0...v6.1.1) (2018-09-15)
 
