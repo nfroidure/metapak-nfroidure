@@ -1,3 +1,13 @@
+<a name="6.1.3"></a>
+## [6.1.3](https://github.com/nfroidure/metapak-nfroidure/compare/v6.1.2...v6.1.3) (2018-09-15)
+
+
+### Bug Fixes
+
+* **Babel config:** Fix the bad package version for object spread op ([433db38](https://github.com/nfroidure/metapak-nfroidure/commit/433db38))
+
+
+
 <a name="6.1.2"></a>
 ## [6.1.2](https://github.com/nfroidure/metapak-nfroidure/compare/v6.1.1...v6.1.2) (2018-09-15)
 
