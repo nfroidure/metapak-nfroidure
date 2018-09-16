@@ -19,5 +19,21 @@ describe('Karma', () => {
         })
       ).toMatchSnapshot();
     });
+
+    it('should work with mocha configs', () => {
+      expect(
+        packageTransformer({
+          scripts: {
+            test: '',
+          },
+          metapak: {
+            data: {
+              testsFiles: 'src/*.js src/**/*.js',
+            },
+            configs: ['mocha'],
+          },
+        })
+      ).toMatchSnapshot();
+    });
   });
 });

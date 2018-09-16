@@ -7,6 +7,22 @@ module.exports = packageConf => {
     packageConf.metapak && packageConf.metapak.data
       ? packageConf.metapak.data
       : {};
+  // Add packages
+  const packagesAdded = [
+    'karma',
+    'karma-chrome-launcher',
+    'karma-firefox-launcher',
+  ];
+
+  packageConf.devDependencies = packageConf.devDependencies || {};
+  packageConf.devDependencies.karma = '^3.0.0';
+  packageConf.devDependencies['karma-chrome-launcher'] = '^2.2.0';
+  packageConf.devDependencies['karma-firefox-launcher'] = '^1.1.0';
+
+  if (packageConf.metapak.configs.includes('mocha')) {
+    packageConf.devDependencies['karma-mocha'] = '^1.3.0';
+    packagesAdded.push('karma-mocha');
+  }
 
   // Adapting script to work with Babel
   packageConf.scripts = packageConf.scripts || {};
@@ -17,13 +33,14 @@ module.exports = packageConf => {
       : packageConf.scripts.test + ' && ' + KARMA_COMMAND;
   }
 
-  packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.karma = '^2.0.0';
-  packageConf.devDependencies['karma-chrome-launcher'] = '^2.2.0';
-  packageConf.devDependencies['karma-firefox-launcher'] = '^1.1.0';
-
-  if (packageConf.metapak.configs.includes('mocha')) {
-    packageConf.devDependencies['karma-mocha'] = '^1.3.0';
+  // Declaring added package to green keeper
+  if ('metapak-nfroidure' !== packageConf.name) {
+    packageConf.greenkeeper = {
+      ignore: (packageConf.greenkeeper && packageConf.greenkeeper.ignore
+        ? packageConf.greenkeeper.ignore
+        : []
+      ).concat(packagesAdded),
+    };
   }
 
   return packageConf;
