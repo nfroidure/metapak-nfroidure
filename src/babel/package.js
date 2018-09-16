@@ -5,7 +5,7 @@ const COMPILE_COMMAND = 'npm run compile';
 const DEFAULT_BABEL_CONFIG = {
   presets: [
     [
-      'env',
+      '@babel/env',
       {
         targets: {
           node: config.lastNodeLTS,
@@ -13,7 +13,7 @@ const DEFAULT_BABEL_CONFIG = {
       },
     ],
   ],
-  plugins: ['transform-object-rest-spread'],
+  plugins: ['@babel/plugin-proposal-object-rest-spread'],
 };
 
 module.exports = packageConf => {
@@ -26,6 +26,20 @@ module.exports = packageConf => {
   packageConf.babel = packageConf.babel
     ? packageConf.babel
     : DEFAULT_BABEL_CONFIG;
+
+  // Fix existing babel config
+  packageConf.babel.presets = packageConf.babel.presets.map(
+    ([presetName, ...presetArgs]) =>
+      presetName === 'env'
+        ? ['@babel/env', ...presetArgs]
+        : [presetName, ...presetArgs]
+  );
+  packageConf.babel.plugins = packageConf.babel.plugins.map(
+    plugin =>
+      plugin === 'transform-object-rest-spread'
+        ? '@babel/plugin-proposal-object-rest-spread'
+        : plugin
+  );
 
   // Adapting script to work with Babel
   packageConf.scripts = packageConf.scripts || {};

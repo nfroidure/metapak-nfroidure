@@ -4,11 +4,11 @@ exports[`Babel Package transformer should work with jest config 1`] = `
 Object {
   "babel": Object {
     "plugins": Array [
-      "transform-object-rest-spread",
+      "@babel/plugin-proposal-object-rest-spread",
     ],
     "presets": Array [
       Array [
-        "env",
+        "@babel/env",
         Object {
           "targets": Object {
             "node": "6.9.5",
@@ -47,11 +47,11 @@ exports[`Babel Package transformer should work with mocha config 1`] = `
 Object {
   "babel": Object {
     "plugins": Array [
-      "transform-object-rest-spread",
+      "@babel/plugin-proposal-object-rest-spread",
     ],
     "presets": Array [
       Array [
-        "env",
+        "@babel/env",
         Object {
           "targets": Object {
             "node": "6.9.5",
@@ -93,11 +93,11 @@ exports[`Babel Package transformer should work with some files 1`] = `
 Object {
   "babel": Object {
     "plugins": Array [
-      "transform-object-rest-spread",
+      "@babel/plugin-proposal-object-rest-spread",
     ],
     "presets": Array [
       Array [
-        "env",
+        "@babel/env",
         Object {
           "targets": Object {
             "node": "6.9.5",
