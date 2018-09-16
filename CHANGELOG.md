@@ -1,3 +1,13 @@
+<a name="6.1.5"></a>
+## [6.1.5](https://github.com/nfroidure/metapak-nfroidure/compare/v6.1.4...v6.1.5) (2018-09-16)
+
+
+### Bug Fixes
+
+* **Babel config:** Override old Babel configs ([73f958d](https://github.com/nfroidure/metapak-nfroidure/commit/73f958d))
+
+
+
 <a name="6.1.4"></a>
 ## [6.1.4](https://github.com/nfroidure/metapak-nfroidure/compare/v6.1.3...v6.1.4) (2018-09-15)
 
