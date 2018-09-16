@@ -1,3 +1,13 @@
+<a name="6.3.0"></a>
+# [6.3.0](https://github.com/nfroidure/metapak-nfroidure/compare/v6.2.0...v6.3.0) (2018-09-16)
+
+
+### Features
+
+* **Karma config:** Improve karma config ([43c63e2](https://github.com/nfroidure/metapak-nfroidure/commit/43c63e2))
+
+
+
 <a name="6.2.0"></a>
 # [6.2.0](https://github.com/nfroidure/metapak-nfroidure/compare/v6.1.5...v6.2.0) (2018-09-16)
 
