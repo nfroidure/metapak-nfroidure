@@ -67,7 +67,6 @@ Object {
     "@babel/preset-env": "^7.0.0",
     "@babel/register": "^7.0.0",
     "babel-eslint": "^9.0.0",
-    "istanbul": "^1.0.0-alpha.2",
   },
   "metapak": Object {
     "configs": Array [
@@ -80,9 +79,7 @@ Object {
   "scripts": Object {
     "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
     "compile": "babel src --out-dir=dist",
-    "cover": "istanbul cover _mocha --report html -- --compilers js:babel-register src/*.js src/**/*.js -R spec -t 5000",
-    "coveralls": "istanbul cover _mocha --report lcovonly -- --compilers js:babel-register src/*.js src/**/*.js -R spec -t 5000 && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
-    "mocha": "mocha --compilers js:babel-register src/*.js src/**/*.js",
+    "mocha": "mocha --compilers js:@babel/register src/*.js src/**/*.js",
     "preversion": " && npm run compile",
     "test": "",
   },

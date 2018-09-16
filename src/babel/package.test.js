@@ -28,9 +28,7 @@ describe('Babel', () => {
             test: '',
             preversion: '',
           },
-          devDependencies: {
-            istanbul: '0.0.1',
-          },
+          devDependencies: {},
           metapak: {
             data: {
               testsFiles: 'src/*.js src/**/*.js',

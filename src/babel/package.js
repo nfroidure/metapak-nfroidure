@@ -49,23 +49,7 @@ module.exports = packageConf => {
   }
   if (metapak.configs.includes('mocha')) {
     packageConf.scripts.mocha =
-      'mocha --compilers js:babel-register' + ' ' + metapak.data.testsFiles;
-    packageConf.scripts.coveralls =
-      'istanbul cover _mocha --report lcovonly --' +
-      ' --compilers js:babel-register' +
-      ' ' +
-      metapak.data.testsFiles +
-      ' -R spec -t 5000' +
-      ' && cat ./coverage/lcov.info' +
-      ' | coveralls' +
-      ' && rm -rf ./coverage';
-    packageConf.scripts.cover =
-      'istanbul cover _mocha --report html --' +
-      ' --compilers js:babel-register' +
-      ' ' +
-      metapak.data.testsFiles +
-      ' -R spec -t 5000';
-    packageConf.devDependencies.istanbul = '^1.0.0-alpha.2';
+      'mocha --compilers js:@babel/register' + ' ' + metapak.data.testsFiles;
   }
 
   // Adding Babel compile script
@@ -91,15 +75,9 @@ module.exports = packageConf => {
   ];
   delete packageConf.devDependencies['babel-eslint'];
 
-  // Istanbul needs a specific version to work with babel
-  if (
-    packageConf.devDependencies.istanbul ||
-    metapak.configs.includes('mocha')
-  ) {
-    packageConf.devDependencies.istanbul = '^1.0.0-alpha.2';
-  } else if (metapak.configs.includes('jest')) {
-    delete packageConf.devDependencies.istanbul;
-  }
+  // Istanbul needed a specific version to work with babel
+  // but let's remove it snce we do not use it anymore
+  delete packageConf.devDependencies.istanbul;
 
   // Jest needs an additionnal module to work with babel
   if (metapak.configs.includes('jest')) {
