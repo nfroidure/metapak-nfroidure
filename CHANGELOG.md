@@ -1,3 +1,13 @@
+<a name="6.2.0"></a>
+# [6.2.0](https://github.com/nfroidure/metapak-nfroidure/compare/v6.1.5...v6.2.0) (2018-09-16)
+
+
+### Features
+
+* **Mocha config:** Setup mocha config to use nyc instead of istanbul ([bd6b2ab](https://github.com/nfroidure/metapak-nfroidure/commit/bd6b2ab))
+
+
+
 <a name="6.1.5"></a>
 ## [6.1.5](https://github.com/nfroidure/metapak-nfroidure/compare/v6.1.4...v6.1.5) (2018-09-16)
 
