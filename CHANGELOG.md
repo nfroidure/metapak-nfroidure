@@ -1,3 +1,14 @@
+<a name="7.1.0"></a>
+# [7.1.0](https://github.com/nfroidure/metapak-nfroidure/compare/v7.0.0...v7.1.0) (2018-09-22)
+
+
+### Features
+
+* **Main config:** Make the main config more universal ([3e00700](https://github.com/nfroidure/metapak-nfroidure/commit/3e00700))
+* **Readme config:** Add package authors to the README file ([546bb82](https://github.com/nfroidure/metapak-nfroidure/commit/546bb82))
+
+
+
 <a name="7.0.0"></a>
 # [7.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v6.3.0...v7.0.0) (2018-09-22)
 
