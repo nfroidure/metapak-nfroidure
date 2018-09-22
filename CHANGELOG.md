@@ -1,3 +1,13 @@
+<a name="7.1.1"></a>
+## [7.1.1](https://github.com/nfroidure/metapak-nfroidure/compare/v7.1.0...v7.1.1) (2018-09-22)
+
+
+### Bug Fixes
+
+* **Main config:** Fix pre-commit git hooks composability ([249ebfc](https://github.com/nfroidure/metapak-nfroidure/commit/249ebfc))
+
+
+
 <a name="7.1.0"></a>
 # [7.1.0](https://github.com/nfroidure/metapak-nfroidure/compare/v7.0.0...v7.1.0) (2018-09-22)
 
