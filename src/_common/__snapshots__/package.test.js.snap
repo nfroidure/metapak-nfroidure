@@ -2,12 +2,17 @@
 
 exports[`Package transformer should work with an empty package.json 1`] = `
 Object {
-  "author": "Nicolas Froidure",
+  "author": Object {
+    "email": "nicolas.froidure@insertafter.com",
+    "name": "Nicolas Froidure",
+    "url": "http://insertafter.com/en/index.html",
+  },
   "config": Object {
     "commitizen": Object {
       "path": "./node_modules/cz-conventional-changelog",
     },
   },
+  "contributors": Array [],
   "devDependencies": Object {
     "commitizen": "^2.10.1",
     "conventional-changelog-cli": "^2.0.5",
@@ -29,7 +34,8 @@ Object {
     "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
     "cz": "env NODE_ENV=\${NODE_ENV:-cli} git cz",
     "lint": "echo \\"WARNING: No linter specified\\"",
-    "preversion": "npm t && npm run lint && npm run metapak -s",
+    "precz": "npm t && npm run lint && npm run metapak -- -s",
+    "preversion": "npm t && npm run lint && npm run metapak -- -s",
     "test": "echo \\"WARNING: No tests specified\\"",
     "version": "npm run changelog && git add CHANGELOG.md",
   },

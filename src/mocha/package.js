@@ -1,12 +1,11 @@
 'use strict';
 
+const { getMetapakData } = require('../lib.js');
+
 const MOCHA_COMMAND = 'npm run mocha';
 
 module.exports = packageConf => {
-  const metapakData =
-    packageConf.metapak && packageConf.metapak.data
-      ? packageConf.metapak.data
-      : {};
+  const metapakData = getMetapakData(packageConf);
 
   if (!metapakData.testsFiles) {
     throw new Error('E_NO_TEST_FILES', packageConf.metapak);

@@ -28,12 +28,17 @@
     "jest": "NODE_ENV=test jest",
     "lint": "eslint 'src/**/*.js'",
     "metapak": "metapak",
+    "precz": "npm t && npm run metapak -- -s && npm run lint",
     "prettier": "prettier --write 'src/**/*.js'",
-    "preversion": "npm t && npm run lint && npm run metapak -s",
+    "preversion": "npm t && npm run lint && npm run metapak -- -s",
     "test": "npm run jest",
     "version": "npm run changelog && git add CHANGELOG.md"
   },
-  "author": "Nicolas Froidure",
+  "author": {
+    "name": "Nicolas Froidure",
+    "email": "nicolas.froidure@insertafter.com",
+    "url": "http://insertafter.com/en/index.html"
+  },
   "license": "MIT",
   "peerDependencies": {
     "metapak": "^1.0.0"
@@ -61,7 +66,9 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "escape-string-regexp": "^1.0.5"
+  },
   "jest": {
     "coverageReporters": [
       "lcov"
@@ -69,5 +76,6 @@
     "testPathIgnorePatterns": [
       "/node_modules/"
     ]
-  }
+  },
+  "contributors": []
 }

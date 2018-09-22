@@ -1,10 +1,9 @@
 'use strict';
 
+const { getMetapakData } = require('../lib.js');
+
 module.exports = packageConf => {
-  const metapakData =
-    packageConf.metapak && packageConf.metapak.data
-      ? packageConf.metapak.data
-      : {};
+  const metapakData = getMetapakData(packageConf);
 
   // Adding documentation generation script
   packageConf.scripts = packageConf.scripts || {};

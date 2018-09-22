@@ -44,9 +44,6 @@ module.exports = packageConf => {
   // Adapting script to work with Babel
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.cli = 'env NODE_ENV=${NODE_ENV:-cli}';
-  if (metapak.configs.includes('jsdocs')) {
-    packageConf.devDependencies['jsdoc-to-markdown'] = '^3.1.0-0';
-  }
   if (metapak.configs.includes('mocha')) {
     packageConf.scripts.mocha =
       'mocha --compilers js:@babel/register' + ' ' + metapak.data.testsFiles;
@@ -73,7 +70,6 @@ module.exports = packageConf => {
   delete packageConf.devDependencies[
     'babel-plugin-transform-object-rest-spread'
   ];
-  delete packageConf.devDependencies['babel-eslint'];
 
   // Istanbul needed a specific version to work with babel
   // but let's remove it snce we do not use it anymore

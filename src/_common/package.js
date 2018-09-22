@@ -1,12 +1,23 @@
 'use strict';
 
 const config = require('../config.js');
+const { ensureScript } = require('../lib.js');
 
 const GITHUB_REPOSITORY_REGEXP = /git\+https:\/\/github.com\/([a-zA-Z0-9-]+)\/([a-zA-Z0-9-]+)\.git/;
+const TEST_SCRIPT = 'npm t';
+const LINT_SCRIPT = 'npm run lint';
+const METAPAK_SCRIPT = 'npm run metapak -- -s';
 
 module.exports = packageConf => {
   // Looks like i am the author of all my modules ;)
-  packageConf.author = 'Nicolas Froidure';
+  packageConf.author = {
+    name: 'Nicolas Froidure',
+    email: 'nicolas.froidure@insertafter.com',
+    url: 'http://insertafter.com/en/index.html',
+  };
+
+  // Add an empty contributors field
+  packageConf.contributors = [];
 
   // I mostly publish under MIT license, let's default to it
   packageConf.license = 'MIT';
@@ -24,8 +35,28 @@ module.exports = packageConf => {
   // without having global modules
   packageConf.scripts.cli = 'env NODE_ENV=${NODE_ENV:-cli}';
 
-  // Lets use commitizen
+  // Add default scripts to warn they should be there
+  if (!packageConf.scripts.test) {
+    packageConf.scripts.test = 'echo "WARNING: No tests specified"';
+  }
+  if (!packageConf.scripts.lint) {
+    packageConf.scripts.lint = 'echo "WARNING: No linter specified"';
+  }
+
+  // Let's use commitizen
   packageConf.scripts.cz = 'env NODE_ENV=${NODE_ENV:-cli} git cz';
+  packageConf.scripts.precz = ensureScript(
+    packageConf.scripts.precz,
+    TEST_SCRIPT
+  );
+  packageConf.scripts.precz = ensureScript(
+    packageConf.scripts.precz,
+    LINT_SCRIPT
+  );
+  packageConf.scripts.precz = ensureScript(
+    packageConf.scripts.precz,
+    METAPAK_SCRIPT
+  );
   packageConf.config = {
     commitizen: {
       path: './node_modules/cz-conventional-changelog',
@@ -36,16 +67,18 @@ module.exports = packageConf => {
   packageConf.scripts.changelog =
     'conventional-changelog -p angular -i CHANGELOG.md -s';
   packageConf.scripts.version = 'npm run changelog && git add CHANGELOG.md';
-
-  if (!packageConf.scripts.test) {
-    packageConf.scripts.test = 'echo "WARNING: No tests specified"';
-  }
-  if (!packageConf.scripts.lint) {
-    packageConf.scripts.lint = 'echo "WARNING: No linter specified"';
-  }
-
-  packageConf.scripts.preversion =
-    'npm t && npm run lint && npm run metapak -s';
+  packageConf.scripts.preversion = ensureScript(
+    packageConf.scripts.preversion,
+    TEST_SCRIPT
+  );
+  packageConf.scripts.preversion = ensureScript(
+    packageConf.scripts.preversion,
+    LINT_SCRIPT
+  );
+  packageConf.scripts.preversion = ensureScript(
+    packageConf.scripts.preversion,
+    METAPAK_SCRIPT
+  );
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};

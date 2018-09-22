@@ -1,12 +1,13 @@
 'use strict';
 
+const { getMetapakData } = require('../lib.js');
+('use strict');
+
 const KARMA_COMMAND = 'npm run karma';
 
 module.exports = packageConf => {
-  const metapakData =
-    packageConf.metapak && packageConf.metapak.data
-      ? packageConf.metapak.data
-      : {};
+  const metapakData = getMetapakData(packageConf);
+
   // Add packages
   const packagesAdded = [
     'karma',

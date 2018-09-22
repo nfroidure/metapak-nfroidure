@@ -14,6 +14,7 @@
 [![Coverage Status](https://coveralls.io/repos/nfroidure/metapak-nfroidure/badge.svg?branch=master)](https://coveralls.io/r/nfroidure/metapak-nfroidure?branch=master)
 [![Code Climate](https://codeclimate.com/github/nfroidure/metapak-nfroidure.svg)](https://codeclimate.com/github/nfroidure/metapak-nfroidure)
 [![Dependency Status](https://dependencyci.com/github/nfroidure/metapak-nfroidure/badge)](https://dependencyci.com/github/nfroidure/metapak-nfroidure)
+[![Package Quality](http://npm.packagequality.com/shield/metapak-nfroidure.svg)](http://packagequality.com/#?package=metapak-nfroidure)
 
 
 [//]: # (::contents:start)

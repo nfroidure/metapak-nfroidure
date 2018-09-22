@@ -1,15 +1,17 @@
 'use strict';
 
-const JEST_COMMAND = 'npm run jest';
+const { ensureScript } = require('../lib.js');
+
+const JEST_SCRIPT = 'npm run jest';
 
 module.exports = packageConf => {
   // Let's add test scripts
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.jest = 'NODE_ENV=test jest';
-  packageConf.scripts.test = packageConf.scripts.test.includes(JEST_COMMAND)
-    ? packageConf.scripts.test
-    : (packageConf.scripts.test ? packageConf.scripts.test + ' && ' : '') +
-      JEST_COMMAND;
+  packageConf.scripts.test = ensureScript(
+    packageConf.scripts.test,
+    JEST_SCRIPT
+  );
   packageConf.scripts.cover = `npm run jest -- --coverage`;
   packageConf.scripts.coveralls =
     'npm run cover && cat ./coverage/lcov.info | coveralls' +

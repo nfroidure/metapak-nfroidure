@@ -1,12 +1,10 @@
 'use strict';
 
+const { getMetapakData } = require('../lib.js');
 const config = require('../config.js');
 
 module.exports = (file, packageConf) => {
-  const metapakData =
-    packageConf.metapak && packageConf.metapak.data
-      ? packageConf.metapak.data
-      : {};
+  const metapakData = getMetapakData(packageConf);
 
   // Rename dot files the right way
   if (file.name.startsWith('_dot_')) {
@@ -15,7 +13,7 @@ module.exports = (file, packageConf) => {
 
   // Add author to the license
   if ('LICENSE' === file.name) {
-    file.data = file.data.replace(/<copyright holders>/gm, 'Nicolas Froidure');
+    file.data = file.data.replace(/<copyright holders>/gm, packageConf.author.name);
   }
 
   // Add NodeJS LTS where needed

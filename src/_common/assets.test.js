@@ -17,7 +17,9 @@ describe('main', () => {
               'utf-8'
             ),
           },
-          {}
+          {
+            author: { name: 'Nicolas Froidure' },
+          }
         )
       ).toMatchSnapshot();
     });
