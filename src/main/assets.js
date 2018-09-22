@@ -13,7 +13,10 @@ module.exports = (file, packageConf) => {
 
   // Add author to the license
   if ('LICENSE' === file.name) {
-    file.data = file.data.replace(/<copyright holders>/gm, packageConf.author.name);
+    file.data = file.data.replace(
+      /<copyright holders>/gm,
+      packageConf.author.name
+    );
   }
 
   // Add NodeJS LTS where needed

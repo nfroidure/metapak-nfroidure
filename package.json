@@ -4,6 +4,7 @@
   "version": "6.3.0",
   "metapak": {
     "configs": [
+      "main",
       "readme",
       "jest",
       "eslint",
