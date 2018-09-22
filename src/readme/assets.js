@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require('path');
+const { getMetapakInfos } = require('../lib.js');
 const { apiPath } = require('../config.js');
 const USERNAME = 'nfroidure';
 const README_CONTENTS_START_TAG = `[//]: # (::contents:start)`;
@@ -8,10 +9,7 @@ const README_CONTENTS_END_TAG = `[//]: # (::contents:end)`;
 const README_REGEXP = /^(?:[^]*)\[\/\/\]: # \(::contents:start\)\r?\n\r?\n([^]*)\r?\n\r?\n\[\/\/\]: # \(::contents:end\)(?:[^]*)$/gm;
 
 module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
-  const metapakConfigs =
-    packageConf.metapak && packageConf.metapak.configs
-      ? packageConf.metapak.configs
-      : [{}];
+  const { configs } = getMetapakInfos(packageConf);
 
   // Simple README templating system
   if ('README.md' === file.name) {
@@ -26,7 +24,7 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
     file.data += `[![NPM version](https://badge.fury.io/js/${
       packageConf.name
     }.svg)](https://npmjs.org/package/${packageConf.name})\n`;
-    if (metapakConfigs.includes('travis')) {
+    if (configs.includes('travis')) {
       file.data += `[![Build status](https://secure.travis-ci.org/${USERNAME}/${
         packageConf.name
       }.svg)](https://travis-ci.org/${USERNAME}/${packageConf.name})\n`;
@@ -46,7 +44,7 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
         packageConf.name
       }?branch=master)\n`;
     }
-    if (metapakConfigs.includes('codeclimate')) {
+    if (configs.includes('codeclimate')) {
       file.data += `[![Code Climate](https://codeclimate.com/github/${USERNAME}/${
         packageConf.name
       }.svg)](https://codeclimate.com/github/${USERNAME}/${
@@ -73,15 +71,24 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
       if (api) {
         file.data += api + '\n';
       }
-      file.data +=
-        '# License\n' +
-        '[' +
-        packageConf.license +
-        '](https://github.com/' +
-        USERNAME +
-        '/' +
-        packageConf.name +
-        '/blob/master/LICENSE)\n';
+      file.data += `# Authors\n${[
+        packageConf.author,
+        ...(packageConf.contributors || []),
+      ]
+        .map(
+          author =>
+            `- ${
+              author.email || author.url
+                ? `[${author.name}](${author.url || `mailto:${author.email}`})`
+                : author.name
+            }`
+        )
+        .join('\n')}\n\n`;
+      file.data += `# License\n[${
+        packageConf.license
+      }](https://github.com/${USERNAME}/${
+        packageConf.name
+      }/blob/master/LICENSE)\n`;
       return file;
     });
   }

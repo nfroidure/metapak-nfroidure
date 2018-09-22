@@ -73,6 +73,16 @@ describe('Assets transformer for www configs', () => {
         name: 'module',
         description: 'A great module!',
         devDependencies: {},
+        author: {
+          name: 'Nicolas Froidure',
+          email: 'nicolas.froidure@insertafter.com',
+          url: 'http://insertafter.com/en/index.html',
+        },
+        contributors: [
+          {
+            name: 'John Doe',
+          },
+        ],
         license: 'MIT',
       },
       {

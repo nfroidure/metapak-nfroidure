@@ -1,15 +1,15 @@
 'use strict';
 
-const { getMetapakData } = require('../lib.js');
+const { getMetapakInfos } = require('../lib.js');
 const { apiPath } = require('../config.js');
 
 module.exports = packageConf => {
-  const metapakData = getMetapakData(packageConf);
+  const { data } = getMetapakInfos(packageConf);
 
   // Adding documentation generation script
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.doc = `echo "# API" > ${apiPath}; jsdoc2md ${
-    metapakData.files
+    data.files
   } >> ${apiPath}`;
 
   // Add doc deps

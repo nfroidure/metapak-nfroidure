@@ -1,10 +1,10 @@
 'use strict';
 
-const { getMetapakData } = require('../lib.js');
+const { getMetapakInfos } = require('../lib.js');
 const config = require('../config.js');
 
 module.exports = (file, packageConf) => {
-  const metapakData = getMetapakData(packageConf);
+  const { data } = getMetapakInfos(packageConf);
 
   // Rename dot files the right way
   if (file.name.startsWith('_dot_')) {
@@ -25,16 +25,12 @@ module.exports = (file, packageConf) => {
   }
 
   // Add .gitignore additionnal files
-  if (
-    file.name.endsWith('.gitignore') &&
-    metapakData.ignore &&
-    metapakData.ignore.length
-  ) {
+  if (file.name.endsWith('.gitignore') && data.ignore && data.ignore.length) {
     file.data =
       file.data +
       '\n' +
       '# Project custom ignored file\n' +
-      metapakData.ignore.join('\n') +
+      data.ignore.join('\n') +
       '\n';
   }
 

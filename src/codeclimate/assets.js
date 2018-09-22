@@ -1,22 +1,22 @@
 'use strict';
 
-const { getMetapakData } = require('../lib.js');
+const { getMetapakInfos } = require('../lib.js');
 
 module.exports = (file, packageConf) => {
   // Set files to code climate
   if ('.codeclimate.yml' === file.name) {
-    const metapakData = getMetapakData(packageConf);
-    if (metapakData.files) {
+    const { data } = getMetapakInfos(packageConf);
+    if (data.files) {
       file.data = file.data.replace(
         /\*\*\.js/gm,
         packageConf.metapak.data.files
       );
     }
-    if (metapakData.testFiles) {
+    if (data.testFiles) {
       file.data += `## Exclude test files.
 exclude_patterns:
 - "dist/"
-- "**/node_modules/"${metapakData.testFiles.split(' ').map(
+- "**/node_modules/"${data.testFiles.split(' ').map(
         files => `
 - "${
           files.startsWith("'") && files.endsWith("'")

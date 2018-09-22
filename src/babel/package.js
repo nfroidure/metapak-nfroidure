@@ -1,6 +1,7 @@
 'use strict';
 
 const config = require('../config.js');
+const { getMetapakInfos } = require('../lib.js');
 const COMPILE_COMMAND = 'npm run compile';
 const DEFAULT_BABEL_CONFIG = {
   presets: [
@@ -17,10 +18,7 @@ const DEFAULT_BABEL_CONFIG = {
 };
 
 module.exports = packageConf => {
-  const metapak = Object.assign(
-    { data: {}, configs: [] },
-    packageConf.metapak || {}
-  );
+  const { configs, data } = getMetapakInfos(packageConf);
 
   // Add Babel config
   packageConf.babel = packageConf.babel
@@ -44,9 +42,9 @@ module.exports = packageConf => {
   // Adapting script to work with Babel
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.cli = 'env NODE_ENV=${NODE_ENV:-cli}';
-  if (metapak.configs.includes('mocha')) {
+  if (configs.includes('mocha')) {
     packageConf.scripts.mocha =
-      'mocha --compilers js:@babel/register' + ' ' + metapak.data.testsFiles;
+      'mocha --compilers js:@babel/register' + ' ' + data.testsFiles;
   }
 
   // Adding Babel compile script
@@ -76,7 +74,7 @@ module.exports = packageConf => {
   delete packageConf.devDependencies.istanbul;
 
   // Jest needs an additionnal module to work with babel
-  if (metapak.configs.includes('jest')) {
+  if (configs.includes('jest')) {
     packageConf.devDependencies['babel-core'] = '^7.0.0-0';
   }
 

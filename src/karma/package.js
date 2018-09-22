@@ -1,12 +1,11 @@
 'use strict';
 
-const { getMetapakData } = require('../lib.js');
-('use strict');
+const { getMetapakInfos } = require('../lib.js');
 
 const KARMA_COMMAND = 'npm run karma';
 
 module.exports = packageConf => {
-  const metapakData = getMetapakData(packageConf);
+  const { configs, data } = getMetapakInfos(packageConf);
 
   // Add packages
   const packagesAdded = [
@@ -20,14 +19,14 @@ module.exports = packageConf => {
   packageConf.devDependencies['karma-chrome-launcher'] = '^2.2.0';
   packageConf.devDependencies['karma-firefox-launcher'] = '^1.1.0';
 
-  if (packageConf.metapak.configs.includes('mocha')) {
+  if (configs.includes('mocha')) {
     packageConf.devDependencies['karma-mocha'] = '^1.3.0';
     packagesAdded.push('karma-mocha');
   }
 
   // Adapting script to work with Babel
   packageConf.scripts = packageConf.scripts || {};
-  if (metapakData.testsFiles) {
+  if (data.testsFiles) {
     packageConf.scripts.karma = 'karma start karma.conf.js';
     packageConf.scripts.test = packageConf.scripts.test.includes(KARMA_COMMAND)
       ? packageConf.scripts.test

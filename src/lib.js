@@ -4,7 +4,7 @@ const escapeStringRegexp = require('escape-string-regexp');
 
 module.exports = {
   ensureScript,
-  getMetapakData,
+  getMetapakInfos,
 };
 
 function ensureScript(baseScript = '', addedScript) {
@@ -15,8 +15,6 @@ function ensureScript(baseScript = '', addedScript) {
     : `${baseScript ? `${baseScript} && ` : baseScript}${addedScript}`;
 }
 
-function getMetapakData(packageConf) {
-  return packageConf.metapak && packageConf.metapak.data
-    ? packageConf.metapak.data
-    : {};
+function getMetapakInfos(packageConf) {
+  return Object.assign({ data: {}, configs: [] }, packageConf.metapak || {});
 }
