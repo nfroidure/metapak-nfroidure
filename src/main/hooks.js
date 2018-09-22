@@ -15,8 +15,7 @@ const PRE_COMMIT_CWD_WARNING = `
 if ! git diff-files --quiet --ignore-submodules ; then
   echo "⚠️ - Unstaged files found:"
   echo $(git diff-files --shortstat)
-fi
-`;
+fi`;
 
 module.exports = hooks => {
   hooks['pre-commit'] = hooks['pre-commit'] || [];

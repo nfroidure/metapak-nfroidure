@@ -20,8 +20,7 @@ fi",
 if ! git diff-files --quiet --ignore-submodules ; then
   echo \\"⚠️ - Unstaged files found:\\"
   echo $(git diff-files --shortstat)
-fi
-",
+fi",
   ],
 }
 `;
