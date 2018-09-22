@@ -1,3 +1,18 @@
+<a name="7.0.0"></a>
+# [7.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v6.3.0...v7.0.0) (2018-09-22)
+
+
+### Code Refactoring
+
+* **Main config:** Avoid the _common special config ([a820ba6](https://github.com/nfroidure/metapak-nfroidure/commit/a820ba6))
+
+
+### BREAKING CHANGES
+
+* **Main config:** Package using this module will have to add the "main" config to heir config list
+
+
+
 <a name="6.3.0"></a>
 # [6.3.0](https://github.com/nfroidure/metapak-nfroidure/compare/v6.2.0...v6.3.0) (2018-09-16)
 
