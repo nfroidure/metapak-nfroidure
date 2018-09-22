@@ -9,18 +9,22 @@ const LINT_SCRIPT = 'npm run lint';
 const METAPAK_SCRIPT = 'npm run metapak -- -s';
 
 module.exports = packageConf => {
-  // Looks like i am the author of all my modules ;)
-  packageConf.author = {
-    name: 'Nicolas Froidure',
-    email: 'nicolas.froidure@insertafter.com',
-    url: 'http://insertafter.com/en/index.html',
-  };
+  // Looks like i am the author of all my modules
+  // so adding myself per default ;)
+  packageConf.author =
+    typeof packageConf.author !== 'object'
+      ? {
+          name: 'Nicolas Froidure',
+          email: 'nicolas.froidure@insertafter.com',
+          url: 'http://insertafter.com/en/index.html',
+        }
+      : packageConf.author;
 
-  // Add an empty contributors field
-  packageConf.contributors = [];
+  // Add an empty contributors field per default
+  packageConf.contributors = packageConf.contributors || [];
 
   // I mostly publish under MIT license, let's default to it
-  packageConf.license = 'MIT';
+  packageConf.license = packageConf.license || 'MIT';
 
   // Let's always start with the 0.0.0 version
   packageConf.version = packageConf.version || '0.0.0';
