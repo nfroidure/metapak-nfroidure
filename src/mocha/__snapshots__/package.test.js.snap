@@ -20,7 +20,7 @@ Object {
     },
   },
   "scripts": Object {
-    "cover": "nyc npm test && nyc report --reporter=text",
+    "cover": "nyc npm test && nyc report --reporter=html --reporter=text",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf ./coverage",
     "mocha": "mocha src/*.js src/**/*.js",
     "test": " && npm run mocha",

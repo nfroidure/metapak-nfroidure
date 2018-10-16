@@ -22,10 +22,14 @@ module.exports = packageConf => {
 
   if ('metapak-nfroidure' !== packageConf.name) {
     packageConf.greenkeeper = {
-      ignore: (packageConf.greenkeeper && packageConf.greenkeeper.ignore
-        ? packageConf.greenkeeper.ignore
-        : []
-      ).concat(['eslint', 'eslint-config-prettier', 'prettier']),
+      ignore: [
+        ...new Set(
+          (packageConf.greenkeeper && packageConf.greenkeeper.ignore
+            ? packageConf.greenkeeper.ignore
+            : []
+          ).concat(['eslint', 'eslint-config-prettier', 'prettier'])
+        ),
+      ],
     };
   }
 

@@ -19,7 +19,8 @@ module.exports = packageConf => {
     : packageConf.scripts.test + ' && ' + MOCHA_COMMAND;
   packageConf.scripts.coveralls =
     'nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf ./coverage';
-  packageConf.scripts.cover = 'nyc npm test && nyc report --reporter=text';
+  packageConf.scripts.cover =
+    'nyc npm test && nyc report --reporter=html --reporter=text';
 
   packageConf.devDependencies = packageConf.devDependencies || {};
   packageConf.devDependencies.mocha = '^5.2.0';
@@ -31,10 +32,14 @@ module.exports = packageConf => {
 
   if ('metapak-nfroidure' !== packageConf.name) {
     packageConf.greenkeeper = {
-      ignore: (packageConf.greenkeeper && packageConf.greenkeeper.ignore
-        ? packageConf.greenkeeper.ignore
-        : []
-      ).concat(['mocha', 'coveralls', 'nyc']),
+      ignore: [
+        ...new Set(
+          (packageConf.greenkeeper && packageConf.greenkeeper.ignore
+            ? packageConf.greenkeeper.ignore
+            : []
+          ).concat(['mocha', 'coveralls', 'nyc'])
+        ),
+      ],
     };
   }
 

@@ -15,9 +15,16 @@ module.exports = packageConf => {
 
   // Avoid GreenKeeper to update automatically added modules
   if ('metapak-nfroidure' !== packageConf.name) {
-    packageConf.greenkeeper.ignore = packageConf.greenkeeper.ignore.concat([
-      'jsarch',
-    ]);
+    packageConf.greenkeeper = {
+      ignore: [
+        ...new Set(
+          (packageConf.greenkeeper && packageConf.greenkeeper.ignore
+            ? packageConf.greenkeeper.ignore
+            : []
+          ).concat(['jsarch'])
+        ),
+      ],
+    };
   }
 
   return packageConf;

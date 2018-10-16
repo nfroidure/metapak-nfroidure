@@ -36,10 +36,14 @@ module.exports = packageConf => {
   // Declaring added package to green keeper
   if ('metapak-nfroidure' !== packageConf.name) {
     packageConf.greenkeeper = {
-      ignore: (packageConf.greenkeeper && packageConf.greenkeeper.ignore
-        ? packageConf.greenkeeper.ignore
-        : []
-      ).concat(packagesAdded),
+      ignore: [
+        ...new Set(
+          (packageConf.greenkeeper && packageConf.greenkeeper.ignore
+            ? packageConf.greenkeeper.ignore
+            : []
+          ).concat(packagesAdded)
+        ),
+      ],
     };
   }
 
