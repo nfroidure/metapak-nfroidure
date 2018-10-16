@@ -1,3 +1,13 @@
+<a name="7.1.2"></a>
+## [7.1.2](https://github.com/nfroidure/metapak-nfroidure/compare/v7.1.1...v7.1.2) (2018-10-16)
+
+
+### Bug Fixes
+
+* **Greenkeeper ignores:** Ensure that greenkeeper ignores remain fixed ([b1797a0](https://github.com/nfroidure/metapak-nfroidure/commit/b1797a0))
+
+
+
 <a name="7.1.1"></a>
 ## [7.1.1](https://github.com/nfroidure/metapak-nfroidure/compare/v7.1.0...v7.1.1) (2018-09-22)
 
