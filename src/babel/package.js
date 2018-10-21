@@ -78,13 +78,13 @@ module.exports = packageConf => {
     packageConf.devDependencies['babel-core'] = '^7.0.0-0';
   }
 
-  packageConf.devDependencies['@babel/cli'] = '^7.0.0';
-  packageConf.devDependencies['@babel/core'] = '^7.0.1';
+  packageConf.devDependencies['@babel/cli'] = '^7.1.2';
+  packageConf.devDependencies['@babel/core'] = '^7.1.2';
   packageConf.devDependencies['@babel/register'] = '^7.0.0';
-  packageConf.devDependencies['@babel/preset-env'] = '^7.0.0';
+  packageConf.devDependencies['@babel/preset-env'] = '^7.1.0';
   packageConf.devDependencies['@babel/plugin-proposal-object-rest-spread'] =
     '^7.0.0';
-  packageConf.devDependencies['babel-eslint'] = '^9.0.0';
+  packageConf.devDependencies['babel-eslint'] = '^10.0.1';
 
   return packageConf;
 };
