@@ -1,3 +1,13 @@
+<a name="7.2.1"></a>
+## [7.2.1](https://github.com/nfroidure/metapak-nfroidure/compare/v7.2.0...v7.2.1) (2018-10-21)
+
+
+### Bug Fixes
+
+* **Main config:** Fix dependencies ([ee671f1](https://github.com/nfroidure/metapak-nfroidure/commit/ee671f1))
+
+
+
 <a name="7.2.0"></a>
 # [7.2.0](https://github.com/nfroidure/metapak-nfroidure/compare/v7.1.2...v7.2.0) (2018-10-21)
 
