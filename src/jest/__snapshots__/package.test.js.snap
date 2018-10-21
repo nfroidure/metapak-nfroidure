@@ -25,7 +25,7 @@ Object {
   },
   "metapak": Object {
     "data": Object {
-      "testFiles": "src/*.js src/**/*.js",
+      "testsFiles": "src/*.js src/**/*.js",
     },
   },
   "scripts": Object {

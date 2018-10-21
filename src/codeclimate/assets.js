@@ -12,11 +12,11 @@ module.exports = (file, packageConf) => {
         packageConf.metapak.data.files
       );
     }
-    if (data.testFiles) {
+    if (data.testsFiles) {
       file.data += `## Exclude test files.
 exclude_patterns:
 - "dist/"
-- "**/node_modules/"${data.testFiles.split(' ').map(
+- "**/node_modules/"${data.testsFiles.split(' ').map(
         files => `
 - "${
           files.startsWith("'") && files.endsWith("'")

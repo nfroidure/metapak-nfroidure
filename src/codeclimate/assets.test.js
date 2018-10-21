@@ -21,7 +21,7 @@ describe('TravisCI', () => {
             metapak: {
               data: {
                 files: 'src/*.js src/**/*.js',
-                testFiles: "test/*.js 'src/**/*.test.js'",
+                testsFiles: "test/*.js 'src/**/*.test.js'",
               },
             },
           }

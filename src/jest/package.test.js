@@ -9,7 +9,7 @@ describe('mocha', () => {
         packageTransformer({
           metapak: {
             data: {
-              testFiles: 'src/*.js src/**/*.js',
+              testsFiles: 'src/*.js src/**/*.js',
             },
           },
           scripts: {
