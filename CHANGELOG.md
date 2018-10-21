@@ -1,3 +1,13 @@
+<a name="7.2.0"></a>
+# [7.2.0](https://github.com/nfroidure/metapak-nfroidure/compare/v7.1.2...v7.2.0) (2018-10-21)
+
+
+### Features
+
+* **Jest config:** Allow to add project roots ([c0a2e8e](https://github.com/nfroidure/metapak-nfroidure/commit/c0a2e8e))
+
+
+
 <a name="7.1.2"></a>
 ## [7.1.2](https://github.com/nfroidure/metapak-nfroidure/compare/v7.1.1...v7.1.2) (2018-10-16)
 
