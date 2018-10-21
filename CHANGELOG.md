@@ -1,3 +1,13 @@
+<a name="8.0.0"></a>
+# [8.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v7.2.1...v8.0.0) (2018-10-21)
+
+
+### Bug Fixes
+
+* **All configs:** Uniformize test files property accross configs ([f21bf59](https://github.com/nfroidure/metapak-nfroidure/commit/f21bf59))
+
+
+
 <a name="7.2.1"></a>
 ## [7.2.1](https://github.com/nfroidure/metapak-nfroidure/compare/v7.2.0...v7.2.1) (2018-10-21)
 
