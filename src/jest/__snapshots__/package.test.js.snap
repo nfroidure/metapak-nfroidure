@@ -16,6 +16,9 @@ Object {
     "coverageReporters": Array [
       "lcov",
     ],
+    "roots": Array [
+      "<rootDir>/src",
+    ],
     "testPathIgnorePatterns": Array [
       "/node_modules/",
     ],

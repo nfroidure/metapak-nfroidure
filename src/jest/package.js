@@ -1,10 +1,12 @@
 'use strict';
 
 const { ensureScript } = require('../lib.js');
+const { getMetapakInfos } = require('../lib.js');
 
 const JEST_SCRIPT = 'npm run jest';
 
 module.exports = packageConf => {
+  const { data } = getMetapakInfos(packageConf);
   // Let's add test scripts
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.jest = 'NODE_ENV=test jest';
@@ -37,6 +39,7 @@ module.exports = packageConf => {
   packageConf.jest = packageConf.jest || {
     coverageReporters: ['lcov'],
     testPathIgnorePatterns: ['/node_modules/'],
+    roots: data.jestRoots || ['<rootDir>/src'],
   };
 
   return packageConf;
