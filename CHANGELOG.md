@@ -1,3 +1,7 @@
+# [8.1.0](https://github.com/nfroidure/metapak-nfroidure/compare/v8.0.0...v8.1.0) (2018-11-01)
+
+
+
 <a name="8.0.0"></a>
 # [8.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v7.2.1...v8.0.0) (2018-10-21)
 
