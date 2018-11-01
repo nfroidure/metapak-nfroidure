@@ -1,5 +1,6 @@
 'use strict';
 
+const YError = require('yerror');
 const config = require('../config.js');
 const { getMetapakInfos } = require('../lib.js');
 const COMPILE_COMMAND = 'npm run compile';
@@ -18,7 +19,7 @@ const DEFAULT_BABEL_CONFIG = {
 };
 
 module.exports = packageConf => {
-  const { configs, data } = getMetapakInfos(packageConf);
+  const { configs } = getMetapakInfos(packageConf);
 
   // Add Babel config
   packageConf.babel = packageConf.babel
@@ -42,10 +43,6 @@ module.exports = packageConf => {
   // Adapting script to work with Babel
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.cli = 'env NODE_ENV=${NODE_ENV:-cli}';
-  if (configs.includes('mocha')) {
-    packageConf.scripts.mocha =
-      'mocha --compilers js:@babel/register' + ' ' + data.testsFiles;
-  }
 
   // Adding Babel compile script
   packageConf.scripts.compile = 'babel src --out-dir=dist';
@@ -84,7 +81,39 @@ module.exports = packageConf => {
   packageConf.devDependencies['@babel/preset-env'] = '^7.1.0';
   packageConf.devDependencies['@babel/plugin-proposal-object-rest-spread'] =
     '^7.0.0';
-  packageConf.devDependencies['babel-eslint'] = '^10.0.1';
+
+  // Add ESLint tweaks
+  if (configs.includes('eslint')) {
+    if (configs.indexOf('eslint') > configs.indexOf('babel')) {
+      throw new YError('E_BAD_CONFIG_ORDER', 'babel', 'eslint');
+    }
+    packageConf.devDependencies['babel-eslint'] = '^10.0.1';
+    packageConf.eslintConfig = {
+      extends: 'eslint:recommended',
+      parserOptions: {
+        ecmaVersion: 2018,
+        sourceType: 'module',
+        modules: true,
+      },
+      env: {
+        es6: true,
+        node: true,
+        jest: true,
+        mocha: true,
+      },
+      plugins: ['prettier'],
+      rules: {
+        'prettier/prettier': 'error',
+      },
+    };
+    packageConf.prettier = {
+      semi: true,
+      printWidth: 80,
+      singleQuote: true,
+      trailingComma: 'all',
+      proseWrap: 'always',
+    };
+  }
 
   return packageConf;
 };

@@ -15,7 +15,7 @@ describe('Babel', () => {
             data: {
               testsFiles: 'src/*.js src/**/*.js',
             },
-            configs: [],
+            configs: ['babel'],
           },
         })
       ).toMatchSnapshot();
@@ -33,7 +33,7 @@ describe('Babel', () => {
             data: {
               testsFiles: 'src/*.js src/**/*.js',
             },
-            configs: ['mocha'],
+            configs: ['babel', 'mocha'],
           },
         })
       ).toMatchSnapshot();
@@ -50,7 +50,24 @@ describe('Babel', () => {
             data: {
               testsFiles: 'src/*.js src/**/*.js',
             },
-            configs: ['jest'],
+            configs: ['babel', 'jest'],
+          },
+        })
+      ).toMatchSnapshot();
+    });
+
+    it('should work with eslint config', () => {
+      expect(
+        packageTransformer({
+          scripts: {
+            test: '',
+            preversion: '',
+          },
+          metapak: {
+            data: {
+              testsFiles: 'src/*.js src/**/*.js',
+            },
+            configs: ['eslint', 'babel'],
           },
         })
       ).toMatchSnapshot();

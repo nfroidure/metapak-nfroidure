@@ -1,5 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`mocha Package transformer should work with babel config 1`] = `
+Object {
+  "devDependencies": Object {
+    "coveralls": "^3.0.2",
+    "mocha": "^5.2.0",
+    "nyc": "^13.0.1",
+  },
+  "greenkeeper": Object {
+    "ignore": Array [
+      "mocha",
+      "coveralls",
+      "nyc",
+    ],
+  },
+  "metapak": Object {
+    "configs": Array [
+      "babel",
+      "mocha",
+    ],
+    "data": Object {
+      "testsFiles": "src/*.js src/**/*.js",
+    },
+  },
+  "scripts": Object {
+    "cover": "nyc npm test && nyc report --reporter=html --reporter=text",
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf ./coverage",
+    "mocha": "mocha --require '@babel/register' src/*.js src/**/*.js",
+    "test": " && npm run mocha",
+  },
+}
+`;
+
 exports[`mocha Package transformer should work with some files 1`] = `
 Object {
   "devDependencies": Object {
@@ -15,6 +47,9 @@ Object {
     ],
   },
   "metapak": Object {
+    "configs": Array [
+      "mocha",
+    ],
     "data": Object {
       "testsFiles": "src/*.js src/**/*.js",
     },

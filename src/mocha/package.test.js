@@ -11,6 +11,23 @@ describe('mocha', () => {
             test: '',
           },
           metapak: {
+            configs: ['mocha'],
+            data: {
+              testsFiles: 'src/*.js src/**/*.js',
+            },
+          },
+        })
+      ).toMatchSnapshot();
+    });
+
+    it('should work with babel config', () => {
+      expect(
+        packageTransformer({
+          scripts: {
+            test: '',
+          },
+          metapak: {
+            configs: ['babel', 'mocha'],
             data: {
               testsFiles: 'src/*.js src/**/*.js',
             },

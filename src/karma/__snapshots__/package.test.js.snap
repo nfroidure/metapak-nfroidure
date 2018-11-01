@@ -19,6 +19,7 @@ Object {
   "metapak": Object {
     "configs": Array [
       "mocha",
+      "karma",
     ],
     "data": Object {
       "testsFiles": "src/*.js src/**/*.js",
@@ -46,7 +47,9 @@ Object {
     ],
   },
   "metapak": Object {
-    "configs": Array [],
+    "configs": Array [
+      "karma",
+    ],
     "data": Object {
       "testsFiles": "src/*.js src/**/*.js",
     },

@@ -1,5 +1,6 @@
 'use strict';
 
+const YError = require('yerror');
 const { getMetapakInfos } = require('../lib.js');
 
 const KARMA_COMMAND = 'npm run karma';
@@ -20,6 +21,9 @@ module.exports = packageConf => {
   packageConf.devDependencies['karma-firefox-launcher'] = '^1.1.0';
 
   if (configs.includes('mocha')) {
+    if (configs.indexOf('mocha') > configs.indexOf('karma')) {
+      throw new YError('E_BAD_CONFIG_ORDER', 'karma', 'mocha');
+    }
     packageConf.devDependencies['karma-mocha'] = '^1.3.0';
     packagesAdded.push('karma-mocha');
   }

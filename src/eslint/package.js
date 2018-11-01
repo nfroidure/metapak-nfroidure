@@ -15,7 +15,7 @@ module.exports = packageConf => {
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.eslint = '^5.7.0';
+  packageConf.devDependencies.eslint = '^5.8.0';
   delete packageConf.devDependencies['eslint-config-simplifield'];
   packageConf.devDependencies.prettier = '^1.14.3';
   packageConf.devDependencies['eslint-plugin-prettier'] = '^3.0.0';
@@ -32,6 +32,32 @@ module.exports = packageConf => {
       ],
     };
   }
+
+  packageConf.eslintConfig = {
+    extends: ['eslint:recommended'],
+    parserOptions: {
+      sourceType: 'script',
+      modules: true,
+    },
+    env: {
+      es6: true,
+      node: true,
+      jest: true,
+      mocha: true,
+    },
+    plugins: ['prettier'],
+    rules: {
+      'prettier/prettier': 'error',
+    },
+  };
+
+  packageConf.prettier = {
+    semi: true,
+    printWidth: 80,
+    singleQuote: true,
+    trailingComma: 'es5',
+    proseWrap: 'always',
+  };
 
   return packageConf;
 };

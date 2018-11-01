@@ -14,7 +14,7 @@ describe('Karma', () => {
             data: {
               testsFiles: 'src/*.js src/**/*.js',
             },
-            configs: [],
+            configs: ['karma'],
           },
         })
       ).toMatchSnapshot();
@@ -30,7 +30,7 @@ describe('Karma', () => {
             data: {
               testsFiles: 'src/*.js src/**/*.js',
             },
-            configs: ['mocha'],
+            configs: ['mocha', 'karma'],
           },
         })
       ).toMatchSnapshot();

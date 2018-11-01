@@ -1,5 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Babel Package transformer should work with eslint config 1`] = `
+Object {
+  "babel": Object {
+    "plugins": Array [
+      "@babel/plugin-proposal-object-rest-spread",
+    ],
+    "presets": Array [
+      Array [
+        "@babel/env",
+        Object {
+          "targets": Object {
+            "node": "6.9.5",
+          },
+        },
+      ],
+    ],
+  },
+  "devDependencies": Object {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+  },
+  "eslintConfig": Object {
+    "env": Object {
+      "es6": true,
+      "jest": true,
+      "mocha": true,
+      "node": true,
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": Object {
+      "ecmaVersion": 2018,
+      "modules": true,
+      "sourceType": "module",
+    },
+    "plugins": Array [
+      "prettier",
+    ],
+    "rules": Object {
+      "prettier/prettier": "error",
+    },
+  },
+  "metapak": Object {
+    "configs": Array [
+      "eslint",
+      "babel",
+    ],
+    "data": Object {
+      "testsFiles": "src/*.js src/**/*.js",
+    },
+  },
+  "prettier": Object {
+    "printWidth": 80,
+    "proseWrap": "always",
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+  },
+  "scripts": Object {
+    "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
+    "compile": "babel src --out-dir=dist",
+    "preversion": " && npm run compile",
+    "test": "",
+  },
+}
+`;
+
 exports[`Babel Package transformer should work with jest config 1`] = `
 Object {
   "babel": Object {
@@ -24,10 +94,10 @@ Object {
     "@babel/preset-env": "^7.1.0",
     "@babel/register": "^7.0.0",
     "babel-core": "^7.0.0-0",
-    "babel-eslint": "^10.0.1",
   },
   "metapak": Object {
     "configs": Array [
+      "babel",
       "jest",
     ],
     "data": Object {
@@ -66,10 +136,10 @@ Object {
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/register": "^7.0.0",
-    "babel-eslint": "^10.0.1",
   },
   "metapak": Object {
     "configs": Array [
+      "babel",
       "mocha",
     ],
     "data": Object {
@@ -79,7 +149,6 @@ Object {
   "scripts": Object {
     "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
     "compile": "babel src --out-dir=dist",
-    "mocha": "mocha --compilers js:@babel/register src/*.js src/**/*.js",
     "preversion": " && npm run compile",
     "test": "",
   },
@@ -109,10 +178,11 @@ Object {
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/register": "^7.0.0",
-    "babel-eslint": "^10.0.1",
   },
   "metapak": Object {
-    "configs": Array [],
+    "configs": Array [
+      "babel",
+    ],
     "data": Object {
       "testsFiles": "src/*.js src/**/*.js",
     },
