@@ -1,3 +1,12 @@
+## [8.3.1](https://github.com/nfroidure/metapak-nfroidure/compare/v8.3.0...v8.3.1) (2018-11-03)
+
+
+### Bug Fixes
+
+* **Babel config:** Make the build fixtures path more reliable ([7d46be3](https://github.com/nfroidure/metapak-nfroidure/commit/7d46be3))
+
+
+
 # [8.3.0](https://github.com/nfroidure/metapak-nfroidure/compare/v8.2.0...v8.3.0) (2018-11-03)
 
 
