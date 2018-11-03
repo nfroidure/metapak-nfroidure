@@ -49,12 +49,11 @@ module.exports = packageConf => {
     }),
   });
 
-  // Adapting script to work with Babel
-  packageConf.scripts = packageConf.scripts || {};
-  packageConf.scripts.cli = 'env NODE_ENV=${NODE_ENV:-cli}';
-
   // Adding Babel compile script
-  packageConf.scripts.compile = 'babel src --out-dir=dist';
+  packageConf.scripts = packageConf.scripts || {};
+  packageConf.scripts.compile = data.rootPackage
+    ? 'lerna run compile'
+    : 'babel src --out-dir=dist';
 
   // We have to compile with Babel before pushing a version
   packageConf.scripts.preversion = packageConf.scripts.preversion || '';

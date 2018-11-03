@@ -1,5 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Babel Package transformer should work with child packages 1`] = `
+Object {
+  "babel": Object {
+    "plugins": Array [
+      "@babel/plugin-proposal-object-rest-spread",
+    ],
+    "presets": Array [
+      Array [
+        "@babel/env",
+        Object {
+          "targets": Object {
+            "node": "6.9.5",
+          },
+        },
+      ],
+    ],
+  },
+  "devDependencies": Object {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+  },
+  "metapak": Object {
+    "data": Object {
+      "bundleFiles": Array [
+        "dist/**/*.js",
+      ],
+      "childPackage": true,
+      "files": "src/*.js src/**/*.js",
+    },
+  },
+  "scripts": Object {
+    "compile": "babel src --out-dir=dist",
+    "preversion": " && npm run compile",
+  },
+}
+`;
+
 exports[`Babel Package transformer should work with eslint config 1`] = `
 Object {
   "babel": Object {
@@ -65,7 +105,6 @@ Object {
     "trailingComma": "all",
   },
   "scripts": Object {
-    "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
     "compile": "babel src --out-dir=dist",
     "preversion": " && npm run compile",
     "test": "",
@@ -111,7 +150,6 @@ Object {
     },
   },
   "scripts": Object {
-    "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
     "compile": "babel src --out-dir=dist",
     "preversion": " && npm run compile",
     "test": "",
@@ -156,7 +194,6 @@ Object {
     },
   },
   "scripts": Object {
-    "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
     "compile": "babel src --out-dir=dist",
     "preversion": " && npm run compile",
     "test": "",
@@ -204,7 +241,6 @@ Object {
     },
   },
   "scripts": Object {
-    "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
     "compile": "babel src --out-dir=dist",
     "preversion": " && npm run compile",
     "test": "",

@@ -16,7 +16,29 @@ Object {
     },
   },
   "scripts": Object {
-    "architecture": "jsarch yolo.js > ARCHITECTURE.md",
+    "architecture": "jsarch yolo.js > ARCHITECTURE.md && git add ARCHITECTURE.md",
+    "precz": "npm run architecture",
+    "preversion": "npm run architecture",
+  },
+}
+`;
+
+exports[`Package transformer for jsdocs should work with child package 1`] = `
+Object {
+  "devDependencies": Object {
+    "jsarch": "^1.3.0",
+  },
+  "greenkeeper": Object {
+    "ignore": Array [],
+  },
+  "metapak": Object {
+    "data": Object {
+      "childPackage": true,
+      "files": "yolo.js",
+    },
+  },
+  "scripts": Object {
+    "architecture": "jsarch yolo.js > ARCHITECTURE.md && git add ARCHITECTURE.md",
   },
 }
 `;

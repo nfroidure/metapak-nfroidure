@@ -1,5 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`mocha Package transformer should work with child packages 1`] = `
+Object {
+  "devDependencies": Object {
+    "jest": "^23.6.0",
+  },
+  "jest": Object {
+    "coverageReporters": Array [
+      "lcov",
+    ],
+    "roots": Array [
+      "<rootDir>/src",
+    ],
+    "testPathIgnorePatterns": Array [
+      "/node_modules/",
+    ],
+  },
+  "metapak": Object {
+    "data": Object {
+      "childPackage": true,
+      "files": "src/*.js src/**/*.js",
+    },
+  },
+  "scripts": Object {
+    "cover": "npm run jest -- --coverage",
+    "jest": "NODE_ENV=test jest",
+    "test": "npm run jest",
+  },
+}
+`;
+
 exports[`mocha Package transformer should work with some files 1`] = `
 Object {
   "devDependencies": Object {

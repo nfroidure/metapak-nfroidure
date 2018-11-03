@@ -1,5 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Package transformer should work with a child package.json 1`] = `
+Object {
+  "author": Object {
+    "email": "nicolas.froidure@insertafter.com",
+    "name": "Nicolas Froidure",
+    "url": "http://insertafter.com/en/index.html",
+  },
+  "contributors": Array [],
+  "engines": Object {
+    "node": ">=6.9.5",
+  },
+  "files": Array [
+    "src/**/*.js",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+  ],
+  "license": "MIT",
+  "metapak": Object {
+    "data": Object {
+      "childPackage": true,
+    },
+  },
+  "scripts": Object {
+    "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
+    "lint": "echo \\"WARNING: No linter specified\\"",
+    "test": "echo \\"WARNING: No tests specified\\"",
+  },
+  "version": "0.0.0",
+}
+`;
+
+exports[`Package transformer should work with a root package 1`] = `
+Object {
+  "author": Object {
+    "email": "nicolas.froidure@insertafter.com",
+    "name": "Nicolas Froidure",
+    "url": "http://insertafter.com/en/index.html",
+  },
+  "config": Object {
+    "commitizen": Object {
+      "path": "./node_modules/cz-conventional-changelog",
+    },
+  },
+  "contributors": Array [],
+  "devDependencies": Object {
+    "commitizen": "^3.0.4",
+    "conventional-changelog-cli": "^2.0.11",
+    "cz-conventional-changelog": "^2.1.0",
+  },
+  "engines": Object {
+    "node": ">=6.9.5",
+  },
+  "files": Array [
+    "src/**/*.js",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+  ],
+  "greenkeeper": Object {
+    "ignore": Array [
+      "commitizen",
+      "cz-conventional-changelog",
+      "conventional-changelog-cli",
+    ],
+  },
+  "license": "MIT",
+  "metapak": Object {
+    "data": Object {
+      "rootPackage": true,
+    },
+  },
+  "scripts": Object {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
+    "cz": "env NODE_ENV=\${NODE_ENV:-cli} git cz",
+    "lint": "lerna run lint",
+    "precz": "npm t && npm run lint && npm run metapak -- -s",
+    "preversion": "npm t && npm run lint && npm run metapak -- -s",
+    "test": "lerna run test",
+    "version": "npm run changelog && git add CHANGELOG.md",
+  },
+  "version": "0.0.0",
+}
+`;
+
 exports[`Package transformer should work with an empty package.json 1`] = `
 Object {
   "author": Object {

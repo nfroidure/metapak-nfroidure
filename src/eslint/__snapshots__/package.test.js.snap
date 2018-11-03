@@ -1,5 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`eslint Package transformer should work with child packages 1`] = `
+Object {
+  "devDependencies": Object {
+    "eslint": "^5.8.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "prettier": "^1.14.3",
+  },
+  "eslintConfig": Object {
+    "env": Object {
+      "es6": true,
+      "jest": true,
+      "mocha": true,
+      "node": true,
+    },
+    "extends": Array [
+      "eslint:recommended",
+    ],
+    "parserOptions": Object {
+      "modules": true,
+      "sourceType": "script",
+    },
+    "plugins": Array [
+      "prettier",
+    ],
+    "rules": Object {
+      "prettier/prettier": "error",
+    },
+  },
+  "metapak": Object {
+    "data": Object {
+      "childPackage": true,
+      "files": "src/*.js src/**/*.js",
+    },
+  },
+  "prettier": Object {
+    "printWidth": 80,
+    "proseWrap": "always",
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5",
+  },
+  "scripts": Object {
+    "lint": "eslint src/*.js src/**/*.js",
+    "prettier": "prettier --write src/*.js src/**/*.js",
+  },
+}
+`;
+
 exports[`eslint Package transformer should work with some files 1`] = `
 Object {
   "devDependencies": Object {

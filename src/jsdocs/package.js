@@ -1,16 +1,31 @@
 'use strict';
 
-const { getMetapakInfos } = require('../lib.js');
+const { ensureScript, getMetapakInfos } = require('../lib.js');
 const { apiPath } = require('../config.js');
+
+const DOCUMENTATION_SCRIPT = 'npm run doc';
 
 module.exports = packageConf => {
   const { data } = getMetapakInfos(packageConf);
 
   // Adding documentation generation script
   packageConf.scripts = packageConf.scripts || {};
-  packageConf.scripts.doc = `echo "# API" > ${apiPath}; jsdoc2md ${
-    data.files
-  } >> ${apiPath}`;
+  packageConf.scripts.doc = data.rootPackage
+    ? 'lerna run doc'
+    : `echo "# API" > ${apiPath}; jsdoc2md ${
+        data.files
+      } >> ${apiPath} && git add ${apiPath}`;
+
+  if (!data.childPackage) {
+    packageConf.scripts.precz = ensureScript(
+      packageConf.scripts.precz,
+      DOCUMENTATION_SCRIPT
+    );
+    packageConf.scripts.preversion = ensureScript(
+      packageConf.scripts.preversion,
+      DOCUMENTATION_SCRIPT
+    );
+  }
 
   // Add doc deps
   packageConf.devDependencies = packageConf.devDependencies || {};

@@ -79,5 +79,18 @@ describe('Babel', () => {
         })
       ).toMatchSnapshot();
     });
+
+    it('should work with child packages', () => {
+      expect(
+        packageTransformer({
+          metapak: {
+            data: {
+              childPackage: true,
+              files: 'src/*.js src/**/*.js',
+            },
+          },
+        })
+      ).toMatchSnapshot();
+    });
   });
 });

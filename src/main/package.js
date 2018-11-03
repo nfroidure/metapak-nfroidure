@@ -50,66 +50,72 @@ module.exports = packageConf => {
 
   // Add default scripts to warn they should be there
   if (!packageConf.scripts.test) {
-    packageConf.scripts.test = 'echo "WARNING: No tests specified"';
+    packageConf.scripts.test = data.rootPackage
+      ? 'lerna run test'
+      : 'echo "WARNING: No tests specified"';
   }
   if (!packageConf.scripts.lint) {
-    packageConf.scripts.lint = 'echo "WARNING: No linter specified"';
+    packageConf.scripts.lint = data.rootPackage
+      ? 'lerna run lint'
+      : 'echo "WARNING: No linter specified"';
   }
 
-  // Let's use commitizen
-  packageConf.scripts.cz = 'env NODE_ENV=${NODE_ENV:-cli} git cz';
-  packageConf.scripts.precz = ensureScript(
-    packageConf.scripts.precz,
-    TEST_SCRIPT
-  );
-  packageConf.scripts.precz = ensureScript(
-    packageConf.scripts.precz,
-    LINT_SCRIPT
-  );
-  packageConf.scripts.precz = ensureScript(
-    packageConf.scripts.precz,
-    METAPAK_SCRIPT
-  );
-  packageConf.config = {
-    commitizen: {
-      path: './node_modules/cz-conventional-changelog',
-    },
-  };
-
-  // Add the changelog stuffs
-  packageConf.scripts.changelog =
-    'conventional-changelog -p angular -i CHANGELOG.md -s';
-  packageConf.scripts.version = 'npm run changelog && git add CHANGELOG.md';
-  packageConf.scripts.preversion = ensureScript(
-    packageConf.scripts.preversion,
-    TEST_SCRIPT
-  );
-  packageConf.scripts.preversion = ensureScript(
-    packageConf.scripts.preversion,
-    LINT_SCRIPT
-  );
-  packageConf.scripts.preversion = ensureScript(
-    packageConf.scripts.preversion,
-    METAPAK_SCRIPT
-  );
-
-  // Add the MUST HAVE dev dependencies
-  packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.commitizen = '^3.0.4';
-  packageConf.devDependencies['cz-conventional-changelog'] = '^2.1.0';
-  packageConf.devDependencies['conventional-changelog-cli'] = '^2.0.11';
-
-  // Avoid GreenKeeper to update automatically added modules
-  // except for this module so that we still benefit from
-  // greenkeeper but once to avoid PR spam ;)
-  if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
-    packageConf.greenkeeper = {
-      ignore: [
-        'commitizen',
-        'cz-conventional-changelog',
-        'conventional-changelog-cli',
-      ],
+  // Let's use commitizen on main packages
+  if (!data.childPackage) {
+    packageConf.scripts.cz = 'env NODE_ENV=${NODE_ENV:-cli} git cz';
+    packageConf.scripts.precz = ensureScript(
+      packageConf.scripts.precz,
+      TEST_SCRIPT
+    );
+    packageConf.scripts.precz = ensureScript(
+      packageConf.scripts.precz,
+      LINT_SCRIPT
+    );
+    packageConf.scripts.precz = ensureScript(
+      packageConf.scripts.precz,
+      METAPAK_SCRIPT
+    );
+    packageConf.config = {
+      commitizen: {
+        path: './node_modules/cz-conventional-changelog',
+      },
     };
+
+    // Add the changelog stuffs
+    packageConf.scripts.changelog =
+      'conventional-changelog -p angular -i CHANGELOG.md -s';
+    packageConf.scripts.version = 'npm run changelog && git add CHANGELOG.md';
+    packageConf.scripts.preversion = ensureScript(
+      packageConf.scripts.preversion,
+      TEST_SCRIPT
+    );
+    packageConf.scripts.preversion = ensureScript(
+      packageConf.scripts.preversion,
+      LINT_SCRIPT
+    );
+    packageConf.scripts.preversion = ensureScript(
+      packageConf.scripts.preversion,
+      METAPAK_SCRIPT
+    );
+
+    // Add the MUST HAVE dev dependencies
+    packageConf.devDependencies = packageConf.devDependencies || {};
+    packageConf.devDependencies.commitizen = '^3.0.4';
+    packageConf.devDependencies['cz-conventional-changelog'] = '^2.1.0';
+    packageConf.devDependencies['conventional-changelog-cli'] = '^2.0.11';
+
+    // Avoid GreenKeeper to update automatically added modules
+    // except for this module so that we still benefit from
+    // greenkeeper but once to avoid PR spam ;)
+    if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
+      packageConf.greenkeeper = {
+        ignore: [
+          'commitizen',
+          'cz-conventional-changelog',
+          'conventional-changelog-cli',
+        ],
+      };
+    }
   }
 
   // This job is already done by NPM, but once,.

@@ -17,4 +17,20 @@ describe('Package transformer for jsdocs', () => {
       })
     ).toMatchSnapshot();
   });
+
+  it('should work with child package', () => {
+    expect(
+      packageTransformer({
+        metapak: {
+          data: {
+            childPackage: true,
+            files: 'yolo.js',
+          },
+        },
+        greenkeeper: {
+          ignore: [],
+        },
+      })
+    ).toMatchSnapshot();
+  });
 });

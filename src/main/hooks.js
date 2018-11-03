@@ -1,5 +1,7 @@
 'use strict';
 
+const { getMetapakInfos } = require('../lib.js');
+
 const COMMIT_MSG_COMMITIZEN_CHECK = `
 if [ "$NODE_ENV" != "cli" ] ; then
   if grep -q '^[0-9]\\+.[0-9]\\+.[0-9]\\+$' "$1" ; then
@@ -17,10 +19,14 @@ if ! git diff-files --quiet --ignore-submodules ; then
   echo $(git diff-files --shortstat)
 fi`;
 
-module.exports = hooks => {
-  hooks['pre-commit'] = hooks['pre-commit'] || [];
-  hooks['pre-commit'].push(PRE_COMMIT_CWD_WARNING);
-  hooks['commit-msg'] = hooks['commit-msg'] || [];
-  hooks['commit-msg'].push(COMMIT_MSG_COMMITIZEN_CHECK);
+module.exports = (hooks, packageConf) => {
+  const { data } = getMetapakInfos(packageConf);
+
+  if (!data.childPackage) {
+    hooks['pre-commit'] = hooks['pre-commit'] || [];
+    hooks['pre-commit'].push(PRE_COMMIT_CWD_WARNING);
+    hooks['commit-msg'] = hooks['commit-msg'] || [];
+    hooks['commit-msg'].push(COMMIT_MSG_COMMITIZEN_CHECK);
+  }
   return hooks;
 };

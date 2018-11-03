@@ -15,13 +15,17 @@ module.exports = packageConf => {
     JEST_SCRIPT
   );
   packageConf.scripts.cover = `npm run jest -- --coverage`;
-  packageConf.scripts.coveralls =
-    'npm run cover && cat ./coverage/lcov.info | coveralls' +
-    ' && rm -rf ./coverage';
 
   packageConf.devDependencies = packageConf.devDependencies || {};
   packageConf.devDependencies.jest = '^23.6.0';
-  packageConf.devDependencies.coveralls = '^3.0.2';
+
+  // Add coveralls for independant packages
+  if (!data.childPackage) {
+    packageConf.scripts.coveralls =
+      'npm run cover && cat ./coverage/lcov.info | coveralls' +
+      ' && rm -rf ./coverage';
+    packageConf.devDependencies.coveralls = '^3.0.2';
+  }
 
   if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
     packageConf.greenkeeper = {

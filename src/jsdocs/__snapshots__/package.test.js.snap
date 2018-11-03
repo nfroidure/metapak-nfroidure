@@ -16,7 +16,9 @@ Object {
     },
   },
   "scripts": Object {
-    "doc": "echo \\"# API\\" > API.md; jsdoc2md yolo.js >> API.md",
+    "doc": "echo \\"# API\\" > API.md; jsdoc2md yolo.js >> API.md && git add API.md",
+    "precz": "npm run doc",
+    "preversion": "npm run doc",
   },
 }
 `;

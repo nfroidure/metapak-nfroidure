@@ -27,15 +27,19 @@ module.exports = packageConf => {
   packageConf.scripts.test = packageConf.scripts.test.includes(MOCHA_COMMAND)
     ? packageConf.scripts.test
     : packageConf.scripts.test + ' && ' + MOCHA_COMMAND;
-  packageConf.scripts.coveralls =
-    'nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf ./coverage';
   packageConf.scripts.cover =
     'nyc npm test && nyc report --reporter=html --reporter=text';
 
   packageConf.devDependencies = packageConf.devDependencies || {};
   packageConf.devDependencies.mocha = '^5.2.0';
-  packageConf.devDependencies.coveralls = '^3.0.2';
   packageConf.devDependencies.nyc = '^13.0.1';
+
+  // Add coveralls for independant packages
+  if (!data.childPackage) {
+    packageConf.scripts.coveralls =
+      'nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf ./coverage';
+    packageConf.devDependencies.coveralls = '^3.0.2';
+  }
 
   delete packageConf.devDependencies['mocha-lcov-reporter'];
   delete packageConf.devDependencies.istanbul;
