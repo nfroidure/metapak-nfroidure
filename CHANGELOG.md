@@ -1,3 +1,14 @@
+# [8.3.0](https://github.com/nfroidure/metapak-nfroidure/compare/v8.2.0...v8.3.0) (2018-11-03)
+
+
+### Features
+
+* **All configs:** Ensure compatibility with monorepos ([f5fd51c](https://github.com/nfroidure/metapak-nfroidure/commit/f5fd51c))
+* **Configs:** Special tweaks for monorepo compatibility ([cef41e4](https://github.com/nfroidure/metapak-nfroidure/commit/cef41e4))
+* **Main config:** Save trees, declare bundle files 🌲 ([40cddf5](https://github.com/nfroidure/metapak-nfroidure/commit/40cddf5))
+
+
+
 # [8.2.0](https://github.com/nfroidure/metapak-nfroidure/compare/v8.1.0...v8.2.0) (2018-11-03)
 
 
