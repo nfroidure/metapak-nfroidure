@@ -1,3 +1,17 @@
+# [8.2.0](https://github.com/nfroidure/metapak-nfroidure/compare/v8.1.0...v8.2.0) (2018-11-03)
+
+
+### Bug Fixes
+
+* **Babel config:** Fix the Babel config for empty preversion scripts ([7ad4d82](https://github.com/nfroidure/metapak-nfroidure/commit/7ad4d82))
+
+
+### Features
+
+* **Readme config:** Allow to disable badges ([f950d31](https://github.com/nfroidure/metapak-nfroidure/commit/f950d31))
+
+
+
 # [8.1.0](https://github.com/nfroidure/metapak-nfroidure/compare/v8.0.0...v8.1.0) (2018-11-01)
 
 
