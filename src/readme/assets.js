@@ -9,7 +9,7 @@ const README_CONTENTS_END_TAG = `[//]: # (::contents:end)`;
 const README_REGEXP = /^(?:[^]*)\[\/\/\]: # \(::contents:start\)\r?\n\r?\n([^]*)\r?\n\r?\n\[\/\/\]: # \(::contents:end\)(?:[^]*)$/gm;
 
 module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
-  const { configs } = getMetapakInfos(packageConf);
+  const { configs, data } = getMetapakInfos(packageConf);
 
   // Simple README templating system
   if ('README.md' === file.name) {
@@ -21,44 +21,47 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
     file.data += '\n';
 
     // Badges
-    file.data += `[![NPM version](https://badge.fury.io/js/${
-      packageConf.name
-    }.svg)](https://npmjs.org/package/${packageConf.name})\n`;
-    if (configs.includes('travis')) {
-      file.data += `[![Build status](https://secure.travis-ci.org/${USERNAME}/${
+    if (!data.noBadge) {
+      file.data += `[![NPM version](https://badge.fury.io/js/${
         packageConf.name
-      }.svg)](https://travis-ci.org/${USERNAME}/${packageConf.name})\n`;
-    }
-    file.data += `[![Dependency Status](https://david-dm.org/${USERNAME}/${
-      packageConf.name
-    }.svg)](https://david-dm.org/${USERNAME}/${packageConf.name})\n`;
-    file.data += `[![devDependency Status](https://david-dm.org/${USERNAME}/${
-      packageConf.name
-    }/dev-status.svg)](https://david-dm.org/${USERNAME}/${
-      packageConf.name
-    }#info=devDependencies)\n`;
-    if (packageConf.devDependencies.coveralls) {
-      file.data += `[![Coverage Status](https://coveralls.io/repos/${USERNAME}/${
+      }.svg)](https://npmjs.org/package/${packageConf.name})\n`;
+      if (configs.includes('travis')) {
+        file.data += `[![Build status](https://secure.travis-ci.org/${USERNAME}/${
+          packageConf.name
+        }.svg)](https://travis-ci.org/${USERNAME}/${packageConf.name})\n`;
+      }
+      file.data += `[![Dependency Status](https://david-dm.org/${USERNAME}/${
         packageConf.name
-      }/badge.svg?branch=master)](https://coveralls.io/r/${USERNAME}/${
+      }.svg)](https://david-dm.org/${USERNAME}/${packageConf.name})\n`;
+      file.data += `[![devDependency Status](https://david-dm.org/${USERNAME}/${
         packageConf.name
-      }?branch=master)\n`;
-    }
-    if (configs.includes('codeclimate')) {
-      file.data += `[![Code Climate](https://codeclimate.com/github/${USERNAME}/${
+      }/dev-status.svg)](https://david-dm.org/${USERNAME}/${
         packageConf.name
-      }.svg)](https://codeclimate.com/github/${USERNAME}/${
+      }#info=devDependencies)\n`;
+      if (packageConf.devDependencies.coveralls) {
+        file.data += `[![Coverage Status](https://coveralls.io/repos/${USERNAME}/${
+          packageConf.name
+        }/badge.svg?branch=master)](https://coveralls.io/r/${USERNAME}/${
+          packageConf.name
+        }?branch=master)\n`;
+      }
+      if (configs.includes('codeclimate')) {
+        file.data += `[![Code Climate](https://codeclimate.com/github/${USERNAME}/${
+          packageConf.name
+        }.svg)](https://codeclimate.com/github/${USERNAME}/${
+          packageConf.name
+        })\n`;
+      }
+      file.data += `[![Dependency Status](https://dependencyci.com/github/${USERNAME}/${
+        packageConf.name
+      }/badge)](https://dependencyci.com/github/${USERNAME}/${
         packageConf.name
       })\n`;
+      file.data += `[![Package Quality](http://npm.packagequality.com/shield/${
+        packageConf.name
+      }.svg)](http://packagequality.com/#?package=${packageConf.name})\n`;
     }
-    file.data += `[![Dependency Status](https://dependencyci.com/github/${USERNAME}/${
-      packageConf.name
-    }/badge)](https://dependencyci.com/github/${USERNAME}/${
-      packageConf.name
-    })\n`;
-    file.data += `[![Package Quality](http://npm.packagequality.com/shield/${
-      packageConf.name
-    }.svg)](http://packagequality.com/#?package=${packageConf.name})\n`;
+
     return Promise.all([
       _getReadmeContents({ PROJECT_DIR, fs, log }),
       _getAPIContents({ PROJECT_DIR, fs, log }),

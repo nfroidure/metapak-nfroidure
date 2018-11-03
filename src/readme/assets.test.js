@@ -98,6 +98,59 @@ describe('Assets transformer for www configs', () => {
       .catch(done);
   });
 
+  it('should build the README.md file with no badge', done => {
+    const fs = {
+      readFileAsync: jest.fn(),
+    };
+    const PROJECT_DIR = '/lol/';
+    const log = {
+      error: jest.fn(),
+    };
+
+    fs.readFileAsync.mockReturnValueOnce(
+      Promise.resolve(PROJECT_README_CONTENTS)
+    );
+    fs.readFileAsync.mockReturnValueOnce(Promise.resolve(PROJECT_API_CONTENTS));
+
+    assetsTransformer(
+      {
+        name: 'README.md',
+        data: ASSETS_README_CONTENTS,
+      },
+      {
+        name: 'module',
+        description: 'A great module!',
+        metapak: {
+          data: {
+            noBadge: true,
+          },
+        },
+        devDependencies: {},
+        author: {
+          name: 'Nicolas Froidure',
+          email: 'nicolas.froidure@insertafter.com',
+          url: 'http://insertafter.com/en/index.html',
+        },
+        contributors: [
+          {
+            name: 'John Doe',
+          },
+        ],
+        license: 'MIT',
+      },
+      {
+        PROJECT_DIR,
+        fs,
+        log,
+      }
+    )
+      .then(file => {
+        expect(file).toMatchSnapshot();
+      })
+      .then(done)
+      .catch(done);
+  });
+
   it('should let pass other files', () => {
     assert.deepEqual(
       assetsTransformer(
