@@ -48,6 +48,7 @@ module.exports = packageConf => {
   packageConf.scripts.compile = 'babel src --out-dir=dist';
 
   // We have to compile with Babel before pushing a version
+  packageConf.scripts.preversion = packageConf.scripts.preversion || '';
   packageConf.scripts.preversion = packageConf.scripts.preversion.includes(
     COMPILE_COMMAND
   )
