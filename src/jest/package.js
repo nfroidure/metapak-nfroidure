@@ -23,7 +23,7 @@ module.exports = packageConf => {
   packageConf.devDependencies.jest = '^23.6.0';
   packageConf.devDependencies.coveralls = '^3.0.2';
 
-  if ('metapak-nfroidure' !== packageConf.name) {
+  if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
     packageConf.greenkeeper = {
       ignore: [
         ...new Set(

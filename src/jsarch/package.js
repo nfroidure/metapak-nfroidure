@@ -14,7 +14,7 @@ module.exports = packageConf => {
   packageConf.devDependencies.jsarch = '^1.3.0';
 
   // Avoid GreenKeeper to update automatically added modules
-  if ('metapak-nfroidure' !== packageConf.name) {
+  if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
     packageConf.greenkeeper = {
       ignore: [
         ...new Set(

@@ -38,7 +38,7 @@ module.exports = packageConf => {
   }
 
   // Declaring added package to green keeper
-  if ('metapak-nfroidure' !== packageConf.name) {
+  if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
     packageConf.greenkeeper = {
       ignore: [
         ...new Set(

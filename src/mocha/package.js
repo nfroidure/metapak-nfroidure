@@ -40,7 +40,7 @@ module.exports = packageConf => {
   delete packageConf.devDependencies['mocha-lcov-reporter'];
   delete packageConf.devDependencies.istanbul;
 
-  if ('metapak-nfroidure' !== packageConf.name) {
+  if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
     packageConf.greenkeeper = {
       ignore: [
         ...new Set(

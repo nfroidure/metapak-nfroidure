@@ -17,7 +17,7 @@ module.exports = packageConf => {
   packageConf.devDependencies['jsdoc-to-markdown'] = '^4.0.1';
 
   // Avoid GreenKeeper to update automatically added modules
-  if ('metapak-nfroidure' !== packageConf.name) {
+  if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
     packageConf.greenkeeper = {
       ignore: [
         ...new Set(

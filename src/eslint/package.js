@@ -20,7 +20,7 @@ module.exports = packageConf => {
   packageConf.devDependencies.prettier = '^1.14.3';
   packageConf.devDependencies['eslint-plugin-prettier'] = '^3.0.0';
 
-  if ('metapak-nfroidure' !== packageConf.name) {
+  if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
     packageConf.greenkeeper = {
       ignore: [
         ...new Set(

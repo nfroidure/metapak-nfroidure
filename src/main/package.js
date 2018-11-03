@@ -1,7 +1,7 @@
 'use strict';
 
 const config = require('../config.js');
-const { ensureScript } = require('../lib.js');
+const { ensureScript, getMetapakInfos } = require('../lib.js');
 
 const GITHUB_REPOSITORY_REGEXP = /git\+https:\/\/github.com\/([a-zA-Z0-9-]+)\/([a-zA-Z0-9-]+)\.git/;
 const TEST_SCRIPT = 'npm t';
@@ -9,6 +9,8 @@ const LINT_SCRIPT = 'npm run lint';
 const METAPAK_SCRIPT = 'npm run metapak -- -s';
 
 module.exports = packageConf => {
+  const { data } = getMetapakInfos(packageConf);
+
   // Looks like i am the author of all my modules
   // so adding myself per default ;)
   packageConf.author =
@@ -93,7 +95,7 @@ module.exports = packageConf => {
   // Avoid GreenKeeper to update automatically added modules
   // except for this module so that we still benefit from
   // greenkeeper but once to avoid PR spam ;)
-  if ('metapak-nfroidure' !== packageConf.name) {
+  if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
     packageConf.greenkeeper = {
       ignore: [
         'commitizen',
