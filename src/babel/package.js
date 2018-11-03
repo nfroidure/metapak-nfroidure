@@ -44,7 +44,7 @@ module.exports = packageConf => {
   packageConf.metapak = Object.assign({}, packageConf.metapak || {}, {
     data: Object.assign({}, data, {
       bundleFiles: [
-        ...new Set((data.bundleFiles || []).concat(['dist/**/*.js'])),
+        ...new Set((data.bundleFiles || []).concat(["'dist/**/*.js'"])),
       ],
     }),
   });

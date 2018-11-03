@@ -27,7 +27,7 @@ Object {
   "metapak": Object {
     "data": Object {
       "bundleFiles": Array [
-        "dist/**/*.js",
+        "'dist/**/*.js'",
       ],
       "childPackage": true,
       "files": "src/*.js src/**/*.js",
@@ -92,7 +92,7 @@ Object {
     ],
     "data": Object {
       "bundleFiles": Array [
-        "dist/**/*.js",
+        "'dist/**/*.js'",
       ],
       "testsFiles": "src/*.js src/**/*.js",
     },
@@ -144,7 +144,7 @@ Object {
     ],
     "data": Object {
       "bundleFiles": Array [
-        "dist/**/*.js",
+        "'dist/**/*.js'",
       ],
       "testsFiles": "src/*.js src/**/*.js",
     },
@@ -188,7 +188,7 @@ Object {
     ],
     "data": Object {
       "bundleFiles": Array [
-        "dist/**/*.js",
+        "'dist/**/*.js'",
       ],
       "testsFiles": "src/*.js src/**/*.js",
     },
@@ -236,6 +236,7 @@ Object {
         "README.md",
         "CHANGELOG.md",
         "dist/**/*.js",
+        "'dist/**/*.js'",
       ],
       "testsFiles": "src/*.js src/**/*.js",
     },
