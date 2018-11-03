@@ -51,6 +51,9 @@ Object {
       "babel",
     ],
     "data": Object {
+      "bundleFiles": Array [
+        "dist/**/*.js",
+      ],
       "testsFiles": "src/*.js src/**/*.js",
     },
   },
@@ -101,6 +104,9 @@ Object {
       "jest",
     ],
     "data": Object {
+      "bundleFiles": Array [
+        "dist/**/*.js",
+      ],
       "testsFiles": "src/*.js src/**/*.js",
     },
   },
@@ -143,6 +149,9 @@ Object {
       "mocha",
     ],
     "data": Object {
+      "bundleFiles": Array [
+        "dist/**/*.js",
+      ],
       "testsFiles": "src/*.js src/**/*.js",
     },
   },
@@ -184,6 +193,13 @@ Object {
       "babel",
     ],
     "data": Object {
+      "bundleFiles": Array [
+        "src/**/*.js",
+        "LICENSE",
+        "README.md",
+        "CHANGELOG.md",
+        "dist/**/*.js",
+      ],
       "testsFiles": "src/*.js src/**/*.js",
     },
   },

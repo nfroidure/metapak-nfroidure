@@ -107,5 +107,11 @@
     "singleQuote": true,
     "trailingComma": "es5",
     "proseWrap": "always"
-  }
+  },
+  "files": [
+    "src/**/*.js",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ]
 }

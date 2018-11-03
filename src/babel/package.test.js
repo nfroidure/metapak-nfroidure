@@ -14,6 +14,13 @@ describe('Babel', () => {
           metapak: {
             data: {
               testsFiles: 'src/*.js src/**/*.js',
+              bundleFiles: [
+                'src/**/*.js',
+                'LICENSE',
+                'README.md',
+                'CHANGELOG.md',
+                'dist/**/*.js',
+              ],
             },
             configs: ['babel'],
           },

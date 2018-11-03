@@ -34,6 +34,13 @@ module.exports = packageConf => {
   // Supporting Node LTS version only
   packageConf.engines = { node: '>=' + config.lastNodeLTS };
 
+  // Only add necessar files
+  packageConf.files = (data.bundleFiles || ['src/**/*.js']).concat(
+    'LICENSE',
+    'README.md',
+    'CHANGELOG.md'
+  );
+
   // Let's add my handy scripts
   packageConf.scripts = packageConf.scripts || {};
 

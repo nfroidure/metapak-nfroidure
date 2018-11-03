@@ -19,7 +19,7 @@ const DEFAULT_BABEL_CONFIG = {
 };
 
 module.exports = packageConf => {
-  const { configs } = getMetapakInfos(packageConf);
+  const { configs, data } = getMetapakInfos(packageConf);
 
   // Add Babel config
   packageConf.babel = packageConf.babel
@@ -39,6 +39,15 @@ module.exports = packageConf => {
         ? '@babel/plugin-proposal-object-rest-spread'
         : plugin
   );
+
+  // Set dist as the bundle files
+  packageConf.metapak = Object.assign({}, packageConf.metapak || {}, {
+    data: Object.assign({}, data, {
+      bundleFiles: [
+        ...new Set((data.bundleFiles || []).concat(['dist/**/*.js'])),
+      ],
+    }),
+  });
 
   // Adapting script to work with Babel
   packageConf.scripts = packageConf.scripts || {};

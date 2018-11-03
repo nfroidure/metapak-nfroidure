@@ -21,6 +21,12 @@ Object {
   "engines": Object {
     "node": ">=6.9.5",
   },
+  "files": Array [
+    "src/**/*.js",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+  ],
   "greenkeeper": Object {
     "ignore": Array [
       "commitizen",
