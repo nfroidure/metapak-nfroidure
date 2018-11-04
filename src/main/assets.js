@@ -34,5 +34,22 @@ module.exports = (file, packageConf) => {
       '\n';
   }
 
+  // Avoid adding wrong files in child packages
+  if (
+    data.childPackage &&
+    [
+      'LICENSE',
+      '.github/CODE_OF_CONDUCT.md',
+      '.github/CONTRIBUTING',
+      '.github/ISSUE_TEMPLATE',
+      '.github/PULL_REQUEST_TEMPLATE',
+      '.editorconfig',
+      '.gitattributes',
+      '.gitignore',
+    ].includes(file.name)
+  ) {
+    file.data = '';
+  }
+
   return file;
 };

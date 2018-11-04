@@ -26,6 +26,9 @@ module.exports = packageConf => {
     ? packageConf.babel
     : DEFAULT_BABEL_CONFIG;
 
+  // Set the Node support in all cases
+  packageConf.babel.presets[0][1].targets.node = config.lastNodeLTS;
+
   // Fix existing babel config
   packageConf.babel.presets = packageConf.babel.presets.map(
     ([presetName, ...presetArgs]) =>

@@ -39,5 +39,27 @@ describe('main', () => {
         }
       );
     });
+
+    it('should empty child package files', () => {
+      assert.deepEqual(
+        assetsTransformer(
+          {
+            name: '_dot_gitignore',
+            data: 'dist\n',
+          },
+          {
+            metapak: {
+              data: {
+                childPackage: true,
+              },
+            },
+          }
+        ),
+        {
+          name: '.gitignore',
+          data: '',
+        }
+      );
+    });
   });
 });
