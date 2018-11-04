@@ -12,6 +12,9 @@
       "codeclimate"
     ],
     "data": {
+      "bundleFiles": [
+        "src/**/*"
+      ],
       "testsFiles": "'src/**/*.mocha.js'",
       "files": "'src/**/*.js'"
     }
@@ -109,7 +112,7 @@
     "proseWrap": "always"
   },
   "files": [
-    "src/**/*.js",
+    "src/**/*",
     "LICENSE",
     "README.md",
     "CHANGELOG.md"
