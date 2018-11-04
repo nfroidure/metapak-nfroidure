@@ -1,3 +1,12 @@
+## [9.0.1](https://github.com/nfroidure/metapak-nfroidure/compare/v9.0.0...v9.0.1) (2018-11-04)
+
+
+### Bug Fixes
+
+* **Bundle:** Fix bundle files to include assets too ([b3fe754](https://github.com/nfroidure/metapak-nfroidure/commit/b3fe754))
+
+
+
 # [9.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v8.3.1...v9.0.0) (2018-11-04)
 
 
