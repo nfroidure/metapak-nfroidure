@@ -1,3 +1,17 @@
+# [9.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v8.3.1...v9.0.0) (2018-11-04)
+
+
+### Code Refactoring
+
+* **Node support:** Drop support for NodeJS 6 ([d795884](https://github.com/nfroidure/metapak-nfroidure/commit/d795884))
+
+
+### BREAKING CHANGES
+
+* **Node support:** Will necessit to upgrade NodeJS to 8.12+
+
+
+
 ## [8.3.1](https://github.com/nfroidure/metapak-nfroidure/compare/v8.3.0...v8.3.1) (2018-11-03)
 
 
