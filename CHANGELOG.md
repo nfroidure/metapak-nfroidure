@@ -1,3 +1,12 @@
+## [9.0.2](https://github.com/nfroidure/metapak-nfroidure/compare/v9.0.1...v9.0.2) (2018-11-04)
+
+
+### Bug Fixes
+
+* **Main config:** Avoid adding unuseful files in child packages ([c8ac820](https://github.com/nfroidure/metapak-nfroidure/commit/c8ac820))
+
+
+
 ## [9.0.1](https://github.com/nfroidure/metapak-nfroidure/compare/v9.0.0...v9.0.1) (2018-11-04)
 
 
