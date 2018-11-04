@@ -9,7 +9,7 @@ Object {
   },
   "contributors": Array [],
   "engines": Object {
-    "node": ">=6.9.5",
+    "node": ">=8.12.0",
   },
   "files": Array [
     "src/**/*.js",
@@ -51,7 +51,7 @@ Object {
     "cz-conventional-changelog": "^2.1.0",
   },
   "engines": Object {
-    "node": ">=6.9.5",
+    "node": ">=8.12.0",
   },
   "files": Array [
     "src/**/*.js",
@@ -105,7 +105,7 @@ Object {
     "cz-conventional-changelog": "^2.1.0",
   },
   "engines": Object {
-    "node": ">=6.9.5",
+    "node": ">=8.12.0",
   },
   "files": Array [
     "src/**/*.js",
