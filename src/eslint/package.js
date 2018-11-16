@@ -15,7 +15,7 @@ module.exports = packageConf => {
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.eslint = '^5.8.0';
+  packageConf.devDependencies.eslint = '^5.9.0';
   delete packageConf.devDependencies['eslint-config-simplifield'];
   packageConf.devDependencies.prettier = '^1.14.3';
   packageConf.devDependencies['eslint-plugin-prettier'] = '^3.0.0';

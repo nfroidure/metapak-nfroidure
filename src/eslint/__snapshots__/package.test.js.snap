@@ -3,7 +3,7 @@
 exports[`eslint Package transformer should work with child packages 1`] = `
 Object {
   "devDependencies": Object {
-    "eslint": "^5.8.0",
+    "eslint": "^5.9.0",
     "eslint-plugin-prettier": "^3.0.0",
     "prettier": "^1.14.3",
   },
@@ -51,7 +51,7 @@ Object {
 exports[`eslint Package transformer should work with some files 1`] = `
 Object {
   "devDependencies": Object {
-    "eslint": "^5.8.0",
+    "eslint": "^5.9.0",
     "eslint-plugin-prettier": "^3.0.0",
     "prettier": "^1.14.3",
   },

@@ -36,11 +36,10 @@ module.exports = packageConf => {
         ? ['@babel/env', ...presetArgs]
         : [presetName, ...presetArgs]
   );
-  packageConf.babel.plugins = packageConf.babel.plugins.map(
-    plugin =>
-      plugin === 'transform-object-rest-spread'
-        ? '@babel/plugin-proposal-object-rest-spread'
-        : plugin
+  packageConf.babel.plugins = packageConf.babel.plugins.map(plugin =>
+    plugin === 'transform-object-rest-spread'
+      ? '@babel/plugin-proposal-object-rest-spread'
+      : plugin
   );
 
   // Set dist as the bundle files
@@ -87,10 +86,10 @@ module.exports = packageConf => {
     packageConf.devDependencies['babel-core'] = '^7.0.0-0';
   }
 
-  packageConf.devDependencies['@babel/cli'] = '^7.1.2';
-  packageConf.devDependencies['@babel/core'] = '^7.1.2';
+  packageConf.devDependencies['@babel/cli'] = '^7.1.5';
+  packageConf.devDependencies['@babel/core'] = '^7.1.6';
   packageConf.devDependencies['@babel/register'] = '^7.0.0';
-  packageConf.devDependencies['@babel/preset-env'] = '^7.1.0';
+  packageConf.devDependencies['@babel/preset-env'] = '^7.1.6';
   packageConf.devDependencies['@babel/plugin-proposal-object-rest-spread'] =
     '^7.0.0';
 
