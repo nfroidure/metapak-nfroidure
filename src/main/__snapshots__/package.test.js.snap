@@ -5,7 +5,7 @@ Object {
   "author": Object {
     "email": "nicolas.froidure@insertafter.com",
     "name": "Nicolas Froidure",
-    "url": "http://insertafter.com/en/index.html",
+    "url": "https://insertafter.com/en/index.html",
   },
   "contributors": Array [],
   "engines": Object {
@@ -37,7 +37,7 @@ Object {
   "author": Object {
     "email": "nicolas.froidure@insertafter.com",
     "name": "Nicolas Froidure",
-    "url": "http://insertafter.com/en/index.html",
+    "url": "https://insertafter.com/en/index.html",
   },
   "config": Object {
     "commitizen": Object {
@@ -91,7 +91,7 @@ Object {
   "author": Object {
     "email": "nicolas.froidure@insertafter.com",
     "name": "Nicolas Froidure",
-    "url": "http://insertafter.com/en/index.html",
+    "url": "https://insertafter.com/en/index.html",
   },
   "config": Object {
     "commitizen": Object {

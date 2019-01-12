@@ -31,7 +31,7 @@ npm install --save-dev metapak metapak-nfroidure
 [//]: # (::contents:end)
 
 # Authors
-- [Nicolas Froidure](http://insertafter.com/en/index.html)
+- [Nicolas Froidure](https://insertafter.com/en/index.html)
 
 # License
 [MIT](https://github.com/nfroidure/metapak-nfroidure/blob/master/LICENSE)

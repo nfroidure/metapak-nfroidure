@@ -3,7 +3,7 @@
 exports[`Package transformer for jsdocs should work with an empty package.json 1`] = `
 Object {
   "devDependencies": Object {
-    "jsarch": "^1.3.0",
+    "jsarch": "^2.0.0",
   },
   "greenkeeper": Object {
     "ignore": Array [
@@ -26,7 +26,7 @@ Object {
 exports[`Package transformer for jsdocs should work with child package 1`] = `
 Object {
   "devDependencies": Object {
-    "jsarch": "^1.3.0",
+    "jsarch": "^2.0.0",
   },
   "greenkeeper": Object {
     "ignore": Array [],

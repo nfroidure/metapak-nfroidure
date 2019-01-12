@@ -18,7 +18,7 @@ module.exports = packageConf => {
       ? {
           name: 'Nicolas Froidure',
           email: 'nicolas.froidure@insertafter.com',
-          url: 'http://insertafter.com/en/index.html',
+          url: 'https://insertafter.com/en/index.html',
         }
       : packageConf.author;
 

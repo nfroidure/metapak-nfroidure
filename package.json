@@ -41,7 +41,7 @@
   "author": {
     "name": "Nicolas Froidure",
     "email": "nicolas.froidure@insertafter.com",
-    "url": "http://insertafter.com/en/index.html"
+    "url": "https://insertafter.com/en/index.html"
   },
   "license": "MIT",
   "peerDependencies": {
