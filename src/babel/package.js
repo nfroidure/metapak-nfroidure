@@ -86,12 +86,12 @@ module.exports = packageConf => {
     packageConf.devDependencies['babel-core'] = '^7.0.0-0';
   }
 
-  packageConf.devDependencies['@babel/cli'] = '^7.1.5';
-  packageConf.devDependencies['@babel/core'] = '^7.1.6';
+  packageConf.devDependencies['@babel/cli'] = '^7.2.3';
+  packageConf.devDependencies['@babel/core'] = '^7.2.2';
   packageConf.devDependencies['@babel/register'] = '^7.0.0';
-  packageConf.devDependencies['@babel/preset-env'] = '^7.1.6';
+  packageConf.devDependencies['@babel/preset-env'] = '^7.2.3';
   packageConf.devDependencies['@babel/plugin-proposal-object-rest-spread'] =
-    '^7.0.0';
+    '^7.2.0';
 
   // Add ESLint tweaks
   if (configs.includes('eslint')) {
