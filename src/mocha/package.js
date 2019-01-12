@@ -34,6 +34,11 @@ module.exports = packageConf => {
   packageConf.devDependencies.mocha = '^5.2.0';
   packageConf.devDependencies.nyc = '^13.0.1';
 
+  // Ignore test files
+  packageConf.nyc = packageConf.nyc || {
+    exclude: [data.testsFiles],
+  };
+
   // Add coveralls for independant packages
   if (!data.childPackage) {
     packageConf.scripts.coveralls =

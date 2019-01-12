@@ -23,6 +23,11 @@ Object {
       "testsFiles": "src/*.js src/**/*.js",
     },
   },
+  "nyc": Object {
+    "exclude": Array [
+      "src/*.js src/**/*.js",
+    ],
+  },
   "scripts": Object {
     "cover": "nyc npm test && nyc report --reporter=html --reporter=text",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf ./coverage",
@@ -53,6 +58,11 @@ Object {
     "data": Object {
       "testsFiles": "src/*.js src/**/*.js",
     },
+  },
+  "nyc": Object {
+    "exclude": Array [
+      "src/*.js src/**/*.js",
+    ],
   },
   "scripts": Object {
     "cover": "nyc npm test && nyc report --reporter=html --reporter=text",
