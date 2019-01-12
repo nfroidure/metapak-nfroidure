@@ -1,3 +1,17 @@
+## [9.0.4](https://github.com/nfroidure/metapak-nfroidure/compare/v9.0.3...v9.0.4) (2019-01-12)
+
+
+### Bug Fixes
+
+* **Typo:** Various typo fixes ([95ebf97](https://github.com/nfroidure/metapak-nfroidure/commit/95ebf97))
+
+
+### Features
+
+* **Mocha config:** Ignore tests files from nyc coverage ([df1e624](https://github.com/nfroidure/metapak-nfroidure/commit/df1e624))
+
+
+
 ## [9.0.3](https://github.com/nfroidure/metapak-nfroidure/compare/v9.0.2...v9.0.3) (2018-11-16)
 
 
