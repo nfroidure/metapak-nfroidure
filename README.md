@@ -7,12 +7,12 @@
 # metapak-nfroidure
 > A metapak module for my open source projects.
 
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nfroidure/metapak-nfroidure/blob/master/LICENSE)
 [![Build status](https://secure.travis-ci.org/nfroidure/metapak-nfroidure.svg)](https://travis-ci.org/nfroidure/metapak-nfroidure)
 [![Coverage Status](https://coveralls.io/repos/nfroidure/metapak-nfroidure/badge.svg?branch=master)](https://coveralls.io/r/nfroidure/metapak-nfroidure?branch=master)
 [![NPM version](https://badge.fury.io/js/metapak-nfroidure.svg)](https://npmjs.org/package/metapak-nfroidure)
 [![Dependency Status](https://david-dm.org/nfroidure/metapak-nfroidure.svg)](https://david-dm.org/nfroidure/metapak-nfroidure)
 [![devDependency Status](https://david-dm.org/nfroidure/metapak-nfroidure/dev-status.svg)](https://david-dm.org/nfroidure/metapak-nfroidure#info=devDependencies)
-[![Dependency Status](https://dependencyci.com/github/nfroidure/metapak-nfroidure/badge)](https://dependencyci.com/github/nfroidure/metapak-nfroidure)
 [![Package Quality](http://npm.packagequality.com/shield/metapak-nfroidure.svg)](http://packagequality.com/#?package=metapak-nfroidure)
 [![Code Climate](https://codeclimate.com/github/nfroidure/metapak-nfroidure.svg)](https://codeclimate.com/github/nfroidure/metapak-nfroidure)
 

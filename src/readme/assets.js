@@ -1,8 +1,8 @@
 'use strict';
 
 const path = require('path');
-const { getMetapakInfos } = require('../lib.js');
 const { apiPath } = require('../config.js');
+const { getMetapakInfos } = require('../lib.js');
 const USERNAME = 'nfroidure';
 const README_CONTENTS_START_TAG = `[//]: # (::contents:start)`;
 const README_CONTENTS_END_TAG = `[//]: # (::contents:end)`;
@@ -22,6 +22,11 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
 
     // Badges
     if (!data.noBadge) {
+      if (packageConf.license === 'MIT') {
+        file.data += `[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/${USERNAME}/${
+          packageConf.name
+        }/blob/master/LICENSE)\n`;
+      }
       if (configs.includes('travis')) {
         file.data += `[![Build status](https://secure.travis-ci.org/${USERNAME}/${
           packageConf.name
@@ -46,11 +51,6 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
         }/dev-status.svg)](https://david-dm.org/${USERNAME}/${
           packageConf.name
         }#info=devDependencies)\n`;
-        file.data += `[![Dependency Status](https://dependencyci.com/github/${USERNAME}/${
-          packageConf.name
-        }/badge)](https://dependencyci.com/github/${USERNAME}/${
-          packageConf.name
-        })\n`;
         file.data += `[![Package Quality](http://npm.packagequality.com/shield/${
           packageConf.name
         }.svg)](http://packagequality.com/#?package=${packageConf.name})\n`;
