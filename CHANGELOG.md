@@ -1,3 +1,12 @@
+# [9.1.0](https://github.com/nfroidure/metapak-nfroidure/compare/v9.0.5...v9.1.0) (2019-01-19)
+
+
+### Bug Fixes
+
+* **Main config:** Avoid erasing existing scripts ([206a4e5](https://github.com/nfroidure/metapak-nfroidure/commit/206a4e5))
+
+
+
 ## [9.0.5](https://github.com/nfroidure/metapak-nfroidure/compare/v9.0.4...v9.0.5) (2019-01-12)
 
 
