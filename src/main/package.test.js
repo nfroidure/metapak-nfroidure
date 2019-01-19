@@ -30,4 +30,20 @@ describe('Package transformer', () => {
       })
     ).toMatchSnapshot();
   });
+
+  it('should let existing lin & test scripts', () => {
+    expect(
+      packageTransformer({
+        scripts: {
+          test: 'echo "Testing is doubting"',
+          lint: 'echo "Linting is fearing"',
+        },
+        metapak: {
+          data: {
+            childPackage: true,
+          },
+        },
+      })
+    ).toMatchSnapshot();
+  });
 });

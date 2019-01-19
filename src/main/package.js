@@ -52,12 +52,12 @@ module.exports = packageConf => {
   if (!packageConf.scripts.test) {
     packageConf.scripts.test = data.rootPackage
       ? 'lerna run test'
-      : 'echo "WARNING: No tests specified"';
+      : packageConf.scripts.test || 'echo "WARNING: No tests specified"';
   }
   if (!packageConf.scripts.lint) {
     packageConf.scripts.lint = data.rootPackage
       ? 'lerna run lint'
-      : 'echo "WARNING: No linter specified"';
+      : packageConf.scripts.lint || 'echo "WARNING: No linter specified"';
   }
 
   // Let's use commitizen on main packages
