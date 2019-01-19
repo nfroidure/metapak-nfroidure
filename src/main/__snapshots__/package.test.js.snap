@@ -105,14 +105,14 @@ Object {
     },
   },
   "scripts": Object {
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
     "cz": "env NODE_ENV=\${NODE_ENV:-cli} git cz",
     "lint": "lerna run lint",
     "precz": "npm t && npm run lint && npm run metapak -- -s",
     "preversion": "npm t && npm run lint && npm run metapak -- -s",
     "test": "lerna run test",
-    "version": "npm run changelog && git add CHANGELOG.md",
+    "version": "npm run changelog",
   },
   "version": "0.0.0",
 }
@@ -154,14 +154,14 @@ Object {
   },
   "license": "MIT",
   "scripts": Object {
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
     "cz": "env NODE_ENV=\${NODE_ENV:-cli} git cz",
     "lint": "echo \\"WARNING: No linter specified\\"",
     "precz": "npm t && npm run lint && npm run metapak -- -s",
     "preversion": "npm t && npm run lint && npm run metapak -- -s",
     "test": "echo \\"WARNING: No tests specified\\"",
-    "version": "npm run changelog && git add CHANGELOG.md",
+    "version": "npm run changelog",
   },
   "version": "0.0.0",
 }

@@ -24,7 +24,7 @@
     "url": "git+https://github.com/nfroidure/metapak-nfroidure.git"
   },
   "scripts": {
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "cli": "env NODE_ENV=${NODE_ENV:-cli}",
     "cover": "npm run jest -- --coverage",
     "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
@@ -36,7 +36,7 @@
     "prettier": "prettier --write 'src/**/*.js'",
     "preversion": "npm t && npm run lint && npm run metapak -- -s",
     "test": "npm run jest",
-    "version": "npm run changelog && git add CHANGELOG.md"
+    "version": "npm run changelog"
   },
   "author": {
     "name": "Nicolas Froidure",

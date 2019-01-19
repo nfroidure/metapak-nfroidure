@@ -7,6 +7,7 @@ const GITHUB_REPOSITORY_REGEXP = /git\+https:\/\/github.com\/([a-zA-Z0-9-]+)\/([
 const TEST_SCRIPT = 'npm t';
 const LINT_SCRIPT = 'npm run lint';
 const METAPAK_SCRIPT = 'npm run metapak -- -s';
+const CHANGELOG_SCRIPT = 'npm run changelog';
 
 module.exports = packageConf => {
   const { data } = getMetapakInfos(packageConf);
@@ -83,8 +84,11 @@ module.exports = packageConf => {
 
     // Add the changelog stuffs
     packageConf.scripts.changelog =
-      'conventional-changelog -p angular -i CHANGELOG.md -s';
-    packageConf.scripts.version = 'npm run changelog && git add CHANGELOG.md';
+      'conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md';
+    packageConf.scripts.version = ensureScript(
+      packageConf.scripts.version,
+      CHANGELOG_SCRIPT
+    );
     packageConf.scripts.preversion = ensureScript(
       packageConf.scripts.preversion,
       TEST_SCRIPT
