@@ -1,3 +1,12 @@
+# [9.2.0](https://github.com/nfroidure/metapak-nfroidure/compare/v9.1.0...v9.2.0) (2019-01-19)
+
+
+### Features
+
+* **Main config:** Fully isolate changelog script from version one ([405acb0](https://github.com/nfroidure/metapak-nfroidure/commit/405acb0))
+
+
+
 # [9.1.0](https://github.com/nfroidure/metapak-nfroidure/compare/v9.0.5...v9.1.0) (2019-01-19)
 
 
