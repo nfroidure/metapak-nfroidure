@@ -33,4 +33,21 @@ describe('Package transformer for jsdocs', () => {
       })
     ).toMatchSnapshot();
   });
+
+  it('should work with typescrit configs', () => {
+    expect(
+      packageTransformer({
+        metapak: {
+          configs: ['typescript'],
+          data: {
+            childPackage: true,
+            files: 'yolo.js',
+          },
+        },
+        greenkeeper: {
+          ignore: [],
+        },
+      })
+    ).toMatchSnapshot();
+  });
 });

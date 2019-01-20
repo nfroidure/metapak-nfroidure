@@ -6,14 +6,14 @@ const { apiPath } = require('../config.js');
 const DOCUMENTATION_SCRIPT = 'npm run doc';
 
 module.exports = packageConf => {
-  const { data } = getMetapakInfos(packageConf);
+  const { configs, data } = getMetapakInfos(packageConf);
 
   // Adding documentation generation script
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.doc = data.rootPackage
     ? 'lerna run doc'
     : `echo "# API" > ${apiPath}; jsdoc2md ${
-        data.files
+        configs.includes('typescript') ? data.distFiles : data.files
       } >> ${apiPath} && git add ${apiPath}`;
 
   if (!data.childPackage) {

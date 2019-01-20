@@ -27,15 +27,25 @@ module.exports = packageConf => {
     : DEFAULT_BABEL_CONFIG;
 
   // Set the Node support in all cases
-  packageConf.babel.presets[0][1].targets.node = config.lastNodeLTS;
+  packageConf.babel.presets = packageConf.babel.presets.map(preset => {
+    if (preset[0] !== '@babel/env') {
+      return preset;
+    }
+    preset[1].targets.node = config.lastNodeLTS;
+    return preset;
+  });
 
   // Fix existing babel config
-  packageConf.babel.presets = packageConf.babel.presets.map(
-    ([presetName, ...presetArgs]) =>
-      presetName === 'env'
-        ? ['@babel/env', ...presetArgs]
-        : [presetName, ...presetArgs]
-  );
+  packageConf.babel.presets = packageConf.babel.presets.map(preset => {
+    if (!(preset instanceof Array)) {
+      return preset;
+    }
+    const [presetName, ...presetArgs] = preset;
+
+    return presetName === 'env'
+      ? ['@babel/env', ...presetArgs]
+      : [presetName, ...presetArgs];
+  });
   packageConf.babel.plugins = packageConf.babel.plugins.map(plugin =>
     plugin === 'transform-object-rest-spread'
       ? '@babel/plugin-proposal-object-rest-spread'
@@ -55,6 +65,8 @@ module.exports = packageConf => {
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.compile = data.rootPackage
     ? 'lerna run compile'
+    : configs.includes('typescript')
+    ? "babel --extensions '.ts,.js' src --out-dir=dist"
     : 'babel src --out-dir=dist';
 
   // We have to compile with Babel before pushing a version
@@ -99,30 +111,80 @@ module.exports = packageConf => {
       throw new YError('E_BAD_CONFIG_ORDER', 'babel', 'eslint');
     }
     packageConf.devDependencies['babel-eslint'] = '^10.0.1';
-    packageConf.eslintConfig = {
-      extends: 'eslint:recommended',
-      parserOptions: {
-        ecmaVersion: 2018,
-        sourceType: 'module',
-        modules: true,
-      },
-      env: {
-        es6: true,
-        node: true,
-        jest: true,
-        mocha: true,
-      },
-      plugins: ['prettier'],
-      rules: {
-        'prettier/prettier': 'error',
-      },
-    };
+    packageConf.eslintConfig = Object.assign(
+      {},
+      packageConf.eslintConfig || {},
+      {
+        extends: 'eslint:recommended',
+        parserOptions: {
+          ecmaVersion: 2018,
+          sourceType: 'module',
+          modules: true,
+        },
+        env: {
+          es6: true,
+          node: true,
+          jest: true,
+          mocha: true,
+        },
+        plugins: ['prettier'],
+        rules: {
+          'prettier/prettier': 'error',
+        },
+      }
+    );
     packageConf.prettier = {
       semi: true,
       printWidth: 80,
       singleQuote: true,
       trailingComma: 'all',
       proseWrap: 'always',
+    };
+  }
+
+  // Special configuration for TypeScript
+  if (configs.includes('typescript')) {
+    packageConf.babel.presets = [
+      ...new Set(['@babel/typescript', ...packageConf.babel.presets]),
+    ];
+    packageConf.babel.plugins = [
+      ...new Set([
+        '@babel/proposal-class-properties',
+        ...packageConf.babel.plugins,
+      ]),
+    ];
+    packageConf.devDependencies['@babel/preset-typescript'] = '^7.1.0';
+    packageConf.devDependencies['@babel/plugin-proposal-class-properties'] =
+      '^7.2.3';
+  }
+
+  if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
+    packageConf.greenkeeper = {
+      ignore: [
+        ...new Set(
+          (packageConf.greenkeeper && packageConf.greenkeeper.ignore
+            ? packageConf.greenkeeper.ignore
+            : []
+          )
+            .concat([
+              '@babel/cli',
+              '@babel/core',
+              '@babel/register',
+              '@babel/preset-env',
+              '@babel/plugin-proposal-object-rest-spread',
+            ])
+            .concat(
+              configs.includes('typescript')
+                ? [
+                    '@babel/preset-typescript',
+                    '@babel/plugin-proposal-class-properties',
+                  ]
+                : []
+            )
+            .concat(configs.includes('eslint') ? ['babel-eslint'] : [])
+            .concat(configs.includes('jest') ? ['babel-core'] : [])
+        ),
+      ],
     };
   }
 

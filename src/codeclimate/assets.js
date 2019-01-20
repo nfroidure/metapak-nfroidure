@@ -7,10 +7,7 @@ module.exports = (file, packageConf) => {
   if ('.codeclimate.yml' === file.name) {
     const { data } = getMetapakInfos(packageConf);
     if (data.files) {
-      file.data = file.data.replace(
-        /\*\*\.js/gm,
-        packageConf.metapak.data.files
-      );
+      file.data = file.data.replace(/\*\*\.js/gm, data.files);
     }
     if (data.testsFiles) {
       file.data += `## Exclude test files.

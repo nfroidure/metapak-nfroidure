@@ -4,7 +4,7 @@ const { ensureScript, getMetapakInfos } = require('../lib.js');
 const ARCHITECTURE_SCRIPT = 'npm run architecture';
 
 module.exports = packageConf => {
-  const { data } = getMetapakInfos(packageConf);
+  const { configs, data } = getMetapakInfos(packageConf);
 
   // Adding architecture generation script
   packageConf.scripts = packageConf.scripts || {};
@@ -23,9 +23,18 @@ module.exports = packageConf => {
     );
   }
 
+  // Special configuration for TypeScript
+  if (configs.includes('typescript') && !packageConf.jsarch) {
+    packageConf.jsarch = {
+      parserOptions: {
+        plugins: ['typescript'],
+      },
+    };
+  }
+
   // Add jsarch dep
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jsarch = '^2.0.0';
+  packageConf.devDependencies.jsarch = '^2.0.1';
 
   // Avoid GreenKeeper to update automatically added modules
   if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {

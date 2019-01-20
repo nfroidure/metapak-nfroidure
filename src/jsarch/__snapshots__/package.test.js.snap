@@ -3,7 +3,7 @@
 exports[`Package transformer for jsdocs should work with an empty package.json 1`] = `
 Object {
   "devDependencies": Object {
-    "jsarch": "^2.0.0",
+    "jsarch": "^2.0.1",
   },
   "greenkeeper": Object {
     "ignore": Array [
@@ -26,12 +26,42 @@ Object {
 exports[`Package transformer for jsdocs should work with child package 1`] = `
 Object {
   "devDependencies": Object {
-    "jsarch": "^2.0.0",
+    "jsarch": "^2.0.1",
   },
   "greenkeeper": Object {
     "ignore": Array [],
   },
   "metapak": Object {
+    "data": Object {
+      "childPackage": true,
+      "files": "yolo.js",
+    },
+  },
+  "scripts": Object {
+    "architecture": "jsarch yolo.js > ARCHITECTURE.md && git add ARCHITECTURE.md",
+  },
+}
+`;
+
+exports[`Package transformer for jsdocs should work with typescrit configs 1`] = `
+Object {
+  "devDependencies": Object {
+    "jsarch": "^2.0.1",
+  },
+  "greenkeeper": Object {
+    "ignore": Array [],
+  },
+  "jsarch": Object {
+    "parserOptions": Object {
+      "plugins": Array [
+        "typescript",
+      ],
+    },
+  },
+  "metapak": Object {
+    "configs": Array [
+      "typescript",
+    ],
     "data": Object {
       "childPackage": true,
       "files": "yolo.js",

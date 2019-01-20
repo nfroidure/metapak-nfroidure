@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`private Package transformer should work 1`] = `
+Object {
+  "devDependencies": Object {
+    "typescript": "^3.2.4",
+  },
+  "greenkeeper": Object {
+    "ignore": Array [
+      "typescript",
+    ],
+  },
+  "metapak": Object {
+    "data": Object {
+      "bundleFiles": Array [
+        "index.d.ts",
+      ],
+      "typesDefs": "index.d.ts",
+      "typesFiles": "index.ts",
+    },
+  },
+  "scripts": Object {
+    "precz": "npm run types",
+    "preversion": "npm run types",
+    "types": "tsc --declaration --emitDeclarationOnly index.ts || echo; npm run prettier -- index.d.ts",
+  },
+  "types": "index.d.ts",
+}
+`;

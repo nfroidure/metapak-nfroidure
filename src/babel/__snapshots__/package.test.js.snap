@@ -85,6 +85,16 @@ Object {
       "prettier/prettier": "error",
     },
   },
+  "greenkeeper": Object {
+    "ignore": Array [
+      "@babel/cli",
+      "@babel/core",
+      "@babel/register",
+      "@babel/preset-env",
+      "@babel/plugin-proposal-object-rest-spread",
+      "babel-eslint",
+    ],
+  },
   "metapak": Object {
     "configs": Array [
       "eslint",
@@ -137,6 +147,16 @@ Object {
     "@babel/register": "^7.0.0",
     "babel-core": "^7.0.0-0",
   },
+  "greenkeeper": Object {
+    "ignore": Array [
+      "@babel/cli",
+      "@babel/core",
+      "@babel/register",
+      "@babel/preset-env",
+      "@babel/plugin-proposal-object-rest-spread",
+      "babel-core",
+    ],
+  },
   "metapak": Object {
     "configs": Array [
       "babel",
@@ -181,6 +201,15 @@ Object {
     "@babel/preset-env": "^7.2.3",
     "@babel/register": "^7.0.0",
   },
+  "greenkeeper": Object {
+    "ignore": Array [
+      "@babel/cli",
+      "@babel/core",
+      "@babel/register",
+      "@babel/preset-env",
+      "@babel/plugin-proposal-object-rest-spread",
+    ],
+  },
   "metapak": Object {
     "configs": Array [
       "babel",
@@ -224,6 +253,15 @@ Object {
     "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
     "@babel/preset-env": "^7.2.3",
     "@babel/register": "^7.0.0",
+  },
+  "greenkeeper": Object {
+    "ignore": Array [
+      "@babel/cli",
+      "@babel/core",
+      "@babel/register",
+      "@babel/preset-env",
+      "@babel/plugin-proposal-object-rest-spread",
+    ],
   },
   "metapak": Object {
     "configs": Array [

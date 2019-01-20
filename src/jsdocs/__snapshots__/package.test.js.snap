@@ -1,5 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Package transformer for jsdocs should work with a typescript setup 1`] = `
+Object {
+  "devDependencies": Object {
+    "jsdoc-to-markdown": "^4.0.1",
+  },
+  "greenkeeper": Object {
+    "ignore": Array [
+      "jsdoc-to-markdown",
+    ],
+  },
+  "metapak": Object {
+    "configs": Array [
+      "typescript",
+    ],
+    "data": Object {
+      "distFiles": "yolo.js",
+      "files": "yolo.ts",
+    },
+  },
+  "scripts": Object {
+    "doc": "echo \\"# API\\" > API.md; jsdoc2md yolo.js >> API.md && git add API.md",
+    "precz": "npm run doc",
+    "preversion": "npm run doc",
+  },
+}
+`;
+
 exports[`Package transformer for jsdocs should work with an empty package.json 1`] = `
 Object {
   "devDependencies": Object {
