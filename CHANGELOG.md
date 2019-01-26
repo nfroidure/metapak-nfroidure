@@ -1,3 +1,12 @@
+## [9.3.1](https://github.com/nfroidure/metapak-nfroidure/compare/v9.3.0...v9.3.1) (2019-01-26)
+
+
+### Bug Fixes
+
+* **License:** The license should remain in child packages ([b56dcfc](https://github.com/nfroidure/metapak-nfroidure/commit/b56dcfc))
+
+
+
 # [9.3.0](https://github.com/nfroidure/metapak-nfroidure/compare/v9.2.0...v9.3.0) (2019-01-20)
 
 
