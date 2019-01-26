@@ -38,7 +38,6 @@ module.exports = (file, packageConf) => {
   if (
     data.childPackage &&
     [
-      'LICENSE',
       '.github/CODE_OF_CONDUCT.md',
       '.github/CONTRIBUTING',
       '.github/ISSUE_TEMPLATE',
