@@ -18,6 +18,7 @@ Object {
       "eslint:recommended",
     ],
     "parserOptions": Object {
+      "ecmaVersion": 2018,
       "modules": true,
       "sourceType": "script",
     },
@@ -66,6 +67,7 @@ Object {
       "eslint:recommended",
     ],
     "parserOptions": Object {
+      "ecmaVersion": 2018,
       "modules": true,
       "sourceType": "script",
     },

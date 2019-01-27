@@ -23,6 +23,7 @@ module.exports = packageConf => {
   packageConf.eslintConfig = {
     extends: ['eslint:recommended'],
     parserOptions: {
+      ecmaVersion: 2018,
       sourceType: 'script',
       modules: true,
     },
