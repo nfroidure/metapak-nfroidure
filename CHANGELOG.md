@@ -1,3 +1,12 @@
+# [9.4.0](https://github.com/nfroidure/metapak-nfroidure/compare/v9.3.1...v9.4.0) (2019-01-27)
+
+
+### Features
+
+* **ESLint config:** Use es2018 for the ESLint parser ([ec3847b](https://github.com/nfroidure/metapak-nfroidure/commit/ec3847b))
+
+
+
 ## [9.3.1](https://github.com/nfroidure/metapak-nfroidure/compare/v9.3.0...v9.3.1) (2019-01-26)
 
 
