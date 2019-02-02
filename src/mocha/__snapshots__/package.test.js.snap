@@ -5,7 +5,7 @@ Object {
   "devDependencies": Object {
     "coveralls": "^3.0.2",
     "mocha": "^5.2.0",
-    "nyc": "^13.0.1",
+    "nyc": "^13.1.0",
   },
   "greenkeeper": Object {
     "ignore": Array [
@@ -42,7 +42,7 @@ Object {
   "devDependencies": Object {
     "coveralls": "^3.0.2",
     "mocha": "^5.2.0",
-    "nyc": "^13.0.1",
+    "nyc": "^13.1.0",
   },
   "greenkeeper": Object {
     "ignore": Array [

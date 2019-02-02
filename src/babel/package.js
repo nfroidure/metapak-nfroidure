@@ -93,17 +93,18 @@ module.exports = packageConf => {
   // but let's remove it snce we do not use it anymore
   delete packageConf.devDependencies.istanbul;
 
-  // Jest needs an additionnal module to work with babel
+  // Jest needed an additionnal module to work with babel
+  // but it is no longer needed
   if (configs.includes('jest')) {
-    packageConf.devDependencies['babel-core'] = '^7.0.0-0';
+    delete packageConf.devDependencies['babel-core'];
   }
 
   packageConf.devDependencies['@babel/cli'] = '^7.2.3';
   packageConf.devDependencies['@babel/core'] = '^7.2.2';
   packageConf.devDependencies['@babel/register'] = '^7.0.0';
-  packageConf.devDependencies['@babel/preset-env'] = '^7.2.3';
+  packageConf.devDependencies['@babel/preset-env'] = '^7.3.1';
   packageConf.devDependencies['@babel/plugin-proposal-object-rest-spread'] =
-    '^7.2.0';
+    '^7.3.1';
 
   // Add ESLint tweaks
   if (configs.includes('eslint')) {
@@ -155,7 +156,7 @@ module.exports = packageConf => {
     ];
     packageConf.devDependencies['@babel/preset-typescript'] = '^7.1.0';
     packageConf.devDependencies['@babel/plugin-proposal-class-properties'] =
-      '^7.2.3';
+      '^7.3.0';
   }
 
   if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {

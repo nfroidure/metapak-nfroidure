@@ -32,7 +32,7 @@ module.exports = packageConf => {
 
   packageConf.devDependencies = packageConf.devDependencies || {};
   packageConf.devDependencies.mocha = '^5.2.0';
-  packageConf.devDependencies.nyc = '^13.0.1';
+  packageConf.devDependencies.nyc = '^13.1.0';
 
   // Ignore test files
   packageConf.nyc = packageConf.nyc || {

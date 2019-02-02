@@ -17,7 +17,7 @@ module.exports = packageConf => {
   packageConf.scripts.cover = `npm run jest -- --coverage`;
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jest = '^23.6.0';
+  packageConf.devDependencies.jest = '^24.0.0';
 
   // Add coveralls for independant packages
   if (!data.childPackage) {
@@ -32,14 +32,12 @@ module.exports = packageConf => {
       testPathIgnorePatterns: ['/node_modules/'],
       roots: data.jestRoots || ['<rootDir>/src'],
     },
+    // Remove no longer needed ts conf
     configs.includes('typescript')
       ? {
-          testRegex: '.*\\.test\\.(ts|js)$',
-          moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
-          transform: {
-            '^.+\\.tsx?$': 'ts-jest',
-            '^.+\\.(js|jsx)?$': 'babel-jest',
-          },
+          testRegex: {}.undef,
+          moduleFileExtensions: {}.undef,
+          transform: {}.undef,
         }
       : {},
 
@@ -47,7 +45,7 @@ module.exports = packageConf => {
   );
 
   if (configs.includes('typescript')) {
-    packageConf.devDependencies['ts-jest'] = '^23.10.5';
+    delete packageConf.devDependencies['ts-jest'];
   }
 
   if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
@@ -59,7 +57,7 @@ module.exports = packageConf => {
             : []
           )
             .concat(['jest', 'coveralls'])
-            .concat(configs.includes('typescript') ? ['ts-jest'] : [])
+            .filter(packageName => packageName !== 'ts-jest')
         ),
       ],
     };
