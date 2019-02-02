@@ -1,3 +1,12 @@
+# [9.5.0](https://github.com/nfroidure/metapak-nfroidure/compare/v9.4.0...v9.5.0) (2019-02-02)
+
+
+### Features
+
+* **Typescript:** Update TypeScript config to latest changes ([683fab9](https://github.com/nfroidure/metapak-nfroidure/commit/683fab9))
+
+
+
 # [9.4.0](https://github.com/nfroidure/metapak-nfroidure/compare/v9.3.1...v9.4.0) (2019-01-27)
 
 
