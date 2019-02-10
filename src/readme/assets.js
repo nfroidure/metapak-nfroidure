@@ -43,17 +43,19 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
         file.data += `[![NPM version](https://badge.fury.io/js/${
           packageConf.name
         }.svg)](https://npmjs.org/package/${packageConf.name})\n`;
-        file.data += `[![Dependency Status](https://david-dm.org/${USERNAME}/${
-          packageConf.name
-        }.svg)](https://david-dm.org/${USERNAME}/${packageConf.name})\n`;
-        file.data += `[![devDependency Status](https://david-dm.org/${USERNAME}/${
-          packageConf.name
-        }/dev-status.svg)](https://david-dm.org/${USERNAME}/${
-          packageConf.name
-        }#info=devDependencies)\n`;
-        file.data += `[![Package Quality](http://npm.packagequality.com/shield/${
-          packageConf.name
-        }.svg)](http://packagequality.com/#?package=${packageConf.name})\n`;
+        if (!data.childPackage) {
+          file.data += `[![Dependency Status](https://david-dm.org/${USERNAME}/${
+            packageConf.name
+          }.svg)](https://david-dm.org/${USERNAME}/${packageConf.name})\n`;
+          file.data += `[![devDependency Status](https://david-dm.org/${USERNAME}/${
+            packageConf.name
+          }/dev-status.svg)](https://david-dm.org/${USERNAME}/${
+            packageConf.name
+          }#info=devDependencies)\n`;
+          file.data += `[![Package Quality](http://npm.packagequality.com/shield/${
+            packageConf.name
+          }.svg)](http://packagequality.com/#?package=${packageConf.name})\n`;
+        }
       }
       if (configs.includes('codeclimate')) {
         file.data += `[![Code Climate](https://codeclimate.com/github/${USERNAME}/${

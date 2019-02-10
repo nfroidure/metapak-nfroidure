@@ -45,7 +45,7 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "metapak": "^3.1.1"
+    "metapak": "^3.1.5"
   },
   "engines": {
     "node": ">=8.12.0"
@@ -62,7 +62,7 @@
     "eslint": "^5.13.0",
     "eslint-plugin-prettier": "^3.0.1",
     "jest": "^24.0.0",
-    "metapak": "^3.1.1",
+    "metapak": "^3.1.5",
     "prettier": "^1.16.3"
   },
   "config": {
@@ -72,11 +72,12 @@
   },
   "dependencies": {
     "escape-string-regexp": "^1.0.5",
-    "yerror": "^4.0.0"
+    "yerror": "^4.0.1"
   },
   "jest": {
     "coverageReporters": [
-      "lcov"
+      "lcov",
+      "html"
     ],
     "testPathIgnorePatterns": [
       "/node_modules/"
