@@ -1,3 +1,12 @@
+## [9.5.1](https://github.com/nfroidure/metapak-nfroidure/compare/v9.5.0...v9.5.1) (2019-02-10)
+
+
+### Bug Fixes
+
+* **Readme config:** Fix readme badges for child packages ([7971cc4](https://github.com/nfroidure/metapak-nfroidure/commit/7971cc4))
+
+
+
 # [9.5.0](https://github.com/nfroidure/metapak-nfroidure/compare/v9.4.0...v9.5.0) (2019-02-02)
 
 
