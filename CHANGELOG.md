@@ -1,3 +1,17 @@
+# [9.6.0](https://github.com/nfroidure/metapak-nfroidure/compare/v9.5.1...v9.6.0) (2019-02-24)
+
+
+### Bug Fixes
+
+* **Dependencies:** Update metapak ([4cc00d6](https://github.com/nfroidure/metapak-nfroidure/commit/4cc00d6))
+
+
+### Features
+
+* **Readme config:** Allow scoped packages ([9cbcd30](https://github.com/nfroidure/metapak-nfroidure/commit/9cbcd30))
+
+
+
 ## [9.5.1](https://github.com/nfroidure/metapak-nfroidure/compare/v9.5.0...v9.5.1) (2019-02-10)
 
 
