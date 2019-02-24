@@ -10,6 +10,10 @@ const README_REGEXP = /^(?:[^]*)\[\/\/\]: # \(::contents:start\)\r?\n\r?\n([^]*)
 
 module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
   const { configs, data } = getMetapakInfos(packageConf);
+  const ghPath = getGitHubPathFromModuleName(
+    packageConf.name,
+    data.childPackage
+  );
 
   // Simple README templating system
   if ('README.md' === file.name) {
@@ -23,9 +27,7 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
     // Badges
     if (!data.noBadge) {
       if (packageConf.license === 'MIT') {
-        file.data += `[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/${USERNAME}/${
-          packageConf.name
-        }/blob/master/LICENSE)\n`;
+        file.data += `[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/${USERNAME}${ghPath}/LICENSE)\n`;
       }
       if (configs.includes('travis')) {
         file.data += `[![Build status](https://secure.travis-ci.org/${USERNAME}/${
@@ -126,4 +128,15 @@ function _getAPIContents({ PROJECT_DIR, fs, log }) {
     log('debug', err.stack);
     return '';
   });
+}
+
+function getGitHubPathFromModuleName(packageName, childPackage = false) {
+  if (!packageName.startsWith('@')) {
+    return `/${packageName}/blob/master`;
+  }
+  const [scope, name] = packageName.slice(1).split('/');
+
+  return childPackage
+    ? `/${scope}/blob/master/packages/${scope}-${name}`
+    : `/${scope}-${name}/blob/master`;
 }

@@ -205,6 +205,116 @@ describe('Assets transformer for www configs', () => {
       .catch(done);
   });
 
+  it('should work with scoped packages', done => {
+    const fs = {
+      readFileAsync: jest.fn(),
+    };
+    const PROJECT_DIR = '/lol/';
+    const log = {
+      error: jest.fn(),
+    };
+
+    fs.readFileAsync.mockReturnValueOnce(
+      Promise.resolve(PROJECT_README_CONTENTS)
+    );
+    fs.readFileAsync.mockReturnValueOnce(Promise.resolve(PROJECT_API_CONTENTS));
+
+    assetsTransformer(
+      {
+        name: 'README.md',
+        data: ASSETS_README_CONTENTS,
+      },
+      {
+        name: '@scope/module',
+        description: 'A great module!',
+        metapak: {
+          configs: ['travis', 'codeclimate'],
+          data: {},
+        },
+        devDependencies: {
+          coveralls: '1.0.0',
+        },
+        author: {
+          name: 'Nicolas Froidure',
+          email: 'nicolas.froidure@insertafter.com',
+          url: 'http://insertafter.com/en/index.html',
+        },
+        contributors: [
+          {
+            name: 'John Doe',
+          },
+        ],
+        license: 'MIT',
+      },
+      {
+        PROJECT_DIR,
+        fs,
+        log,
+      }
+    )
+      .then(file => {
+        expect(file).toMatchSnapshot();
+      })
+      .then(done)
+      .catch(done);
+  });
+
+  it('should work with scoped packages inside a monorepo', done => {
+    const fs = {
+      readFileAsync: jest.fn(),
+    };
+    const PROJECT_DIR = '/lol/';
+    const log = {
+      error: jest.fn(),
+    };
+
+    fs.readFileAsync.mockReturnValueOnce(
+      Promise.resolve(PROJECT_README_CONTENTS)
+    );
+    fs.readFileAsync.mockReturnValueOnce(Promise.resolve(PROJECT_API_CONTENTS));
+
+    assetsTransformer(
+      {
+        name: 'README.md',
+        data: ASSETS_README_CONTENTS,
+      },
+      {
+        name: '@scope/module',
+        description: 'A great module!',
+        metapak: {
+          configs: ['travis', 'codeclimate'],
+          data: {
+            childPackage: true,
+          },
+        },
+        devDependencies: {
+          coveralls: '1.0.0',
+        },
+        author: {
+          name: 'Nicolas Froidure',
+          email: 'nicolas.froidure@insertafter.com',
+          url: 'http://insertafter.com/en/index.html',
+        },
+        contributors: [
+          {
+            name: 'John Doe',
+          },
+        ],
+        license: 'MIT',
+      },
+      {
+        PROJECT_DIR,
+        fs,
+        log,
+      }
+    )
+      .then(file => {
+        expect(file).toMatchSnapshot();
+      })
+      .then(done)
+      .catch(done);
+  });
+
   it('should let pass other files', () => {
     assert.deepEqual(
       assetsTransformer(
@@ -212,7 +322,9 @@ describe('Assets transformer for www configs', () => {
           name: 'YOLO',
           data: 'Carpe diem\n',
         },
-        {},
+        {
+          name: 'yolo',
+        },
         {}
       ),
       {
