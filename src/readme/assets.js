@@ -42,9 +42,9 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
         }?branch=master)\n`;
       }
       if (!data.rootPackage) {
-        file.data += `[![NPM version](https://badge.fury.io/js/${
+        file.data += `[![NPM version](https://badge.fury.io/js/${encodeURIComponent(
           packageConf.name
-        }.svg)](https://npmjs.org/package/${packageConf.name})\n`;
+        )}.svg)](https://npmjs.org/package/${packageConf.name})\n`;
         if (!data.childPackage) {
           file.data += `[![Dependency Status](https://david-dm.org/${USERNAME}/${
             packageConf.name
