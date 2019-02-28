@@ -95,9 +95,7 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
         .join('\n')}\n\n`;
       file.data += `# License\n[${
         packageConf.license
-      }](https://github.com/${USERNAME}/${
-        packageConf.name
-      }/blob/master/LICENSE)\n`;
+      }](https://github.com/${USERNAME}${ghPath}/LICENSE)\n`;
       return file;
     });
   }
