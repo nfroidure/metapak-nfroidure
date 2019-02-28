@@ -1,3 +1,12 @@
+## [9.6.2](https://github.com/nfroidure/metapak-nfroidure/compare/v9.6.1...v9.6.2) (2019-02-28)
+
+
+### Bug Fixes
+
+* **Readme config:** Fix license link for scoped modules ([696830d](https://github.com/nfroidure/metapak-nfroidure/commit/696830d))
+
+
+
 ## [9.6.1](https://github.com/nfroidure/metapak-nfroidure/compare/v9.6.0...v9.6.1) (2019-02-26)
 
 
