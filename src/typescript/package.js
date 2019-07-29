@@ -8,14 +8,12 @@ module.exports = packageConf => {
 
   // Add the dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.typescript = '^3.2.4';
+  packageConf.devDependencies.typescript = '^3.5.3';
 
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.types = data.rootPackage
     ? 'lerna run types'
-    : `tsc --declaration --emitDeclarationOnly ${
-        data.typesFiles
-      } || echo; npm run prettier -- ${data.typesDefs}`;
+    : `tsc --declaration --emitDeclarationOnly ${data.typesFiles} || echo; npm run prettier -- ${data.typesDefs}`;
 
   if (!data.rootPackage) {
     packageConf.types = data.typesDefs;

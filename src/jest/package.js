@@ -17,14 +17,14 @@ module.exports = packageConf => {
   packageConf.scripts.cover = `npm run jest -- --coverage`;
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jest = '^24.0.0';
+  packageConf.devDependencies.jest = '^24.8.0';
 
   // Add coveralls for independant packages
   if (!data.childPackage) {
     packageConf.scripts.coveralls =
       'npm run cover && cat ./coverage/lcov.info | coveralls' +
       ' && rm -rf ./coverage';
-    packageConf.devDependencies.coveralls = '^3.0.2';
+    packageConf.devDependencies.coveralls = '^3.0.5';
   }
   packageConf.jest = Object.assign(
     {

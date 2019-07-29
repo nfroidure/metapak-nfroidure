@@ -17,9 +17,7 @@ module.exports = packageConf => {
     if (configs.indexOf('babel') > configs.indexOf('mocha')) {
       throw new YError('E_BAD_CONFIG_ORDER', 'babel', 'mocha');
     }
-    packageConf.scripts.mocha = `mocha --require '@babel/register' ${
-      data.testsFiles
-    }`;
+    packageConf.scripts.mocha = `mocha --require '@babel/register' ${data.testsFiles}`;
   } else {
     packageConf.scripts.mocha = `mocha ${data.testsFiles}`;
   }
@@ -31,8 +29,8 @@ module.exports = packageConf => {
     'nyc npm test && nyc report --reporter=html --reporter=text';
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.mocha = '^5.2.0';
-  packageConf.devDependencies.nyc = '^13.1.0';
+  packageConf.devDependencies.mocha = '^6.2.0';
+  packageConf.devDependencies.nyc = '^14.1.1';
 
   // Ignore test files
   packageConf.nyc = packageConf.nyc || {
@@ -43,7 +41,7 @@ module.exports = packageConf => {
   if (!data.childPackage) {
     packageConf.scripts.coveralls =
       'nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf ./coverage';
-    packageConf.devDependencies.coveralls = '^3.0.2';
+    packageConf.devDependencies.coveralls = '^3.0.5';
   }
 
   delete packageConf.devDependencies['mocha-lcov-reporter'];

@@ -30,41 +30,23 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
         file.data += `[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/${USERNAME}${ghPath}/LICENSE)\n`;
       }
       if (configs.includes('travis')) {
-        file.data += `[![Build status](https://secure.travis-ci.org/${USERNAME}/${
-          packageConf.name
-        }.svg)](https://travis-ci.org/${USERNAME}/${packageConf.name})\n`;
+        file.data += `[![Build status](https://secure.travis-ci.org/${USERNAME}/${packageConf.name}.svg)](https://travis-ci.org/${USERNAME}/${packageConf.name})\n`;
       }
       if (packageConf.devDependencies.coveralls) {
-        file.data += `[![Coverage Status](https://coveralls.io/repos/${USERNAME}/${
-          packageConf.name
-        }/badge.svg?branch=master)](https://coveralls.io/r/${USERNAME}/${
-          packageConf.name
-        }?branch=master)\n`;
+        file.data += `[![Coverage Status](https://coveralls.io/repos/${USERNAME}/${packageConf.name}/badge.svg?branch=master)](https://coveralls.io/r/${USERNAME}/${packageConf.name}?branch=master)\n`;
       }
       if (!data.rootPackage) {
         file.data += `[![NPM version](https://badge.fury.io/js/${encodeURIComponent(
           packageConf.name
         )}.svg)](https://npmjs.org/package/${packageConf.name})\n`;
         if (!data.childPackage) {
-          file.data += `[![Dependency Status](https://david-dm.org/${USERNAME}/${
-            packageConf.name
-          }.svg)](https://david-dm.org/${USERNAME}/${packageConf.name})\n`;
-          file.data += `[![devDependency Status](https://david-dm.org/${USERNAME}/${
-            packageConf.name
-          }/dev-status.svg)](https://david-dm.org/${USERNAME}/${
-            packageConf.name
-          }#info=devDependencies)\n`;
-          file.data += `[![Package Quality](http://npm.packagequality.com/shield/${
-            packageConf.name
-          }.svg)](http://packagequality.com/#?package=${packageConf.name})\n`;
+          file.data += `[![Dependency Status](https://david-dm.org/${USERNAME}/${packageConf.name}.svg)](https://david-dm.org/${USERNAME}/${packageConf.name})\n`;
+          file.data += `[![devDependency Status](https://david-dm.org/${USERNAME}/${packageConf.name}/dev-status.svg)](https://david-dm.org/${USERNAME}/${packageConf.name}#info=devDependencies)\n`;
+          file.data += `[![Package Quality](http://npm.packagequality.com/shield/${packageConf.name}.svg)](http://packagequality.com/#?package=${packageConf.name})\n`;
         }
       }
       if (configs.includes('codeclimate')) {
-        file.data += `[![Code Climate](https://codeclimate.com/github/${USERNAME}/${
-          packageConf.name
-        }.svg)](https://codeclimate.com/github/${USERNAME}/${
-          packageConf.name
-        })\n`;
+        file.data += `[![Code Climate](https://codeclimate.com/github/${USERNAME}/${packageConf.name}.svg)](https://codeclimate.com/github/${USERNAME}/${packageConf.name})\n`;
       }
     }
 
@@ -93,9 +75,7 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
             }`
         )
         .join('\n')}\n\n`;
-      file.data += `# License\n[${
-        packageConf.license
-      }](https://github.com/${USERNAME}${ghPath}/LICENSE)\n`;
+      file.data += `# License\n[${packageConf.license}](https://github.com/${USERNAME}${ghPath}/LICENSE)\n`;
       return file;
     });
   }
