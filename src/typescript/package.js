@@ -13,7 +13,7 @@ module.exports = packageConf => {
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.types = data.rootPackage
     ? 'lerna run types'
-    : `tsc --declaration --emitDeclarationOnly ${data.typesFiles} || echo; npm run prettier -- ${data.typesDefs}`;
+    : `tsc --declaration --emitDeclarationOnly --project '.tsconfig.json' ${data.typesFiles}; npm run prettier -- ${data.typesDefs}`;
 
   if (!data.rootPackage) {
     packageConf.types = data.typesDefs;

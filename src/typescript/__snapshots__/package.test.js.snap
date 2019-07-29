@@ -22,7 +22,7 @@ Object {
   "scripts": Object {
     "precz": "npm run types",
     "preversion": "npm run types",
-    "types": "tsc --declaration --emitDeclarationOnly index.ts || echo; npm run prettier -- index.d.ts",
+    "types": "tsc --declaration --emitDeclarationOnly --project '.tsconfig.json' index.ts; npm run prettier -- index.d.ts",
   },
   "types": "index.d.ts",
 }
