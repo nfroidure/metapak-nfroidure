@@ -1,3 +1,12 @@
+## [9.6.4](https://github.com/nfroidure/metapak-nfroidure/compare/v9.6.3...v9.6.4) (2019-07-29)
+
+
+### Bug Fixes
+
+* **typescript:** fix types generation with the right config ([ee0cf74](https://github.com/nfroidure/metapak-nfroidure/commit/ee0cf74))
+
+
+
 ## [9.6.3](https://github.com/nfroidure/metapak-nfroidure/compare/v9.6.2...v9.6.3) (2019-07-29)
 
 
