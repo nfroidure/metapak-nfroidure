@@ -102,7 +102,7 @@ module.exports = packageConf => {
   packageConf.devDependencies['@babel/cli'] = '^7.7.4';
   packageConf.devDependencies['@babel/core'] = '^7.7.4';
   packageConf.devDependencies['@babel/register'] = '^7.7.4';
-  packageConf.devDependencies['@babel/preset-env'] = '^7.5.5';
+  packageConf.devDependencies['@babel/preset-env'] = '^7.7.4';
   packageConf.devDependencies['@babel/plugin-proposal-object-rest-spread'] =
     '^7.7.4';
 
@@ -154,9 +154,9 @@ module.exports = packageConf => {
         ...packageConf.babel.plugins,
       ]),
     ];
-    packageConf.devDependencies['@babel/preset-typescript'] = '^7.3.3';
+    packageConf.devDependencies['@babel/preset-typescript'] = '^7.7.4';
     packageConf.devDependencies['@babel/plugin-proposal-class-properties'] =
-      '^7.5.5';
+      '^7.7.4';
   }
 
   if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
