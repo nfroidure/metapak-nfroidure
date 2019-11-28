@@ -3,7 +3,7 @@
 exports[`private Package transformer should work 1`] = `
 Object {
   "devDependencies": Object {
-    "typescript": "^3.5.3",
+    "typescript": "^3.7.2",
   },
   "greenkeeper": Object {
     "ignore": Array [

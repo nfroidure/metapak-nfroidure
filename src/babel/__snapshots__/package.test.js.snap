@@ -18,11 +18,11 @@ Object {
     ],
   },
   "devDependencies": Object {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
     "@babel/preset-env": "^7.5.5",
-    "@babel/register": "^7.5.5",
+    "@babel/register": "^7.7.4",
   },
   "metapak": Object {
     "data": Object {
@@ -58,12 +58,12 @@ Object {
     ],
   },
   "devDependencies": Object {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
     "@babel/preset-env": "^7.5.5",
-    "@babel/register": "^7.5.5",
-    "babel-eslint": "^10.0.2",
+    "@babel/register": "^7.7.4",
+    "babel-eslint": "^10.0.3",
   },
   "eslintConfig": Object {
     "env": Object {
@@ -140,11 +140,11 @@ Object {
     ],
   },
   "devDependencies": Object {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
     "@babel/preset-env": "^7.5.5",
-    "@babel/register": "^7.5.5",
+    "@babel/register": "^7.7.4",
   },
   "greenkeeper": Object {
     "ignore": Array [
@@ -194,11 +194,11 @@ Object {
     ],
   },
   "devDependencies": Object {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
     "@babel/preset-env": "^7.5.5",
-    "@babel/register": "^7.5.5",
+    "@babel/register": "^7.7.4",
   },
   "greenkeeper": Object {
     "ignore": Array [
@@ -247,11 +247,11 @@ Object {
     ],
   },
   "devDependencies": Object {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
     "@babel/preset-env": "^7.5.5",
-    "@babel/register": "^7.5.5",
+    "@babel/register": "^7.7.4",
   },
   "greenkeeper": Object {
     "ignore": Array [

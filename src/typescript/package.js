@@ -8,7 +8,7 @@ module.exports = packageConf => {
 
   // Add the dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.typescript = '^3.5.3';
+  packageConf.devDependencies.typescript = '^3.7.2';
 
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.types = data.rootPackage
