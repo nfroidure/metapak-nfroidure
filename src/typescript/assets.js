@@ -6,16 +6,24 @@ module.exports = (file, packageConf) => {
   // Set types in ts config
   if ('tsconfig.json' === file.name) {
     const { data } = getMetapakInfos(packageConf);
-    if (data.types) {
-      file.data = JSON.stringify(
-        Object.assign({}, JSON.parse(file.data), {
-          types: data.types,
-        }),
-        null,
-        2
-      );
-    }
-  }
+    let contents = JSON.parse(file.data);
 
+    if (data.types) {
+      contents = Object.assign({}, contents, {
+        ...contents,
+        compilerOptions: {
+          ...(contents.compilerOptions || {}),
+          types: data.types,
+        },
+      });
+    }
+
+    if (data.typesFiles) {
+      contents = Object.assign({}, contents, {
+        include: [data.typesFiles],
+      });
+    }
+    file.data = JSON.stringify(contents, null, 2);
+  }
   return file;
 };

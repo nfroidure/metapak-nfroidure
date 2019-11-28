@@ -1,5 +1,6 @@
 'use strict';
 
+const YError = require('yerror');
 const { ensureScript, getMetapakInfos } = require('../lib.js');
 const TYPES_COMMAND = 'npm run types';
 
@@ -13,10 +14,10 @@ module.exports = packageConf => {
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.types = data.rootPackage
     ? 'lerna run types'
-    : `rm ${data.typesDefs} && tsc --project=. --declaration --emitDeclarationOnly ${data.typesFiles}; npm run prettier -- ${data.typesDefs}`;
+    : `rm ${data.typesDefs}; tsc --project . --declaration --emitDeclarationOnly; npm run prettier -- ${data.typesDefs}`;
 
-  if (!data.rootPackage) {
-    packageConf.types = data.typesDefs;
+  if (!data.rootPackage && !packageConf.types) {
+    throw new YError('E_TYPES_NOT_DECLARED');
   }
   if (!data.childPackage) {
     packageConf.scripts.precz = ensureScript(
@@ -29,11 +30,11 @@ module.exports = packageConf => {
     );
   }
 
-  // Set type to the bundle files
+  // Set main type definitions to the bundle files
   packageConf.metapak = Object.assign({}, packageConf.metapak || {}, {
     data: Object.assign({}, data, {
       bundleFiles: [
-        ...new Set((data.bundleFiles || []).concat([data.typesDefs])),
+        ...new Set((data.bundleFiles || []).concat([packageConf.types])),
       ],
     }),
   });

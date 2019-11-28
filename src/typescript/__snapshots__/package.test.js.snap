@@ -15,14 +15,14 @@ Object {
       "bundleFiles": Array [
         "index.d.ts",
       ],
-      "typesDefs": "index.d.ts",
+      "typesDefs": "*.d.ts",
       "typesFiles": "index.ts",
     },
   },
   "scripts": Object {
     "precz": "npm run types",
     "preversion": "npm run types",
-    "types": "rm index.d.ts && tsc --project=. --declaration --emitDeclarationOnly index.ts; npm run prettier -- index.d.ts",
+    "types": "rm *.d.ts; tsc --project . --declaration --emitDeclarationOnly; npm run prettier -- *.d.ts",
   },
   "types": "index.d.ts",
 }

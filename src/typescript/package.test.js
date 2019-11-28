@@ -7,10 +7,11 @@ describe('private', () => {
     it('should work', () => {
       expect(
         packageTransformer({
+          types: 'index.d.ts',
           metapak: {
             data: {
               typesFiles: 'index.ts',
-              typesDefs: 'index.d.ts',
+              typesDefs: '*.d.ts',
             },
           },
         })
