@@ -1,3 +1,12 @@
+## [9.7.3](https://github.com/nfroidure/metapak-nfroidure/compare/v9.7.2...v9.7.3) (2019-11-28)
+
+
+### Bug Fixes
+
+* **typescript config:** fix TypeScript config ([003481f](https://github.com/nfroidure/metapak-nfroidure/commit/003481f78a074b8ffa72509294a68943e85b659b))
+
+
+
 ## [9.7.2](https://github.com/nfroidure/metapak-nfroidure/compare/v9.7.1...v9.7.2) (2019-11-28)
 
 
