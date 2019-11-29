@@ -103,3 +103,75 @@ Object {
   },
 }
 `;
+
+exports[`eslint Package transformer should work with typescript configs 1`] = `
+Object {
+  "devDependencies": Object {
+    "@typescript-eslint/parser": "^2.9.0",
+    "eslint": "^6.7.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.19.1",
+  },
+  "eslintConfig": Object {
+    "env": Object {
+      "es6": true,
+      "jest": true,
+      "mocha": true,
+      "node": true,
+    },
+    "extends": Array [
+      "eslint:recommended",
+    ],
+    "ignorePatterns": Array [
+      "*.d.ts",
+    ],
+    "overrides": Array [
+      Object {
+        "files": Array [
+          "*.ts",
+        ],
+        "rules": Object {
+          "no-unused-vars": Array [
+            1,
+            Object {
+              "args": "none",
+            },
+          ],
+        },
+      },
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": Object {
+      "ecmaVersion": 2018,
+      "modules": true,
+      "sourceType": "script",
+    },
+    "plugins": Array [
+      "prettier",
+    ],
+    "rules": Object {
+      "prettier/prettier": "error",
+    },
+  },
+  "metapak": Object {
+    "configs": Array [
+      "typescript",
+    ],
+    "data": Object {
+      "childPackage": true,
+      "files": "src/*.js src/**/*.js",
+    },
+  },
+  "prettier": Object {
+    "printWidth": 80,
+    "proseWrap": "always",
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5",
+  },
+  "scripts": Object {
+    "lint": "eslint src/*.js src/**/*.js",
+    "prettier": "prettier --write src/*.js src/**/*.js",
+  },
+}
+`;

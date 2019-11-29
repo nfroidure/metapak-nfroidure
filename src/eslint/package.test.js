@@ -28,5 +28,19 @@ describe('eslint', () => {
         })
       ).toMatchSnapshot();
     });
+
+    it('should work with typescript configs', () => {
+      expect(
+        packageTransformer({
+          metapak: {
+            data: {
+              childPackage: true,
+              files: 'src/*.js src/**/*.js',
+            },
+            configs: ['typescript'],
+          },
+        })
+      ).toMatchSnapshot();
+    });
   });
 });
