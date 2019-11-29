@@ -1,3 +1,12 @@
+## [9.7.4](https://github.com/nfroidure/metapak-nfroidure/compare/v9.7.3...v9.7.4) (2019-11-29)
+
+
+### Bug Fixes
+
+* **eslint config:** fix Eslint with TypeScript nesting ([9335398](https://github.com/nfroidure/metapak-nfroidure/commit/93353980129cf68c9f0080fc3c14927eecf2b58b))
+
+
+
 ## [9.7.3](https://github.com/nfroidure/metapak-nfroidure/compare/v9.7.2...v9.7.3) (2019-11-28)
 
 
