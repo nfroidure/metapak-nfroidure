@@ -36,7 +36,7 @@ module.exports = packageConf => {
   packageConf.engines = { node: '>=' + config.lastNodeLTS };
 
   // Only add necessar files
-  packageConf.files = (data.bundleFiles || ['src/**/*.js']).concat(
+  packageConf.files = (data.bundleFiles || ['src']).concat(
     'LICENSE',
     'README.md',
     'CHANGELOG.md'

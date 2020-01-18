@@ -12,7 +12,7 @@ Object {
     "node": ">=8.12.0",
   },
   "files": Array [
-    "src/**/*.js",
+    "src",
     "LICENSE",
     "README.md",
     "CHANGELOG.md",
@@ -44,7 +44,7 @@ Object {
     "node": ">=8.12.0",
   },
   "files": Array [
-    "src/**/*.js",
+    "src",
     "LICENSE",
     "README.md",
     "CHANGELOG.md",
@@ -86,7 +86,7 @@ Object {
     "node": ">=8.12.0",
   },
   "files": Array [
-    "src/**/*.js",
+    "src",
     "LICENSE",
     "README.md",
     "CHANGELOG.md",
@@ -140,7 +140,7 @@ Object {
     "node": ">=8.12.0",
   },
   "files": Array [
-    "src/**/*.js",
+    "src",
     "LICENSE",
     "README.md",
     "CHANGELOG.md",

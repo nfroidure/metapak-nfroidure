@@ -1,8 +1,8 @@
 'use strict';
 
+const { ensureScript, getMetapakInfos } = require('../lib.js');
 const YError = require('yerror');
 const config = require('../config.js');
-const { getMetapakInfos } = require('../lib.js');
 const COMPILE_COMMAND = 'npm run compile';
 const DEFAULT_BABEL_CONFIG = {
   presets: [
@@ -56,7 +56,7 @@ module.exports = packageConf => {
   packageConf.metapak = Object.assign({}, packageConf.metapak || {}, {
     data: Object.assign({}, data, {
       bundleFiles: [
-        ...new Set((data.bundleFiles || []).concat(['dist/**/*.js'])),
+        ...new Set((data.bundleFiles || []).concat(['dist', 'src'])),
       ],
     }),
   });
@@ -66,16 +66,18 @@ module.exports = packageConf => {
   packageConf.scripts.compile = data.rootPackage
     ? 'lerna run compile'
     : configs.includes('typescript')
-    ? "babel --extensions '.ts,.js' src --out-dir=dist"
+    ? "babel --extensions '.ts,.js' src --out-dir=dist --source-maps=true"
     : 'babel src --out-dir=dist';
 
   // We have to compile with Babel before pushing a version
-  packageConf.scripts.preversion = packageConf.scripts.preversion || '';
-  packageConf.scripts.preversion = packageConf.scripts.preversion.includes(
+  packageConf.scripts.precz = ensureScript(
+    packageConf.scripts.precz,
     COMPILE_COMMAND
-  )
-    ? packageConf.scripts.preversion
-    : packageConf.scripts.preversion + ' && ' + COMPILE_COMMAND;
+  );
+  packageConf.scripts.preversion = ensureScript(
+    packageConf.scripts.preversion,
+    COMPILE_COMMAND
+  );
 
   packageConf.devDependencies = packageConf.devDependencies || {};
   delete packageConf.devDependencies[

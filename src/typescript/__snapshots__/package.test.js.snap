@@ -11,18 +11,12 @@ Object {
     ],
   },
   "metapak": Object {
-    "data": Object {
-      "bundleFiles": Array [
-        "index.d.ts",
-      ],
-      "typesDefs": "*.d.ts",
-      "typesFiles": "index.ts",
-    },
+    "data": Object {},
   },
   "scripts": Object {
     "precz": "npm run types",
     "preversion": "npm run types",
-    "types": "rm *.d.ts; tsc --project . --declaration --emitDeclarationOnly; npm run prettier -- *.d.ts",
+    "types": "rimraf -f 'dist/**/*.d.ts' && tsc --project . --declaration --emitDeclarationOnly --outDir dist",
   },
   "types": "index.d.ts",
 }

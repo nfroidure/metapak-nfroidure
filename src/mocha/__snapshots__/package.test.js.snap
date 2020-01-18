@@ -32,7 +32,7 @@ Object {
     "cover": "nyc npm test && nyc report --reporter=html --reporter=text",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf ./coverage",
     "mocha": "mocha --require '@babel/register' src/*.js src/**/*.js",
-    "test": " && npm run mocha",
+    "test": "npm run mocha",
   },
 }
 `;
@@ -68,7 +68,7 @@ Object {
     "cover": "nyc npm test && nyc report --reporter=html --reporter=text",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf ./coverage",
     "mocha": "mocha src/*.js src/**/*.js",
-    "test": " && npm run mocha",
+    "test": "npm run mocha",
   },
 }
 `;

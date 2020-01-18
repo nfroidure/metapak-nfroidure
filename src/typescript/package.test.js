@@ -9,10 +9,7 @@ describe('private', () => {
         packageTransformer({
           types: 'index.d.ts',
           metapak: {
-            data: {
-              typesFiles: 'index.ts',
-              typesDefs: '*.d.ts',
-            },
+            data: {},
           },
         })
       ).toMatchSnapshot();

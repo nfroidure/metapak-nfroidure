@@ -27,7 +27,8 @@ Object {
   "metapak": Object {
     "data": Object {
       "bundleFiles": Array [
-        "dist/**/*.js",
+        "dist",
+        "src",
       ],
       "childPackage": true,
       "files": "src/*.js src/**/*.js",
@@ -35,7 +36,8 @@ Object {
   },
   "scripts": Object {
     "compile": "babel src --out-dir=dist",
-    "preversion": " && npm run compile",
+    "precz": "npm run compile",
+    "preversion": "npm run compile",
   },
 }
 `;
@@ -102,7 +104,8 @@ Object {
     ],
     "data": Object {
       "bundleFiles": Array [
-        "dist/**/*.js",
+        "dist",
+        "src",
       ],
       "testsFiles": "src/*.js src/**/*.js",
     },
@@ -116,7 +119,8 @@ Object {
   },
   "scripts": Object {
     "compile": "babel src --out-dir=dist",
-    "preversion": " && npm run compile",
+    "precz": "npm run compile",
+    "preversion": "npm run compile",
     "test": "",
   },
 }
@@ -163,14 +167,16 @@ Object {
     ],
     "data": Object {
       "bundleFiles": Array [
-        "dist/**/*.js",
+        "dist",
+        "src",
       ],
       "testsFiles": "src/*.js src/**/*.js",
     },
   },
   "scripts": Object {
     "compile": "babel src --out-dir=dist",
-    "preversion": " && npm run compile",
+    "precz": "npm run compile",
+    "preversion": "npm run compile",
     "test": "",
   },
 }
@@ -216,14 +222,16 @@ Object {
     ],
     "data": Object {
       "bundleFiles": Array [
-        "dist/**/*.js",
+        "dist",
+        "src",
       ],
       "testsFiles": "src/*.js src/**/*.js",
     },
   },
   "scripts": Object {
     "compile": "babel src --out-dir=dist",
-    "preversion": " && npm run compile",
+    "precz": "npm run compile",
+    "preversion": "npm run compile",
     "test": "",
   },
 }
@@ -273,13 +281,16 @@ Object {
         "README.md",
         "CHANGELOG.md",
         "dist/**/*.js",
+        "dist",
+        "src",
       ],
       "testsFiles": "src/*.js src/**/*.js",
     },
   },
   "scripts": Object {
     "compile": "babel src --out-dir=dist",
-    "preversion": " && npm run compile",
+    "precz": "npm run compile",
+    "preversion": "npm run compile",
     "test": "",
   },
 }

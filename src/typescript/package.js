@@ -14,7 +14,7 @@ module.exports = packageConf => {
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.types = data.rootPackage
     ? 'lerna run types'
-    : `rm ${data.typesDefs}; tsc --project . --declaration --emitDeclarationOnly; npm run prettier -- ${data.typesDefs}`;
+    : "rimraf -f 'dist/**/*.d.ts' && tsc --project . --declaration --emitDeclarationOnly --outDir dist";
 
   if (!data.rootPackage && !packageConf.types) {
     throw new YError('E_TYPES_NOT_DECLARED');
@@ -29,15 +29,6 @@ module.exports = packageConf => {
       TYPES_COMMAND
     );
   }
-
-  // Set main type definitions to the bundle files
-  packageConf.metapak = Object.assign({}, packageConf.metapak || {}, {
-    data: Object.assign({}, data, {
-      bundleFiles: [
-        ...new Set((data.bundleFiles || []).concat([packageConf.types])),
-      ],
-    }),
-  });
 
   // Avoid GreenKeeper to update automatically added modules
   if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {

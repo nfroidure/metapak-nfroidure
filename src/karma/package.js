@@ -1,7 +1,7 @@
 'use strict';
 
+const { ensureScript, getMetapakInfos } = require('../lib.js');
 const YError = require('yerror');
-const { getMetapakInfos } = require('../lib.js');
 
 const KARMA_COMMAND = 'npm run karma';
 
@@ -32,9 +32,10 @@ module.exports = packageConf => {
   packageConf.scripts = packageConf.scripts || {};
   if (data.testsFiles) {
     packageConf.scripts.karma = 'karma start karma.conf.js';
-    packageConf.scripts.test = packageConf.scripts.test.includes(KARMA_COMMAND)
-      ? packageConf.scripts.test
-      : packageConf.scripts.test + ' && ' + KARMA_COMMAND;
+    packageConf.scripts.test = ensureScript(
+      packageConf.scripts.test,
+      KARMA_COMMAND
+    );
   }
 
   // Declaring added package to green keeper

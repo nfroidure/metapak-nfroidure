@@ -1,7 +1,7 @@
 'use strict';
 
 const YError = require('yerror');
-const { getMetapakInfos } = require('../lib.js');
+const { ensureScript, getMetapakInfos } = require('../lib.js');
 
 const MOCHA_COMMAND = 'npm run mocha';
 
@@ -22,9 +22,10 @@ module.exports = packageConf => {
     packageConf.scripts.mocha = `mocha ${data.testsFiles}`;
   }
 
-  packageConf.scripts.test = packageConf.scripts.test.includes(MOCHA_COMMAND)
-    ? packageConf.scripts.test
-    : packageConf.scripts.test + ' && ' + MOCHA_COMMAND;
+  packageConf.scripts.test = ensureScript(
+    packageConf.scripts.test,
+    MOCHA_COMMAND
+  );
   packageConf.scripts.cover =
     'nyc npm test && nyc report --reporter=html --reporter=text';
 
