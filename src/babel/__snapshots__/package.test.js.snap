@@ -35,7 +35,7 @@ Object {
     },
   },
   "scripts": Object {
-    "compile": "babel src --out-dir=dist",
+    "compile": "babel src --out-dir=dist --source-maps=true",
     "precz": "npm run compile",
     "preversion": "npm run compile",
   },
@@ -118,7 +118,7 @@ Object {
     "trailingComma": "all",
   },
   "scripts": Object {
-    "compile": "babel src --out-dir=dist",
+    "compile": "babel src --out-dir=dist --source-maps=true",
     "precz": "npm run compile",
     "preversion": "npm run compile",
     "test": "",
@@ -174,7 +174,7 @@ Object {
     },
   },
   "scripts": Object {
-    "compile": "babel src --out-dir=dist",
+    "compile": "babel src --out-dir=dist --source-maps=true",
     "precz": "npm run compile",
     "preversion": "npm run compile",
     "test": "",
@@ -229,7 +229,7 @@ Object {
     },
   },
   "scripts": Object {
-    "compile": "babel src --out-dir=dist",
+    "compile": "babel src --out-dir=dist --source-maps=true",
     "precz": "npm run compile",
     "preversion": "npm run compile",
     "test": "",
@@ -288,7 +288,7 @@ Object {
     },
   },
   "scripts": Object {
-    "compile": "babel src --out-dir=dist",
+    "compile": "babel src --out-dir=dist --source-maps=true",
     "precz": "npm run compile",
     "preversion": "npm run compile",
     "test": "",

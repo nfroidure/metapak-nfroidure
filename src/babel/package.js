@@ -65,10 +65,9 @@ module.exports = packageConf => {
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.compile = data.rootPackage
     ? 'lerna run compile'
-    : configs.includes('typescript')
-    ? "babel --extensions '.ts,.js' src --out-dir=dist --source-maps=true"
-    : 'babel src --out-dir=dist';
-
+    : `babel${
+        configs.includes('typescript') ? ` --extensions '.ts,.js'` : ''
+      } src --out-dir=dist --source-maps=true`;
   // We have to compile with Babel before pushing a version
   packageConf.scripts.precz = ensureScript(
     packageConf.scripts.precz,
