@@ -1,3 +1,7 @@
+## [9.8.1](https://github.com/nfroidure/metapak-nfroidure/compare/v9.8.0...v9.8.1) (2020-01-19)
+
+
+
 # [9.8.0](https://github.com/nfroidure/metapak-nfroidure/compare/v9.7.4...v9.8.0) (2020-01-19)
 
 
