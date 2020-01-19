@@ -30,8 +30,8 @@ module.exports = packageConf => {
     'nyc npm test && nyc report --reporter=html --reporter=text';
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.mocha = '^6.2.0';
-  packageConf.devDependencies.nyc = '^14.1.1';
+  packageConf.devDependencies.mocha = '^7.0.0';
+  packageConf.devDependencies.nyc = '^15.0.0';
 
   // Ignore test files
   packageConf.nyc = packageConf.nyc || {
@@ -42,7 +42,7 @@ module.exports = packageConf => {
   if (!data.childPackage) {
     packageConf.scripts.coveralls =
       'nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf ./coverage';
-    packageConf.devDependencies.coveralls = '^3.0.5';
+    packageConf.devDependencies.coveralls = '^3.0.9';
   }
 
   delete packageConf.devDependencies['mocha-lcov-reporter'];

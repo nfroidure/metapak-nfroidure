@@ -3,8 +3,8 @@
 exports[`eslint Package transformer should work with child packages 1`] = `
 Object {
   "devDependencies": Object {
-    "eslint": "^6.7.1",
-    "eslint-plugin-prettier": "^3.1.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-prettier": "^3.1.2",
     "prettier": "^1.19.1",
   },
   "eslintConfig": Object {
@@ -52,8 +52,8 @@ Object {
 exports[`eslint Package transformer should work with some files 1`] = `
 Object {
   "devDependencies": Object {
-    "eslint": "^6.7.1",
-    "eslint-plugin-prettier": "^3.1.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-prettier": "^3.1.2",
     "prettier": "^1.19.1",
   },
   "eslintConfig": Object {
@@ -107,9 +107,10 @@ Object {
 exports[`eslint Package transformer should work with typescript configs 1`] = `
 Object {
   "devDependencies": Object {
-    "@typescript-eslint/parser": "^2.9.0",
-    "eslint": "^6.7.1",
-    "eslint-plugin-prettier": "^3.1.1",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-prettier": "^3.1.2",
     "prettier": "^1.19.1",
   },
   "eslintConfig": Object {

@@ -79,7 +79,7 @@ Object {
   "contributors": Array [],
   "devDependencies": Object {
     "commitizen": "^4.0.3",
-    "conventional-changelog-cli": "^2.0.28",
+    "conventional-changelog-cli": "^2.0.31",
     "cz-conventional-changelog": "^3.0.2",
   },
   "engines": Object {
@@ -133,7 +133,7 @@ Object {
   "contributors": Array [],
   "devDependencies": Object {
     "commitizen": "^4.0.3",
-    "conventional-changelog-cli": "^2.0.28",
+    "conventional-changelog-cli": "^2.0.31",
     "cz-conventional-changelog": "^3.0.2",
   },
   "engines": Object {
