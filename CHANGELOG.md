@@ -1,3 +1,12 @@
+## [9.8.2](https://github.com/nfroidure/metapak-nfroidure/compare/v9.8.1...v9.8.2) (2020-01-31)
+
+
+### Bug Fixes
+
+* **typescript config:** add rimraf dependency to the typescript config ([0cac71c](https://github.com/nfroidure/metapak-nfroidure/commit/0cac71c72349e4a2e6905ce7a7490b41cddb7c4b))
+
+
+
 ## [9.8.1](https://github.com/nfroidure/metapak-nfroidure/compare/v9.8.0...v9.8.1) (2020-01-19)
 
 
