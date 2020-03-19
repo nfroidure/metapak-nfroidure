@@ -49,8 +49,8 @@ module.exports = packageConf => {
 
   // Special configuration for TypeScript
   if (configs.includes('typescript')) {
-    packageConf.devDependencies['@typescript-eslint/eslint-plugin'] = '^2.16.0';
-    packageConf.devDependencies['@typescript-eslint/parser'] = '^2.16.0';
+    packageConf.devDependencies['@typescript-eslint/eslint-plugin'] = '^2.24.0';
+    packageConf.devDependencies['@typescript-eslint/parser'] = '^2.24.0';
     packageConf.eslintConfig.parser = '@typescript-eslint/parser';
     packageConf.eslintConfig.ignorePatterns = ['*.d.ts'];
     packageConf.eslintConfig.overrides = [

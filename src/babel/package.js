@@ -100,10 +100,10 @@ module.exports = packageConf => {
     delete packageConf.devDependencies['babel-core'];
   }
 
-  packageConf.devDependencies['@babel/cli'] = '^7.8.3';
-  packageConf.devDependencies['@babel/core'] = '^7.8.3';
-  packageConf.devDependencies['@babel/register'] = '^7.8.3';
-  packageConf.devDependencies['@babel/preset-env'] = '^7.8.3';
+  packageConf.devDependencies['@babel/cli'] = '^7.8.4';
+  packageConf.devDependencies['@babel/core'] = '^7.8.7';
+  packageConf.devDependencies['@babel/register'] = '^7.8.6';
+  packageConf.devDependencies['@babel/preset-env'] = '^7.8.7';
   packageConf.devDependencies['@babel/plugin-proposal-object-rest-spread'] =
     '^7.8.3';
 
@@ -112,7 +112,7 @@ module.exports = packageConf => {
     if (configs.indexOf('eslint') > configs.indexOf('babel')) {
       throw new YError('E_BAD_CONFIG_ORDER', 'babel', 'eslint');
     }
-    packageConf.devDependencies['babel-eslint'] = '^10.0.3';
+    packageConf.devDependencies['babel-eslint'] = '^10.1.0';
     packageConf.eslintConfig = Object.assign(
       {},
       packageConf.eslintConfig || {},

@@ -42,7 +42,7 @@ module.exports = packageConf => {
   if (!data.childPackage) {
     packageConf.scripts.coveralls =
       'nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf ./coverage';
-    packageConf.devDependencies.coveralls = '^3.0.9';
+    packageConf.devDependencies.coveralls = '^3.0.11';
   }
 
   delete packageConf.devDependencies['mocha-lcov-reporter'];

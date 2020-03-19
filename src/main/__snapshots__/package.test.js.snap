@@ -80,7 +80,7 @@ Object {
   "devDependencies": Object {
     "commitizen": "^4.0.3",
     "conventional-changelog-cli": "^2.0.31",
-    "cz-conventional-changelog": "^3.0.2",
+    "cz-conventional-changelog": "^3.1.0",
   },
   "engines": Object {
     "node": ">=10.19.0",
@@ -134,7 +134,7 @@ Object {
   "devDependencies": Object {
     "commitizen": "^4.0.3",
     "conventional-changelog-cli": "^2.0.31",
-    "cz-conventional-changelog": "^3.0.2",
+    "cz-conventional-changelog": "^3.1.0",
   },
   "engines": Object {
     "node": ">=10.19.0",
