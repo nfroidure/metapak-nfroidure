@@ -9,7 +9,7 @@ Object {
   },
   "contributors": Array [],
   "engines": Object {
-    "node": ">=8.12.0",
+    "node": ">=10.19.0",
   },
   "files": Array [
     "src",
@@ -41,7 +41,7 @@ Object {
   },
   "contributors": Array [],
   "engines": Object {
-    "node": ">=8.12.0",
+    "node": ">=10.19.0",
   },
   "files": Array [
     "src",
@@ -83,7 +83,7 @@ Object {
     "cz-conventional-changelog": "^3.0.2",
   },
   "engines": Object {
-    "node": ">=8.12.0",
+    "node": ">=10.19.0",
   },
   "files": Array [
     "src",
@@ -137,7 +137,7 @@ Object {
     "cz-conventional-changelog": "^3.0.2",
   },
   "engines": Object {
-    "node": ">=8.12.0",
+    "node": ">=10.19.0",
   },
   "files": Array [
     "src",
