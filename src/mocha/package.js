@@ -30,7 +30,7 @@ module.exports = packageConf => {
     'nyc npm test && nyc report --reporter=html --reporter=text';
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.mocha = '^7.0.0';
+  packageConf.devDependencies.mocha = '^7.1.1';
   packageConf.devDependencies.nyc = '^15.0.0';
 
   // Ignore test files

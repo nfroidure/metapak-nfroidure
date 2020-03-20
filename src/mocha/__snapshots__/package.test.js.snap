@@ -4,7 +4,7 @@ exports[`mocha Package transformer should work with babel config 1`] = `
 Object {
   "devDependencies": Object {
     "coveralls": "^3.0.11",
-    "mocha": "^7.0.0",
+    "mocha": "^7.1.1",
     "nyc": "^15.0.0",
   },
   "greenkeeper": Object {
@@ -41,7 +41,7 @@ exports[`mocha Package transformer should work with some files 1`] = `
 Object {
   "devDependencies": Object {
     "coveralls": "^3.0.11",
-    "mocha": "^7.0.0",
+    "mocha": "^7.1.1",
     "nyc": "^15.0.0",
   },
   "greenkeeper": Object {
