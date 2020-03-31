@@ -1,3 +1,12 @@
+# [10.1.0](https://github.com/nfroidure/metapak-nfroidure/compare/v10.0.1...v10.1.0) (2020-03-31)
+
+
+### Features
+
+* **babel config:** add support for esm ([00e9474](https://github.com/nfroidure/metapak-nfroidure/commit/00e9474ab4da8593a3d2a35ebde8565cb9ff4f8a))
+
+
+
 ## [10.0.1](https://github.com/nfroidure/metapak-nfroidure/compare/v10.0.0...v10.0.1) (2020-03-20)
 
 
