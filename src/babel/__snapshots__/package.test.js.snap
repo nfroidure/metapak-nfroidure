@@ -3,6 +3,36 @@
 exports[`Babel Package transformer should work with child packages 1`] = `
 Object {
   "babel": Object {
+    "env": Object {
+      "cjs": Object {
+        "comments": true,
+        "presets": Array [
+          Array [
+            "@babel/env",
+            Object {
+              "modules": "commonjs",
+              "targets": Object {
+                "node": "10",
+              },
+            },
+          ],
+        ],
+      },
+      "mjs": Object {
+        "comments": false,
+        "presets": Array [
+          Array [
+            "@babel/env",
+            Object {
+              "modules": "false",
+              "targets": Object {
+                "node": "12",
+              },
+            },
+          ],
+        ],
+      },
+    },
     "plugins": Array [
       "@babel/plugin-proposal-object-rest-spread",
     ],
@@ -16,6 +46,7 @@ Object {
         },
       ],
     ],
+    "sourceMaps": true,
   },
   "devDependencies": Object {
     "@babel/cli": "^7.8.4",
@@ -24,6 +55,7 @@ Object {
     "@babel/preset-env": "^7.9.0",
     "@babel/register": "^7.9.0",
   },
+  "main": "index",
   "metapak": Object {
     "data": Object {
       "bundleFiles": Array [
@@ -34,8 +66,11 @@ Object {
       "files": "src/*.js src/**/*.js",
     },
   },
+  "module": "index.mjs",
   "scripts": Object {
-    "compile": "rimraf -f 'dist' && babel src --out-dir=dist --source-maps=true",
+    "compile": "rimraf -f 'dist' && npm run compile:cjs && npm run compile:mjs && npm run compile:rework",
+    "compile:cjs": "babel --env-name=cjs --out-dir=dist --source-maps=true --extensions '.ts,.js' src",
+    "compile:mjs": "babel --env-name=mjs --out-file-extension=.mjs --out-dir=dist --source-maps=true --extensions '.ts,.js' src",
     "precz": "npm run compile",
     "preversion": "npm run compile",
   },
@@ -45,6 +80,36 @@ Object {
 exports[`Babel Package transformer should work with eslint config 1`] = `
 Object {
   "babel": Object {
+    "env": Object {
+      "cjs": Object {
+        "comments": true,
+        "presets": Array [
+          Array [
+            "@babel/env",
+            Object {
+              "modules": "commonjs",
+              "targets": Object {
+                "node": "10",
+              },
+            },
+          ],
+        ],
+      },
+      "mjs": Object {
+        "comments": false,
+        "presets": Array [
+          Array [
+            "@babel/env",
+            Object {
+              "modules": "false",
+              "targets": Object {
+                "node": "12",
+              },
+            },
+          ],
+        ],
+      },
+    },
     "plugins": Array [
       "@babel/plugin-proposal-object-rest-spread",
     ],
@@ -58,6 +123,7 @@ Object {
         },
       ],
     ],
+    "sourceMaps": true,
   },
   "devDependencies": Object {
     "@babel/cli": "^7.8.4",
@@ -97,6 +163,7 @@ Object {
       "babel-eslint",
     ],
   },
+  "main": "index",
   "metapak": Object {
     "configs": Array [
       "eslint",
@@ -110,6 +177,7 @@ Object {
       "testsFiles": "src/*.js src/**/*.js",
     },
   },
+  "module": "index.mjs",
   "prettier": Object {
     "printWidth": 80,
     "proseWrap": "always",
@@ -118,7 +186,9 @@ Object {
     "trailingComma": "all",
   },
   "scripts": Object {
-    "compile": "rimraf -f 'dist' && babel src --out-dir=dist --source-maps=true",
+    "compile": "rimraf -f 'dist' && npm run compile:cjs && npm run compile:mjs && npm run compile:rework",
+    "compile:cjs": "babel --env-name=cjs --out-dir=dist --source-maps=true --extensions '.ts,.js' src",
+    "compile:mjs": "babel --env-name=mjs --out-file-extension=.mjs --out-dir=dist --source-maps=true --extensions '.ts,.js' src",
     "precz": "npm run compile",
     "preversion": "npm run compile",
     "test": "",
@@ -129,6 +199,36 @@ Object {
 exports[`Babel Package transformer should work with jest config 1`] = `
 Object {
   "babel": Object {
+    "env": Object {
+      "cjs": Object {
+        "comments": true,
+        "presets": Array [
+          Array [
+            "@babel/env",
+            Object {
+              "modules": "commonjs",
+              "targets": Object {
+                "node": "10",
+              },
+            },
+          ],
+        ],
+      },
+      "mjs": Object {
+        "comments": false,
+        "presets": Array [
+          Array [
+            "@babel/env",
+            Object {
+              "modules": "false",
+              "targets": Object {
+                "node": "12",
+              },
+            },
+          ],
+        ],
+      },
+    },
     "plugins": Array [
       "@babel/plugin-proposal-object-rest-spread",
     ],
@@ -142,6 +242,7 @@ Object {
         },
       ],
     ],
+    "sourceMaps": true,
   },
   "devDependencies": Object {
     "@babel/cli": "^7.8.4",
@@ -160,6 +261,7 @@ Object {
       "babel-core",
     ],
   },
+  "main": "index",
   "metapak": Object {
     "configs": Array [
       "babel",
@@ -173,8 +275,11 @@ Object {
       "testsFiles": "src/*.js src/**/*.js",
     },
   },
+  "module": "index.mjs",
   "scripts": Object {
-    "compile": "rimraf -f 'dist' && babel src --out-dir=dist --source-maps=true",
+    "compile": "rimraf -f 'dist' && npm run compile:cjs && npm run compile:mjs && npm run compile:rework",
+    "compile:cjs": "babel --env-name=cjs --out-dir=dist --source-maps=true --extensions '.ts,.js' src",
+    "compile:mjs": "babel --env-name=mjs --out-file-extension=.mjs --out-dir=dist --source-maps=true --extensions '.ts,.js' src",
     "precz": "npm run compile",
     "preversion": "npm run compile",
     "test": "",
@@ -185,6 +290,36 @@ Object {
 exports[`Babel Package transformer should work with mocha config 1`] = `
 Object {
   "babel": Object {
+    "env": Object {
+      "cjs": Object {
+        "comments": true,
+        "presets": Array [
+          Array [
+            "@babel/env",
+            Object {
+              "modules": "commonjs",
+              "targets": Object {
+                "node": "10",
+              },
+            },
+          ],
+        ],
+      },
+      "mjs": Object {
+        "comments": false,
+        "presets": Array [
+          Array [
+            "@babel/env",
+            Object {
+              "modules": "false",
+              "targets": Object {
+                "node": "12",
+              },
+            },
+          ],
+        ],
+      },
+    },
     "plugins": Array [
       "@babel/plugin-proposal-object-rest-spread",
     ],
@@ -198,6 +333,7 @@ Object {
         },
       ],
     ],
+    "sourceMaps": true,
   },
   "devDependencies": Object {
     "@babel/cli": "^7.8.4",
@@ -215,6 +351,7 @@ Object {
       "@babel/plugin-proposal-object-rest-spread",
     ],
   },
+  "main": "index",
   "metapak": Object {
     "configs": Array [
       "babel",
@@ -228,8 +365,11 @@ Object {
       "testsFiles": "src/*.js src/**/*.js",
     },
   },
+  "module": "index.mjs",
   "scripts": Object {
-    "compile": "rimraf -f 'dist' && babel src --out-dir=dist --source-maps=true",
+    "compile": "rimraf -f 'dist' && npm run compile:cjs && npm run compile:mjs && npm run compile:rework",
+    "compile:cjs": "babel --env-name=cjs --out-dir=dist --source-maps=true --extensions '.ts,.js' src",
+    "compile:mjs": "babel --env-name=mjs --out-file-extension=.mjs --out-dir=dist --source-maps=true --extensions '.ts,.js' src",
     "precz": "npm run compile",
     "preversion": "npm run compile",
     "test": "",
@@ -240,6 +380,36 @@ Object {
 exports[`Babel Package transformer should work with some files 1`] = `
 Object {
   "babel": Object {
+    "env": Object {
+      "cjs": Object {
+        "comments": true,
+        "presets": Array [
+          Array [
+            "@babel/env",
+            Object {
+              "modules": "commonjs",
+              "targets": Object {
+                "node": "10",
+              },
+            },
+          ],
+        ],
+      },
+      "mjs": Object {
+        "comments": false,
+        "presets": Array [
+          Array [
+            "@babel/env",
+            Object {
+              "modules": "false",
+              "targets": Object {
+                "node": "12",
+              },
+            },
+          ],
+        ],
+      },
+    },
     "plugins": Array [
       "@babel/plugin-proposal-object-rest-spread",
     ],
@@ -253,6 +423,7 @@ Object {
         },
       ],
     ],
+    "sourceMaps": true,
   },
   "devDependencies": Object {
     "@babel/cli": "^7.8.4",
@@ -270,6 +441,7 @@ Object {
       "@babel/plugin-proposal-object-rest-spread",
     ],
   },
+  "main": "index",
   "metapak": Object {
     "configs": Array [
       "babel",
@@ -287,8 +459,11 @@ Object {
       "testsFiles": "src/*.js src/**/*.js",
     },
   },
+  "module": "index.mjs",
   "scripts": Object {
-    "compile": "rimraf -f 'dist' && babel src --out-dir=dist --source-maps=true",
+    "compile": "rimraf -f 'dist' && npm run compile:cjs && npm run compile:mjs && npm run compile:rework",
+    "compile:cjs": "babel --env-name=cjs --out-dir=dist --source-maps=true --extensions '.ts,.js' src",
+    "compile:mjs": "babel --env-name=mjs --out-file-extension=.mjs --out-dir=dist --source-maps=true --extensions '.ts,.js' src",
     "precz": "npm run compile",
     "preversion": "npm run compile",
     "test": "",

@@ -5,21 +5,61 @@ const YError = require('yerror');
 const config = require('../config.js');
 const COMPILE_COMMAND = 'npm run compile';
 const DEFAULT_BABEL_CONFIG = {
+  plugins: ['@babel/plugin-proposal-object-rest-spread'],
   presets: [
     [
       '@babel/env',
       {
         targets: {
-          node: config.lastNodeLTS,
+          node: config.lastNodeLTS.split('.')[0],
         },
       },
     ],
   ],
-  plugins: ['@babel/plugin-proposal-object-rest-spread'],
+  env: {
+    cjs: {
+      presets: [
+        [
+          '@babel/env',
+          {
+            targets: {
+              node: '10',
+            },
+            modules: 'commonjs',
+          },
+        ],
+      ],
+      comments: true,
+    },
+    mjs: {
+      presets: [
+        [
+          '@babel/env',
+          {
+            targets: {
+              node: '12',
+            },
+            modules: 'false',
+          },
+        ],
+      ],
+      // Setting false since jsdocs do not use
+      //  the .mjs files and are likely to be
+      //  used by Webpack builds
+      comments: false,
+    },
+  },
+  sourceMaps: true,
 };
 
 module.exports = (packageConf) => {
   const { configs, data } = getMetapakInfos(packageConf);
+
+  // Setup the good main field
+  packageConf.main = packageConf.main.endsWith('.js')
+    ? packageConf.main.slice(0, -3)
+    : packageConf.main;
+  packageConf.module = packageConf.module || packageConf.main + '.mjs';
 
   // Add Babel config
   packageConf.babel = packageConf.babel
@@ -63,11 +103,20 @@ module.exports = (packageConf) => {
 
   // Adding Babel compile script
   packageConf.scripts = packageConf.scripts || {};
-  packageConf.scripts.compile = data.rootPackage
-    ? 'lerna run compile'
-    : `rimraf -f 'dist' && babel${
-        configs.includes('typescript') ? ` --extensions '.ts,.js'` : ''
-      } src --out-dir=dist --source-maps=true`;
+  if (data.rootPackage) {
+    packageConf.scripts.compile = 'lerna run compile';
+  } else {
+    packageConf.scripts.compile =
+      "rimraf -f 'dist' && npm run compile:cjs && npm run compile:mjs && npm run compile:rework";
+    packageConf.scripts[
+      'compile:mjs'
+    ] = `babel --env-name=mjs --out-file-extension=.mjs --out-dir=dist${
+      configs.includes('typescript') ? ` --extensions '.ts,.js'` : ''
+    } --source-maps=true --extensions '.ts,.js' src`;
+    packageConf.scripts['compile:cjs'] = `babel --env-name=cjs --out-dir=dist${
+      configs.includes('typescript') ? ` --extensions '.ts,.js'` : ''
+    } --source-maps=true --extensions '.ts,.js' src`;
+  }
   // We have to compile with Babel before pushing a version
   packageConf.scripts.precz = ensureScript(
     packageConf.scripts.precz,

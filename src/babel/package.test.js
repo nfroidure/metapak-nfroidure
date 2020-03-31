@@ -7,6 +7,8 @@ describe('Babel', () => {
     it('should work with some files', () => {
       expect(
         packageTransformer({
+          main: 'index',
+          module: 'index.mjs',
           scripts: {
             test: '',
             preversion: '',
@@ -31,6 +33,8 @@ describe('Babel', () => {
     it('should work with mocha config', () => {
       expect(
         packageTransformer({
+          main: 'index',
+          module: 'index.mjs',
           scripts: {
             test: '',
             preversion: '',
@@ -49,6 +53,8 @@ describe('Babel', () => {
     it('should work with jest config', () => {
       expect(
         packageTransformer({
+          main: 'index',
+          module: 'index.mjs',
           scripts: {
             test: '',
             preversion: '',
@@ -66,6 +72,8 @@ describe('Babel', () => {
     it('should work with eslint config', () => {
       expect(
         packageTransformer({
+          main: 'index',
+          module: 'index.mjs',
           scripts: {
             test: '',
             preversion: '',
@@ -83,6 +91,7 @@ describe('Babel', () => {
     it('should work with child packages', () => {
       expect(
         packageTransformer({
+          main: 'index.js',
           metapak: {
             data: {
               childPackage: true,
