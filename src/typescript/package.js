@@ -4,7 +4,7 @@ const YError = require('yerror');
 const { ensureScript, getMetapakInfos } = require('../lib.js');
 const TYPES_COMMAND = 'npm run types';
 
-module.exports = packageConf => {
+module.exports = (packageConf) => {
   const { data } = getMetapakInfos(packageConf);
 
   // Add the dev dependencies

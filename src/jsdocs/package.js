@@ -5,7 +5,7 @@ const { apiPath } = require('../config.js');
 
 const DOCUMENTATION_SCRIPT = 'npm run doc';
 
-module.exports = packageConf => {
+module.exports = (packageConf) => {
   const { configs, data } = getMetapakInfos(packageConf);
 
   // Adding documentation generation script

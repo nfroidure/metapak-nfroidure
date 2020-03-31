@@ -67,7 +67,7 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
         ...(packageConf.contributors || []),
       ]
         .map(
-          author =>
+          (author) =>
             `- ${
               author.email || author.url
                 ? `[${author.name}](${author.url || `mailto:${author.email}`})`
@@ -88,12 +88,12 @@ function _getReadmeContents({ PROJECT_DIR, fs, log }) {
 
   return fs
     .readFileAsync(filePath, 'utf8')
-    .catch(err => {
+    .catch((err) => {
       log('error', 'Cannot read the README.md file contents:', filePath);
       log('stack', err.stack);
       throw err;
     })
-    .then(contents => {
+    .then((contents) => {
       return contents.replace(README_REGEXP, '$1');
     });
 }
@@ -101,7 +101,7 @@ function _getReadmeContents({ PROJECT_DIR, fs, log }) {
 function _getAPIContents({ PROJECT_DIR, fs, log }) {
   const filePath = path.join(PROJECT_DIR, apiPath);
 
-  return fs.readFileAsync(filePath, 'utf8').catch(err => {
+  return fs.readFileAsync(filePath, 'utf8').catch((err) => {
     log('debug', 'Cannot read the API.md file contents:', filePath);
     log('debug', err.stack);
     return '';

@@ -2,7 +2,7 @@
 
 const { getMetapakInfos } = require('../lib.js');
 
-module.exports = packageConf => {
+module.exports = (packageConf) => {
   const { configs, data } = getMetapakInfos(packageConf);
 
   if (!data.files) {
@@ -17,7 +17,7 @@ module.exports = packageConf => {
   packageConf.devDependencies = packageConf.devDependencies || {};
   packageConf.devDependencies.eslint = '^6.8.0';
   delete packageConf.devDependencies['eslint-config-simplifield'];
-  packageConf.devDependencies.prettier = '^1.19.1';
+  packageConf.devDependencies.prettier = '^2.0.2';
   packageConf.devDependencies['eslint-plugin-prettier'] = '^3.1.2';
 
   packageConf.eslintConfig = {
@@ -49,8 +49,8 @@ module.exports = packageConf => {
 
   // Special configuration for TypeScript
   if (configs.includes('typescript')) {
-    packageConf.devDependencies['@typescript-eslint/eslint-plugin'] = '^2.24.0';
-    packageConf.devDependencies['@typescript-eslint/parser'] = '^2.24.0';
+    packageConf.devDependencies['@typescript-eslint/eslint-plugin'] = '^2.26.0';
+    packageConf.devDependencies['@typescript-eslint/parser'] = '^2.26.0';
     packageConf.eslintConfig.parser = '@typescript-eslint/parser';
     packageConf.eslintConfig.ignorePatterns = ['*.d.ts'];
     packageConf.eslintConfig.overrides = [

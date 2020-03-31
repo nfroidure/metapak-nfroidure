@@ -50,7 +50,7 @@ toto.lol()
 `;
 
 describe('Assets transformer for www configs', () => {
-  it('should build the README.md file', done => {
+  it('should build the README.md file', (done) => {
     const fs = {
       readFileAsync: jest.fn(),
     };
@@ -91,14 +91,14 @@ describe('Assets transformer for www configs', () => {
         log,
       }
     )
-      .then(file => {
+      .then((file) => {
         expect(file).toMatchSnapshot();
       })
       .then(done)
       .catch(done);
   });
 
-  it('should build the README.md file with no badge', done => {
+  it('should build the README.md file with no badge', (done) => {
     const fs = {
       readFileAsync: jest.fn(),
     };
@@ -144,14 +144,14 @@ describe('Assets transformer for www configs', () => {
         log,
       }
     )
-      .then(file => {
+      .then((file) => {
         expect(file).toMatchSnapshot();
       })
       .then(done)
       .catch(done);
   });
 
-  it('should build the README.md file with additional badges', done => {
+  it('should build the README.md file with additional badges', (done) => {
     const fs = {
       readFileAsync: jest.fn(),
     };
@@ -198,14 +198,14 @@ describe('Assets transformer for www configs', () => {
         log,
       }
     )
-      .then(file => {
+      .then((file) => {
         expect(file).toMatchSnapshot();
       })
       .then(done)
       .catch(done);
   });
 
-  it('should work with scoped packages', done => {
+  it('should work with scoped packages', (done) => {
     const fs = {
       readFileAsync: jest.fn(),
     };
@@ -252,14 +252,14 @@ describe('Assets transformer for www configs', () => {
         log,
       }
     )
-      .then(file => {
+      .then((file) => {
         expect(file).toMatchSnapshot();
       })
       .then(done)
       .catch(done);
   });
 
-  it('should work with scoped packages inside a monorepo', done => {
+  it('should work with scoped packages inside a monorepo', (done) => {
     const fs = {
       readFileAsync: jest.fn(),
     };
@@ -308,7 +308,7 @@ describe('Assets transformer for www configs', () => {
         log,
       }
     )
-      .then(file => {
+      .then((file) => {
         expect(file).toMatchSnapshot();
       })
       .then(done)

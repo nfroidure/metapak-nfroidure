@@ -3,7 +3,7 @@
 const { ensureScript, getMetapakInfos } = require('../lib.js');
 const ARCHITECTURE_SCRIPT = 'npm run architecture';
 
-module.exports = packageConf => {
+module.exports = (packageConf) => {
   const { configs, data } = getMetapakInfos(packageConf);
 
   // Adding architecture generation script

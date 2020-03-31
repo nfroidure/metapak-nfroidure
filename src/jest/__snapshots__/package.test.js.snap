@@ -3,7 +3,7 @@
 exports[`mocha Package transformer should work with child packages 1`] = `
 Object {
   "devDependencies": Object {
-    "jest": "^25.1.0",
+    "jest": "^25.2.4",
   },
   "jest": Object {
     "coverageReporters": Array [
@@ -34,7 +34,7 @@ exports[`mocha Package transformer should work with some files 1`] = `
 Object {
   "devDependencies": Object {
     "coveralls": "^3.0.11",
-    "jest": "^25.1.0",
+    "jest": "^25.2.4",
   },
   "greenkeeper": Object {
     "ignore": Array [

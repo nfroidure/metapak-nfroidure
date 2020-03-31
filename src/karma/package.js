@@ -5,7 +5,7 @@ const YError = require('yerror');
 
 const KARMA_COMMAND = 'npm run karma';
 
-module.exports = packageConf => {
+module.exports = (packageConf) => {
   const { configs, data } = getMetapakInfos(packageConf);
 
   // Add packages

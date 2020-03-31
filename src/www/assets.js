@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = file => {
+module.exports = (file) => {
   // Add www to ignored files
   if ('.gitignore' === file.name) {
     file.data += 'www\n';

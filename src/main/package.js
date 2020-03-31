@@ -9,7 +9,7 @@ const LINT_SCRIPT = 'npm run lint';
 const METAPAK_SCRIPT = 'npm run metapak -- -s';
 const CHANGELOG_SCRIPT = 'npm run changelog';
 
-module.exports = packageConf => {
+module.exports = (packageConf) => {
   const { data } = getMetapakInfos(packageConf);
 
   // Looks like i am the author of all my modules

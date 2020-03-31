@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = packageConf => {
+module.exports = (packageConf) => {
   packageConf.private = true;
 
   return packageConf;

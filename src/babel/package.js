@@ -18,7 +18,7 @@ const DEFAULT_BABEL_CONFIG = {
   plugins: ['@babel/plugin-proposal-object-rest-spread'],
 };
 
-module.exports = packageConf => {
+module.exports = (packageConf) => {
   const { configs, data } = getMetapakInfos(packageConf);
 
   // Add Babel config
@@ -27,7 +27,7 @@ module.exports = packageConf => {
     : DEFAULT_BABEL_CONFIG;
 
   // Set the Node support in all cases
-  packageConf.babel.presets = packageConf.babel.presets.map(preset => {
+  packageConf.babel.presets = packageConf.babel.presets.map((preset) => {
     if (preset[0] !== '@babel/env') {
       return preset;
     }
@@ -36,7 +36,7 @@ module.exports = packageConf => {
   });
 
   // Fix existing babel config
-  packageConf.babel.presets = packageConf.babel.presets.map(preset => {
+  packageConf.babel.presets = packageConf.babel.presets.map((preset) => {
     if (!(preset instanceof Array)) {
       return preset;
     }
@@ -46,7 +46,7 @@ module.exports = packageConf => {
       ? ['@babel/env', ...presetArgs]
       : [presetName, ...presetArgs];
   });
-  packageConf.babel.plugins = packageConf.babel.plugins.map(plugin =>
+  packageConf.babel.plugins = packageConf.babel.plugins.map((plugin) =>
     plugin === 'transform-object-rest-spread'
       ? '@babel/plugin-proposal-object-rest-spread'
       : plugin
@@ -65,7 +65,7 @@ module.exports = packageConf => {
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.compile = data.rootPackage
     ? 'lerna run compile'
-    : `babel${
+    : `rimraf -f 'dist' && babel${
         configs.includes('typescript') ? ` --extensions '.ts,.js'` : ''
       } src --out-dir=dist --source-maps=true`;
   // We have to compile with Babel before pushing a version
@@ -101,11 +101,11 @@ module.exports = packageConf => {
   }
 
   packageConf.devDependencies['@babel/cli'] = '^7.8.4';
-  packageConf.devDependencies['@babel/core'] = '^7.8.7';
-  packageConf.devDependencies['@babel/register'] = '^7.8.6';
-  packageConf.devDependencies['@babel/preset-env'] = '^7.8.7';
+  packageConf.devDependencies['@babel/core'] = '^7.9.0';
+  packageConf.devDependencies['@babel/register'] = '^7.9.0';
+  packageConf.devDependencies['@babel/preset-env'] = '^7.9.0';
   packageConf.devDependencies['@babel/plugin-proposal-object-rest-spread'] =
-    '^7.8.3';
+    '^7.9.0';
 
   // Add ESLint tweaks
   if (configs.includes('eslint')) {
@@ -155,7 +155,7 @@ module.exports = packageConf => {
         ...packageConf.babel.plugins,
       ]),
     ];
-    packageConf.devDependencies['@babel/preset-typescript'] = '^7.8.3';
+    packageConf.devDependencies['@babel/preset-typescript'] = '^7.9.0';
     packageConf.devDependencies['@babel/plugin-proposal-class-properties'] =
       '^7.8.3';
   }

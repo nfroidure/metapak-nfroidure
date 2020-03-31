@@ -14,7 +14,7 @@ module.exports = (file, packageConf) => {
 exclude_patterns:
 - "dist/"
 - "**/node_modules/"${data.testsFiles.split(' ').map(
-        files => `
+        (files) => `
 - "${
           files.startsWith("'") && files.endsWith("'")
             ? files.slice(1, -1)

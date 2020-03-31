@@ -5,7 +5,7 @@ const { getMetapakInfos } = require('../lib.js');
 
 const JEST_SCRIPT = 'npm run jest';
 
-module.exports = packageConf => {
+module.exports = (packageConf) => {
   const { configs, data } = getMetapakInfos(packageConf);
   // Let's add test scripts
   packageConf.scripts = packageConf.scripts || {};
@@ -17,7 +17,7 @@ module.exports = packageConf => {
   packageConf.scripts.cover = `npm run jest -- --coverage`;
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jest = '^25.1.0';
+  packageConf.devDependencies.jest = '^25.2.4';
 
   // Add coveralls for independant packages
   if (!data.childPackage) {
@@ -45,7 +45,7 @@ module.exports = packageConf => {
   );
   // Special configuration for TypeScript
   if (configs.includes('typescript')) {
-    packageConf.devDependencies['@types/jest'] = '^24.9.0';
+    packageConf.devDependencies['@types/jest'] = '^25.1.4';
   }
 
   if (configs.includes('typescript')) {
@@ -61,7 +61,7 @@ module.exports = packageConf => {
             : []
           )
             .concat(['jest', 'coveralls'])
-            .filter(packageName => packageName !== 'ts-jest')
+            .filter((packageName) => packageName !== 'ts-jest')
         ),
       ],
     };

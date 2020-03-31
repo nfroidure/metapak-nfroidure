@@ -2,7 +2,7 @@
 
 const config = require('../config.js');
 
-module.exports = file => {
+module.exports = (file) => {
   if ('.travis.yml' === file.name) {
     const lastNodeLTSMajorPart = parseInt(config.lastNodeLTS.split('.')[0], 10);
     const lastNodeMajorPart = parseInt(config.lastNode.split('.')[0], 10);

@@ -5,7 +5,7 @@ const { ensureScript, getMetapakInfos } = require('../lib.js');
 
 const MOCHA_COMMAND = 'npm run mocha';
 
-module.exports = packageConf => {
+module.exports = (packageConf) => {
   const { configs, data } = getMetapakInfos(packageConf);
 
   if (!data.testsFiles) {
