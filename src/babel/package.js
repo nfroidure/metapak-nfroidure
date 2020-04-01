@@ -107,7 +107,7 @@ module.exports = (packageConf) => {
     packageConf.scripts.compile = 'lerna run compile';
   } else {
     packageConf.scripts.compile =
-      "rimraf -f 'dist' && npm run compile:cjs && npm run compile:mjs && npm run compile:rework";
+      "rimraf -f 'dist' && npm run compile:cjs && npm run compile:mjs";
     packageConf.scripts[
       'compile:mjs'
     ] = `babel --env-name=mjs --out-file-extension=.mjs --out-dir=dist${
