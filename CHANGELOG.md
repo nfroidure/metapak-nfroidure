@@ -1,3 +1,12 @@
+## [10.1.1](https://github.com/nfroidure/metapak-nfroidure/compare/v10.1.0...v10.1.1) (2020-04-01)
+
+
+### Bug Fixes
+
+* **eslint config:** fix broken compile script ([03b083e](https://github.com/nfroidure/metapak-nfroidure/commit/03b083e0448da9680b2420941b3ccafb1cf94b5b))
+
+
+
 # [10.1.0](https://github.com/nfroidure/metapak-nfroidure/compare/v10.0.1...v10.1.0) (2020-03-31)
 
 
