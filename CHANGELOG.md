@@ -1,3 +1,12 @@
+## [10.1.2](https://github.com/nfroidure/metapak-nfroidure/compare/v10.1.1...v10.1.2) (2020-04-01)
+
+
+### Bug Fixes
+
+* **babel config:** fix the Babel extensions for non-ts projects ([a01085f](https://github.com/nfroidure/metapak-nfroidure/commit/a01085f4d2867df03f62983c6f7b9d01b0243599))
+
+
+
 ## [10.1.1](https://github.com/nfroidure/metapak-nfroidure/compare/v10.1.0...v10.1.1) (2020-04-01)
 
 
