@@ -112,10 +112,10 @@ module.exports = (packageConf) => {
       'compile:mjs'
     ] = `babel --env-name=mjs --out-file-extension=.mjs --out-dir=dist${
       configs.includes('typescript') ? ` --extensions '.ts,.js'` : ''
-    } --source-maps=true --extensions '.ts,.js' src`;
+    } --source-maps=true src`;
     packageConf.scripts['compile:cjs'] = `babel --env-name=cjs --out-dir=dist${
       configs.includes('typescript') ? ` --extensions '.ts,.js'` : ''
-    } --source-maps=true --extensions '.ts,.js' src`;
+    } --source-maps=true src`;
   }
   // We have to compile with Babel before pushing a version
   packageConf.scripts.precz = ensureScript(
