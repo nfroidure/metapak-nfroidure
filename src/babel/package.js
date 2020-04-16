@@ -39,7 +39,7 @@ const DEFAULT_BABEL_CONFIG = {
             targets: {
               node: '12',
             },
-            modules: 'false',
+            modules: false,
           },
         ],
       ],
