@@ -15,10 +15,9 @@ module.exports = (packageConf) => {
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.eslint = '^6.8.0';
-  delete packageConf.devDependencies['eslint-config-simplifield'];
-  packageConf.devDependencies.prettier = '^2.0.2';
-  packageConf.devDependencies['eslint-plugin-prettier'] = '^3.1.2';
+  packageConf.devDependencies.eslint = '^7.0.0';
+  packageConf.devDependencies.prettier = '^2.0.5';
+  packageConf.devDependencies['eslint-plugin-prettier'] = '^3.1.3';
 
   packageConf.eslintConfig = {
     extends: ['eslint:recommended'],
@@ -49,8 +48,8 @@ module.exports = (packageConf) => {
 
   // Special configuration for TypeScript
   if (configs.includes('typescript')) {
-    packageConf.devDependencies['@typescript-eslint/eslint-plugin'] = '^2.26.0';
-    packageConf.devDependencies['@typescript-eslint/parser'] = '^2.26.0';
+    packageConf.devDependencies['@typescript-eslint/eslint-plugin'] = '^2.33.0';
+    packageConf.devDependencies['@typescript-eslint/parser'] = '^2.33.0';
     packageConf.eslintConfig.parser = '@typescript-eslint/parser';
     packageConf.eslintConfig.ignorePatterns = ['*.d.ts'];
     packageConf.eslintConfig.overrides = [

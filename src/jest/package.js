@@ -17,14 +17,14 @@ module.exports = (packageConf) => {
   packageConf.scripts.cover = `npm run jest -- --coverage`;
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jest = '^25.2.4';
+  packageConf.devDependencies.jest = '^26.0.1';
 
   // Add coveralls for independant packages
   if (!data.childPackage) {
     packageConf.scripts.coveralls =
       'npm run cover && cat ./coverage/lcov.info | coveralls' +
       ' && rm -rf ./coverage';
-    packageConf.devDependencies.coveralls = '^3.0.11';
+    packageConf.devDependencies.coveralls = '^3.1.0';
   }
   packageConf.jest = Object.assign(
     {
@@ -45,7 +45,7 @@ module.exports = (packageConf) => {
   );
   // Special configuration for TypeScript
   if (configs.includes('typescript')) {
-    packageConf.devDependencies['@types/jest'] = '^25.1.4';
+    packageConf.devDependencies['@types/jest'] = '^25.2.2';
   }
 
   if (configs.includes('typescript')) {
