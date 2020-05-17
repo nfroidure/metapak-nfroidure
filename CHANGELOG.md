@@ -1,3 +1,12 @@
+# [10.2.0](https://github.com/nfroidure/metapak-nfroidure/compare/v10.1.2...v10.2.0) (2020-05-17)
+
+
+### Bug Fixes
+
+* **babel config:** pass stricter babel validations ([94c6f9b](https://github.com/nfroidure/metapak-nfroidure/commit/94c6f9b4f536e317d0ee8dd488188ce50a3cf6d9))
+
+
+
 ## [10.1.2](https://github.com/nfroidure/metapak-nfroidure/compare/v10.1.1...v10.1.2) (2020-04-01)
 
 
