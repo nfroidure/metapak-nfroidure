@@ -10,8 +10,14 @@ module.exports = (packageConf) => {
   }
 
   packageConf.scripts = packageConf.scripts || {};
-  packageConf.scripts.lint = 'eslint ' + data.files;
-  packageConf.scripts.prettier = 'prettier --write ' + data.files;
+
+  if (data.rootPackage) {
+    packageConf.scripts.lint = 'npm run lerna -- run eslint ';
+    packageConf.scripts.prettier = 'npm run lerna -- run prettier ';
+  } else {
+    packageConf.scripts.lint = 'eslint ' + data.files;
+    packageConf.scripts.prettier = 'prettier --write ' + data.files;
+  }
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};

@@ -117,15 +117,18 @@ module.exports = (packageConf) => {
       configs.includes('typescript') ? ` --extensions '.ts,.js'` : ''
     } --source-maps=true src`;
   }
-  // We have to compile with Babel before pushing a version
-  packageConf.scripts.precz = ensureScript(
-    packageConf.scripts.precz,
-    COMPILE_COMMAND
-  );
-  packageConf.scripts.preversion = ensureScript(
-    packageConf.scripts.preversion,
-    COMPILE_COMMAND
-  );
+
+  if (!data.childPackage) {
+    // We have to compile with Babel before commiting pushing a version
+    packageConf.scripts.precz = ensureScript(
+      packageConf.scripts.precz,
+      COMPILE_COMMAND
+    );
+    packageConf.scripts.preversion = ensureScript(
+      packageConf.scripts.preversion,
+      COMPILE_COMMAND
+    );
+  }
 
   packageConf.devDependencies = packageConf.devDependencies || {};
   delete packageConf.devDependencies[
