@@ -1,3 +1,12 @@
+## [10.2.1](https://github.com/nfroidure/metapak-nfroidure/compare/v10.2.0...v10.2.1) (2020-05-19)
+
+
+### Bug Fixes
+
+* **monorepo:** fix monorepositories scripts ([fd20487](https://github.com/nfroidure/metapak-nfroidure/commit/fd20487915a739a368fd01ff75e5ca8fa2d76a97))
+
+
+
 # [10.2.0](https://github.com/nfroidure/metapak-nfroidure/compare/v10.1.2...v10.2.0) (2020-05-17)
 
 
