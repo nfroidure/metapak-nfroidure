@@ -19,8 +19,8 @@
 
 [//]: # (::contents:start)
 
-This is a [`metapak`](https://github.com/nfroidure/metapak) module,
- it is intended to apply projects configuration automagically.
+This is a [`metapak`](https://github.com/nfroidure/metapak) module, it is
+intended to apply projects configuration automagically.
 
 # Usage
 

@@ -6,7 +6,7 @@ const { getMetapakInfos } = require('../lib.js');
 const USERNAME = 'nfroidure';
 const README_CONTENTS_START_TAG = `[//]: # (::contents:start)`;
 const README_CONTENTS_END_TAG = `[//]: # (::contents:end)`;
-const README_REGEXP = /^(?:[^]*)\[\/\/\]: # \(::contents:start\)\r?\n\r?\n([^]*)\r?\n\r?\n\[\/\/\]: # \(::contents:end\)(?:[^]*)$/gm;
+const README_REGEXP = /^(?:[^]*)\[\/\/\]: # (?:\(|')::contents:start(?:\)|')\r?\n\r?\n([^]*)\r?\n\r?\n\[\/\/\]: # (?:\(|')::contents:end(?:\)|')(?:[^]*)$/gm;
 
 module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
   const { configs, data } = getMetapakInfos(packageConf);
