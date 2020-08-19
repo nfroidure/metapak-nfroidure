@@ -1,3 +1,12 @@
+## [10.2.3](https://github.com/nfroidure/metapak-nfroidure/compare/v10.2.2...v10.2.3) (2020-08-19)
+
+
+### Bug Fixes
+
+* **readme config:** support a wider range of comments flag ([a092187](https://github.com/nfroidure/metapak-nfroidure/commit/a092187fba169660e148dc3c51e407f46a20b15f))
+
+
+
 ## [10.2.2](https://github.com/nfroidure/metapak-nfroidure/compare/v10.2.1...v10.2.2) (2020-08-19)
 
 
