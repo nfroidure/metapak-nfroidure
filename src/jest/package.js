@@ -17,7 +17,7 @@ module.exports = (packageConf) => {
   packageConf.scripts.cover = `npm run jest -- --coverage`;
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jest = '^26.0.1';
+  packageConf.devDependencies.jest = '^26.4.0';
 
   // Add coveralls for independant packages
   if (!data.childPackage) {
@@ -45,7 +45,7 @@ module.exports = (packageConf) => {
   );
   // Special configuration for TypeScript
   if (configs.includes('typescript')) {
-    packageConf.devDependencies['@types/jest'] = '^25.2.2';
+    packageConf.devDependencies['@types/jest'] = '^26.0.10';
   }
 
   if (configs.includes('typescript')) {

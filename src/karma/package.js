@@ -16,7 +16,7 @@ module.exports = (packageConf) => {
   ];
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.karma = '^5.0.7';
+  packageConf.devDependencies.karma = '^5.1.0';
   packageConf.devDependencies['karma-chrome-launcher'] = '^3.1.0';
   packageConf.devDependencies['karma-firefox-launcher'] = '^1.3.0';
 

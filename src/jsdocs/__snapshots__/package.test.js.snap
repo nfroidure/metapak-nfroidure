@@ -3,7 +3,7 @@
 exports[`Package transformer for jsdocs should work with a typescript setup 1`] = `
 Object {
   "devDependencies": Object {
-    "jsdoc-to-markdown": "^5.0.3",
+    "jsdoc-to-markdown": "^6.0.1",
   },
   "greenkeeper": Object {
     "ignore": Array [
@@ -30,7 +30,7 @@ Object {
 exports[`Package transformer for jsdocs should work with an empty package.json 1`] = `
 Object {
   "devDependencies": Object {
-    "jsdoc-to-markdown": "^5.0.3",
+    "jsdoc-to-markdown": "^6.0.1",
   },
   "greenkeeper": Object {
     "ignore": Array [
