@@ -17,6 +17,9 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
 
   // Simple README templating system
   if ('README.md' === file.name) {
+    const ghProjectPath = getGitHubProjectFromRepoURL(
+      (packageConf.repository || {}).url || ''
+    );
     // Header
     file.data += '# ' + packageConf.name + '\n';
     if (packageConf.description) {
@@ -29,11 +32,11 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
       if (packageConf.license === 'MIT') {
         file.data += `[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/${USERNAME}${ghPath}/LICENSE)\n`;
       }
-      if (configs.includes('travis')) {
-        file.data += `[![Build status](https://secure.travis-ci.org/${USERNAME}/${packageConf.name}.svg)](https://travis-ci.org/${USERNAME}/${packageConf.name})\n`;
+      if (configs.includes('travis') && ghProjectPath) {
+        file.data += `[![Build status](https://travis-ci.com/${ghProjectPath}.svg?branch=master)](https://travis-ci.com/github/${ghProjectPath})\n`;
       }
-      if (packageConf.devDependencies.coveralls) {
-        file.data += `[![Coverage Status](https://coveralls.io/repos/${USERNAME}/${packageConf.name}/badge.svg?branch=master)](https://coveralls.io/r/${USERNAME}/${packageConf.name}?branch=master)\n`;
+      if (packageConf.devDependencies.coveralls && ghProjectPath) {
+        file.data += `[![Coverage Status](https://coveralls.io/repos/github/${ghProjectPath}/badge.svg?branch=master)](https://coveralls.io/github/${ghProjectPath}?branch=master)\n`;
       }
       if (!data.rootPackage) {
         file.data += `[![NPM version](https://badge.fury.io/js/${encodeURIComponent(
@@ -42,11 +45,11 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
         if (!data.childPackage) {
           file.data += `[![Dependency Status](https://david-dm.org/${USERNAME}/${packageConf.name}.svg)](https://david-dm.org/${USERNAME}/${packageConf.name})\n`;
           file.data += `[![devDependency Status](https://david-dm.org/${USERNAME}/${packageConf.name}/dev-status.svg)](https://david-dm.org/${USERNAME}/${packageConf.name}#info=devDependencies)\n`;
-          file.data += `[![Package Quality](http://npm.packagequality.com/shield/${packageConf.name}.svg)](http://packagequality.com/#?package=${packageConf.name})\n`;
+          file.data += `[![Package Quality](https://npm.packagequality.com/shield/${packageConf.name}.svg)](https://packagequality.com/#?package=${packageConf.name})\n`;
         }
       }
-      if (configs.includes('codeclimate')) {
-        file.data += `[![Code Climate](https://codeclimate.com/github/${USERNAME}/${packageConf.name}.svg)](https://codeclimate.com/github/${USERNAME}/${packageConf.name})\n`;
+      if (configs.includes('codeclimate') && ghProjectPath) {
+        file.data += `[![Code Climate](https://codeclimate.com/github/${ghProjectPath}.svg)](https://codeclimate.com/github/${ghProjectPath})\n`;
       }
     }
 
@@ -117,4 +120,11 @@ function getGitHubPathFromModuleName(packageName, childPackage = false) {
   return childPackage
     ? `/${scope}/blob/master/packages/${scope}-${name}`
     : `/${scope}-${name}/blob/master`;
+}
+
+function getGitHubProjectFromRepoURL(repoURL) {
+  return repoURL.replace(
+    /^git\+https:\/\/github.com\/([^/]+\/[^.]+)\.git$/,
+    '$1'
+  );
 }

@@ -190,6 +190,9 @@ describe('Assets transformer for www configs', () => {
             name: 'John Doe',
           },
         ],
+        repository: {
+          url: 'git+https://github.com/nfroidure/module.git',
+        },
         license: 'MIT',
       },
       {
@@ -244,6 +247,9 @@ describe('Assets transformer for www configs', () => {
             name: 'John Doe',
           },
         ],
+        repository: {
+          url: 'git+https://github.com/nfroidure/module.git',
+        },
         license: 'MIT',
       },
       {
@@ -300,6 +306,9 @@ describe('Assets transformer for www configs', () => {
             name: 'John Doe',
           },
         ],
+        repository: {
+          url: 'git+https://github.com/nfroidure/module.git',
+        },
         license: 'MIT',
       },
       {

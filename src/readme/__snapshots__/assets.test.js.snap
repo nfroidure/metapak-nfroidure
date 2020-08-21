@@ -15,7 +15,7 @@ Object {
 [![NPM version](https://badge.fury.io/js/module.svg)](https://npmjs.org/package/module)
 [![Dependency Status](https://david-dm.org/nfroidure/module.svg)](https://david-dm.org/nfroidure/module)
 [![devDependency Status](https://david-dm.org/nfroidure/module/dev-status.svg)](https://david-dm.org/nfroidure/module#info=devDependencies)
-[![Package Quality](http://npm.packagequality.com/shield/module.svg)](http://packagequality.com/#?package=module)
+[![Package Quality](https://npm.packagequality.com/shield/module.svg)](https://packagequality.com/#?package=module)
 
 
 [//]: # (::contents:start)
@@ -56,12 +56,12 @@ Object {
 > A great module!
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nfroidure/module/blob/master/LICENSE)
-[![Build status](https://secure.travis-ci.org/nfroidure/module.svg)](https://travis-ci.org/nfroidure/module)
-[![Coverage Status](https://coveralls.io/repos/nfroidure/module/badge.svg?branch=master)](https://coveralls.io/r/nfroidure/module?branch=master)
+[![Build status](https://travis-ci.com/nfroidure/module.svg?branch=master)](https://travis-ci.com/github/nfroidure/module)
+[![Coverage Status](https://coveralls.io/repos/github/nfroidure/module/badge.svg?branch=master)](https://coveralls.io/github/nfroidure/module?branch=master)
 [![NPM version](https://badge.fury.io/js/module.svg)](https://npmjs.org/package/module)
 [![Dependency Status](https://david-dm.org/nfroidure/module.svg)](https://david-dm.org/nfroidure/module)
 [![devDependency Status](https://david-dm.org/nfroidure/module/dev-status.svg)](https://david-dm.org/nfroidure/module#info=devDependencies)
-[![Package Quality](http://npm.packagequality.com/shield/module.svg)](http://packagequality.com/#?package=module)
+[![Package Quality](https://npm.packagequality.com/shield/module.svg)](https://packagequality.com/#?package=module)
 [![Code Climate](https://codeclimate.com/github/nfroidure/module.svg)](https://codeclimate.com/github/nfroidure/module)
 
 
@@ -142,13 +142,13 @@ Object {
 > A great module!
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nfroidure/scope-module/blob/master/LICENSE)
-[![Build status](https://secure.travis-ci.org/nfroidure/@scope/module.svg)](https://travis-ci.org/nfroidure/@scope/module)
-[![Coverage Status](https://coveralls.io/repos/nfroidure/@scope/module/badge.svg?branch=master)](https://coveralls.io/r/nfroidure/@scope/module?branch=master)
+[![Build status](https://travis-ci.com/nfroidure/module.svg?branch=master)](https://travis-ci.com/github/nfroidure/module)
+[![Coverage Status](https://coveralls.io/repos/github/nfroidure/module/badge.svg?branch=master)](https://coveralls.io/github/nfroidure/module?branch=master)
 [![NPM version](https://badge.fury.io/js/%40scope%2Fmodule.svg)](https://npmjs.org/package/@scope/module)
 [![Dependency Status](https://david-dm.org/nfroidure/@scope/module.svg)](https://david-dm.org/nfroidure/@scope/module)
 [![devDependency Status](https://david-dm.org/nfroidure/@scope/module/dev-status.svg)](https://david-dm.org/nfroidure/@scope/module#info=devDependencies)
-[![Package Quality](http://npm.packagequality.com/shield/@scope/module.svg)](http://packagequality.com/#?package=@scope/module)
-[![Code Climate](https://codeclimate.com/github/nfroidure/@scope/module.svg)](https://codeclimate.com/github/nfroidure/@scope/module)
+[![Package Quality](https://npm.packagequality.com/shield/@scope/module.svg)](https://packagequality.com/#?package=@scope/module)
+[![Code Climate](https://codeclimate.com/github/nfroidure/module.svg)](https://codeclimate.com/github/nfroidure/module)
 
 
 [//]: # (::contents:start)
@@ -189,10 +189,10 @@ Object {
 > A great module!
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nfroidure/scope/blob/master/packages/scope-module/LICENSE)
-[![Build status](https://secure.travis-ci.org/nfroidure/@scope/module.svg)](https://travis-ci.org/nfroidure/@scope/module)
-[![Coverage Status](https://coveralls.io/repos/nfroidure/@scope/module/badge.svg?branch=master)](https://coveralls.io/r/nfroidure/@scope/module?branch=master)
+[![Build status](https://travis-ci.com/nfroidure/module.svg?branch=master)](https://travis-ci.com/github/nfroidure/module)
+[![Coverage Status](https://coveralls.io/repos/github/nfroidure/module/badge.svg?branch=master)](https://coveralls.io/github/nfroidure/module?branch=master)
 [![NPM version](https://badge.fury.io/js/%40scope%2Fmodule.svg)](https://npmjs.org/package/@scope/module)
-[![Code Climate](https://codeclimate.com/github/nfroidure/@scope/module.svg)](https://codeclimate.com/github/nfroidure/@scope/module)
+[![Code Climate](https://codeclimate.com/github/nfroidure/module.svg)](https://codeclimate.com/github/nfroidure/module)
 
 
 [//]: # (::contents:start)
