@@ -1,3 +1,12 @@
+## [10.2.4](https://github.com/nfroidure/metapak-nfroidure/compare/v10.2.3...v10.2.4) (2020-08-21)
+
+
+### Bug Fixes
+
+* **badges:** fix badges URLs ([19a0846](https://github.com/nfroidure/metapak-nfroidure/commit/19a08464dbeb282783d7c5c5703fcfa71bebfe1a))
+
+
+
 ## [10.2.3](https://github.com/nfroidure/metapak-nfroidure/compare/v10.2.2...v10.2.3) (2020-08-19)
 
 
