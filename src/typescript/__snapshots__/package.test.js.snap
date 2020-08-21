@@ -4,7 +4,7 @@ exports[`private Package transformer should work 1`] = `
 Object {
   "devDependencies": Object {
     "rimraf": "^3.0.2",
-    "typescript": "^3.9.7",
+    "typescript": "^4.0.2",
   },
   "greenkeeper": Object {
     "ignore": Array [
