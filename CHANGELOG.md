@@ -1,3 +1,12 @@
+## [10.2.5](https://github.com/nfroidure/metapak-nfroidure/compare/v10.2.4...v10.2.5) (2020-08-24)
+
+
+### Bug Fixes
+
+* **badge:** allow https only git url ([de90527](https://github.com/nfroidure/metapak-nfroidure/commit/de90527ea95a7e72fdb496fdfc2db537aa272245))
+
+
+
 ## [10.2.4](https://github.com/nfroidure/metapak-nfroidure/compare/v10.2.3...v10.2.4) (2020-08-21)
 
 
