@@ -165,28 +165,6 @@ module.exports = (packageConf) => {
       throw new YError('E_BAD_CONFIG_ORDER', 'babel', 'eslint');
     }
     packageConf.devDependencies['babel-eslint'] = '^10.1.0';
-    packageConf.eslintConfig = Object.assign(
-      {},
-      packageConf.eslintConfig || {},
-      {
-        extends: 'eslint:recommended',
-        parserOptions: {
-          ecmaVersion: 2018,
-          sourceType: 'module',
-          modules: true,
-        },
-        env: {
-          es6: true,
-          node: true,
-          jest: true,
-          mocha: true,
-        },
-        plugins: ['prettier'],
-        rules: {
-          'prettier/prettier': 'error',
-        },
-      }
-    );
     packageConf.prettier = {
       semi: true,
       printWidth: 80,

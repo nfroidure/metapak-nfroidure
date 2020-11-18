@@ -131,26 +131,6 @@ Object {
     "@babel/register": "^7.12.1",
     "babel-eslint": "^10.1.0",
   },
-  "eslintConfig": Object {
-    "env": Object {
-      "es6": true,
-      "jest": true,
-      "mocha": true,
-      "node": true,
-    },
-    "extends": "eslint:recommended",
-    "parserOptions": Object {
-      "ecmaVersion": 2018,
-      "modules": true,
-      "sourceType": "module",
-    },
-    "plugins": Array [
-      "prettier",
-    ],
-    "rules": Object {
-      "prettier/prettier": "error",
-    },
-  },
   "greenkeeper": Object {
     "ignore": Array [
       "@babel/cli",
