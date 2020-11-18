@@ -57,18 +57,12 @@ module.exports = (packageConf) => {
     packageConf.devDependencies['@typescript-eslint/eslint-plugin'] = '^4.8.1';
     packageConf.devDependencies['@typescript-eslint/parser'] = '^4.8.1';
     packageConf.eslintConfig.parser = '@typescript-eslint/parser';
-    packageConf.eslintConfig.ignorePatterns = ['*.d.ts'];
-    packageConf.eslintConfig.overrides = [
-      // Sadly, ESLint does not take in account that
-      // the type are indeed used so disabling this
-      // rule for ts files
-      {
-        files: ['*.ts'],
-        rules: {
-          'no-unused-vars': [1, { args: 'none' }],
-        },
-      },
+    packageConf.eslintConfig.extends = [
+      ...packageConf.eslintConfig.extends,
+      'plugin:@typescript-eslint/eslint-recommended',
+      'plugin:@typescript-eslint/recommended',
     ];
+    packageConf.eslintConfig.ignorePatterns = ['*.d.ts'];
   }
 
   if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {

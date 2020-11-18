@@ -122,24 +122,11 @@ Object {
     },
     "extends": Array [
       "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
     ],
     "ignorePatterns": Array [
       "*.d.ts",
-    ],
-    "overrides": Array [
-      Object {
-        "files": Array [
-          "*.ts",
-        ],
-        "rules": Object {
-          "no-unused-vars": Array [
-            1,
-            Object {
-              "args": "none",
-            },
-          ],
-        },
-      },
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": Object {
