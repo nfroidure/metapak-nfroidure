@@ -41,7 +41,7 @@ Object {
         "@babel/env",
         Object {
           "targets": Object {
-            "node": "10.19.0",
+            "node": "12.19.0",
           },
         },
       ],
@@ -116,7 +116,7 @@ Object {
         "@babel/env",
         Object {
           "targets": Object {
-            "node": "10.19.0",
+            "node": "12.19.0",
           },
         },
       ],
@@ -235,7 +235,7 @@ Object {
         "@babel/env",
         Object {
           "targets": Object {
-            "node": "10.19.0",
+            "node": "12.19.0",
           },
         },
       ],
@@ -326,7 +326,7 @@ Object {
         "@babel/env",
         Object {
           "targets": Object {
-            "node": "10.19.0",
+            "node": "12.19.0",
           },
         },
       ],
@@ -416,7 +416,7 @@ Object {
         "@babel/env",
         Object {
           "targets": Object {
-            "node": "10.19.0",
+            "node": "12.19.0",
           },
         },
       ],
