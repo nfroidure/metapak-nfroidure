@@ -1,3 +1,12 @@
+## [11.0.2](https://github.com/nfroidure/metapak-nfroidure/compare/v11.0.1...v11.0.2) (2020-11-18)
+
+
+### Bug Fixes
+
+* **babel:** remove unused eslint config for babel ([9059ead](https://github.com/nfroidure/metapak-nfroidure/commit/9059eadaa2e2780126533ac73a1cd7e79c451ff4))
+
+
+
 ## [11.0.1](https://github.com/nfroidure/metapak-nfroidure/compare/v11.0.0...v11.0.1) (2020-11-18)
 
 
