@@ -1,3 +1,7 @@
+## [11.0.1](https://github.com/nfroidure/metapak-nfroidure/compare/v11.0.0...v11.0.1) (2020-11-18)
+
+
+
 # [11.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v10.2.5...v11.0.0) (2020-11-18)
 
 
