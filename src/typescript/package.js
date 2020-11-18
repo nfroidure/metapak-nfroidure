@@ -9,7 +9,7 @@ module.exports = (packageConf) => {
 
   // Add the dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.typescript = '^4.0.2';
+  packageConf.devDependencies.typescript = '^4.0.5';
   packageConf.devDependencies.rimraf = '^3.0.2';
 
   packageConf.scripts = packageConf.scripts || {};
