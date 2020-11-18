@@ -1,3 +1,12 @@
+## [11.0.3](https://github.com/nfroidure/metapak-nfroidure/compare/v11.0.2...v11.0.3) (2020-11-18)
+
+
+### Bug Fixes
+
+* **babel:** only add new configurations when using babel with eslint ([2a5cd55](https://github.com/nfroidure/metapak-nfroidure/commit/2a5cd559e477c86e9f11162a6efee29c4ce8f775))
+
+
+
 ## [11.0.2](https://github.com/nfroidure/metapak-nfroidure/compare/v11.0.1...v11.0.2) (2020-11-18)
 
 
