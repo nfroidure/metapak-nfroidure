@@ -78,6 +78,12 @@ describe('Babel', () => {
             test: '',
             preversion: '',
           },
+          eslintConfig: {
+            parserOptions: {
+              sourceType: 'script',
+            },
+          },
+          prettier: {},
           metapak: {
             data: {
               testsFiles: 'src/*.js src/**/*.js',

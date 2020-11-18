@@ -165,12 +165,10 @@ module.exports = (packageConf) => {
       throw new YError('E_BAD_CONFIG_ORDER', 'babel', 'eslint');
     }
     packageConf.devDependencies['babel-eslint'] = '^10.1.0';
+    packageConf.eslintConfig.parserOptions.sourceType = 'module';
     packageConf.prettier = {
-      semi: true,
-      printWidth: 80,
-      singleQuote: true,
+      ...packageConf.prettier,
       trailingComma: 'all',
-      proseWrap: 'always',
     };
   }
 

@@ -131,6 +131,11 @@ Object {
     "@babel/register": "^7.12.1",
     "babel-eslint": "^10.1.0",
   },
+  "eslintConfig": Object {
+    "parserOptions": Object {
+      "sourceType": "module",
+    },
+  },
   "greenkeeper": Object {
     "ignore": Array [
       "@babel/cli",
@@ -157,10 +162,6 @@ Object {
   },
   "module": "index.mjs",
   "prettier": Object {
-    "printWidth": 80,
-    "proseWrap": "always",
-    "semi": true,
-    "singleQuote": true,
     "trailingComma": "all",
   },
   "scripts": Object {
