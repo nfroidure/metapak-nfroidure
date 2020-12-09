@@ -1,3 +1,12 @@
+## [11.0.4](https://github.com/nfroidure/metapak-nfroidure/compare/v11.0.3...v11.0.4) (2020-12-09)
+
+
+### Bug Fixes
+
+* **main config:** fix lerna based package changelog ([d0d3315](https://github.com/nfroidure/metapak-nfroidure/commit/d0d33157eea8e58756a0530ebc5cc8b82dfb7183))
+
+
+
 ## [11.0.3](https://github.com/nfroidure/metapak-nfroidure/compare/v11.0.2...v11.0.3) (2020-11-18)
 
 
