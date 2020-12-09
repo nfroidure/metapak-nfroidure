@@ -30,7 +30,9 @@ module.exports = (packageConf) => {
   packageConf.license = packageConf.license || 'MIT';
 
   // Let's always start with the 0.0.0 version
-  packageConf.version = packageConf.version || '0.0.0';
+  if (!data.rootPackage) {
+    packageConf.version = packageConf.version || '0.0.0';
+  }
 
   // Supporting Node LTS version only
   packageConf.engines = { node: '>=' + config.lastNodeLTS };
@@ -83,8 +85,13 @@ module.exports = (packageConf) => {
     };
 
     // Add the changelog stuffs
-    packageConf.scripts.changelog =
-      'conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md';
+    packageConf.scripts.changelog = data.rootPackage
+      ? `conventional-changelog -p angular -i CHANGELOG.md -s -k packages/${packageConf.name}/package.json && git add CHANGELOG.md`
+      : 'conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md';
+    packageConf.scripts.version = ensureScript(
+      packageConf.scripts.version,
+      CHANGELOG_SCRIPT
+    );
     packageConf.scripts.version = ensureScript(
       packageConf.scripts.version,
       CHANGELOG_SCRIPT
