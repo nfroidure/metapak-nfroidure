@@ -1,3 +1,7 @@
+## [11.0.7](https://github.com/nfroidure/metapak-nfroidure/compare/v11.0.6...v11.0.7) (2021-04-09)
+
+
+
 ## [11.0.6](https://github.com/nfroidure/metapak-nfroidure/compare/v11.0.5...v11.0.6) (2021-04-09)
 
 
