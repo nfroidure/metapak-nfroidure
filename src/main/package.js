@@ -111,7 +111,7 @@ module.exports = (packageConf) => {
 
     // Add the MUST HAVE dev dependencies
     packageConf.devDependencies = packageConf.devDependencies || {};
-    packageConf.devDependencies.commitizen = '^4.1.2';
+    packageConf.devDependencies.commitizen = '^4.2.3';
     packageConf.devDependencies['cz-conventional-changelog'] = '^3.3.0';
     packageConf.devDependencies['conventional-changelog-cli'] = '^2.1.1';
 

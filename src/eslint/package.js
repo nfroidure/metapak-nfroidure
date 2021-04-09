@@ -21,9 +21,9 @@ module.exports = (packageConf) => {
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.eslint = '^7.13.0';
-  packageConf.devDependencies.prettier = '^2.1.2';
-  packageConf.devDependencies['eslint-plugin-prettier'] = '^3.1.4';
+  packageConf.devDependencies.eslint = '^7.23.0';
+  packageConf.devDependencies.prettier = '^2.2.1';
+  packageConf.devDependencies['eslint-plugin-prettier'] = '^3.3.1';
 
   packageConf.eslintConfig = {
     extends: ['eslint:recommended'],
@@ -54,8 +54,8 @@ module.exports = (packageConf) => {
 
   // Special configuration for TypeScript
   if (configs.includes('typescript')) {
-    packageConf.devDependencies['@typescript-eslint/eslint-plugin'] = '^4.8.1';
-    packageConf.devDependencies['@typescript-eslint/parser'] = '^4.8.1';
+    packageConf.devDependencies['@typescript-eslint/eslint-plugin'] = '^4.21.0';
+    packageConf.devDependencies['@typescript-eslint/parser'] = '^4.21.0';
     packageConf.eslintConfig.parser = '@typescript-eslint/parser';
     packageConf.eslintConfig.extends = [
       ...packageConf.eslintConfig.extends,
