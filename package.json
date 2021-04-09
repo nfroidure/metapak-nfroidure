@@ -73,7 +73,7 @@
   "dependencies": {
     "escape-string-regexp": "^4.0.0",
     "rimraf": "^3.0.2",
-    "yerror": "^5.0.0"
+    "yerror": "^6.0.0"
   },
   "jest": {
     "coverageReporters": [
