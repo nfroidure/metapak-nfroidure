@@ -6,7 +6,8 @@ const { getMetapakInfos } = require('../lib.js');
 const USERNAME = 'nfroidure';
 const README_CONTENTS_START_TAG = `[//]: # (::contents:start)`;
 const README_CONTENTS_END_TAG = `[//]: # (::contents:end)`;
-const README_REGEXP = /^(?:[^]*)\[\/\/\]: # (?:\(|')::contents:start(?:\)|')\r?\n\r?\n([^]*)\r?\n\r?\n\[\/\/\]: # (?:\(|')::contents:end(?:\)|')(?:[^]*)$/gm;
+const README_REGEXP =
+  /^(?:[^]*)\[\/\/\]: # (?:\(|')::contents:start(?:\)|')\r?\n\r?\n([^]*)\r?\n\r?\n\[\/\/\]: # (?:\(|')::contents:end(?:\)|')(?:[^]*)$/gm;
 
 module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
   const { configs, data } = getMetapakInfos(packageConf);
@@ -37,19 +38,6 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
       }
       if (packageConf.devDependencies.coveralls && ghProjectPath) {
         file.data += `[![Coverage Status](https://coveralls.io/repos/github/${ghProjectPath}/badge.svg?branch=master)](https://coveralls.io/github/${ghProjectPath}?branch=master)\n`;
-      }
-      if (!data.rootPackage) {
-        file.data += `[![NPM version](https://badge.fury.io/js/${encodeURIComponent(
-          packageConf.name
-        )}.svg)](https://npmjs.org/package/${packageConf.name})\n`;
-        if (!data.childPackage) {
-          file.data += `[![Dependency Status](https://david-dm.org/${USERNAME}/${packageConf.name}.svg)](https://david-dm.org/${USERNAME}/${packageConf.name})\n`;
-          file.data += `[![devDependency Status](https://david-dm.org/${USERNAME}/${packageConf.name}/dev-status.svg)](https://david-dm.org/${USERNAME}/${packageConf.name}#info=devDependencies)\n`;
-          file.data += `[![Package Quality](https://npm.packagequality.com/shield/${packageConf.name}.svg)](https://packagequality.com/#?package=${packageConf.name})\n`;
-        }
-      }
-      if (configs.includes('codeclimate') && ghProjectPath) {
-        file.data += `[![Code Climate](https://codeclimate.com/github/${ghProjectPath}.svg)](https://codeclimate.com/github/${ghProjectPath})\n`;
       }
     }
 

@@ -3,7 +3,8 @@
 const config = require('../config.js');
 const { ensureScript, getMetapakInfos } = require('../lib.js');
 
-const GITHUB_REPOSITORY_REGEXP = /git\+https:\/\/github.com\/([a-zA-Z0-9-]+)\/([a-zA-Z0-9-]+)\.git/;
+const GITHUB_REPOSITORY_REGEXP =
+  /git\+https:\/\/github.com\/([a-zA-Z0-9-]+)\/([a-zA-Z0-9-]+)\.git/;
 const TEST_SCRIPT = 'npm t';
 const LINT_SCRIPT = 'npm run lint';
 const METAPAK_SCRIPT = 'npm run metapak -- -s';
@@ -111,7 +112,7 @@ module.exports = (packageConf) => {
 
     // Add the MUST HAVE dev dependencies
     packageConf.devDependencies = packageConf.devDependencies || {};
-    packageConf.devDependencies.commitizen = '^4.2.3';
+    packageConf.devDependencies.commitizen = '^4.2.4';
     packageConf.devDependencies['cz-conventional-changelog'] = '^3.3.0';
     packageConf.devDependencies['conventional-changelog-cli'] = '^2.1.1';
 
