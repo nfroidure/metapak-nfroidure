@@ -16,9 +16,9 @@ module.exports = (packageConf) => {
   ];
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.karma = '^6.3.6';
-  packageConf.devDependencies['karma-chrome-launcher'] = '^3.1.0';
-  packageConf.devDependencies['karma-firefox-launcher'] = '^2.1.1';
+  packageConf.devDependencies.karma = '^6.3.20';
+  packageConf.devDependencies['karma-chrome-launcher'] = '^3.1.1';
+  packageConf.devDependencies['karma-firefox-launcher'] = '^2.1.2';
 
   if (configs.includes('mocha')) {
     if (configs.indexOf('mocha') > configs.indexOf('karma')) {

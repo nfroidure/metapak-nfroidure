@@ -17,7 +17,7 @@ module.exports = (packageConf) => {
   packageConf.scripts.cover = `npm run jest -- --coverage`;
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jest = '^27.3.1';
+  packageConf.devDependencies.jest = '^28.1.0';
 
   // Add coveralls for independant packages
   if (!data.childPackage) {

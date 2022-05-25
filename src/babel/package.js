@@ -152,19 +152,19 @@ module.exports = (packageConf) => {
     delete packageConf.devDependencies['babel-core'];
   }
 
-  packageConf.devDependencies['@babel/cli'] = '^7.16.0';
-  packageConf.devDependencies['@babel/core'] = '^7.16.0';
-  packageConf.devDependencies['@babel/register'] = '^7.16.0';
-  packageConf.devDependencies['@babel/preset-env'] = '^7.16.0';
+  packageConf.devDependencies['@babel/cli'] = '^7.17.10';
+  packageConf.devDependencies['@babel/core'] = '^7.18.2';
+  packageConf.devDependencies['@babel/register'] = '^7.17.7';
+  packageConf.devDependencies['@babel/preset-env'] = '^7.18.2';
   packageConf.devDependencies['@babel/plugin-proposal-object-rest-spread'] =
-    '^7.16.0';
+    '^7.18.0';
 
   // Add ESLint tweaks
   if (configs.includes('eslint')) {
     if (configs.indexOf('eslint') > configs.indexOf('babel')) {
       throw new YError('E_BAD_CONFIG_ORDER', 'babel', 'eslint');
     }
-    packageConf.devDependencies['@babel/eslint-parser'] = '^7.16.0';
+    packageConf.devDependencies['@babel/eslint-parser'] = '^7.18.2';
     delete packageConf.devDependencies['babel-eslint'];
     packageConf.eslintConfig.parserOptions.sourceType = 'module';
     packageConf.prettier = {
@@ -184,9 +184,9 @@ module.exports = (packageConf) => {
         ...packageConf.babel.plugins,
       ]),
     ];
-    packageConf.devDependencies['@babel/preset-typescript'] = '^7.16.0';
+    packageConf.devDependencies['@babel/preset-typescript'] = '^7.17.12';
     packageConf.devDependencies['@babel/plugin-proposal-class-properties'] =
-      '^7.16.0';
+      '^7.17.12';
   }
 
   if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {

@@ -1,6 +1,6 @@
 'use strict';
 
-const YError = require('yerror');
+const YError = require('yerror').default;
 const { ensureScript, getMetapakInfos } = require('../lib.js');
 const TYPES_COMMAND = 'npm run types';
 
@@ -9,7 +9,7 @@ module.exports = (packageConf) => {
 
   // Add the dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.typescript = '^4.4.4';
+  packageConf.devDependencies.typescript = '^4.7.2';
   packageConf.devDependencies.rimraf = '^3.0.2';
 
   packageConf.scripts = packageConf.scripts || {};
