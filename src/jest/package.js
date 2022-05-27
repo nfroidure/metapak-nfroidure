@@ -44,7 +44,7 @@ module.exports = (packageConf) => {
     packageConf.jest
   );
   // Special configuration for TypeScript
-  if (configs.includes('typescript')) {
+  if (configs.includes('typescript') || configs.includes('tsesm')) {
     packageConf.devDependencies['@types/jest'] = '^27.0.2';
   }
 

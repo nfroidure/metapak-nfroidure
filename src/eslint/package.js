@@ -53,7 +53,7 @@ module.exports = (packageConf) => {
   };
 
   // Special configuration for TypeScript
-  if (configs.includes('typescript')) {
+  if (configs.includes('typescript') || configs.includes('tsesm')) {
     packageConf.devDependencies['@typescript-eslint/eslint-plugin'] = '^5.26.0';
     packageConf.devDependencies['@typescript-eslint/parser'] = '^5.26.0';
     packageConf.eslintConfig.parser = '@typescript-eslint/parser';
@@ -75,8 +75,11 @@ module.exports = (packageConf) => {
           )
             .concat(['eslint', 'eslint-config-prettier', 'prettier'])
             .concat(
-              configs.includes('typescript')
-                ? ['@typescript-eslint/parser']
+              configs.includes('typescript') || configs.includes('tsesm')
+                ? [
+                    '@typescript-eslint/eslint-plugin',
+                    '@typescript-eslint/parser',
+                  ]
                 : []
             )
         ),

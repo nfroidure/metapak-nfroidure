@@ -24,7 +24,10 @@ module.exports = (packageConf) => {
   }
 
   // Special configuration for TypeScript
-  if (configs.includes('typescript') && !packageConf.jsarch) {
+  if (
+    (configs.includes('typescript') || configs.includes('tsesm')) &&
+    !packageConf.jsarch
+  ) {
     packageConf.jsarch = {
       parserOptions: {
         plugins: ['typescript'],

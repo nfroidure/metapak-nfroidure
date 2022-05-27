@@ -13,7 +13,9 @@ module.exports = (packageConf) => {
   packageConf.scripts.doc = data.rootPackage
     ? 'lerna run doc'
     : `echo "# API" > ${apiPath}; jsdoc2md ${
-        configs.includes('typescript') ? data.distFiles : data.files
+        configs.includes('typescript') || configs.includes('tsesm')
+          ? data.distFiles
+          : data.files
       } >> ${apiPath} && git add ${apiPath}`;
 
   if (!data.childPackage) {
