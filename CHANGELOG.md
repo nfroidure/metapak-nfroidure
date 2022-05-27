@@ -1,3 +1,19 @@
+# [12.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v11.2.1...v12.0.0) (2022-05-27)
+
+
+### Bug Fixes
+
+* **ci:** fix CI Config ([aea9263](https://github.com/nfroidure/metapak-nfroidure/commit/aea92638c3a579306b4060e62c7c22447a9ccc16))
+* **configs:** fix GH Actions file name ([2c5d8af](https://github.com/nfroidure/metapak-nfroidure/commit/2c5d8af959a9a1755ef6754799f776ea8af016a6))
+
+
+### Features
+
+* **configs:** add GH Actions instead of TravisCI ([bf679d6](https://github.com/nfroidure/metapak-nfroidure/commit/bf679d68dd4bf2209adeced107014743d33b487c)), closes [#19](https://github.com/nfroidure/metapak-nfroidure/issues/19)
+* **configs:** add TypeScript+ESM build configuration ([145c9ba](https://github.com/nfroidure/metapak-nfroidure/commit/145c9ba57cb3f9e86bdd9a0b08ea4050f27aaa53)), closes [#31](https://github.com/nfroidure/metapak-nfroidure/issues/31)
+
+
+
 ## [11.2.1](https://github.com/nfroidure/metapak-nfroidure/compare/v11.2.0...v11.2.1) (2022-05-25)
 
 
