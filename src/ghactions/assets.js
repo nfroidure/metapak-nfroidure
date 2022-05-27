@@ -3,7 +3,7 @@
 const config = require('../config.js');
 
 module.exports = (file) => {
-  if ('test.yml' === file.name) {
+  if ('.github/workflows/test.yml' === file.name) {
     const lastNodeLTSMajorPart = parseInt(config.lastNodeLTS.split('.')[0], 10);
     const lastNodeMajorPart = parseInt(config.lastNode.split('.')[0], 10);
     const versions = [];

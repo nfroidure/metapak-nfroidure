@@ -11,7 +11,7 @@ describe('GHActions', () => {
       expect(
         assetsTransformer(
           {
-            name: 'test.yml',
+            name: '.github/workflows/test.yml',
             data: fs.readFileSync(
               path.join(
                 __dirname,
