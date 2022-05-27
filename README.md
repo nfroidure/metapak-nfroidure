@@ -8,7 +8,6 @@
 > A metapak module for my open source projects.
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nfroidure/metapak-nfroidure/blob/master/LICENSE)
-[![Build status](https://travis-ci.com/nfroidure/metapak-nfroidure.svg?branch=master)](https://travis-ci.com/github/nfroidure/metapak-nfroidure)
 [![Coverage Status](https://coveralls.io/repos/github/nfroidure/metapak-nfroidure/badge.svg?branch=master)](https://coveralls.io/github/nfroidure/metapak-nfroidure?branch=master)
 
 
