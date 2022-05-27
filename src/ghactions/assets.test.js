@@ -33,29 +33,17 @@ describe('GHActions', () => {
 
         on:
           push:
-            branches: [ master ]
+            branches: [master]
           pull_request:
-            branches: [ master ]
+            branches: [master]
 
         jobs:
           build:
-
             runs-on: ubuntu-latest
 
             strategy:
               matrix:
                 node-version: [16.x, 18.x]
-
-            services:
-              redis:
-                image: redis
-                options: >-
-                  --health-cmd \\"redis-cli ping\\"
-                  --health-interval 10s
-                  --health-timeout 5s
-                  --health-retries 5
-                ports:
-                  - 6379:6379
 
             steps:
               - uses: actions/checkout@v3
@@ -63,12 +51,13 @@ describe('GHActions', () => {
                 uses: actions/setup-node@v3
                 with:
                   node-version: \${{ matrix.node-version }}
-                  cache: 'npm'
-              - run: npm ci
-              - run: npm run build --if-present
-              - run: npm run precz
+                  cache: \\"npm\\"
+              - name: Install dependencies
+                run: npm ci
+              - name: Run pre-commit tests
+                run: npm run precz
         ",
-          "name": "test.yml",
+          "name": ".github/workflows/test.yml",
         }
       `);
     });
