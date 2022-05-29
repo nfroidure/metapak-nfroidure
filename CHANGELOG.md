@@ -1,3 +1,12 @@
+## [12.0.1](https://github.com/nfroidure/metapak-nfroidure/compare/v12.0.0...v12.0.1) (2022-05-29)
+
+
+### Bug Fixes
+
+* **tsesm:** fix TypeScript + Jest configuration ([b7c6768](https://github.com/nfroidure/metapak-nfroidure/commit/b7c67688a494acc8cc918a61e75054d2c1ac7d80))
+
+
+
 # [12.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v11.2.1...v12.0.0) (2022-05-27)
 
 
