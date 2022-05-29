@@ -40,12 +40,34 @@ module.exports = (packageConf) => {
           transform: {}.undef,
         }
       : {},
+    // Add ts esm necessary conf
+    configs.includes('tsesm')
+      ? {
+          preset: 'ts-jest',
+          testEnvironment: 'node',
+          transform: {
+            '\\.[jt]sx?$': 'ts-jest',
+          },
+          globals: {
+            'ts-jest': {
+              useESM: true,
+            },
+          },
+          moduleNameMapper: {
+            '(.+)\\.js': '$1',
+          },
+          extensionsToTreatAsEsm: ['.ts'],
+        }
+      : {},
 
     packageConf.jest
   );
   // Special configuration for TypeScript
   if (configs.includes('typescript') || configs.includes('tsesm')) {
     packageConf.devDependencies['@types/jest'] = '^27.0.2';
+  }
+  if (configs.includes('tsesm')) {
+    packageConf.devDependencies['ts-jest'] = '^28.0.3';
   }
 
   if (configs.includes('typescript')) {
@@ -61,7 +83,10 @@ module.exports = (packageConf) => {
             : []
           )
             .concat(['jest', 'coveralls'])
-            .filter((packageName) => packageName !== 'ts-jest')
+            .filter(
+              (packageName) =>
+                packageName !== 'ts-jest' || configs.includes('tsesm')
+            )
         ),
       ],
     };
