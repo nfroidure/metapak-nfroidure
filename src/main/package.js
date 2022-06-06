@@ -42,7 +42,7 @@ module.exports = (packageConf) => {
   packageConf.files = (data.bundleFiles || ['src']).concat(
     'LICENSE',
     'README.md',
-    'CHANGELOG.md'
+    'CHANGELOG.md',
   );
 
   // Let's add my handy scripts
@@ -69,15 +69,15 @@ module.exports = (packageConf) => {
     packageConf.scripts.cz = 'env NODE_ENV=${NODE_ENV:-cli} git cz';
     packageConf.scripts.precz = ensureScript(
       packageConf.scripts.precz,
-      TEST_SCRIPT
+      TEST_SCRIPT,
     );
     packageConf.scripts.precz = ensureScript(
       packageConf.scripts.precz,
-      LINT_SCRIPT
+      LINT_SCRIPT,
     );
     packageConf.scripts.precz = ensureScript(
       packageConf.scripts.precz,
-      METAPAK_SCRIPT
+      METAPAK_SCRIPT,
     );
     packageConf.config = {
       commitizen: {
@@ -91,23 +91,23 @@ module.exports = (packageConf) => {
       : 'conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md';
     packageConf.scripts.version = ensureScript(
       packageConf.scripts.version,
-      CHANGELOG_SCRIPT
+      CHANGELOG_SCRIPT,
     );
     packageConf.scripts.version = ensureScript(
       packageConf.scripts.version,
-      CHANGELOG_SCRIPT
+      CHANGELOG_SCRIPT,
     );
     packageConf.scripts.preversion = ensureScript(
       packageConf.scripts.preversion,
-      TEST_SCRIPT
+      TEST_SCRIPT,
     );
     packageConf.scripts.preversion = ensureScript(
       packageConf.scripts.preversion,
-      LINT_SCRIPT
+      LINT_SCRIPT,
     );
     packageConf.scripts.preversion = ensureScript(
       packageConf.scripts.preversion,
-      METAPAK_SCRIPT
+      METAPAK_SCRIPT,
     );
 
     // Add the MUST HAVE dev dependencies

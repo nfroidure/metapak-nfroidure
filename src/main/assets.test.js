@@ -14,13 +14,13 @@ describe('main', () => {
             name: 'LICENSE',
             data: fs.readFileSync(
               path.join(__dirname, 'assets', 'LICENSE'),
-              'utf-8'
+              'utf-8',
             ),
           },
           {
             author: { name: 'Nicolas Froidure' },
-          }
-        )
+          },
+        ),
       ).toMatchSnapshot();
     });
 
@@ -31,12 +31,12 @@ describe('main', () => {
             name: 'YOLO',
             data: 'Carpe diem\n',
           },
-          {}
+          {},
         ),
         {
           name: 'YOLO',
           data: 'Carpe diem\n',
-        }
+        },
       );
     });
 
@@ -53,12 +53,12 @@ describe('main', () => {
                 childPackage: true,
               },
             },
-          }
+          },
         ),
         {
           name: '.gitignore',
           data: '',
-        }
+        },
       );
     });
   });

@@ -10,11 +10,11 @@ describe('Hooks transformer', () => {
         {
           'pre-commit': ['npm run architecture && git add ARCHITECTURE.md'],
         },
-        {}
+        {},
       ),
       {
         'pre-commit': [],
-      }
+      },
     );
   });
 
@@ -24,11 +24,11 @@ describe('Hooks transformer', () => {
         {
           'pre-commit': ['npm t'],
         },
-        {}
+        {},
       ),
       {
         'pre-commit': ['npm t'],
-      }
+      },
     );
   });
 });

@@ -19,7 +19,7 @@ exclude_patterns:
           files.startsWith("'") && files.endsWith("'")
             ? files.slice(1, -1)
             : files
-        }"`
+        }"`,
       )}
 `;
     }

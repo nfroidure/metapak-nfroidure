@@ -15,7 +15,7 @@ describe('Package transformer', () => {
             rootPackage: true,
           },
         },
-      })
+      }),
     ).toMatchSnapshot();
   });
 
@@ -27,7 +27,7 @@ describe('Package transformer', () => {
             childPackage: true,
           },
         },
-      })
+      }),
     ).toMatchSnapshot();
   });
 
@@ -43,7 +43,7 @@ describe('Package transformer', () => {
             childPackage: true,
           },
         },
-      })
+      }),
     ).toMatchSnapshot();
   });
 });

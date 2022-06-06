@@ -21,11 +21,11 @@ module.exports = (packageConf) => {
   if (!data.childPackage) {
     packageConf.scripts.precz = ensureScript(
       packageConf.scripts.precz,
-      DOCUMENTATION_SCRIPT
+      DOCUMENTATION_SCRIPT,
     );
     packageConf.scripts.preversion = ensureScript(
       packageConf.scripts.preversion,
-      DOCUMENTATION_SCRIPT
+      DOCUMENTATION_SCRIPT,
     );
   }
 
@@ -41,7 +41,7 @@ module.exports = (packageConf) => {
           (packageConf.greenkeeper && packageConf.greenkeeper.ignore
             ? packageConf.greenkeeper.ignore
             : []
-          ).concat(['jsdoc-to-markdown'])
+          ).concat(['jsdoc-to-markdown']),
         ),
       ],
     };

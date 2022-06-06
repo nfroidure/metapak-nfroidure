@@ -60,6 +60,7 @@
     "coveralls": "^3.1.1",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^28.1.0",
     "metapak": "^4.0.4",
@@ -90,7 +91,8 @@
   "contributors": [],
   "eslintConfig": {
     "extends": [
-      "eslint:recommended"
+      "eslint:recommended",
+      "plugin:prettier/recommended"
     ],
     "parserOptions": {
       "ecmaVersion": 2018,
@@ -114,7 +116,7 @@
     "semi": true,
     "printWidth": 80,
     "singleQuote": true,
-    "trailingComma": "es5",
+    "trailingComma": "all",
     "proseWrap": "always"
   },
   "files": [

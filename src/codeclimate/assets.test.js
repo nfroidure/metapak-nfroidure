@@ -14,7 +14,7 @@ describe('TravisCI', () => {
             name: '.codeclimate.yml',
             data: fs.readFileSync(
               path.join(__dirname, 'assets', '_dot_codeclimate.yml'),
-              'utf-8'
+              'utf-8',
             ),
           },
           {
@@ -24,8 +24,8 @@ describe('TravisCI', () => {
                 testsFiles: "test/*.js 'src/**/*.test.js'",
               },
             },
-          }
-        )
+          },
+        ),
       ).toMatchSnapshot();
     });
 
@@ -36,12 +36,12 @@ describe('TravisCI', () => {
             name: 'YOLO',
             data: 'Carpe diem\n',
           },
-          {}
+          {},
         ),
         {
           name: 'YOLO',
           data: 'Carpe diem\n',
-        }
+        },
       );
     });
   });

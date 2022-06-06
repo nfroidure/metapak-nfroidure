@@ -22,8 +22,8 @@ node_js:
   - 10
 `,
           },
-          {}
-        )
+          {},
+        ),
       ).toMatchSnapshot();
     });
 
@@ -34,12 +34,12 @@ node_js:
             name: 'YOLO',
             data: 'Carpe diem\n',
           },
-          {}
+          {},
         ),
         {
           name: 'YOLO',
           data: 'Carpe diem\n',
-        }
+        },
       );
     });
   });

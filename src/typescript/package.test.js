@@ -11,7 +11,7 @@ describe('private', () => {
           metapak: {
             data: {},
           },
-        })
+        }),
       ).toMatchSnapshot();
     });
   });

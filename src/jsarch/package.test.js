@@ -14,7 +14,7 @@ describe('Package transformer for jsdocs', () => {
         greenkeeper: {
           ignore: [],
         },
-      })
+      }),
     ).toMatchSnapshot();
   });
 
@@ -30,7 +30,7 @@ describe('Package transformer for jsdocs', () => {
         greenkeeper: {
           ignore: [],
         },
-      })
+      }),
     ).toMatchSnapshot();
   });
 
@@ -47,7 +47,7 @@ describe('Package transformer for jsdocs', () => {
         greenkeeper: {
           ignore: [],
         },
-      })
+      }),
     ).toMatchSnapshot();
   });
 });

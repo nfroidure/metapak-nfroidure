@@ -12,7 +12,7 @@ describe('eslint', () => {
               files: 'src/*.js src/**/*.js',
             },
           },
-        })
+        }),
       ).toMatchSnapshot();
     });
 
@@ -25,7 +25,7 @@ describe('eslint', () => {
               files: 'src/*.js src/**/*.js',
             },
           },
-        })
+        }),
       ).toMatchSnapshot();
     });
 
@@ -39,7 +39,7 @@ describe('eslint', () => {
             },
             configs: ['typescript'],
           },
-        })
+        }),
       ).toMatchSnapshot();
     });
   });

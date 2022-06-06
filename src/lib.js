@@ -9,7 +9,7 @@ module.exports = {
 
 function ensureScript(baseScript = '', addedScript) {
   return new RegExp(`(^| && )${escapeStringRegexp(addedScript)}($| && )`).test(
-    baseScript
+    baseScript,
   )
     ? baseScript
     : `${baseScript ? `${baseScript} && ` : baseScript}${addedScript}`;

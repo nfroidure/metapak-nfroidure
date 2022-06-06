@@ -60,7 +60,7 @@ describe('Assets transformer for www configs', () => {
     };
 
     fs.readFileAsync.mockReturnValueOnce(
-      Promise.resolve(PROJECT_README_CONTENTS)
+      Promise.resolve(PROJECT_README_CONTENTS),
     );
     fs.readFileAsync.mockReturnValueOnce(Promise.resolve(PROJECT_API_CONTENTS));
 
@@ -89,7 +89,7 @@ describe('Assets transformer for www configs', () => {
         PROJECT_DIR,
         fs,
         log,
-      }
+      },
     )
       .then((file) => {
         expect(file).toMatchSnapshot();
@@ -108,7 +108,7 @@ describe('Assets transformer for www configs', () => {
     };
 
     fs.readFileAsync.mockReturnValueOnce(
-      Promise.resolve(PROJECT_README_CONTENTS)
+      Promise.resolve(PROJECT_README_CONTENTS),
     );
     fs.readFileAsync.mockReturnValueOnce(Promise.resolve(PROJECT_API_CONTENTS));
 
@@ -142,7 +142,7 @@ describe('Assets transformer for www configs', () => {
         PROJECT_DIR,
         fs,
         log,
-      }
+      },
     )
       .then((file) => {
         expect(file).toMatchSnapshot();
@@ -161,7 +161,7 @@ describe('Assets transformer for www configs', () => {
     };
 
     fs.readFileAsync.mockReturnValueOnce(
-      Promise.resolve(PROJECT_README_CONTENTS)
+      Promise.resolve(PROJECT_README_CONTENTS),
     );
     fs.readFileAsync.mockReturnValueOnce(Promise.resolve(PROJECT_API_CONTENTS));
 
@@ -199,7 +199,7 @@ describe('Assets transformer for www configs', () => {
         PROJECT_DIR,
         fs,
         log,
-      }
+      },
     )
       .then((file) => {
         expect(file).toMatchSnapshot();
@@ -218,7 +218,7 @@ describe('Assets transformer for www configs', () => {
     };
 
     fs.readFileAsync.mockReturnValueOnce(
-      Promise.resolve(PROJECT_README_CONTENTS)
+      Promise.resolve(PROJECT_README_CONTENTS),
     );
     fs.readFileAsync.mockReturnValueOnce(Promise.resolve(PROJECT_API_CONTENTS));
 
@@ -256,7 +256,7 @@ describe('Assets transformer for www configs', () => {
         PROJECT_DIR,
         fs,
         log,
-      }
+      },
     )
       .then((file) => {
         expect(file).toMatchSnapshot();
@@ -275,7 +275,7 @@ describe('Assets transformer for www configs', () => {
     };
 
     fs.readFileAsync.mockReturnValueOnce(
-      Promise.resolve(PROJECT_README_CONTENTS)
+      Promise.resolve(PROJECT_README_CONTENTS),
     );
     fs.readFileAsync.mockReturnValueOnce(Promise.resolve(PROJECT_API_CONTENTS));
 
@@ -315,7 +315,7 @@ describe('Assets transformer for www configs', () => {
         PROJECT_DIR,
         fs,
         log,
-      }
+      },
     )
       .then((file) => {
         expect(file).toMatchSnapshot();
@@ -334,12 +334,12 @@ describe('Assets transformer for www configs', () => {
         {
           name: 'yolo',
         },
-        {}
+        {},
       ),
       {
         name: 'YOLO',
         data: 'Carpe diem\n',
-      }
+      },
     );
   });
 });

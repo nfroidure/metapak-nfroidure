@@ -25,11 +25,11 @@ module.exports = (packageConf) => {
   if (!data.childPackage) {
     packageConf.scripts.precz = ensureScript(
       packageConf.scripts.precz,
-      BUILD_COMMAND
+      BUILD_COMMAND,
     );
     packageConf.scripts.preversion = ensureScript(
       packageConf.scripts.preversion,
-      BUILD_COMMAND
+      BUILD_COMMAND,
     );
   }
 
@@ -56,7 +56,7 @@ module.exports = (packageConf) => {
           (packageConf.greenkeeper && packageConf.greenkeeper.ignore
             ? packageConf.greenkeeper.ignore
             : []
-          ).concat(['typescript', 'rimraf'])
+          ).concat(['typescript', 'rimraf']),
         ),
       ],
     };

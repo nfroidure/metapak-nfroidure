@@ -18,15 +18,15 @@ describe('GHActions', () => {
                 'assets',
                 '_dot_github',
                 'workflows',
-                'test.yml'
+                'test.yml',
               ),
 
-              'utf-8'
+              'utf-8',
             ),
           },
 
-          {}
-        )
+          {},
+        ),
       ).toMatchInlineSnapshot(`
         Object {
           "data": "name: Node.js CI
@@ -69,12 +69,12 @@ describe('GHActions', () => {
             name: 'YOLO',
             data: 'Carpe diem\n',
           },
-          {}
+          {},
         ),
         {
           name: 'YOLO',
           data: 'Carpe diem\n',
-        }
+        },
       );
     });
   });

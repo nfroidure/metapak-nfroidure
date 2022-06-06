@@ -23,11 +23,11 @@ module.exports = (packageConf) => {
   if (!data.childPackage) {
     packageConf.scripts.precz = ensureScript(
       packageConf.scripts.precz,
-      TYPES_COMMAND
+      TYPES_COMMAND,
     );
     packageConf.scripts.preversion = ensureScript(
       packageConf.scripts.preversion,
-      TYPES_COMMAND
+      TYPES_COMMAND,
     );
   }
 
@@ -39,7 +39,7 @@ module.exports = (packageConf) => {
           (packageConf.greenkeeper && packageConf.greenkeeper.ignore
             ? packageConf.greenkeeper.ignore
             : []
-          ).concat(['typescript'])
+          ).concat(['typescript']),
         ),
       ],
     };

@@ -12,7 +12,7 @@ module.exports = (packageConf) => {
   packageConf.scripts.jest = 'NODE_ENV=test jest';
   packageConf.scripts.test = ensureScript(
     packageConf.scripts.test,
-    JEST_SCRIPT
+    JEST_SCRIPT,
   );
   packageConf.scripts.cover = `npm run jest -- --coverage`;
 
@@ -60,7 +60,7 @@ module.exports = (packageConf) => {
         }
       : {},
 
-    packageConf.jest
+    packageConf.jest,
   );
   // Special configuration for TypeScript
   if (configs.includes('typescript') || configs.includes('tsesm')) {
@@ -85,8 +85,8 @@ module.exports = (packageConf) => {
             .concat(['jest', 'coveralls'])
             .filter(
               (packageName) =>
-                packageName !== 'ts-jest' || configs.includes('tsesm')
-            )
+                packageName !== 'ts-jest' || configs.includes('tsesm'),
+            ),
         ),
       ],
     };

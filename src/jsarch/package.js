@@ -15,11 +15,11 @@ module.exports = (packageConf) => {
   if (!data.childPackage) {
     packageConf.scripts.precz = ensureScript(
       packageConf.scripts.precz,
-      ARCHITECTURE_SCRIPT
+      ARCHITECTURE_SCRIPT,
     );
     packageConf.scripts.preversion = ensureScript(
       packageConf.scripts.preversion,
-      ARCHITECTURE_SCRIPT
+      ARCHITECTURE_SCRIPT,
     );
   }
 
@@ -47,7 +47,7 @@ module.exports = (packageConf) => {
           (packageConf.greenkeeper && packageConf.greenkeeper.ignore
             ? packageConf.greenkeeper.ignore
             : []
-          ).concat(['jsarch'])
+          ).concat(['jsarch']),
         ),
       ],
     };

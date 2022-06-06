@@ -16,7 +16,7 @@ describe('mocha', () => {
               testsFiles: 'src/*.js src/**/*.js',
             },
           },
-        })
+        }),
       ).toMatchSnapshot();
     });
 
@@ -32,7 +32,7 @@ describe('mocha', () => {
               testsFiles: 'src/*.js src/**/*.js',
             },
           },
-        })
+        }),
       ).toMatchSnapshot();
     });
   });

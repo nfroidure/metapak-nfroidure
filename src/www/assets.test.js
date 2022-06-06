@@ -11,12 +11,12 @@ describe('Assets transformer for www configs', () => {
           name: '.gitignore',
           data: 'node_modules\n',
         },
-        {}
+        {},
       ),
       {
         name: '.gitignore',
         data: 'node_modules\nwww\n',
-      }
+      },
     );
   });
 
@@ -27,12 +27,12 @@ describe('Assets transformer for www configs', () => {
           name: 'YOLO',
           data: 'Carpe diem\n',
         },
-        {}
+        {},
       ),
       {
         name: 'YOLO',
         data: 'Carpe diem\n',
-      }
+      },
     );
   });
 });

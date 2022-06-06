@@ -4,6 +4,7 @@ exports[`eslint Package transformer should work with child packages 1`] = `
 Object {
   "devDependencies": Object {
     "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.6.2",
   },
@@ -16,6 +17,7 @@ Object {
     },
     "extends": Array [
       "eslint:recommended",
+      "plugin:prettier/recommended",
     ],
     "parserOptions": Object {
       "ecmaVersion": 2018,
@@ -40,7 +42,7 @@ Object {
     "proseWrap": "always",
     "semi": true,
     "singleQuote": true,
-    "trailingComma": "es5",
+    "trailingComma": "all",
   },
   "scripts": Object {
     "lint": "eslint src/*.js src/**/*.js",
@@ -53,6 +55,7 @@ exports[`eslint Package transformer should work with some files 1`] = `
 Object {
   "devDependencies": Object {
     "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.6.2",
   },
@@ -65,6 +68,7 @@ Object {
     },
     "extends": Array [
       "eslint:recommended",
+      "plugin:prettier/recommended",
     ],
     "parserOptions": Object {
       "ecmaVersion": 2018,
@@ -82,6 +86,7 @@ Object {
     "ignore": Array [
       "eslint",
       "eslint-config-prettier",
+      "eslint-plugin-prettier",
       "prettier",
     ],
   },
@@ -95,7 +100,7 @@ Object {
     "proseWrap": "always",
     "semi": true,
     "singleQuote": true,
-    "trailingComma": "es5",
+    "trailingComma": "all",
   },
   "scripts": Object {
     "lint": "eslint src/*.js src/**/*.js",
@@ -110,6 +115,7 @@ Object {
     "@typescript-eslint/eslint-plugin": "^5.27.0",
     "@typescript-eslint/parser": "^5.27.0",
     "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.6.2",
   },
@@ -122,6 +128,7 @@ Object {
     },
     "extends": Array [
       "eslint:recommended",
+      "plugin:prettier/recommended",
       "plugin:@typescript-eslint/eslint-recommended",
       "plugin:@typescript-eslint/recommended",
     ],
@@ -155,7 +162,7 @@ Object {
     "proseWrap": "always",
     "semi": true,
     "singleQuote": true,
-    "trailingComma": "es5",
+    "trailingComma": "all",
   },
   "scripts": Object {
     "lint": "eslint src/*.js src/**/*.js",

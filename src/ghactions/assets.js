@@ -22,7 +22,7 @@ module.exports = (file) => {
     }
     file.data = file.data.replace(
       'node-version: []',
-      `node-version: [${versions.map((version) => version + '.x').join(', ')}]`
+      `node-version: [${versions.map((version) => version + '.x').join(', ')}]`,
     );
   }
 

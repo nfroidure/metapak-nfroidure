@@ -26,7 +26,7 @@ describe('Babel', () => {
             },
             configs: ['babel'],
           },
-        })
+        }),
       ).toMatchSnapshot();
     });
 
@@ -46,7 +46,7 @@ describe('Babel', () => {
             },
             configs: ['babel', 'mocha'],
           },
-        })
+        }),
       ).toMatchSnapshot();
     });
 
@@ -65,7 +65,7 @@ describe('Babel', () => {
             },
             configs: ['babel', 'jest'],
           },
-        })
+        }),
       ).toMatchSnapshot();
     });
 
@@ -90,7 +90,7 @@ describe('Babel', () => {
             },
             configs: ['eslint', 'babel'],
           },
-        })
+        }),
       ).toMatchSnapshot();
     });
 
@@ -104,7 +104,7 @@ describe('Babel', () => {
               files: 'src/*.js src/**/*.js',
             },
           },
-        })
+        }),
       ).toMatchSnapshot();
     });
   });

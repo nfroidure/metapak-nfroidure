@@ -15,7 +15,7 @@ module.exports = (file, packageConf) => {
   if ('LICENSE' === file.name) {
     file.data = file.data.replace(
       /<copyright holders>/gm,
-      packageConf.author.name
+      packageConf.author.name,
     );
   }
 

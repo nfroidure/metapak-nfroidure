@@ -89,7 +89,7 @@ module.exports = (packageConf) => {
   packageConf.babel.plugins = packageConf.babel.plugins.map((plugin) =>
     plugin === 'transform-object-rest-spread'
       ? '@babel/plugin-proposal-object-rest-spread'
-      : plugin
+      : plugin,
   );
 
   // Set dist as the bundle files
@@ -122,11 +122,11 @@ module.exports = (packageConf) => {
     // We have to compile with Babel before commiting pushing a version
     packageConf.scripts.precz = ensureScript(
       packageConf.scripts.precz,
-      COMPILE_COMMAND
+      COMPILE_COMMAND,
     );
     packageConf.scripts.preversion = ensureScript(
       packageConf.scripts.preversion,
-      COMPILE_COMMAND
+      COMPILE_COMMAND,
     );
   }
 
@@ -210,10 +210,10 @@ module.exports = (packageConf) => {
                     '@babel/preset-typescript',
                     '@babel/plugin-proposal-class-properties',
                   ]
-                : []
+                : [],
             )
             .concat(configs.includes('eslint') ? ['babel-eslint'] : [])
-            .concat(configs.includes('jest') ? ['babel-core'] : [])
+            .concat(configs.includes('jest') ? ['babel-core'] : []),
         ),
       ],
     };

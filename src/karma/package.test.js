@@ -16,7 +16,7 @@ describe('Karma', () => {
             },
             configs: ['karma'],
           },
-        })
+        }),
       ).toMatchSnapshot();
     });
 
@@ -32,7 +32,7 @@ describe('Karma', () => {
             },
             configs: ['mocha', 'karma'],
           },
-        })
+        }),
       ).toMatchSnapshot();
     });
   });

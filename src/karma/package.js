@@ -34,7 +34,7 @@ module.exports = (packageConf) => {
     packageConf.scripts.karma = 'karma start karma.conf.js';
     packageConf.scripts.test = ensureScript(
       packageConf.scripts.test,
-      KARMA_COMMAND
+      KARMA_COMMAND,
     );
   }
 
@@ -46,7 +46,7 @@ module.exports = (packageConf) => {
           (packageConf.greenkeeper && packageConf.greenkeeper.ignore
             ? packageConf.greenkeeper.ignore
             : []
-          ).concat(packagesAdded)
+          ).concat(packagesAdded),
         ),
       ],
     };

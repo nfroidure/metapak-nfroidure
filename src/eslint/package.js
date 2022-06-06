@@ -23,10 +23,11 @@ module.exports = (packageConf) => {
   packageConf.devDependencies = packageConf.devDependencies || {};
   packageConf.devDependencies.eslint = '^8.17.0';
   packageConf.devDependencies.prettier = '^2.6.2';
+  packageConf.devDependencies['eslint-config-prettier'] = '^8.5.0';
   packageConf.devDependencies['eslint-plugin-prettier'] = '^4.0.0';
 
   packageConf.eslintConfig = {
-    extends: ['eslint:recommended'],
+    extends: ['eslint:recommended', 'plugin:prettier/recommended'],
     parserOptions: {
       ecmaVersion: 2018,
       sourceType: 'script',
@@ -48,7 +49,7 @@ module.exports = (packageConf) => {
     semi: true,
     printWidth: 80,
     singleQuote: true,
-    trailingComma: 'es5',
+    trailingComma: 'all',
     proseWrap: 'always',
   };
 
@@ -73,15 +74,20 @@ module.exports = (packageConf) => {
             ? packageConf.greenkeeper.ignore
             : []
           )
-            .concat(['eslint', 'eslint-config-prettier', 'prettier'])
+            .concat([
+              'eslint',
+              'eslint-config-prettier',
+              'eslint-plugin-prettier',
+              'prettier',
+            ])
             .concat(
               configs.includes('typescript') || configs.includes('tsesm')
                 ? [
                     '@typescript-eslint/eslint-plugin',
                     '@typescript-eslint/parser',
                   ]
-                : []
-            )
+                : [],
+            ),
         ),
       ],
     };

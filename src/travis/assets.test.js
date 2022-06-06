@@ -14,11 +14,11 @@ describe('TravisCI', () => {
             name: '.travis.yml',
             data: fs.readFileSync(
               path.join(__dirname, 'assets', '_dot_travis.yml'),
-              'utf-8'
+              'utf-8',
             ),
           },
-          {}
-        )
+          {},
+        ),
       ).toMatchSnapshot();
     });
 
@@ -29,12 +29,12 @@ describe('TravisCI', () => {
             name: 'YOLO',
             data: 'Carpe diem\n',
           },
-          {}
+          {},
         ),
         {
           name: 'YOLO',
           data: 'Carpe diem\n',
-        }
+        },
       );
     });
   });

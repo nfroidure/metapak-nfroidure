@@ -24,7 +24,7 @@ module.exports = (packageConf) => {
 
   packageConf.scripts.test = ensureScript(
     packageConf.scripts.test,
-    MOCHA_COMMAND
+    MOCHA_COMMAND,
   );
   packageConf.scripts.cover =
     'nyc npm test && nyc report --reporter=html --reporter=text';
@@ -55,7 +55,7 @@ module.exports = (packageConf) => {
           (packageConf.greenkeeper && packageConf.greenkeeper.ignore
             ? packageConf.greenkeeper.ignore
             : []
-          ).concat(['mocha', 'coveralls', 'nyc'])
+          ).concat(['mocha', 'coveralls', 'nyc']),
         ),
       ],
     };

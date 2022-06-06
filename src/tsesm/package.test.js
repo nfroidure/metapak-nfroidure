@@ -10,7 +10,7 @@ describe('private', () => {
           metapak: {
             data: {},
           },
-        })
+        }),
       ).toMatchInlineSnapshot(`
         Object {
           "devDependencies": Object {

@@ -13,13 +13,13 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
   const { configs, data } = getMetapakInfos(packageConf);
   const ghPath = getGitHubPathFromModuleName(
     packageConf.name,
-    data.childPackage
+    data.childPackage,
   );
 
   // Simple README templating system
   if ('README.md' === file.name) {
     const ghProjectPath = getGitHubProjectFromRepoURL(
-      (packageConf.repository || {}).url || ''
+      (packageConf.repository || {}).url || '',
     );
     // Header
     file.data += '# ' + packageConf.name + '\n';
@@ -63,7 +63,7 @@ module.exports = (file, packageConf, { PROJECT_DIR, fs, log }) => {
               author.email || author.url
                 ? `[${author.name}](${author.url || `mailto:${author.email}`})`
                 : author.name
-            }`
+            }`,
         )
         .join('\n')}\n\n`;
       file.data += `# License\n[${packageConf.license}](https://github.com/${USERNAME}${ghPath}/LICENSE)\n`;
@@ -113,6 +113,6 @@ function getGitHubPathFromModuleName(packageName, childPackage = false) {
 function getGitHubProjectFromRepoURL(repoURL) {
   return repoURL.replace(
     /^(?:git\+|)https:\/\/github.com\/([^/]+\/[^.]+)\.git$/,
-    '$1'
+    '$1',
   );
 }
