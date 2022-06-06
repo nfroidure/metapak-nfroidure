@@ -248,7 +248,7 @@ describe('Assets transformer for www configs', () => {
           },
         ],
         repository: {
-          url: 'git+https://github.com/nfroidure/module.git',
+          url: 'git+ssh://git@github.com/nfroidure/module.git',
         },
         license: 'MIT',
       },

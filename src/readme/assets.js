@@ -112,7 +112,7 @@ function getGitHubPathFromModuleName(packageName, childPackage = false) {
 
 function getGitHubProjectFromRepoURL(repoURL) {
   return repoURL.replace(
-    /^(?:git\+|)https:\/\/github.com\/([^/]+\/[^.]+)\.git$/,
+    /^(?:git\+|)(?:https|ssh):\/\/(?:git@|)github.com\/([^/]+\/[^.]+)\.git$/,
     '$1',
   );
 }
