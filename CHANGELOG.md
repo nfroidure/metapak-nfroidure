@@ -1,3 +1,12 @@
+## [12.0.5](https://github.com/nfroidure/metapak-nfroidure/compare/v12.0.4...v12.0.5) (2022-06-06)
+
+
+### Bug Fixes
+
+* **readme:** fix github URL parsing ([a95375c](https://github.com/nfroidure/metapak-nfroidure/commit/a95375c7897878912fd11622bace239118d7c63d))
+
+
+
 ## [12.0.4](https://github.com/nfroidure/metapak-nfroidure/compare/v12.0.3...v12.0.4) (2022-06-06)
 
 
