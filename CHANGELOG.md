@@ -1,3 +1,12 @@
+## [12.0.4](https://github.com/nfroidure/metapak-nfroidure/compare/v12.0.3...v12.0.4) (2022-06-06)
+
+
+### Bug Fixes
+
+* **eslint:** fix eslint config ([b79e76e](https://github.com/nfroidure/metapak-nfroidure/commit/b79e76e500b38ecf26ed1c27086c1f71d2535871))
+
+
+
 ## [12.0.3](https://github.com/nfroidure/metapak-nfroidure/compare/v12.0.2...v12.0.3) (2022-06-06)
 
 
