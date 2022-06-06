@@ -33,9 +33,17 @@ module.exports = (packageConf) => {
     );
   }
 
-  // Remove eventual ol configurations
+  // Remove eventual old dependencies
+  delete packageConf.devDependencies['babel-plugin-knifecycle'];
+  Object.keys(packageConf.devDependencies || {}).forEach((key) => {
+    if (key.startsWith('@babel')) {
+      delete packageConf.devDependencies[key];
+    }
+  });
+
+  // Remove eventual old configurations
+  delete packageConf.module;
   delete packageConf.scripts.compile;
-  delete packageConf.scripts.module;
   delete packageConf.scripts['compile:cjs'];
   delete packageConf.scripts['compile:mjs'];
   delete packageConf.scripts.types;
