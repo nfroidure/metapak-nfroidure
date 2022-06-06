@@ -15,7 +15,7 @@ describe('private', () => {
         Object {
           "devDependencies": Object {
             "rimraf": "^3.0.2",
-            "typescript": "^4.7.2",
+            "typescript": "^4.7.3",
           },
           "greenkeeper": Object {
             "ignore": Array [

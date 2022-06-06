@@ -45,7 +45,7 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "metapak": "^3.1.5"
+    "metapak": "^4.0.4"
   },
   "engines": {
     "node": ">=16.15.0"
@@ -59,7 +59,7 @@
     "conventional-changelog-cli": "^2.2.2",
     "coveralls": "^3.1.1",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.16.0",
+    "eslint": "^8.17.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^28.1.0",
     "metapak": "^4.0.4",
@@ -73,7 +73,7 @@
   "dependencies": {
     "escape-string-regexp": "^4.0.0",
     "rimraf": "^3.0.2",
-    "yerror": "^6.0.2"
+    "yerror": "^6.1.1"
   },
   "jest": {
     "coverageReporters": [

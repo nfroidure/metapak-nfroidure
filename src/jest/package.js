@@ -64,10 +64,10 @@ module.exports = (packageConf) => {
   );
   // Special configuration for TypeScript
   if (configs.includes('typescript') || configs.includes('tsesm')) {
-    packageConf.devDependencies['@types/jest'] = '^27.0.2';
+    packageConf.devDependencies['@types/jest'] = '^28.1.1';
   }
   if (configs.includes('tsesm')) {
-    packageConf.devDependencies['ts-jest'] = '^28.0.3';
+    packageConf.devDependencies['ts-jest'] = '^28.0.4';
   }
 
   if (configs.includes('typescript')) {
