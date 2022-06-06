@@ -1,3 +1,12 @@
+## [12.0.2](https://github.com/nfroidure/metapak-nfroidure/compare/v12.0.1...v12.0.2) (2022-06-06)
+
+
+### Bug Fixes
+
+* **tsesm:** fix vscode file presence for monorepos ([a2bc240](https://github.com/nfroidure/metapak-nfroidure/commit/a2bc240595be3a964339caa7812f01d710334cfb))
+
+
+
 ## [12.0.1](https://github.com/nfroidure/metapak-nfroidure/compare/v12.0.0...v12.0.1) (2022-05-29)
 
 
