@@ -9,7 +9,9 @@ module.exports = (packageConf) => {
   const { configs, data } = getMetapakInfos(packageConf);
   // Let's add test scripts
   packageConf.scripts = packageConf.scripts || {};
-  packageConf.scripts.jest = 'NODE_ENV=test jest';
+  packageConf.scripts.jest = configs.includes('tsesm')
+    ? 'NODE_OPTIONS=--experimental-vm-modules NODE_ENV=test jest'
+    : 'NODE_ENV=test jest';
   packageConf.scripts.test = ensureScript(
     packageConf.scripts.test,
     JEST_SCRIPT,
@@ -26,48 +28,41 @@ module.exports = (packageConf) => {
       ' && rm -rf ./coverage';
     packageConf.devDependencies.coveralls = '^3.1.1';
   }
-  packageConf.jest = Object.assign(
-    {
-      coverageReporters: ['lcov'],
-      testPathIgnorePatterns: ['/node_modules/'],
-      roots: data.jestRoots || ['<rootDir>/src'],
-    },
-    // Remove no longer needed ts conf
-    configs.includes('typescript')
-      ? {
-          testRegex: {}.undef,
-          moduleFileExtensions: {}.undef,
-          transform: {}.undef,
-        }
-      : {},
+  packageConf.jest = {
+    coverageReporters: ['lcov'],
+    testPathIgnorePatterns: ['/node_modules/'],
+    roots: data.jestRoots || ['<rootDir>/src'],
+    ...packageConf.jest,
     // Add ts esm necessary conf
-    configs.includes('tsesm')
+    ...(configs.includes('tsesm')
       ? {
-          preset: 'ts-jest',
-          testEnvironment: 'node',
           transform: {
-            '\\.[jt]sx?$': 'ts-jest',
+            '^.+\\.tsx?$': [
+              'esbuild-jest',
+              {
+                sourcemap: true,
+                format: 'esm',
+              },
+            ],
           },
-          globals: {
-            'ts-jest': {
-              useESM: true,
-            },
-          },
+          testEnvironment: 'node',
           moduleNameMapper: {
             '(.+)\\.js': '$1',
           },
           extensionsToTreatAsEsm: ['.ts'],
+          preset: {}.undef,
+          globals: {}.undef,
         }
-      : {},
-
-    packageConf.jest,
-  );
+      : {}),
+  };
   // Special configuration for TypeScript
   if (configs.includes('typescript') || configs.includes('tsesm')) {
     packageConf.devDependencies['@types/jest'] = '^28.1.1';
   }
   if (configs.includes('tsesm')) {
-    packageConf.devDependencies['ts-jest'] = '^28.0.4';
+    delete packageConf.devDependencies['ts-jest'];
+    packageConf.devDependencies['esbuild'] = '^0.14.43';
+    packageConf.devDependencies['esbuild-jest'] = '^0.5.0';
   }
 
   if (configs.includes('typescript')) {
