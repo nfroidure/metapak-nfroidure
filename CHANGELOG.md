@@ -1,3 +1,12 @@
+## [12.0.6](https://github.com/nfroidure/metapak-nfroidure/compare/v12.0.5...v12.0.6) (2022-06-11)
+
+
+### Bug Fixes
+
+* **jest:** fix the jest configuration ([0f4f0fa](https://github.com/nfroidure/metapak-nfroidure/commit/0f4f0fab381d832e2609767a3bf4e1f55725ff4e))
+
+
+
 ## [12.0.5](https://github.com/nfroidure/metapak-nfroidure/compare/v12.0.4...v12.0.5) (2022-06-06)
 
 
