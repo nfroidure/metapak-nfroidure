@@ -1,3 +1,17 @@
+# [12.1.0](https://github.com/nfroidure/metapak-nfroidure/compare/v12.0.6...v12.1.0) (2022-06-21)
+
+
+### Bug Fixes
+
+* **tsesm:** keep existing jest module name mappers ([74581b0](https://github.com/nfroidure/metapak-nfroidure/commit/74581b0ebb77d4ef27406ff0610182f227c06ace))
+
+
+### Features
+
+* **main:** add metapak check for root packages ([193aadb](https://github.com/nfroidure/metapak-nfroidure/commit/193aadbcbc698357f0be1d48d392f7d7ca02fa0a))
+
+
+
 ## [12.0.6](https://github.com/nfroidure/metapak-nfroidure/compare/v12.0.5...v12.0.6) (2022-06-11)
 
 
