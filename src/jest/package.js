@@ -47,6 +47,7 @@ module.exports = (packageConf) => {
           },
           testEnvironment: 'node',
           moduleNameMapper: {
+            ...((packageConf.jest || {}).moduleNameMapper || {}),
             '(.+)\\.js': '$1',
           },
           extensionsToTreatAsEsm: ['.ts'],
@@ -61,7 +62,7 @@ module.exports = (packageConf) => {
   }
   if (configs.includes('tsesm')) {
     delete packageConf.devDependencies['ts-jest'];
-    packageConf.devDependencies['esbuild'] = '^0.14.43';
+    packageConf.devDependencies['esbuild'] = '^0.14.46';
     packageConf.devDependencies['esbuild-jest'] = '^0.5.0';
   }
 

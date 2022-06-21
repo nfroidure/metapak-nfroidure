@@ -3,20 +3,45 @@
 exports[`mocha Package transformer should work with child packages 1`] = `
 Object {
   "devDependencies": Object {
+    "@types/jest": "^28.1.1",
+    "esbuild": "^0.14.46",
+    "esbuild-jest": "^0.5.0",
     "jest": "^28.1.0",
   },
   "jest": Object {
     "coverageReporters": Array [
       "lcov",
     ],
+    "extensionsToTreatAsEsm": Array [
+      ".ts",
+    ],
+    "globals": undefined,
+    "moduleNameMapper": Object {
+      "#(.*)": "<rootDir>/../../node_modules/$1",
+      "(.+)\\\\.js": "$1",
+    },
+    "preset": undefined,
     "roots": Array [
       "<rootDir>/src",
     ],
+    "testEnvironment": "node",
     "testPathIgnorePatterns": Array [
       "/node_modules/",
     ],
+    "transform": Object {
+      "^.+\\\\.tsx?$": Array [
+        "esbuild-jest",
+        Object {
+          "format": "esm",
+          "sourcemap": true,
+        },
+      ],
+    },
   },
   "metapak": Object {
+    "configs": Array [
+      "tsesm",
+    ],
     "data": Object {
       "childPackage": true,
       "files": "src/*.js src/**/*.js",
@@ -24,7 +49,7 @@ Object {
   },
   "scripts": Object {
     "cover": "npm run jest -- --coverage",
-    "jest": "NODE_ENV=test jest",
+    "jest": "NODE_OPTIONS=--experimental-vm-modules NODE_ENV=test jest",
     "test": "npm run jest",
   },
 }

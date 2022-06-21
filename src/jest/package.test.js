@@ -23,9 +23,15 @@ describe('mocha', () => {
       expect(
         packageTransformer({
           metapak: {
+            configs: ['tsesm'],
             data: {
               childPackage: true,
               files: 'src/*.js src/**/*.js',
+            },
+          },
+          jest: {
+            moduleNameMapper: {
+              '#(.*)': '<rootDir>/../../node_modules/$1',
             },
           },
         }),
