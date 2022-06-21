@@ -8,6 +8,7 @@ const GITHUB_REPOSITORY_REGEXP =
 const TEST_SCRIPT = 'npm t';
 const LINT_SCRIPT = 'npm run lint';
 const METAPAK_SCRIPT = 'npm run metapak -- -s';
+const METAPAK_LERNA_SCRIPT = `${METAPAK_SCRIPT} && npm run lerna -- run --parallel metapak -- -- -s`;
 const CHANGELOG_SCRIPT = 'npm run changelog';
 
 module.exports = (packageConf) => {
@@ -77,7 +78,7 @@ module.exports = (packageConf) => {
     );
     packageConf.scripts.precz = ensureScript(
       packageConf.scripts.precz,
-      METAPAK_SCRIPT,
+      data.rootPackage ? METAPAK_LERNA_SCRIPT : METAPAK_SCRIPT,
     );
     packageConf.config = {
       commitizen: {
@@ -107,7 +108,7 @@ module.exports = (packageConf) => {
     );
     packageConf.scripts.preversion = ensureScript(
       packageConf.scripts.preversion,
-      METAPAK_SCRIPT,
+      data.rootPackage ? METAPAK_LERNA_SCRIPT : METAPAK_SCRIPT,
     );
 
     // Add the MUST HAVE dev dependencies
