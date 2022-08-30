@@ -12,22 +12,22 @@ describe('private', () => {
           },
         }),
       ).toMatchInlineSnapshot(`
-        Object {
-          "devDependencies": Object {
+        {
+          "devDependencies": {
             "rimraf": "^3.0.2",
-            "typescript": "^4.7.3",
+            "typescript": "^4.8.2",
           },
-          "greenkeeper": Object {
-            "ignore": Array [
+          "greenkeeper": {
+            "ignore": [
               "typescript",
               "rimraf",
             ],
           },
           "main": "dist/index.js",
-          "metapak": Object {
-            "data": Object {},
+          "metapak": {
+            "data": {},
           },
-          "scripts": Object {
+          "scripts": {
             "build": "rimraf -f 'dist' && tsc --outDir dist",
             "precz": "npm run build",
             "preversion": "npm run build",

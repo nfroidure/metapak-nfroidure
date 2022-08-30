@@ -1,26 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Package transformer for jsdocs should work with a typescript setup 1`] = `
-Object {
-  "devDependencies": Object {
+{
+  "devDependencies": {
     "jsdoc-to-markdown": "^7.1.1",
   },
-  "greenkeeper": Object {
-    "ignore": Array [
+  "greenkeeper": {
+    "ignore": [
       "jsdoc-to-markdown",
     ],
   },
-  "metapak": Object {
-    "configs": Array [
+  "metapak": {
+    "configs": [
       "typescript",
     ],
-    "data": Object {
+    "data": {
       "distFiles": "yolo.js",
       "files": "yolo.ts",
     },
   },
-  "scripts": Object {
-    "doc": "echo \\"# API\\" > API.md; jsdoc2md yolo.js >> API.md && git add API.md",
+  "scripts": {
+    "doc": "echo "# API" > API.md; jsdoc2md yolo.js >> API.md && git add API.md",
     "precz": "npm run doc",
     "preversion": "npm run doc",
   },
@@ -28,22 +28,22 @@ Object {
 `;
 
 exports[`Package transformer for jsdocs should work with an empty package.json 1`] = `
-Object {
-  "devDependencies": Object {
+{
+  "devDependencies": {
     "jsdoc-to-markdown": "^7.1.1",
   },
-  "greenkeeper": Object {
-    "ignore": Array [
+  "greenkeeper": {
+    "ignore": [
       "jsdoc-to-markdown",
     ],
   },
-  "metapak": Object {
-    "data": Object {
+  "metapak": {
+    "data": {
       "files": "yolo.js",
     },
   },
-  "scripts": Object {
-    "doc": "echo \\"# API\\" > API.md; jsdoc2md yolo.js >> API.md && git add API.md",
+  "scripts": {
+    "doc": "echo "# API" > API.md; jsdoc2md yolo.js >> API.md && git add API.md",
     "precz": "npm run doc",
     "preversion": "npm run doc",
   },

@@ -1,31 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Babel Package transformer should work with child packages 1`] = `
-Object {
-  "babel": Object {
-    "env": Object {
-      "cjs": Object {
+{
+  "babel": {
+    "env": {
+      "cjs": {
         "comments": true,
-        "presets": Array [
-          Array [
+        "presets": [
+          [
             "@babel/env",
-            Object {
+            {
               "modules": "commonjs",
-              "targets": Object {
+              "targets": {
                 "node": "10",
               },
             },
           ],
         ],
       },
-      "mjs": Object {
+      "mjs": {
         "comments": false,
-        "presets": Array [
-          Array [
+        "presets": [
+          [
             "@babel/env",
-            Object {
+            {
               "modules": false,
-              "targets": Object {
+              "targets": {
                 "node": "12",
               },
             },
@@ -33,14 +33,14 @@ Object {
         ],
       },
     },
-    "plugins": Array [
+    "plugins": [
       "@babel/plugin-proposal-object-rest-spread",
     ],
-    "presets": Array [
-      Array [
+    "presets": [
+      [
         "@babel/env",
-        Object {
-          "targets": Object {
+        {
+          "targets": {
             "node": "16.15.0",
           },
         },
@@ -48,7 +48,7 @@ Object {
     ],
     "sourceMaps": true,
   },
-  "devDependencies": Object {
+  "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.18.0",
@@ -56,9 +56,9 @@ Object {
     "@babel/register": "^7.17.7",
   },
   "main": "index",
-  "metapak": Object {
-    "data": Object {
-      "bundleFiles": Array [
+  "metapak": {
+    "data": {
+      "bundleFiles": [
         "dist",
         "src",
       ],
@@ -67,7 +67,7 @@ Object {
     },
   },
   "module": "index.mjs",
-  "scripts": Object {
+  "scripts": {
     "compile": "rimraf -f 'dist' && npm run compile:cjs && npm run compile:mjs",
     "compile:cjs": "babel --env-name=cjs --out-dir=dist --source-maps=true src",
     "compile:mjs": "babel --env-name=mjs --out-file-extension=.mjs --out-dir=dist --source-maps=true src",
@@ -76,31 +76,31 @@ Object {
 `;
 
 exports[`Babel Package transformer should work with eslint config 1`] = `
-Object {
-  "babel": Object {
-    "env": Object {
-      "cjs": Object {
+{
+  "babel": {
+    "env": {
+      "cjs": {
         "comments": true,
-        "presets": Array [
-          Array [
+        "presets": [
+          [
             "@babel/env",
-            Object {
+            {
               "modules": "commonjs",
-              "targets": Object {
+              "targets": {
                 "node": "10",
               },
             },
           ],
         ],
       },
-      "mjs": Object {
+      "mjs": {
         "comments": false,
-        "presets": Array [
-          Array [
+        "presets": [
+          [
             "@babel/env",
-            Object {
+            {
               "modules": false,
-              "targets": Object {
+              "targets": {
                 "node": "12",
               },
             },
@@ -108,14 +108,14 @@ Object {
         ],
       },
     },
-    "plugins": Array [
+    "plugins": [
       "@babel/plugin-proposal-object-rest-spread",
     ],
-    "presets": Array [
-      Array [
+    "presets": [
+      [
         "@babel/env",
-        Object {
-          "targets": Object {
+        {
+          "targets": {
             "node": "16.15.0",
           },
         },
@@ -123,7 +123,7 @@ Object {
     ],
     "sourceMaps": true,
   },
-  "devDependencies": Object {
+  "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.2",
     "@babel/eslint-parser": "^7.18.2",
@@ -131,13 +131,13 @@ Object {
     "@babel/preset-env": "^7.18.2",
     "@babel/register": "^7.17.7",
   },
-  "eslintConfig": Object {
-    "parserOptions": Object {
+  "eslintConfig": {
+    "parserOptions": {
       "sourceType": "module",
     },
   },
-  "greenkeeper": Object {
-    "ignore": Array [
+  "greenkeeper": {
+    "ignore": [
       "@babel/cli",
       "@babel/core",
       "@babel/register",
@@ -147,13 +147,13 @@ Object {
     ],
   },
   "main": "index",
-  "metapak": Object {
-    "configs": Array [
+  "metapak": {
+    "configs": [
       "eslint",
       "babel",
     ],
-    "data": Object {
-      "bundleFiles": Array [
+    "data": {
+      "bundleFiles": [
         "dist",
         "src",
       ],
@@ -161,10 +161,10 @@ Object {
     },
   },
   "module": "index.mjs",
-  "prettier": Object {
+  "prettier": {
     "trailingComma": "all",
   },
-  "scripts": Object {
+  "scripts": {
     "compile": "rimraf -f 'dist' && npm run compile:cjs && npm run compile:mjs",
     "compile:cjs": "babel --env-name=cjs --out-dir=dist --source-maps=true src",
     "compile:mjs": "babel --env-name=mjs --out-file-extension=.mjs --out-dir=dist --source-maps=true src",
@@ -176,31 +176,31 @@ Object {
 `;
 
 exports[`Babel Package transformer should work with jest config 1`] = `
-Object {
-  "babel": Object {
-    "env": Object {
-      "cjs": Object {
+{
+  "babel": {
+    "env": {
+      "cjs": {
         "comments": true,
-        "presets": Array [
-          Array [
+        "presets": [
+          [
             "@babel/env",
-            Object {
+            {
               "modules": "commonjs",
-              "targets": Object {
+              "targets": {
                 "node": "10",
               },
             },
           ],
         ],
       },
-      "mjs": Object {
+      "mjs": {
         "comments": false,
-        "presets": Array [
-          Array [
+        "presets": [
+          [
             "@babel/env",
-            Object {
+            {
               "modules": false,
-              "targets": Object {
+              "targets": {
                 "node": "12",
               },
             },
@@ -208,14 +208,14 @@ Object {
         ],
       },
     },
-    "plugins": Array [
+    "plugins": [
       "@babel/plugin-proposal-object-rest-spread",
     ],
-    "presets": Array [
-      Array [
+    "presets": [
+      [
         "@babel/env",
-        Object {
-          "targets": Object {
+        {
+          "targets": {
             "node": "16.15.0",
           },
         },
@@ -223,15 +223,15 @@ Object {
     ],
     "sourceMaps": true,
   },
-  "devDependencies": Object {
+  "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.18.0",
     "@babel/preset-env": "^7.18.2",
     "@babel/register": "^7.17.7",
   },
-  "greenkeeper": Object {
-    "ignore": Array [
+  "greenkeeper": {
+    "ignore": [
       "@babel/cli",
       "@babel/core",
       "@babel/register",
@@ -241,13 +241,13 @@ Object {
     ],
   },
   "main": "index",
-  "metapak": Object {
-    "configs": Array [
+  "metapak": {
+    "configs": [
       "babel",
       "jest",
     ],
-    "data": Object {
-      "bundleFiles": Array [
+    "data": {
+      "bundleFiles": [
         "dist",
         "src",
       ],
@@ -255,7 +255,7 @@ Object {
     },
   },
   "module": "index.mjs",
-  "scripts": Object {
+  "scripts": {
     "compile": "rimraf -f 'dist' && npm run compile:cjs && npm run compile:mjs",
     "compile:cjs": "babel --env-name=cjs --out-dir=dist --source-maps=true src",
     "compile:mjs": "babel --env-name=mjs --out-file-extension=.mjs --out-dir=dist --source-maps=true src",
@@ -267,31 +267,31 @@ Object {
 `;
 
 exports[`Babel Package transformer should work with mocha config 1`] = `
-Object {
-  "babel": Object {
-    "env": Object {
-      "cjs": Object {
+{
+  "babel": {
+    "env": {
+      "cjs": {
         "comments": true,
-        "presets": Array [
-          Array [
+        "presets": [
+          [
             "@babel/env",
-            Object {
+            {
               "modules": "commonjs",
-              "targets": Object {
+              "targets": {
                 "node": "10",
               },
             },
           ],
         ],
       },
-      "mjs": Object {
+      "mjs": {
         "comments": false,
-        "presets": Array [
-          Array [
+        "presets": [
+          [
             "@babel/env",
-            Object {
+            {
               "modules": false,
-              "targets": Object {
+              "targets": {
                 "node": "12",
               },
             },
@@ -299,14 +299,14 @@ Object {
         ],
       },
     },
-    "plugins": Array [
+    "plugins": [
       "@babel/plugin-proposal-object-rest-spread",
     ],
-    "presets": Array [
-      Array [
+    "presets": [
+      [
         "@babel/env",
-        Object {
-          "targets": Object {
+        {
+          "targets": {
             "node": "16.15.0",
           },
         },
@@ -314,15 +314,15 @@ Object {
     ],
     "sourceMaps": true,
   },
-  "devDependencies": Object {
+  "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.18.0",
     "@babel/preset-env": "^7.18.2",
     "@babel/register": "^7.17.7",
   },
-  "greenkeeper": Object {
-    "ignore": Array [
+  "greenkeeper": {
+    "ignore": [
       "@babel/cli",
       "@babel/core",
       "@babel/register",
@@ -331,13 +331,13 @@ Object {
     ],
   },
   "main": "index",
-  "metapak": Object {
-    "configs": Array [
+  "metapak": {
+    "configs": [
       "babel",
       "mocha",
     ],
-    "data": Object {
-      "bundleFiles": Array [
+    "data": {
+      "bundleFiles": [
         "dist",
         "src",
       ],
@@ -345,7 +345,7 @@ Object {
     },
   },
   "module": "index.mjs",
-  "scripts": Object {
+  "scripts": {
     "compile": "rimraf -f 'dist' && npm run compile:cjs && npm run compile:mjs",
     "compile:cjs": "babel --env-name=cjs --out-dir=dist --source-maps=true src",
     "compile:mjs": "babel --env-name=mjs --out-file-extension=.mjs --out-dir=dist --source-maps=true src",
@@ -357,31 +357,31 @@ Object {
 `;
 
 exports[`Babel Package transformer should work with some files 1`] = `
-Object {
-  "babel": Object {
-    "env": Object {
-      "cjs": Object {
+{
+  "babel": {
+    "env": {
+      "cjs": {
         "comments": true,
-        "presets": Array [
-          Array [
+        "presets": [
+          [
             "@babel/env",
-            Object {
+            {
               "modules": "commonjs",
-              "targets": Object {
+              "targets": {
                 "node": "10",
               },
             },
           ],
         ],
       },
-      "mjs": Object {
+      "mjs": {
         "comments": false,
-        "presets": Array [
-          Array [
+        "presets": [
+          [
             "@babel/env",
-            Object {
+            {
               "modules": false,
-              "targets": Object {
+              "targets": {
                 "node": "12",
               },
             },
@@ -389,14 +389,14 @@ Object {
         ],
       },
     },
-    "plugins": Array [
+    "plugins": [
       "@babel/plugin-proposal-object-rest-spread",
     ],
-    "presets": Array [
-      Array [
+    "presets": [
+      [
         "@babel/env",
-        Object {
-          "targets": Object {
+        {
+          "targets": {
             "node": "16.15.0",
           },
         },
@@ -404,15 +404,15 @@ Object {
     ],
     "sourceMaps": true,
   },
-  "devDependencies": Object {
+  "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.18.0",
     "@babel/preset-env": "^7.18.2",
     "@babel/register": "^7.17.7",
   },
-  "greenkeeper": Object {
-    "ignore": Array [
+  "greenkeeper": {
+    "ignore": [
       "@babel/cli",
       "@babel/core",
       "@babel/register",
@@ -421,12 +421,12 @@ Object {
     ],
   },
   "main": "index",
-  "metapak": Object {
-    "configs": Array [
+  "metapak": {
+    "configs": [
       "babel",
     ],
-    "data": Object {
-      "bundleFiles": Array [
+    "data": {
+      "bundleFiles": [
         "src/**/*.js",
         "LICENSE",
         "README.md",
@@ -439,7 +439,7 @@ Object {
     },
   },
   "module": "index.mjs",
-  "scripts": Object {
+  "scripts": {
     "compile": "rimraf -f 'dist' && npm run compile:cjs && npm run compile:mjs",
     "compile:cjs": "babel --env-name=cjs --out-dir=dist --source-maps=true src",
     "compile:mjs": "babel --env-name=mjs --out-file-extension=.mjs --out-dir=dist --source-maps=true src",

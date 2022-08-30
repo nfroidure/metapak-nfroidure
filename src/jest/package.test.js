@@ -15,6 +15,7 @@ describe('mocha', () => {
           scripts: {
             test: '',
           },
+          dependencies: {},
         }),
       ).toMatchSnapshot();
     });
@@ -33,6 +34,9 @@ describe('mocha', () => {
             moduleNameMapper: {
               '#(.*)': '<rootDir>/../../node_modules/$1',
             },
+          },
+          dependencies: {
+            '@types/jest': '^28.1.1',
           },
         }),
       ).toMatchSnapshot();

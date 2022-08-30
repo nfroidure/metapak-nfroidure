@@ -37,7 +37,7 @@ module.exports = (packageConf) => {
 
   // Add jsarch dep
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jsarch = '^5.0.1';
+  packageConf.devDependencies.jsarch = '^5.0.2';
 
   // Avoid GreenKeeper to update automatically added modules
   if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {

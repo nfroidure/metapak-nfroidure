@@ -1,53 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`mocha Package transformer should work with child packages 1`] = `
-Object {
-  "devDependencies": Object {
-    "@types/jest": "^28.1.1",
-    "esbuild": "^0.14.46",
+{
+  "dependencies": {},
+  "devDependencies": {
+    "esbuild": "^0.15.6",
     "esbuild-jest": "^0.5.0",
-    "jest": "^28.1.0",
+    "jest": "^29.0.1",
   },
-  "jest": Object {
-    "coverageReporters": Array [
+  "jest": {
+    "coverageReporters": [
       "lcov",
     ],
-    "extensionsToTreatAsEsm": Array [
+    "extensionsToTreatAsEsm": [
       ".ts",
     ],
     "globals": undefined,
-    "moduleNameMapper": Object {
+    "moduleNameMapper": {
       "#(.*)": "<rootDir>/../../node_modules/$1",
-      "(.+)\\\\.js": "$1",
+      "(.+)\\.js": "$1",
     },
     "preset": undefined,
-    "roots": Array [
+    "roots": [
       "<rootDir>/src",
     ],
     "testEnvironment": "node",
-    "testPathIgnorePatterns": Array [
+    "testPathIgnorePatterns": [
       "/node_modules/",
     ],
-    "transform": Object {
-      "^.+\\\\.tsx?$": Array [
+    "transform": {
+      "^.+\\.tsx?$": [
         "esbuild-jest",
-        Object {
+        {
           "format": "esm",
           "sourcemap": true,
         },
       ],
     },
   },
-  "metapak": Object {
-    "configs": Array [
+  "metapak": {
+    "configs": [
       "tsesm",
     ],
-    "data": Object {
+    "data": {
       "childPackage": true,
       "files": "src/*.js src/**/*.js",
     },
   },
-  "scripts": Object {
+  "scripts": {
     "cover": "npm run jest -- --coverage",
     "jest": "NODE_OPTIONS=--experimental-vm-modules NODE_ENV=test jest",
     "test": "npm run jest",
@@ -56,34 +56,35 @@ Object {
 `;
 
 exports[`mocha Package transformer should work with some files 1`] = `
-Object {
-  "devDependencies": Object {
+{
+  "dependencies": {},
+  "devDependencies": {
     "coveralls": "^3.1.1",
-    "jest": "^28.1.0",
+    "jest": "^29.0.1",
   },
-  "greenkeeper": Object {
-    "ignore": Array [
+  "greenkeeper": {
+    "ignore": [
       "jest",
       "coveralls",
     ],
   },
-  "jest": Object {
-    "coverageReporters": Array [
+  "jest": {
+    "coverageReporters": [
       "lcov",
     ],
-    "roots": Array [
+    "roots": [
       "<rootDir>/src",
     ],
-    "testPathIgnorePatterns": Array [
+    "testPathIgnorePatterns": [
       "/node_modules/",
     ],
   },
-  "metapak": Object {
-    "data": Object {
+  "metapak": {
+    "data": {
       "testsFiles": "src/*.js src/**/*.js",
     },
   },
-  "scripts": Object {
+  "scripts": {
     "cover": "npm run jest -- --coverage",
     "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
     "jest": "NODE_ENV=test jest",

@@ -19,7 +19,7 @@ module.exports = (packageConf) => {
   packageConf.scripts.cover = `npm run jest -- --coverage`;
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jest = '^28.1.0';
+  packageConf.devDependencies.jest = '^29.0.1';
 
   // Add coveralls for independant packages
   if (!data.childPackage) {
@@ -58,11 +58,12 @@ module.exports = (packageConf) => {
   };
   // Special configuration for TypeScript
   if (configs.includes('typescript') || configs.includes('tsesm')) {
-    packageConf.devDependencies['@types/jest'] = '^28.1.1';
+    delete packageConf.devDependencies['@types/jest'];
+    delete packageConf.dependencies['@types/jest'];
   }
   if (configs.includes('tsesm')) {
     delete packageConf.devDependencies['ts-jest'];
-    packageConf.devDependencies['esbuild'] = '^0.14.46';
+    packageConf.devDependencies['esbuild'] = '^0.15.6';
     packageConf.devDependencies['esbuild-jest'] = '^0.5.0';
   }
 

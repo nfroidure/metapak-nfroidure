@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`main Assets transformer should fill author in the LICENCE file 1`] = `
-Object {
+{
   "data": "The MIT License (MIT)
 Copyright © 2017 Nicolas Froidure
 

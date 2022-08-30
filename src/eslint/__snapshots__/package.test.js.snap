@@ -1,50 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`eslint Package transformer should work with child packages 1`] = `
-Object {
-  "devDependencies": Object {
-    "eslint": "^8.17.0",
+{
+  "devDependencies": {
+    "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.6.2",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
   },
-  "eslintConfig": Object {
-    "env": Object {
+  "eslintConfig": {
+    "env": {
       "es6": true,
       "jest": true,
       "mocha": true,
       "node": true,
     },
-    "extends": Array [
+    "extends": [
       "eslint:recommended",
       "plugin:prettier/recommended",
     ],
-    "parserOptions": Object {
+    "parserOptions": {
       "ecmaVersion": 2018,
       "modules": true,
       "sourceType": "script",
     },
-    "plugins": Array [
+    "plugins": [
       "prettier",
     ],
-    "rules": Object {
+    "rules": {
       "prettier/prettier": "error",
     },
   },
-  "metapak": Object {
-    "data": Object {
+  "metapak": {
+    "data": {
       "childPackage": true,
       "files": "src/*.js src/**/*.js",
     },
   },
-  "prettier": Object {
+  "prettier": {
     "printWidth": 80,
     "proseWrap": "always",
     "semi": true,
     "singleQuote": true,
     "trailingComma": "all",
   },
-  "scripts": Object {
+  "scripts": {
     "lint": "eslint src/*.js src/**/*.js",
     "prettier": "prettier --write src/*.js src/**/*.js",
   },
@@ -52,57 +52,57 @@ Object {
 `;
 
 exports[`eslint Package transformer should work with some files 1`] = `
-Object {
-  "devDependencies": Object {
-    "eslint": "^8.17.0",
+{
+  "devDependencies": {
+    "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.6.2",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
   },
-  "eslintConfig": Object {
-    "env": Object {
+  "eslintConfig": {
+    "env": {
       "es6": true,
       "jest": true,
       "mocha": true,
       "node": true,
     },
-    "extends": Array [
+    "extends": [
       "eslint:recommended",
       "plugin:prettier/recommended",
     ],
-    "parserOptions": Object {
+    "parserOptions": {
       "ecmaVersion": 2018,
       "modules": true,
       "sourceType": "script",
     },
-    "plugins": Array [
+    "plugins": [
       "prettier",
     ],
-    "rules": Object {
+    "rules": {
       "prettier/prettier": "error",
     },
   },
-  "greenkeeper": Object {
-    "ignore": Array [
+  "greenkeeper": {
+    "ignore": [
       "eslint",
       "eslint-config-prettier",
       "eslint-plugin-prettier",
       "prettier",
     ],
   },
-  "metapak": Object {
-    "data": Object {
+  "metapak": {
+    "data": {
       "files": "src/*.js src/**/*.js",
     },
   },
-  "prettier": Object {
+  "prettier": {
     "printWidth": 80,
     "proseWrap": "always",
     "semi": true,
     "singleQuote": true,
     "trailingComma": "all",
   },
-  "scripts": Object {
+  "scripts": {
     "lint": "eslint src/*.js src/**/*.js",
     "prettier": "prettier --write src/*.js src/**/*.js",
   },
@@ -110,61 +110,61 @@ Object {
 `;
 
 exports[`eslint Package transformer should work with typescript configs 1`] = `
-Object {
-  "devDependencies": Object {
-    "@typescript-eslint/eslint-plugin": "^5.27.0",
-    "@typescript-eslint/parser": "^5.27.0",
-    "eslint": "^8.17.0",
+{
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.36.0",
+    "@typescript-eslint/parser": "^5.36.0",
+    "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.6.2",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
   },
-  "eslintConfig": Object {
-    "env": Object {
+  "eslintConfig": {
+    "env": {
       "es6": true,
       "jest": true,
       "mocha": true,
       "node": true,
     },
-    "extends": Array [
+    "extends": [
       "eslint:recommended",
       "plugin:prettier/recommended",
       "plugin:@typescript-eslint/eslint-recommended",
       "plugin:@typescript-eslint/recommended",
     ],
-    "ignorePatterns": Array [
+    "ignorePatterns": [
       "*.d.ts",
     ],
     "parser": "@typescript-eslint/parser",
-    "parserOptions": Object {
+    "parserOptions": {
       "ecmaVersion": 2018,
       "modules": true,
       "sourceType": "script",
     },
-    "plugins": Array [
+    "plugins": [
       "prettier",
     ],
-    "rules": Object {
+    "rules": {
       "prettier/prettier": "error",
     },
   },
-  "metapak": Object {
-    "configs": Array [
+  "metapak": {
+    "configs": [
       "typescript",
     ],
-    "data": Object {
+    "data": {
       "childPackage": true,
       "files": "src/*.js src/**/*.js",
     },
   },
-  "prettier": Object {
+  "prettier": {
     "printWidth": 80,
     "proseWrap": "always",
     "semi": true,
     "singleQuote": true,
     "trailingComma": "all",
   },
-  "scripts": Object {
+  "scripts": {
     "lint": "eslint src/*.js src/**/*.js",
     "prettier": "prettier --write src/*.js src/**/*.js",
   },

@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Package transformer for jsdocs should work with an empty package.json 1`] = `
-Object {
-  "devDependencies": Object {
-    "jsarch": "^5.0.1",
+{
+  "devDependencies": {
+    "jsarch": "^5.0.2",
   },
-  "greenkeeper": Object {
-    "ignore": Array [
+  "greenkeeper": {
+    "ignore": [
       "jsarch",
     ],
   },
-  "metapak": Object {
-    "data": Object {
+  "metapak": {
+    "data": {
       "files": "yolo.js",
     },
   },
-  "scripts": Object {
+  "scripts": {
     "architecture": "jsarch yolo.js > ARCHITECTURE.md && git add ARCHITECTURE.md",
     "precz": "npm run architecture",
     "preversion": "npm run architecture",
@@ -24,50 +24,50 @@ Object {
 `;
 
 exports[`Package transformer for jsdocs should work with child package 1`] = `
-Object {
-  "devDependencies": Object {
-    "jsarch": "^5.0.1",
+{
+  "devDependencies": {
+    "jsarch": "^5.0.2",
   },
-  "greenkeeper": Object {
-    "ignore": Array [],
+  "greenkeeper": {
+    "ignore": [],
   },
-  "metapak": Object {
-    "data": Object {
+  "metapak": {
+    "data": {
       "childPackage": true,
       "files": "yolo.js",
     },
   },
-  "scripts": Object {
+  "scripts": {
     "architecture": "jsarch yolo.js > ARCHITECTURE.md && git add ARCHITECTURE.md",
   },
 }
 `;
 
 exports[`Package transformer for jsdocs should work with typescrit configs 1`] = `
-Object {
-  "devDependencies": Object {
-    "jsarch": "^5.0.1",
+{
+  "devDependencies": {
+    "jsarch": "^5.0.2",
   },
-  "greenkeeper": Object {
-    "ignore": Array [],
+  "greenkeeper": {
+    "ignore": [],
   },
-  "jsarch": Object {
-    "parserOptions": Object {
-      "plugins": Array [
+  "jsarch": {
+    "parserOptions": {
+      "plugins": [
         "typescript",
       ],
     },
   },
-  "metapak": Object {
-    "configs": Array [
+  "metapak": {
+    "configs": [
       "typescript",
     ],
-    "data": Object {
+    "data": {
       "childPackage": true,
       "files": "yolo.js",
     },
   },
-  "scripts": Object {
+  "scripts": {
     "architecture": "jsarch yolo.js > ARCHITECTURE.md && git add ARCHITECTURE.md",
   },
 }

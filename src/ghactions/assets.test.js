@@ -28,7 +28,7 @@ describe('GHActions', () => {
           {},
         ),
       ).toMatchInlineSnapshot(`
-        Object {
+        {
           "data": "name: Node.js CI
 
         on:
@@ -51,7 +51,7 @@ describe('GHActions', () => {
                 uses: actions/setup-node@v3
                 with:
                   node-version: \${{ matrix.node-version }}
-                  cache: \\"npm\\"
+                  cache: "npm"
               - name: Install dependencies
                 run: npm ci
               - name: Run pre-commit tests
