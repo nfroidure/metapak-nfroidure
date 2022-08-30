@@ -1,3 +1,7 @@
+# [12.3.0](https://github.com/nfroidure/metapak-nfroidure/compare/v12.2.0...v12.3.0) (2022-08-30)
+
+
+
 # [12.2.0](https://github.com/nfroidure/metapak-nfroidure/compare/v12.1.0...v12.2.0) (2022-08-30)
 
 
