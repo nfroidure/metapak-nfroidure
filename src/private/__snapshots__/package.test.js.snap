@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`private Package transformer should work 1`] = `
-{
-  "private": true,
-}
-`;

@@ -2,21 +2,30 @@
   "name": "metapak-nfroidure",
   "description": "A metapak module for my open source projects.",
   "version": "12.3.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "metapak": {
     "configs": [
       "main",
       "readme",
-      "jest",
+      "tsesm",
       "eslint",
+      "jest",
       "ghactions",
       "codeclimate"
     ],
     "data": {
-      "bundleFiles": [
-        "src/**/*"
+      "files": "'src/**/*.ts'",
+      "testsFiles": "'src/**/*.test.ts'",
+      "distFiles": "'dist/**/*.js'",
+      "ignore": [
+        "dist"
       ],
-      "testsFiles": "'src/**/*.mocha.js'",
-      "files": "'src/**/*.js'"
+      "bundleFiles": [
+        "dist",
+        "src"
+      ]
     }
   },
   "repository": {
@@ -24,17 +33,18 @@
     "url": "git+https://github.com/nfroidure/metapak-nfroidure.git"
   },
   "scripts": {
+    "build": "rimraf -f 'dist' && tsc --outDir dist",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "cli": "env NODE_ENV=${NODE_ENV:-cli}",
     "cover": "npm run jest -- --coverage",
     "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
     "cz": "env NODE_ENV=${NODE_ENV:-cli} git cz",
-    "jest": "NODE_ENV=test jest",
-    "lint": "eslint 'src/**/*.js'",
+    "jest": "NODE_OPTIONS=--experimental-vm-modules NODE_ENV=test jest",
+    "lint": "eslint 'src/**/*.ts'",
     "metapak": "metapak",
-    "precz": "npm t && npm run lint && npm run metapak -- -s",
-    "prettier": "prettier --write 'src/**/*.js'",
-    "preversion": "npm t && npm run lint && npm run metapak -- -s",
+    "precz": "npm t && npm run lint && npm run metapak -- -s && npm run build",
+    "prettier": "prettier --write 'src/**/*.ts'",
+    "preversion": "npm t && npm run lint && npm run metapak -- -s && npm run build",
     "test": "npm run jest",
     "version": "npm run changelog"
   },
@@ -45,7 +55,7 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "metapak": "^4.0.4"
+    "metapak": "^4.0.6"
   },
   "engines": {
     "node": ">=16.15.0"
@@ -55,16 +65,22 @@
   },
   "homepage": "https://github.com/nfroidure/metapak-nfroidure#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.36.0",
+    "@typescript-eslint/parser": "^5.36.0",
     "commitizen": "^4.2.5",
     "conventional-changelog-cli": "^2.2.2",
     "coveralls": "^3.1.1",
     "cz-conventional-changelog": "^3.3.0",
+    "esbuild": "^0.15.6",
+    "esbuild-jest": "^0.5.0",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "jest": "^29.0.1",
-    "metapak": "^4.0.4",
-    "prettier": "^2.7.1"
+    "metapak": "^4.0.6",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.8.2"
   },
   "config": {
     "commitizen": {
@@ -72,27 +88,24 @@
     }
   },
   "dependencies": {
-    "escape-string-regexp": "^4.0.0",
+    "escape-string-regexp": "^5.0.0",
     "rimraf": "^3.0.2",
-    "yerror": "^6.1.1"
-  },
-  "jest": {
-    "coverageReporters": [
-      "lcov",
-      "html"
-    ],
-    "testPathIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "roots": [
-      "<rootDir>/src"
-    ]
+    "yerror": "^6.2.1"
   },
   "contributors": [],
+  "files": [
+    "dist",
+    "src",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
   "eslintConfig": {
     "extends": [
       "eslint:recommended",
-      "plugin:prettier/recommended"
+      "plugin:prettier/recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended"
     ],
     "parserOptions": {
       "ecmaVersion": 2018,
@@ -110,7 +123,11 @@
     ],
     "rules": {
       "prettier/prettier": "error"
-    }
+    },
+    "parser": "@typescript-eslint/parser",
+    "ignorePatterns": [
+      "*.d.ts"
+    ]
   },
   "prettier": {
     "semi": true,
@@ -119,10 +136,31 @@
     "trailingComma": "all",
     "proseWrap": "always"
   },
-  "files": [
-    "src/**/*",
-    "LICENSE",
-    "README.md",
-    "CHANGELOG.md"
-  ]
+  "jest": {
+    "coverageReporters": [
+      "lcov"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": [
+        "esbuild-jest",
+        {
+          "sourcemap": true,
+          "format": "esm"
+        }
+      ]
+    },
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "(.+)\\.js": "$1"
+    },
+    "extensionsToTreatAsEsm": [
+      ".ts"
+    ]
+  }
 }
