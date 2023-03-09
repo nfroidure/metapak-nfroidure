@@ -25,7 +25,7 @@ const transformer: PackageJSONTransformer<
   packageConf.scripts.cover = `npm run jest -- --coverage`;
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jest = '^29.0.1';
+  packageConf.devDependencies.jest = '^29.5.0';
 
   // Add coveralls for independant packages
   if (!data.childPackage) {
@@ -74,7 +74,7 @@ const transformer: PackageJSONTransformer<
   }
   if (configs.includes('tsesm')) {
     delete packageConf.devDependencies['ts-jest'];
-    packageConf.devDependencies['esbuild'] = '^0.15.6';
+    packageConf.devDependencies['esbuild'] = '^0.17.11';
     packageConf.devDependencies['esbuild-jest'] = '^0.5.0';
   }
 

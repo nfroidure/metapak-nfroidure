@@ -1,4 +1,4 @@
-import { describe, beforeEach, test, jest, expect } from '@jest/globals';
+import { describe, test, expect } from '@jest/globals';
 import hooksTransformer from './hooks.js';
 
 describe('Hooks transformer', () => {

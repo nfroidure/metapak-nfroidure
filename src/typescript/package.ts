@@ -16,13 +16,13 @@ const transformer: PackageJSONTransformer<
 
   // Add the dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.typescript = '^4.8.2';
-  packageConf.devDependencies.rimraf = '^3.0.2';
+  packageConf.devDependencies.typescript = '^4.9.5';
+  packageConf.devDependencies.rimraf = '^4.4.0';
 
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.types = data.rootPackage
     ? 'lerna run types'
-    : "rimraf -f 'dist/**/*.d.ts' && tsc --project . --declaration --emitDeclarationOnly --outDir dist";
+    : "rimraf --glob -f 'dist/**/*.d.ts' && tsc --project . --declaration --emitDeclarationOnly --outDir dist";
 
   if (!data.rootPackage && !packageConf.types) {
     throw new YError('E_TYPES_NOT_DECLARED');

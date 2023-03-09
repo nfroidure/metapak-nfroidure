@@ -121,7 +121,7 @@ const transformer: PackageJSONTransformer<
 
     // Add the MUST HAVE dev dependencies
     packageConf.devDependencies = packageConf.devDependencies || {};
-    packageConf.devDependencies.commitizen = '^4.2.5';
+    packageConf.devDependencies.commitizen = '^4.3.0';
     packageConf.devDependencies['cz-conventional-changelog'] = '^3.3.0';
     packageConf.devDependencies['conventional-changelog-cli'] = '^2.2.2';
 

@@ -14,8 +14,8 @@ describe('private', () => {
       ).toMatchInlineSnapshot(`
         {
           "devDependencies": {
-            "rimraf": "^3.0.2",
-            "typescript": "^4.8.2",
+            "rimraf": "^4.4.0",
+            "typescript": "^4.9.5",
           },
           "greenkeeper": {
             "ignore": [

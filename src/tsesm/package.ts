@@ -20,8 +20,8 @@ const transformer: PackageJSONTransformer<
 
   // Add the dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.typescript = '^4.8.2';
-  packageConf.devDependencies.rimraf = '^3.0.2';
+  packageConf.devDependencies.typescript = '^4.9.5';
+  packageConf.devDependencies.rimraf = '^4.4.0';
 
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.build = data.rootPackage

@@ -16,10 +16,10 @@ describe('eslint', () => {
       ).toMatchInlineSnapshot(`
         {
           "devDependencies": {
-            "eslint": "^8.23.0",
-            "eslint-config-prettier": "^8.5.0",
+            "eslint": "^8.35.0",
+            "eslint-config-prettier": "^8.7.0",
             "eslint-plugin-prettier": "^4.2.1",
-            "prettier": "^2.7.1",
+            "prettier": "^2.8.4",
           },
           "eslintConfig": {
             "env": {
@@ -89,10 +89,10 @@ describe('eslint', () => {
       ).toMatchInlineSnapshot(`
         {
           "devDependencies": {
-            "eslint": "^8.23.0",
-            "eslint-config-prettier": "^8.5.0",
+            "eslint": "^8.35.0",
+            "eslint-config-prettier": "^8.7.0",
             "eslint-plugin-prettier": "^4.2.1",
-            "prettier": "^2.7.1",
+            "prettier": "^2.8.4",
           },
           "eslintConfig": {
             "env": {
@@ -155,12 +155,12 @@ describe('eslint', () => {
       ).toMatchInlineSnapshot(`
         {
           "devDependencies": {
-            "@typescript-eslint/eslint-plugin": "^5.36.0",
-            "@typescript-eslint/parser": "^5.36.0",
-            "eslint": "^8.23.0",
-            "eslint-config-prettier": "^8.5.0",
+            "@typescript-eslint/eslint-plugin": "^5.54.1",
+            "@typescript-eslint/parser": "^5.54.1",
+            "eslint": "^8.35.0",
+            "eslint-config-prettier": "^8.7.0",
             "eslint-plugin-prettier": "^4.2.1",
-            "prettier": "^2.7.1",
+            "prettier": "^2.8.4",
           },
           "eslintConfig": {
             "env": {

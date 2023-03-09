@@ -75,11 +75,11 @@ describe('Babel', () => {
             "sourceMaps": true,
           },
           "devDependencies": {
-            "@babel/cli": "^7.17.10",
-            "@babel/core": "^7.18.2",
-            "@babel/plugin-proposal-object-rest-spread": "^7.18.0",
-            "@babel/preset-env": "^7.18.2",
-            "@babel/register": "^7.17.7",
+            "@babel/cli": "^7.21.0",
+            "@babel/core": "^7.21.0",
+            "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+            "@babel/preset-env": "^7.20.2",
+            "@babel/register": "^7.21.0",
           },
           "greenkeeper": {
             "ignore": [
@@ -187,11 +187,11 @@ describe('Babel', () => {
             "sourceMaps": true,
           },
           "devDependencies": {
-            "@babel/cli": "^7.17.10",
-            "@babel/core": "^7.18.2",
-            "@babel/plugin-proposal-object-rest-spread": "^7.18.0",
-            "@babel/preset-env": "^7.18.2",
-            "@babel/register": "^7.17.7",
+            "@babel/cli": "^7.21.0",
+            "@babel/core": "^7.21.0",
+            "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+            "@babel/preset-env": "^7.20.2",
+            "@babel/register": "^7.21.0",
           },
           "greenkeeper": {
             "ignore": [
@@ -294,11 +294,11 @@ describe('Babel', () => {
             "sourceMaps": true,
           },
           "devDependencies": {
-            "@babel/cli": "^7.17.10",
-            "@babel/core": "^7.18.2",
-            "@babel/plugin-proposal-object-rest-spread": "^7.18.0",
-            "@babel/preset-env": "^7.18.2",
-            "@babel/register": "^7.17.7",
+            "@babel/cli": "^7.21.0",
+            "@babel/core": "^7.21.0",
+            "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+            "@babel/preset-env": "^7.20.2",
+            "@babel/register": "^7.21.0",
           },
           "greenkeeper": {
             "ignore": [
@@ -408,12 +408,12 @@ describe('Babel', () => {
             "sourceMaps": true,
           },
           "devDependencies": {
-            "@babel/cli": "^7.17.10",
-            "@babel/core": "^7.18.2",
-            "@babel/eslint-parser": "^7.18.2",
-            "@babel/plugin-proposal-object-rest-spread": "^7.18.0",
-            "@babel/preset-env": "^7.18.2",
-            "@babel/register": "^7.17.7",
+            "@babel/cli": "^7.21.0",
+            "@babel/core": "^7.21.0",
+            "@babel/eslint-parser": "^7.19.1",
+            "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+            "@babel/preset-env": "^7.20.2",
+            "@babel/register": "^7.21.0",
           },
           "eslintConfig": {
             "parserOptions": {
@@ -521,11 +521,11 @@ describe('Babel', () => {
             "sourceMaps": true,
           },
           "devDependencies": {
-            "@babel/cli": "^7.17.10",
-            "@babel/core": "^7.18.2",
-            "@babel/plugin-proposal-object-rest-spread": "^7.18.0",
-            "@babel/preset-env": "^7.18.2",
-            "@babel/register": "^7.17.7",
+            "@babel/cli": "^7.21.0",
+            "@babel/core": "^7.21.0",
+            "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+            "@babel/preset-env": "^7.20.2",
+            "@babel/register": "^7.21.0",
           },
           "main": "index",
           "metapak": {

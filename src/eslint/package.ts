@@ -27,9 +27,9 @@ const transformer: PackageJSONTransformer<
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.eslint = '^8.23.0';
-  packageConf.devDependencies.prettier = '^2.7.1';
-  packageConf.devDependencies['eslint-config-prettier'] = '^8.5.0';
+  packageConf.devDependencies.eslint = '^8.35.0';
+  packageConf.devDependencies.prettier = '^2.8.4';
+  packageConf.devDependencies['eslint-config-prettier'] = '^8.7.0';
   packageConf.devDependencies['eslint-plugin-prettier'] = '^4.2.1';
 
   packageConf.eslintConfig = {
@@ -61,8 +61,8 @@ const transformer: PackageJSONTransformer<
 
   // Special configuration for TypeScript
   if (configs.includes('typescript') || configs.includes('tsesm')) {
-    packageConf.devDependencies['@typescript-eslint/eslint-plugin'] = '^5.36.0';
-    packageConf.devDependencies['@typescript-eslint/parser'] = '^5.36.0';
+    packageConf.devDependencies['@typescript-eslint/eslint-plugin'] = '^5.54.1';
+    packageConf.devDependencies['@typescript-eslint/parser'] = '^5.54.1';
     packageConf.eslintConfig.parser = '@typescript-eslint/parser';
     packageConf.eslintConfig.extends = [
       ...packageConf.eslintConfig.extends,

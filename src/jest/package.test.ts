@@ -20,7 +20,7 @@ describe('mocha', () => {
           "dependencies": {},
           "devDependencies": {
             "coveralls": "^3.1.1",
-            "jest": "^29.0.1",
+            "jest": "^29.5.0",
           },
           "greenkeeper": {
             "ignore": [
@@ -77,9 +77,9 @@ describe('mocha', () => {
         {
           "dependencies": {},
           "devDependencies": {
-            "esbuild": "^0.15.6",
+            "esbuild": "^0.17.11",
             "esbuild-jest": "^0.5.0",
-            "jest": "^29.0.1",
+            "jest": "^29.5.0",
           },
           "jest": {
             "coverageReporters": [

@@ -15,8 +15,8 @@ describe('private', () => {
       ).toMatchInlineSnapshot(`
         {
           "devDependencies": {
-            "rimraf": "^3.0.2",
-            "typescript": "^4.8.2",
+            "rimraf": "^4.4.0",
+            "typescript": "^4.9.5",
           },
           "greenkeeper": {
             "ignore": [
@@ -32,7 +32,7 @@ describe('private', () => {
           "scripts": {
             "precz": "npm run types",
             "preversion": "npm run types",
-            "types": "rimraf -f 'dist/**/*.d.ts' && tsc --project . --declaration --emitDeclarationOnly --outDir dist",
+            "types": "rimraf --glob -f 'dist/**/*.d.ts' && tsc --project . --declaration --emitDeclarationOnly --outDir dist",
           },
           "types": "index.d.ts",
         }

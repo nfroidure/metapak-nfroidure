@@ -20,7 +20,7 @@ describe('mocha', () => {
         {
           "devDependencies": {
             "coveralls": "^3.1.1",
-            "mocha": "^10.0.0",
+            "mocha": "^10.2.0",
             "nyc": "^15.1.0",
           },
           "greenkeeper": {
@@ -70,7 +70,7 @@ describe('mocha', () => {
         {
           "devDependencies": {
             "coveralls": "^3.1.1",
-            "mocha": "^10.0.0",
+            "mocha": "^10.2.0",
             "nyc": "^15.1.0",
           },
           "greenkeeper": {

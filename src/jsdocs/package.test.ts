@@ -18,7 +18,7 @@ describe('Package transformer for jsdocs', () => {
     ).toMatchInlineSnapshot(`
       {
         "devDependencies": {
-          "jsdoc-to-markdown": "^7.1.1",
+          "jsdoc-to-markdown": "^8.0.0",
         },
         "greenkeeper": {
           "ignore": [
@@ -59,7 +59,7 @@ describe('Package transformer for jsdocs', () => {
     ).toMatchInlineSnapshot(`
       {
         "devDependencies": {
-          "jsdoc-to-markdown": "^7.1.1",
+          "jsdoc-to-markdown": "^8.0.0",
         },
         "greenkeeper": {
           "ignore": [
