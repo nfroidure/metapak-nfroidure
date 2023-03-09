@@ -125,7 +125,7 @@ const transformer: PackageJSONTransformer<
     packageConf.scripts.compile = 'lerna run compile';
   } else {
     packageConf.scripts.compile =
-      "rimraf -f 'dist' && npm run compile:cjs && npm run compile:mjs";
+      "rimraf 'dist' && npm run compile:cjs && npm run compile:mjs";
     packageConf.scripts[
       'compile:mjs'
     ] = `babel --env-name=mjs --out-file-extension=.mjs --out-dir=dist${

@@ -32,7 +32,7 @@ describe('private', () => {
           "scripts": {
             "precz": "npm run types",
             "preversion": "npm run types",
-            "types": "rimraf --glob -f 'dist/**/*.d.ts' && tsc --project . --declaration --emitDeclarationOnly --outDir dist",
+            "types": "rimraf --glob 'dist/**/*.d.ts' && tsc --project . --declaration --emitDeclarationOnly --outDir dist",
           },
           "types": "index.d.ts",
         }

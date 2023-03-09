@@ -22,7 +22,7 @@ const transformer: PackageJSONTransformer<
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.types = data.rootPackage
     ? 'lerna run types'
-    : "rimraf --glob -f 'dist/**/*.d.ts' && tsc --project . --declaration --emitDeclarationOnly --outDir dist";
+    : "rimraf --glob 'dist/**/*.d.ts' && tsc --project . --declaration --emitDeclarationOnly --outDir dist";
 
   if (!data.rootPackage && !packageConf.types) {
     throw new YError('E_TYPES_NOT_DECLARED');

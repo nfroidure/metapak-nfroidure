@@ -26,7 +26,7 @@ const transformer: PackageJSONTransformer<
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.build = data.rootPackage
     ? 'lerna run build'
-    : "rimraf -f 'dist' && tsc --outDir dist";
+    : "rimraf 'dist' && tsc --outDir dist";
 
   // Install mandatory scripts
   if (!data.childPackage) {

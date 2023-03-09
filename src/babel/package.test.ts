@@ -110,7 +110,7 @@ describe('Babel', () => {
           },
           "module": "index.mjs",
           "scripts": {
-            "compile": "rimraf -f 'dist' && npm run compile:cjs && npm run compile:mjs",
+            "compile": "rimraf 'dist' && npm run compile:cjs && npm run compile:mjs",
             "compile:cjs": "babel --env-name=cjs --out-dir=dist --source-maps=true src",
             "compile:mjs": "babel --env-name=mjs --out-file-extension=.mjs --out-dir=dist --source-maps=true src",
             "precz": "npm run compile",
@@ -218,7 +218,7 @@ describe('Babel', () => {
           },
           "module": "index.mjs",
           "scripts": {
-            "compile": "rimraf -f 'dist' && npm run compile:cjs && npm run compile:mjs",
+            "compile": "rimraf 'dist' && npm run compile:cjs && npm run compile:mjs",
             "compile:cjs": "babel --env-name=cjs --out-dir=dist --source-maps=true src",
             "compile:mjs": "babel --env-name=mjs --out-file-extension=.mjs --out-dir=dist --source-maps=true src",
             "precz": "npm run compile",
@@ -326,7 +326,7 @@ describe('Babel', () => {
           },
           "module": "index.mjs",
           "scripts": {
-            "compile": "rimraf -f 'dist' && npm run compile:cjs && npm run compile:mjs",
+            "compile": "rimraf 'dist' && npm run compile:cjs && npm run compile:mjs",
             "compile:cjs": "babel --env-name=cjs --out-dir=dist --source-maps=true src",
             "compile:mjs": "babel --env-name=mjs --out-file-extension=.mjs --out-dir=dist --source-maps=true src",
             "precz": "npm run compile",
@@ -449,7 +449,7 @@ describe('Babel', () => {
             "trailingComma": "all",
           },
           "scripts": {
-            "compile": "rimraf -f 'dist' && npm run compile:cjs && npm run compile:mjs",
+            "compile": "rimraf 'dist' && npm run compile:cjs && npm run compile:mjs",
             "compile:cjs": "babel --env-name=cjs --out-dir=dist --source-maps=true src",
             "compile:mjs": "babel --env-name=mjs --out-file-extension=.mjs --out-dir=dist --source-maps=true src",
             "precz": "npm run compile",
@@ -543,7 +543,7 @@ describe('Babel', () => {
           },
           "module": "index.mjs",
           "scripts": {
-            "compile": "rimraf -f 'dist' && npm run compile:cjs && npm run compile:mjs",
+            "compile": "rimraf 'dist' && npm run compile:cjs && npm run compile:mjs",
             "compile:cjs": "babel --env-name=cjs --out-dir=dist --source-maps=true src",
             "compile:mjs": "babel --env-name=mjs --out-file-extension=.mjs --out-dir=dist --source-maps=true src",
           },

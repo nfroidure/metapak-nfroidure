@@ -31,7 +31,7 @@ describe('private', () => {
             "data": {},
           },
           "scripts": {
-            "build": "rimraf -f 'dist' && tsc --outDir dist",
+            "build": "rimraf 'dist' && tsc --outDir dist",
             "precz": "npm run build",
             "preversion": "npm run build",
           },
