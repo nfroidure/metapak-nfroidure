@@ -1,3 +1,12 @@
+## [13.1.1](https://github.com/nfroidure/metapak-nfroidure/compare/v13.1.0...v13.1.1) (2023-03-09)
+
+
+### Bug Fixes
+
+* **build:** fix rimraf options ([f177283](https://github.com/nfroidure/metapak-nfroidure/commit/f177283a89a4696e7007842fea6c78323b81e16a))
+
+
+
 # [13.1.0](https://github.com/nfroidure/metapak-nfroidure/compare/v13.0.0...v13.1.0) (2023-03-09)
 
 
