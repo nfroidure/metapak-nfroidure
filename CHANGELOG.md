@@ -1,3 +1,12 @@
+# [14.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v13.1.1...v14.0.0) (2023-05-27)
+
+
+### Features
+
+* **tsesm:** use SWC instead of ESBuild ([4ea5056](https://github.com/nfroidure/metapak-nfroidure/commit/4ea5056386c7ef4e3b928db1be46c25fcfe6dfb0))
+
+
+
 ## [13.1.1](https://github.com/nfroidure/metapak-nfroidure/compare/v13.1.0...v13.1.1) (2023-03-09)
 
 
