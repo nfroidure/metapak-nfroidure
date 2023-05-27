@@ -1,3 +1,12 @@
+## [14.1.1](https://github.com/nfroidure/metapak-nfroidure/compare/v14.1.0...v14.1.1) (2023-05-27)
+
+
+### Bug Fixes
+
+* **core:** fix the required metapak version ([4cf4204](https://github.com/nfroidure/metapak-nfroidure/commit/4cf4204bd361076b3c3416ab048a64fdf025cd7f))
+
+
+
 # [14.1.0](https://github.com/nfroidure/metapak-nfroidure/compare/v14.0.0...v14.1.0) (2023-05-27)
 
 
