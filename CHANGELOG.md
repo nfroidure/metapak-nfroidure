@@ -1,3 +1,13 @@
+# [14.1.0](https://github.com/nfroidure/metapak-nfroidure/compare/v14.0.0...v14.1.0) (2023-05-27)
+
+
+### Bug Fixes
+
+* **main:** fix the last node version ([ad89f74](https://github.com/nfroidure/metapak-nfroidure/commit/ad89f7414d1723d2ae1717cdebf01c03e585872b))
+* **tsesm:** fix build target ([12f73fc](https://github.com/nfroidure/metapak-nfroidure/commit/12f73fcaad22fad9e1098f6fb3896a1d4bd02ce6))
+
+
+
 # [14.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v13.1.1...v14.0.0) (2023-05-27)
 
 
