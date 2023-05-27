@@ -29,7 +29,7 @@ const transformer: PackageJSONTransformer<
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.build = data.rootPackage
     ? 'lerna run build'
-    : "rimraf 'dist' && swc ./src -s -d dist";
+    : "rimraf 'dist' && swc ./src -s -d dist -C jsc.target=es2022";
 
   // Install mandatory scripts
   if (!data.childPackage) {
