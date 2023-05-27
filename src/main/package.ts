@@ -134,7 +134,7 @@ const transformer: PackageJSONTransformer<
           'commitizen',
           'cz-conventional-changelog',
           'conventional-changelog-cli',
-        ],
+        ].filter((dependency) => packageConf?.devDependencies?.[dependency]),
       };
     }
   }

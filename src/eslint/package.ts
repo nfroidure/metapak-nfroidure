@@ -27,9 +27,9 @@ const transformer: PackageJSONTransformer<
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.eslint = '^8.35.0';
-  packageConf.devDependencies.prettier = '^2.8.4';
-  packageConf.devDependencies['eslint-config-prettier'] = '^8.7.0';
+  packageConf.devDependencies.eslint = '^8.41.0';
+  packageConf.devDependencies.prettier = '^2.8.8';
+  packageConf.devDependencies['eslint-config-prettier'] = '^8.8.0';
   packageConf.devDependencies['eslint-plugin-prettier'] = '^4.2.1';
 
   packageConf.eslintConfig = {
@@ -61,8 +61,8 @@ const transformer: PackageJSONTransformer<
 
   // Special configuration for TypeScript
   if (configs.includes('typescript') || configs.includes('tsesm')) {
-    packageConf.devDependencies['@typescript-eslint/eslint-plugin'] = '^5.54.1';
-    packageConf.devDependencies['@typescript-eslint/parser'] = '^5.54.1';
+    packageConf.devDependencies['@typescript-eslint/eslint-plugin'] = '^5.59.7';
+    packageConf.devDependencies['@typescript-eslint/parser'] = '^5.59.7';
     packageConf.eslintConfig.parser = '@typescript-eslint/parser';
     packageConf.eslintConfig.extends = [
       ...packageConf.eslintConfig.extends,
@@ -76,24 +76,16 @@ const transformer: PackageJSONTransformer<
     packageConf.greenkeeper = {
       ignore: [
         ...new Set(
-          (packageConf.greenkeeper && packageConf.greenkeeper.ignore
-            ? packageConf.greenkeeper.ignore
-            : []
-          )
+          (packageConf?.greenkeeper?.ignore || [])
             .concat([
               'eslint',
+              'prettier',
               'eslint-config-prettier',
               'eslint-plugin-prettier',
-              'prettier',
+              '@typescript-eslint/eslint-plugin',
+              '@typescript-eslint/parser',
             ])
-            .concat(
-              configs.includes('typescript') || configs.includes('tsesm')
-                ? [
-                    '@typescript-eslint/eslint-plugin',
-                    '@typescript-eslint/parser',
-                  ]
-                : [],
-            ),
+            .filter((dependency) => packageConf?.devDependencies?.[dependency]),
         ),
       ],
     };

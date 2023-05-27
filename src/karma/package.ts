@@ -14,13 +14,6 @@ const transformer: PackageJSONTransformer<
     metapak: { data, configs },
   } = packageConf;
 
-  // Add packages
-  const packagesAdded = [
-    'karma',
-    'karma-chrome-launcher',
-    'karma-firefox-launcher',
-  ];
-
   packageConf.devDependencies = packageConf.devDependencies || {};
   packageConf.devDependencies.karma = '^6.4.1';
   packageConf.devDependencies['karma-chrome-launcher'] = '^3.1.1';
@@ -31,7 +24,6 @@ const transformer: PackageJSONTransformer<
       throw new YError('E_BAD_CONFIG_ORDER', 'karma', 'mocha');
     }
     packageConf.devDependencies['karma-mocha'] = '^2.0.1';
-    packagesAdded.push('karma-mocha');
   }
 
   // Adapting script to work with Babel
@@ -49,12 +41,14 @@ const transformer: PackageJSONTransformer<
     packageConf.greenkeeper = {
       ignore: [
         ...new Set(
-          (packageConf.greenkeeper && packageConf.greenkeeper.ignore
-            ? packageConf.greenkeeper.ignore
-            : []
-          ).concat(packagesAdded),
+          (packageConf?.greenkeeper?.ignore || []).concat([
+            'karma',
+            'karma-chrome-launcher',
+            'karma-firefox-launcher',
+            'karma-mocha',
+          ]),
         ),
-      ],
+      ].filter((dependency) => packageConf?.devDependencies?.[dependency]),
     };
   }
 

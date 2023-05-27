@@ -14,13 +14,19 @@ describe('private', () => {
       ).toMatchInlineSnapshot(`
         {
           "devDependencies": {
-            "rimraf": "^4.4.0",
-            "typescript": "^4.9.5",
+            "@swc/cli": "^0.1.62",
+            "@swc/core": "^1.3.60",
+            "@swc/helpers": "^0.5.1",
+            "rimraf": "^5.0.1",
+            "typescript": "^5.0.4",
           },
           "greenkeeper": {
             "ignore": [
               "typescript",
               "rimraf",
+              "@swc/cli",
+              "@swc/core",
+              "@swc/helpers",
             ],
           },
           "main": "dist/index.js",
@@ -31,7 +37,7 @@ describe('private', () => {
             "data": {},
           },
           "scripts": {
-            "build": "rimraf 'dist' && tsc --outDir dist",
+            "build": "rimraf 'dist' && swc ./src -s -d dist",
             "precz": "npm run build",
             "preversion": "npm run build",
           },

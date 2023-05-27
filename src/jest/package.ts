@@ -43,13 +43,7 @@ const transformer: PackageJSONTransformer<
     ...(configs.includes('tsesm')
       ? {
           transform: {
-            '^.+\\.tsx?$': [
-              'esbuild-jest',
-              {
-                sourcemap: true,
-                format: 'esm',
-              },
-            ],
+            '^.+\\.tsx?$': ['@swc/jest', {}],
           },
           testEnvironment: 'node',
           moduleNameMapper: {
@@ -74,8 +68,9 @@ const transformer: PackageJSONTransformer<
   }
   if (configs.includes('tsesm')) {
     delete packageConf.devDependencies['ts-jest'];
-    packageConf.devDependencies['esbuild'] = '^0.17.11';
-    packageConf.devDependencies['esbuild-jest'] = '^0.5.0';
+    delete packageConf.devDependencies['esbuild'];
+    delete packageConf.devDependencies['esbuild-jest'];
+    packageConf.devDependencies['@swc/jest'] = '^0.2.26';
   }
 
   if (configs.includes('typescript')) {
@@ -86,15 +81,9 @@ const transformer: PackageJSONTransformer<
     packageConf.greenkeeper = {
       ignore: [
         ...new Set(
-          (packageConf.greenkeeper && packageConf.greenkeeper.ignore
-            ? packageConf.greenkeeper.ignore
-            : []
-          )
-            .concat(['jest', 'coveralls'])
-            .filter(
-              (packageName) =>
-                packageName !== 'ts-jest' || configs.includes('tsesm'),
-            ),
+          (packageConf?.greenkeeper?.ignore || [])
+            .concat(['jest', 'coveralls', '@swc/jest'])
+            .filter((dependency) => packageConf?.devDependencies?.[dependency]),
         ),
       ],
     };

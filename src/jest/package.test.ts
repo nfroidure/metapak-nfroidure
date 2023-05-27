@@ -77,8 +77,7 @@ describe('mocha', () => {
         {
           "dependencies": {},
           "devDependencies": {
-            "esbuild": "^0.17.11",
-            "esbuild-jest": "^0.5.0",
+            "@swc/jest": "^0.2.26",
             "jest": "^29.5.0",
           },
           "jest": {
@@ -103,11 +102,8 @@ describe('mocha', () => {
             ],
             "transform": {
               "^.+\\.tsx?$": [
-                "esbuild-jest",
-                {
-                  "format": "esm",
-                  "sourcemap": true,
-                },
+                "@swc/jest",
+                {},
               ],
             },
           },

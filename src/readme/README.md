@@ -1,3 +1,0 @@
-# readme
-
-Templated README configuration.

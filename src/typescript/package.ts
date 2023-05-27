@@ -16,8 +16,10 @@ const transformer: PackageJSONTransformer<
 
   // Add the dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.typescript = '^4.9.5';
-  packageConf.devDependencies.rimraf = '^4.4.0';
+  packageConf.devDependencies.typescript = '^5.0.4';
+  packageConf.devDependencies.rimraf = '^5.0.1';
+  packageConf.devDependencies['@swc/core'] = '^1.3.60';
+  packageConf.devDependencies['@swc/helpers'] = '^0.5.1';
 
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.types = data.rootPackage
@@ -43,12 +45,14 @@ const transformer: PackageJSONTransformer<
     packageConf.greenkeeper = {
       ignore: [
         ...new Set(
-          (packageConf.greenkeeper && packageConf.greenkeeper.ignore
-            ? packageConf.greenkeeper.ignore
-            : []
-          ).concat(['typescript']),
+          (packageConf?.greenkeeper?.ignore || []).concat([
+            'typescript',
+            'rimraf',
+            '@swc/core',
+            '@swc/helpers',
+          ]),
         ),
-      ],
+      ].filter((dependency) => packageConf?.devDependencies?.[dependency]),
     };
   }
 

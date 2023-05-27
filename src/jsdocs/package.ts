@@ -49,12 +49,11 @@ const transformer: PackageJSONTransformer<
     packageConf.greenkeeper = {
       ignore: [
         ...new Set(
-          (packageConf.greenkeeper && packageConf.greenkeeper.ignore
-            ? packageConf.greenkeeper.ignore
-            : []
-          ).concat(['jsdoc-to-markdown']),
+          (packageConf?.greenkeeper?.ignore || []).concat([
+            'jsdoc-to-markdown',
+          ]),
         ),
-      ],
+      ].filter((dependency) => packageConf?.devDependencies?.[dependency]),
     };
   }
 

@@ -61,12 +61,13 @@ const transformer: PackageJSONTransformer<
     packageConf.greenkeeper = {
       ignore: [
         ...new Set(
-          (packageConf.greenkeeper && packageConf.greenkeeper.ignore
-            ? packageConf.greenkeeper.ignore
-            : []
-          ).concat(['mocha', 'coveralls', 'nyc']),
+          (packageConf?.greenkeeper?.ignore || []).concat([
+            'mocha',
+            'nyc',
+            'coveralls',
+          ]),
         ),
-      ],
+      ].filter((dependency) => packageConf?.devDependencies?.[dependency]),
     };
   }
 

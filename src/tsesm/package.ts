@@ -20,13 +20,16 @@ const transformer: PackageJSONTransformer<
 
   // Add the dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.typescript = '^4.9.5';
-  packageConf.devDependencies.rimraf = '^4.4.0';
+  packageConf.devDependencies.typescript = '^5.0.4';
+  packageConf.devDependencies.rimraf = '^5.0.1';
+  packageConf.devDependencies['@swc/cli'] = '^0.1.62';
+  packageConf.devDependencies['@swc/core'] = '^1.3.60';
+  packageConf.devDependencies['@swc/helpers'] = '^0.5.1';
 
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.build = data.rootPackage
     ? 'lerna run build'
-    : "rimraf 'dist' && tsc --outDir dist";
+    : "rimraf 'dist' && swc ./src -s -d dist";
 
   // Install mandatory scripts
   if (!data.childPackage) {
@@ -60,12 +63,15 @@ const transformer: PackageJSONTransformer<
     packageConf.greenkeeper = {
       ignore: [
         ...new Set(
-          (packageConf.greenkeeper && packageConf.greenkeeper.ignore
-            ? packageConf.greenkeeper.ignore
-            : []
-          ).concat(['typescript', 'rimraf']),
+          (packageConf?.greenkeeper?.ignore || []).concat([
+            'typescript',
+            'rimraf',
+            '@swc/cli',
+            '@swc/core',
+            '@swc/helpers',
+          ]),
         ),
-      ],
+      ].filter((dependency) => packageConf?.devDependencies?.[dependency]),
     };
   }
 

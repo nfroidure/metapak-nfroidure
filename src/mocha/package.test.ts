@@ -26,8 +26,8 @@ describe('mocha', () => {
           "greenkeeper": {
             "ignore": [
               "mocha",
-              "coveralls",
               "nyc",
+              "coveralls",
             ],
           },
           "metapak": {
@@ -76,8 +76,8 @@ describe('mocha', () => {
           "greenkeeper": {
             "ignore": [
               "mocha",
-              "coveralls",
               "nyc",
+              "coveralls",
             ],
           },
           "metapak": {
