@@ -74,7 +74,7 @@ describe('GHActions', () => {
 
             strategy:
               matrix:
-                node-version: [16.x, 18.x]
+                node-version: [18.x, 20.x]
 
             steps:
               - uses: actions/checkout@v3

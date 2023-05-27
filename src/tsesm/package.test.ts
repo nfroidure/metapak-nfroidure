@@ -37,7 +37,7 @@ describe('private', () => {
             "data": {},
           },
           "scripts": {
-            "build": "rimraf 'dist' && swc ./src -s -d dist",
+            "build": "rimraf 'dist' && swc ./src -s -d dist -C jsc.target=es2022",
             "precz": "npm run build",
             "preversion": "npm run build",
           },
