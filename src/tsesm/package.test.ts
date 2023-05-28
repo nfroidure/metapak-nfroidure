@@ -37,9 +37,10 @@ describe('private', () => {
             "data": {},
           },
           "scripts": {
-            "build": "rimraf 'dist' && swc ./src -s -d dist -C jsc.target=es2022",
-            "precz": "npm run build && npm run type-check",
-            "preversion": "npm run build && npm run type-check",
+            "build": "rimraf 'dist' && tsc --outDir dist",
+            "precz": "npm run build",
+            "preversion": "npm run build",
+            "rebuild": "swc ./src -s -d dist -C jsc.target=es2022",
             "type-check": "tsc --pretty --noEmit",
           },
           "type": "module",

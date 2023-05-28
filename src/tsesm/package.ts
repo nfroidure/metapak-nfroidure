@@ -2,7 +2,6 @@ import { ensureScript } from '../lib.js';
 import type { PackageJSONTransformer } from 'metapak';
 
 const BUILD_COMMAND = 'npm run build';
-const TYPE_COMMAND = 'npm run type-check';
 
 const transformer: PackageJSONTransformer<
   { childPackage?: boolean; rootPackage?: boolean },
@@ -30,7 +29,12 @@ const transformer: PackageJSONTransformer<
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.build = data.rootPackage
     ? 'lerna run build'
-    : "rimraf 'dist' && swc ./src -s -d dist -C jsc.target=es2022";
+    : "rimraf 'dist' && tsc --outDir dist";
+  // Currently SWC do not emit types which makes it usefull only
+  // to quickly rebuild a module project...
+  if (!data.rootPackage) {
+    packageConf.scripts.rebuild = 'swc ./src -s -d dist -C jsc.target=es2022';
+  }
   packageConf.scripts['type-check'] = data.rootPackage
     ? 'lerna run type-check'
     : 'tsc --pretty --noEmit';
@@ -41,17 +45,9 @@ const transformer: PackageJSONTransformer<
       packageConf.scripts.precz,
       BUILD_COMMAND,
     );
-    packageConf.scripts.precz = ensureScript(
-      packageConf.scripts.precz,
-      TYPE_COMMAND,
-    );
     packageConf.scripts.preversion = ensureScript(
       packageConf.scripts.preversion,
       BUILD_COMMAND,
-    );
-    packageConf.scripts.preversion = ensureScript(
-      packageConf.scripts.preversion,
-      TYPE_COMMAND,
     );
   }
 

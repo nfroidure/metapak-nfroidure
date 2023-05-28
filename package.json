@@ -33,7 +33,7 @@
     "url": "git+https://github.com/nfroidure/metapak-nfroidure.git"
   },
   "scripts": {
-    "build": "rimraf 'dist' && swc ./src -s -d dist -C jsc.target=es2022",
+    "build": "rimraf 'dist' && tsc --outDir dist",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "cli": "env NODE_ENV=${NODE_ENV:-cli}",
     "cover": "npm run jest -- --coverage",
@@ -45,6 +45,7 @@
     "precz": "npm t && npm run lint && npm run metapak -- -s && npm run build && npm run type-check",
     "prettier": "prettier --write 'src/**/*.ts'",
     "preversion": "npm t && npm run lint && npm run metapak -- -s && npm run build && npm run type-check",
+    "rebuild": "swc ./src -s -d dist -C jsc.target=es2022",
     "test": "npm run jest",
     "type-check": "tsc --pretty --noEmit",
     "version": "npm run changelog"
