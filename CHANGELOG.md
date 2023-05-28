@@ -1,3 +1,17 @@
+## [14.1.2](https://github.com/nfroidure/metapak-nfroidure/compare/v14.1.1...v14.1.2) (2023-05-28)
+
+
+### Bug Fixes
+
+* **tsesm:** fix the build of type defs ([41dc07b](https://github.com/nfroidure/metapak-nfroidure/commit/41dc07bc05bf57a1272fde0eb4fd8a7b0781a3cc))
+
+
+### Features
+
+* **tsesm:** add type check script ([549dfe0](https://github.com/nfroidure/metapak-nfroidure/commit/549dfe0f24a5db5eaa8add64adbaf601ef44aec6))
+
+
+
 ## [14.1.1](https://github.com/nfroidure/metapak-nfroidure/compare/v14.1.0...v14.1.1) (2023-05-27)
 
 
