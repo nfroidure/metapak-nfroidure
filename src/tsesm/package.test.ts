@@ -38,8 +38,9 @@ describe('private', () => {
           },
           "scripts": {
             "build": "rimraf 'dist' && swc ./src -s -d dist -C jsc.target=es2022",
-            "precz": "npm run build",
-            "preversion": "npm run build",
+            "precz": "npm run build && npm run type-check",
+            "preversion": "npm run build && npm run type-check",
+            "type-check": "tsc --pretty --noEmit",
           },
           "type": "module",
           "types": "dist/index.d.ts",

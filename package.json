@@ -42,10 +42,11 @@
     "jest": "NODE_OPTIONS=--experimental-vm-modules NODE_ENV=test jest",
     "lint": "eslint 'src/**/*.ts'",
     "metapak": "metapak",
-    "precz": "npm t && npm run lint && npm run metapak -- -s && npm run build",
+    "precz": "npm t && npm run lint && npm run metapak -- -s && npm run build && npm run type-check",
     "prettier": "prettier --write 'src/**/*.ts'",
-    "preversion": "npm t && npm run lint && npm run metapak -- -s && npm run build",
+    "preversion": "npm t && npm run lint && npm run metapak -- -s && npm run build && npm run type-check",
     "test": "npm run jest",
+    "type-check": "tsc --pretty --noEmit",
     "version": "npm run changelog"
   },
   "author": {
