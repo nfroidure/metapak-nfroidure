@@ -1,5 +1,6 @@
 import { describe, beforeEach, jest, test, expect } from '@jest/globals';
 import assetsTransformer from './assets.js';
+import { constants } from 'fs';
 import type { LogService, FSService } from 'metapak';
 
 const ASSETS_README_CONTENTS = `[//]: # ( )
@@ -57,6 +58,7 @@ describe('Assets transformer for www configs', () => {
     accessAsync: jest.fn<FSService['accessAsync']>(),
     readdirAsync: jest.fn<FSService['readdirAsync']>(),
     unlinkAsync: jest.fn<FSService['unlinkAsync']>(),
+    constants,
   };
   const PROJECT_DIR = '/lol/';
   const log = jest.fn<LogService>();

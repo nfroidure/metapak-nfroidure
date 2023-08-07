@@ -1,5 +1,5 @@
 import { describe, beforeEach, jest, test, expect } from '@jest/globals';
-import _fs from 'fs';
+import _fs, { constants } from 'fs';
 import path from 'path';
 import assetsTransformer from './assets.js';
 import type { LogService, FSService } from 'metapak';
@@ -12,6 +12,7 @@ describe('main', () => {
     accessAsync: jest.fn<FSService['accessAsync']>(),
     readdirAsync: jest.fn<FSService['readdirAsync']>(),
     unlinkAsync: jest.fn<FSService['unlinkAsync']>(),
+    constants,
   };
   const PROJECT_DIR = '/lol/';
   const log = jest.fn<LogService>();
