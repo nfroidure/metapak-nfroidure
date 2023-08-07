@@ -1,3 +1,12 @@
+# [14.2.0](https://github.com/nfroidure/metapak-nfroidure/compare/v14.1.3...v14.2.0) (2023-08-07)
+
+
+### Bug Fixes
+
+* **ci:** try to fix ci error ([7123cec](https://github.com/nfroidure/metapak-nfroidure/commit/7123cec21b34273787c6682677732f1770325634))
+
+
+
 ## [14.1.3](https://github.com/nfroidure/metapak-nfroidure/compare/v14.1.2...v14.1.3) (2023-05-28)
 
 
