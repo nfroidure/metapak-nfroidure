@@ -1,10 +1,11 @@
 import type { PackageJSONTransformer } from 'metapak';
+import type { ESLint } from 'eslint';
 
 const transformer: PackageJSONTransformer<
   { childPackage?: boolean; rootPackage?: boolean; files?: string },
   {
     greenkeeper?: { ignore?: string[] };
-    eslintConfig?: any;
+    eslintConfig?: ESLint.ConfigData;
   }
 > = (packageConf) => {
   const {
@@ -27,10 +28,10 @@ const transformer: PackageJSONTransformer<
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.eslint = '^8.41.0';
-  packageConf.devDependencies.prettier = '^2.8.8';
-  packageConf.devDependencies['eslint-config-prettier'] = '^8.8.0';
-  packageConf.devDependencies['eslint-plugin-prettier'] = '^4.2.1';
+  packageConf.devDependencies.eslint = '^8.46.0';
+  packageConf.devDependencies.prettier = '^3.0.1';
+  packageConf.devDependencies['eslint-config-prettier'] = '^9.0.0';
+  packageConf.devDependencies['eslint-plugin-prettier'] = '^5.0.0';
 
   packageConf.eslintConfig = {
     extends: ['eslint:recommended', 'plugin:prettier/recommended'],
@@ -61,11 +62,16 @@ const transformer: PackageJSONTransformer<
 
   // Special configuration for TypeScript
   if (configs.includes('typescript') || configs.includes('tsesm')) {
-    packageConf.devDependencies['@typescript-eslint/eslint-plugin'] = '^5.59.7';
-    packageConf.devDependencies['@typescript-eslint/parser'] = '^5.59.7';
+    packageConf.devDependencies['@typescript-eslint/eslint-plugin'] = '^6.2.1';
+    packageConf.devDependencies['@typescript-eslint/parser'] = '^6.2.1';
+    packageConf.eslintConfig = packageConf.eslintConfig || {};
     packageConf.eslintConfig.parser = '@typescript-eslint/parser';
     packageConf.eslintConfig.extends = [
-      ...packageConf.eslintConfig.extends,
+      ...(packageConf.eslintConfig.extends instanceof Array
+        ? packageConf.eslintConfig.extends
+        : packageConf.eslintConfig.extends
+        ? [packageConf.eslintConfig.extends]
+        : []),
       'plugin:@typescript-eslint/eslint-recommended',
       'plugin:@typescript-eslint/recommended',
     ];

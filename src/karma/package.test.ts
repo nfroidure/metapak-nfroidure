@@ -19,8 +19,8 @@ describe('Karma', () => {
       ).toMatchInlineSnapshot(`
         {
           "devDependencies": {
-            "karma": "^6.4.1",
-            "karma-chrome-launcher": "^3.1.1",
+            "karma": "^6.4.2",
+            "karma-chrome-launcher": "^3.2.0",
             "karma-firefox-launcher": "^2.1.2",
           },
           "greenkeeper": {
@@ -62,8 +62,8 @@ describe('Karma', () => {
       ).toMatchInlineSnapshot(`
         {
           "devDependencies": {
-            "karma": "^6.4.1",
-            "karma-chrome-launcher": "^3.1.1",
+            "karma": "^6.4.2",
+            "karma-chrome-launcher": "^3.2.0",
             "karma-firefox-launcher": "^2.1.2",
             "karma-mocha": "^2.0.1",
           },

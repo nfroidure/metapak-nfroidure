@@ -20,7 +20,7 @@ describe('mocha', () => {
           "dependencies": {},
           "devDependencies": {
             "coveralls": "^3.1.1",
-            "jest": "^29.5.0",
+            "jest": "^29.6.2",
           },
           "greenkeeper": {
             "ignore": [
@@ -77,8 +77,8 @@ describe('mocha', () => {
         {
           "dependencies": {},
           "devDependencies": {
-            "@swc/jest": "^0.2.26",
-            "jest": "^29.5.0",
+            "@swc/jest": "^0.2.28",
+            "jest": "^29.6.2",
           },
           "jest": {
             "coverageReporters": [

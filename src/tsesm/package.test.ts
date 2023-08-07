@@ -15,10 +15,10 @@ describe('private', () => {
         {
           "devDependencies": {
             "@swc/cli": "^0.1.62",
-            "@swc/core": "^1.3.60",
+            "@swc/core": "^1.3.74",
             "@swc/helpers": "^0.5.1",
             "rimraf": "^5.0.1",
-            "typescript": "^5.0.4",
+            "typescript": "^5.1.6",
           },
           "greenkeeper": {
             "ignore": [

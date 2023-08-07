@@ -25,7 +25,7 @@ describe('Package transformer', () => {
         "contributors": [],
         "devDependencies": {
           "commitizen": "^4.3.0",
-          "conventional-changelog-cli": "^2.2.2",
+          "conventional-changelog-cli": "^3.0.0",
           "cz-conventional-changelog": "^3.3.0",
         },
         "engines": {
@@ -91,7 +91,7 @@ describe('Package transformer', () => {
         "contributors": [],
         "devDependencies": {
           "commitizen": "^4.3.0",
-          "conventional-changelog-cli": "^2.2.2",
+          "conventional-changelog-cli": "^3.0.0",
           "cz-conventional-changelog": "^3.3.0",
         },
         "engines": {

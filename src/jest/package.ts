@@ -1,5 +1,6 @@
 import { ensureScript } from '../lib.js';
 import type { PackageJSONTransformer } from 'metapak';
+import type { Config } from 'jest';
 
 const JEST_SCRIPT = 'npm run jest';
 
@@ -7,6 +8,7 @@ const transformer: PackageJSONTransformer<
   { childPackage?: boolean; rootPackage?: boolean; jestRoots?: string[] },
   {
     greenkeeper?: { ignore?: string[] };
+    jest?: Config;
   }
 > = (packageConf) => {
   const {
@@ -25,7 +27,7 @@ const transformer: PackageJSONTransformer<
   packageConf.scripts.cover = `npm run jest -- --coverage`;
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jest = '^29.5.0';
+  packageConf.devDependencies.jest = '^29.6.2';
 
   // Add coveralls for independant packages
   if (!data.childPackage) {
@@ -60,7 +62,7 @@ const transformer: PackageJSONTransformer<
           globals: undefined,
         }
       : {}),
-  } as any;
+  };
   // Special configuration for TypeScript
   if (configs.includes('typescript') || configs.includes('tsesm')) {
     delete packageConf?.devDependencies?.['@types/jest'];
@@ -70,7 +72,7 @@ const transformer: PackageJSONTransformer<
     delete packageConf.devDependencies['ts-jest'];
     delete packageConf.devDependencies['esbuild'];
     delete packageConf.devDependencies['esbuild-jest'];
-    packageConf.devDependencies['@swc/jest'] = '^0.2.26';
+    packageConf.devDependencies['@swc/jest'] = '^0.2.28';
   }
 
   if (configs.includes('typescript')) {
