@@ -1,3 +1,12 @@
+# [15.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v14.2.0...v15.0.0) (2023-08-11)
+
+
+### Bug Fixes
+
+* **prettier:** fix jest by disabling prettier ([1ead427](https://github.com/nfroidure/metapak-nfroidure/commit/1ead42722e69c1db71d8c154718934ed32355b0e))
+
+
+
 # [14.2.0](https://github.com/nfroidure/metapak-nfroidure/compare/v14.1.3...v14.2.0) (2023-08-07)
 
 
