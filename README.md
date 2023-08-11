@@ -7,8 +7,8 @@
 # metapak-nfroidure
 > A metapak module for my open source projects.
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nfroidure/metapak-nfroidure/blob/master/LICENSE)
-[![Coverage Status](https://coveralls.io/repos/github/nfroidure/metapak-nfroidure/badge.svg?branch=master)](https://coveralls.io/github/nfroidure/metapak-nfroidure?branch=master)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nfroidure/metapak-nfroidure/blob/main/LICENSE)
+[![Coverage Status](https://coveralls.io/repos/github/nfroidure/metapak-nfroidure/badge.svg?branch=main)](https://coveralls.io/github/nfroidure/metapak-nfroidure?branch=main)
 
 
 [//]: # (::contents:start)
@@ -21,4 +21,4 @@ Provides the setup of most of my NPM modules.
 - [Nicolas Froidure](https://insertafter.com/en/index.html)
 
 # License
-[MIT](https://github.com/nfroidure/metapak-nfroidure/blob/master/LICENSE)
+[MIT](https://github.com/nfroidure/metapak-nfroidure/blob/main/LICENSE)

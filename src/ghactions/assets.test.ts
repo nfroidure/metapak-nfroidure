@@ -60,39 +60,39 @@ describe('GHActions', () => {
           },
         ),
       ).toMatchInlineSnapshot(`
-        {
-          "data": "name: Node.js CI
+{
+  "data": "name: Node.js CI
 
-        on:
-          push:
-            branches: [master]
-          pull_request:
-            branches: [master]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
-        jobs:
-          build:
-            runs-on: ubuntu-latest
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-            strategy:
-              matrix:
-                node-version: [18.x, 20.x]
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
 
-            steps:
-              - uses: actions/checkout@v3
-              - name: Use Node.js \${{ matrix.node-version }}
-                uses: actions/setup-node@v3
-                with:
-                  node-version: \${{ matrix.node-version }}
-                  cache: "npm"
-              - name: Install dependencies
-                run: npm ci
-              - name: Run pre-commit tests
-                run: npm run precz
-        ",
-          "dir": "/home/whoami/project/dir",
-          "name": ".github/workflows/test.yml",
-        }
-      `);
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js \${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: \${{ matrix.node-version }}
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Run pre-commit tests
+        run: npm run precz
+",
+  "dir": "/home/whoami/project/dir",
+  "name": ".github/workflows/test.yml",
+}
+`);
     });
 
     test('should let pass other files', async () => {

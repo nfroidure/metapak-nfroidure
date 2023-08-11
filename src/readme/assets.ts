@@ -47,10 +47,10 @@ const transformer: PackageAssetsTransformer<
         file.data += `[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/${USERNAME}${ghPath}/LICENSE)\n`;
       }
       if (configs.includes('travis') && ghProjectPath) {
-        file.data += `[![Build status](https://travis-ci.com/${ghProjectPath}.svg?branch=master)](https://travis-ci.com/github/${ghProjectPath})\n`;
+        file.data += `[![Build status](https://travis-ci.com/${ghProjectPath}.svg?branch=main)](https://travis-ci.com/github/${ghProjectPath})\n`;
       }
       if (packageConf.devDependencies?.coveralls && ghProjectPath) {
-        file.data += `[![Coverage Status](https://coveralls.io/repos/github/${ghProjectPath}/badge.svg?branch=master)](https://coveralls.io/github/${ghProjectPath}?branch=master)\n`;
+        file.data += `[![Coverage Status](https://coveralls.io/repos/github/${ghProjectPath}/badge.svg?branch=main)](https://coveralls.io/github/${ghProjectPath}?branch=main)\n`;
       }
     }
 
@@ -131,13 +131,13 @@ async function _getAPIContents({
 
 function getGitHubPathFromModuleName(packageName, childPackage = false) {
   if (!packageName.startsWith('@')) {
-    return `/${packageName}/blob/master`;
+    return `/${packageName}/blob/main`;
   }
   const [scope, name] = packageName.slice(1).split('/');
 
   return childPackage
-    ? `/${scope}/blob/master/packages/${scope}-${name}`
-    : `/${scope}-${name}/blob/master`;
+    ? `/${scope}/blob/main/packages/${scope}-${name}`
+    : `/${scope}-${name}/blob/main`;
 }
 
 function getGitHubProjectFromRepoURL(repoURL) {
