@@ -153,67 +153,67 @@ describe('eslint', () => {
           },
         }),
       ).toMatchInlineSnapshot(`
-        {
-          "devDependencies": {
-            "@typescript-eslint/eslint-plugin": "^6.2.1",
-            "@typescript-eslint/parser": "^6.2.1",
-            "eslint": "^8.46.0",
-            "eslint-config-prettier": "^9.0.0",
-            "eslint-plugin-prettier": "^5.0.0",
-            "prettier": "^3.0.1",
-          },
-          "eslintConfig": {
-            "env": {
-              "es6": true,
-              "jest": true,
-              "mocha": true,
-              "node": true,
-            },
-            "extends": [
-              "eslint:recommended",
-              "plugin:prettier/recommended",
-              "plugin:@typescript-eslint/eslint-recommended",
-              "plugin:@typescript-eslint/recommended",
-            ],
-            "ignorePatterns": [
-              "*.d.ts",
-            ],
-            "parser": "@typescript-eslint/parser",
-            "parserOptions": {
-              "ecmaVersion": 2018,
-              "modules": true,
-              "sourceType": "script",
-            },
-            "plugins": [
-              "prettier",
-            ],
-            "rules": {
-              "prettier/prettier": "error",
-            },
-          },
-          "metapak": {
-            "configs": [
-              "eslint",
-              "typescript",
-            ],
-            "data": {
-              "childPackage": true,
-              "files": "src/*.js src/**/*.js",
-            },
-          },
-          "prettier": {
-            "printWidth": 80,
-            "proseWrap": "always",
-            "semi": true,
-            "singleQuote": true,
-            "trailingComma": "all",
-          },
-          "scripts": {
-            "lint": "eslint src/*.js src/**/*.js",
-            "prettier": "prettier --write src/*.js src/**/*.js",
-          },
-        }
-      `);
+{
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.1",
+  },
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "jest": true,
+      "mocha": true,
+      "node": true,
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+    ],
+    "ignorePatterns": [
+      "*.d.ts",
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "modules": true,
+      "sourceType": "script",
+    },
+    "plugins": [
+      "prettier",
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+    },
+  },
+  "metapak": {
+    "configs": [
+      "eslint",
+      "typescript",
+    ],
+    "data": {
+      "childPackage": true,
+      "files": "src/*.js src/**/*.js",
+    },
+  },
+  "prettier": {
+    "printWidth": 80,
+    "proseWrap": "always",
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+  },
+  "scripts": {
+    "lint": "eslint src/*.js src/**/*.js",
+    "prettier": "prettier --write src/*.js src/**/*.js",
+  },
+}
+`);
     });
   });
 });
