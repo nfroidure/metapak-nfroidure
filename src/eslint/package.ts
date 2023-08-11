@@ -62,8 +62,8 @@ const transformer: PackageJSONTransformer<
 
   // Special configuration for TypeScript
   if (configs.includes('typescript') || configs.includes('tsesm')) {
-    packageConf.devDependencies['@typescript-eslint/eslint-plugin'] = '^6.2.1';
-    packageConf.devDependencies['@typescript-eslint/parser'] = '^6.2.1';
+    packageConf.devDependencies['@typescript-eslint/eslint-plugin'] = '^6.3.0';
+    packageConf.devDependencies['@typescript-eslint/parser'] = '^6.3.0';
     packageConf.eslintConfig = packageConf.eslintConfig || {};
     packageConf.eslintConfig.parser = '@typescript-eslint/parser';
     packageConf.eslintConfig.extends = [
