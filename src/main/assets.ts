@@ -52,6 +52,7 @@ const transformer: PackageAssetsTransformer<
       '.github/CODE_OF_CONDUCT.md',
       '.github/CONTRIBUTING',
       '.github/ISSUE_TEMPLATE',
+      '.github/FUNDING.yml',
       '.github/PULL_REQUEST_TEMPLATE',
       '.editorconfig',
       '.gitattributes',
