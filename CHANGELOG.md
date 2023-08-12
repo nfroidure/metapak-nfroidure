@@ -1,3 +1,12 @@
+## [15.0.1](https://github.com/nfroidure/metapak-nfroidure/compare/v15.0.0...v15.0.1) (2023-08-12)
+
+
+### Bug Fixes
+
+* **assets:** avoid putting bad assets in child packages ([2caeaab](https://github.com/nfroidure/metapak-nfroidure/commit/2caeaabde5316aee0007371f7f7801a0bcf3079e))
+
+
+
 # [15.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v14.2.0...v15.0.0) (2023-08-11)
 
 
