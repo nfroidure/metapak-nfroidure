@@ -14,65 +14,65 @@ describe('eslint', () => {
           },
         }),
       ).toMatchInlineSnapshot(`
-        {
-          "devDependencies": {
-            "eslint": "^8.46.0",
-            "eslint-config-prettier": "^9.0.0",
-            "eslint-plugin-prettier": "^5.0.0",
-            "prettier": "^3.0.1",
-          },
-          "eslintConfig": {
-            "env": {
-              "es6": true,
-              "jest": true,
-              "mocha": true,
-              "node": true,
-            },
-            "extends": [
-              "eslint:recommended",
-              "plugin:prettier/recommended",
-            ],
-            "parserOptions": {
-              "ecmaVersion": 2018,
-              "modules": true,
-              "sourceType": "script",
-            },
-            "plugins": [
-              "prettier",
-            ],
-            "rules": {
-              "prettier/prettier": "error",
-            },
-          },
-          "greenkeeper": {
-            "ignore": [
-              "eslint",
-              "prettier",
-              "eslint-config-prettier",
-              "eslint-plugin-prettier",
-            ],
-          },
-          "metapak": {
-            "configs": [
-              "eslint",
-            ],
-            "data": {
-              "files": "src/*.js src/**/*.js",
-            },
-          },
-          "prettier": {
-            "printWidth": 80,
-            "proseWrap": "always",
-            "semi": true,
-            "singleQuote": true,
-            "trailingComma": "all",
-          },
-          "scripts": {
-            "lint": "eslint src/*.js src/**/*.js",
-            "prettier": "prettier --write src/*.js src/**/*.js",
-          },
-        }
-      `);
+{
+  "devDependencies": {
+    "eslint": "^8.47.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.2",
+  },
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "jest": true,
+      "mocha": true,
+      "node": true,
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended",
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "modules": true,
+      "sourceType": "script",
+    },
+    "plugins": [
+      "prettier",
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+    },
+  },
+  "greenkeeper": {
+    "ignore": [
+      "eslint",
+      "prettier",
+      "eslint-config-prettier",
+      "eslint-plugin-prettier",
+    ],
+  },
+  "metapak": {
+    "configs": [
+      "eslint",
+    ],
+    "data": {
+      "files": "src/*.js src/**/*.js",
+    },
+  },
+  "prettier": {
+    "printWidth": 80,
+    "proseWrap": "always",
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+  },
+  "scripts": {
+    "lint": "eslint src/*.js src/**/*.js",
+    "prettier": "prettier --write src/*.js src/**/*.js",
+  },
+}
+`);
     });
 
     test('should work with child packages', () => {
@@ -87,58 +87,58 @@ describe('eslint', () => {
           },
         }),
       ).toMatchInlineSnapshot(`
-        {
-          "devDependencies": {
-            "eslint": "^8.46.0",
-            "eslint-config-prettier": "^9.0.0",
-            "eslint-plugin-prettier": "^5.0.0",
-            "prettier": "^3.0.1",
-          },
-          "eslintConfig": {
-            "env": {
-              "es6": true,
-              "jest": true,
-              "mocha": true,
-              "node": true,
-            },
-            "extends": [
-              "eslint:recommended",
-              "plugin:prettier/recommended",
-            ],
-            "parserOptions": {
-              "ecmaVersion": 2018,
-              "modules": true,
-              "sourceType": "script",
-            },
-            "plugins": [
-              "prettier",
-            ],
-            "rules": {
-              "prettier/prettier": "error",
-            },
-          },
-          "metapak": {
-            "configs": [
-              "eslint",
-            ],
-            "data": {
-              "childPackage": true,
-              "files": "src/*.js src/**/*.js",
-            },
-          },
-          "prettier": {
-            "printWidth": 80,
-            "proseWrap": "always",
-            "semi": true,
-            "singleQuote": true,
-            "trailingComma": "all",
-          },
-          "scripts": {
-            "lint": "eslint src/*.js src/**/*.js",
-            "prettier": "prettier --write src/*.js src/**/*.js",
-          },
-        }
-      `);
+{
+  "devDependencies": {
+    "eslint": "^8.47.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.2",
+  },
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "jest": true,
+      "mocha": true,
+      "node": true,
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended",
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "modules": true,
+      "sourceType": "script",
+    },
+    "plugins": [
+      "prettier",
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+    },
+  },
+  "metapak": {
+    "configs": [
+      "eslint",
+    ],
+    "data": {
+      "childPackage": true,
+      "files": "src/*.js src/**/*.js",
+    },
+  },
+  "prettier": {
+    "printWidth": 80,
+    "proseWrap": "always",
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+  },
+  "scripts": {
+    "lint": "eslint src/*.js src/**/*.js",
+    "prettier": "prettier --write src/*.js src/**/*.js",
+  },
+}
+`);
     });
 
     test('should work with typescript configs', () => {
@@ -155,12 +155,12 @@ describe('eslint', () => {
       ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.3.0",
-    "@typescript-eslint/parser": "^6.3.0",
-    "eslint": "^8.46.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
+    "eslint": "^8.47.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
-    "prettier": "^3.0.1",
+    "prettier": "^3.0.2",
   },
   "eslintConfig": {
     "env": {

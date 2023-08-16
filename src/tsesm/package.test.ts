@@ -15,7 +15,7 @@ describe('private', () => {
 {
   "devDependencies": {
     "@swc/cli": "^0.1.62",
-    "@swc/core": "^1.3.76",
+    "@swc/core": "^1.3.77",
     "@swc/helpers": "^0.5.1",
     "rimraf": "^5.0.1",
     "typescript": "^5.1.6",
