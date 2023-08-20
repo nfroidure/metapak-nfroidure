@@ -83,6 +83,7 @@ const transformer: PackageAssetsTransformer<
         )
         .join('\n')}\n\n`;
       file.data += `# License\n[${packageConf.license}](https://github.com/${USERNAME}${ghPath}/LICENSE)\n`;
+
       return file;
     });
   }
