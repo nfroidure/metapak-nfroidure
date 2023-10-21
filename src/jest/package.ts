@@ -27,7 +27,7 @@ const transformer: PackageJSONTransformer<
   packageConf.scripts.cover = `npm run jest -- --coverage`;
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jest = '^29.6.2';
+  packageConf.devDependencies.jest = '^29.7.0';
 
   // Add coveralls for independant packages
   if (!data.childPackage) {

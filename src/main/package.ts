@@ -123,7 +123,7 @@ const transformer: PackageJSONTransformer<
     packageConf.devDependencies = packageConf.devDependencies || {};
     packageConf.devDependencies.commitizen = '^4.3.0';
     packageConf.devDependencies['cz-conventional-changelog'] = '^3.3.0';
-    packageConf.devDependencies['conventional-changelog-cli'] = '^3.0.0';
+    packageConf.devDependencies['conventional-changelog-cli'] = '^4.1.0';
 
     // Avoid GreenKeeper to update automatically added modules
     // except for this module so that we still benefit from
