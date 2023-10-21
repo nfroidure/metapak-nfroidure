@@ -15,10 +15,10 @@ describe('private', () => {
       ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "@swc/core": "^1.3.77",
-    "@swc/helpers": "^0.5.1",
-    "rimraf": "^5.0.1",
-    "typescript": "^5.1.6",
+    "@swc/core": "^1.3.94",
+    "@swc/helpers": "^0.5.3",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.2.2",
   },
   "greenkeeper": {
     "ignore": [
