@@ -15,7 +15,7 @@ const transformer: PackageAssetsTransformer<
   } = packageConf;
 
   // Set types in ts config
-  if ('.vscode/extensions.json' === file.name) {
+  if ('.vscode/extensions.json' === file.name && !data.childPackage) {
     const contents = JSON.parse(file.data || '{}');
 
     contents.recommendations = contents.recommendations || [];

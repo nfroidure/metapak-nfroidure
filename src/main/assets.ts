@@ -54,6 +54,7 @@ const transformer: PackageAssetsTransformer<
       '.github/ISSUE_TEMPLATE',
       '.github/FUNDING.yml',
       '.github/PULL_REQUEST_TEMPLATE',
+      '.vscode/extensions.json',
       '.editorconfig',
       '.gitattributes',
       '.gitignore',
