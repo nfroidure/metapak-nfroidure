@@ -1,3 +1,12 @@
+## [16.0.1](https://github.com/nfroidure/metapak-nfroidure/compare/v16.0.0...v16.0.1) (2024-02-24)
+
+
+### Bug Fixes
+
+* **eslint config:** avoid creating vscode files for child packages ([4191819](https://github.com/nfroidure/metapak-nfroidure/commit/419181974c051f30db64edaf51ab651ccaf0ea36))
+
+
+
 # [16.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v15.0.4...v16.0.0) (2024-02-24)
 
 
