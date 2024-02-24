@@ -15,6 +15,10 @@
 
 Provides the setup of most of my NPM modules.
 
+[Metapak](https://github.com/nfroidure/metapak) is a NPM module that helps
+managing a lot of repositories with idempotent scripts. this project is a plugin
+adding a lot of useful and composable out of the box configurations.
+
 [//]: # (::contents:end)
 
 # Authors
