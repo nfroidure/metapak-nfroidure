@@ -1,3 +1,19 @@
+# [16.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v15.0.4...v16.0.0) (2024-02-24)
+
+
+### Bug Fixes
+
+* **main config:** wider git attributes management ([bf6164a](https://github.com/nfroidure/metapak-nfroidure/commit/bf6164ade2f199f09df3f77f360317dadaf53935)), closes [#34](https://github.com/nfroidure/metapak-nfroidure/issues/34)
+
+
+### Features
+
+* **core:** create a more generic format script ([a6435e6](https://github.com/nfroidure/metapak-nfroidure/commit/a6435e692efeb8188c4af64f948b6e36c25840dd))
+* **coveralls config:** add separate coveralls config ([f012624](https://github.com/nfroidure/metapak-nfroidure/commit/f01262479a58cb4fa85fa841506728cb1086d09d)), closes [#33](https://github.com/nfroidure/metapak-nfroidure/issues/33)
+* **vscode:** add vscode extensions recommendations ([6258438](https://github.com/nfroidure/metapak-nfroidure/commit/62584384a4ec298a4f766c3946431a2387bab21c))
+
+
+
 ## [15.0.4](https://github.com/nfroidure/metapak-nfroidure/compare/v15.0.3...v15.0.4) (2023-10-21)
 
 
