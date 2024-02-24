@@ -49,7 +49,7 @@ const transformer: PackageAssetsTransformer<
       if (configs.includes('travis') && ghProjectPath) {
         file.data += `[![Build status](https://travis-ci.com/${ghProjectPath}.svg?branch=main)](https://travis-ci.com/github/${ghProjectPath})\n`;
       }
-      if (packageConf.devDependencies?.coveralls && ghProjectPath) {
+      if (configs.includes('coveralls') && ghProjectPath) {
         file.data += `[![Coverage Status](https://coveralls.io/repos/github/${ghProjectPath}/badge.svg?branch=main)](https://coveralls.io/github/${ghProjectPath}?branch=main)\n`;
       }
     }

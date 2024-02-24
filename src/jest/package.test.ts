@@ -19,13 +19,11 @@ describe('mocha', () => {
 {
   "dependencies": {},
   "devDependencies": {
-    "coveralls": "^3.1.1",
     "jest": "^29.7.0",
   },
   "greenkeeper": {
     "ignore": [
       "jest",
-      "coveralls",
     ],
   },
   "jest": {
@@ -48,7 +46,6 @@ describe('mocha', () => {
   },
   "scripts": {
     "cover": "npm run jest -- --coverage",
-    "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
     "jest": "NODE_ENV=test jest",
     "test": "npm run jest",
   },

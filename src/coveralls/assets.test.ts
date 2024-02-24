@@ -4,7 +4,7 @@ import path from 'path';
 import assetsTransformer from './assets.js';
 import type { LogService, FSService } from 'metapak';
 
-describe('GHActions', () => {
+describe('Coveralls', () => {
   const fs = {
     readFileAsync: jest.fn<FSService['readFileAsync']>(),
     writeFileAsync: jest.fn<FSService['writeFileAsync']>(),
@@ -28,7 +28,7 @@ describe('GHActions', () => {
   });
 
   describe('Assets transformer', () => {
-    test('should fill the manifest', async () => {
+    test('should amend the test workflow', async () => {
       expect(
         await assetsTransformer(
           {
@@ -88,6 +88,10 @@ jobs:
         run: npm ci
       - name: Run pre-commit tests
         run: npm run precz
+      - name: Run coverage
+        run: npm run cover
+      - name: Report Coveralls
+        uses: coverallsapp/github-action@v2
 ",
   "dir": "/home/whoami/project/dir",
   "name": ".github/workflows/test.yml",

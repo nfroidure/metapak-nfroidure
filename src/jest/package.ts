@@ -29,13 +29,10 @@ const transformer: PackageJSONTransformer<
   packageConf.devDependencies = packageConf.devDependencies || {};
   packageConf.devDependencies.jest = '^29.7.0';
 
-  // Add coveralls for independant packages
-  if (!data.childPackage) {
-    packageConf.scripts.coveralls =
-      'npm run cover && cat ./coverage/lcov.info | coveralls' +
-      ' && rm -rf ./coverage';
-    packageConf.devDependencies.coveralls = '^3.1.1';
-  }
+  // Remove old coveralls configs
+  delete packageConf.scripts.coveralls;
+  delete packageConf.devDependencies.coveralls;
+
   packageConf.jest = {
     coverageReporters: ['lcov'],
     testPathIgnorePatterns: ['/node_modules/'],

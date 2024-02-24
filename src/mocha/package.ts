@@ -47,12 +47,9 @@ const transformer: PackageJSONTransformer<
     exclude: [data.testsFiles],
   };
 
-  // Add coveralls for independant packages
-  if (!data.childPackage) {
-    packageConf.scripts.coveralls =
-      'nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf ./coverage';
-    packageConf.devDependencies.coveralls = '^3.1.1';
-  }
+  // Remove old coveralls configs
+  delete packageConf.scripts.coveralls;
+  delete packageConf.devDependencies.coveralls;
 
   delete packageConf.devDependencies['mocha-lcov-reporter'];
   delete packageConf.devDependencies.istanbul;
@@ -61,11 +58,7 @@ const transformer: PackageJSONTransformer<
     packageConf.greenkeeper = {
       ignore: [
         ...new Set(
-          (packageConf?.greenkeeper?.ignore || []).concat([
-            'mocha',
-            'nyc',
-            'coveralls',
-          ]),
+          (packageConf?.greenkeeper?.ignore || []).concat(['mocha', 'nyc']),
         ),
       ].filter((dependency) => packageConf?.devDependencies?.[dependency]),
     };

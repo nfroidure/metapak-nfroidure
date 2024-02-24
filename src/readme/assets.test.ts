@@ -292,7 +292,6 @@ toto.lol()
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nfroidure/module/blob/main/LICENSE)
 [![Build status](https://travis-ci.com/nfroidure/module.svg?branch=main)](https://travis-ci.com/github/nfroidure/module)
-[![Coverage Status](https://coveralls.io/repos/github/nfroidure/module/badge.svg?branch=main)](https://coveralls.io/github/nfroidure/module?branch=main)
 
 
 [//]: # (::contents:start)
@@ -380,7 +379,6 @@ toto.lol()
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nfroidure/scope-module/blob/main/LICENSE)
 [![Build status](https://travis-ci.com/nfroidure/module.svg?branch=main)](https://travis-ci.com/github/nfroidure/module)
-[![Coverage Status](https://coveralls.io/repos/github/nfroidure/module/badge.svg?branch=main)](https://coveralls.io/github/nfroidure/module?branch=main)
 
 
 [//]: # (::contents:start)
@@ -470,7 +468,6 @@ toto.lol()
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nfroidure/scope/blob/main/packages/scope-module/LICENSE)
 [![Build status](https://travis-ci.com/nfroidure/module.svg?branch=main)](https://travis-ci.com/github/nfroidure/module)
-[![Coverage Status](https://coveralls.io/repos/github/nfroidure/module/badge.svg?branch=main)](https://coveralls.io/github/nfroidure/module?branch=main)
 
 
 [//]: # (::contents:start)

@@ -72,8 +72,8 @@ const transformer: PackageJSONTransformer<
       ...(packageConf.eslintConfig.extends instanceof Array
         ? packageConf.eslintConfig.extends
         : packageConf.eslintConfig.extends
-        ? [packageConf.eslintConfig.extends]
-        : []),
+          ? [packageConf.eslintConfig.extends]
+          : []),
       'plugin:@typescript-eslint/eslint-recommended',
       'plugin:@typescript-eslint/recommended',
     ];
