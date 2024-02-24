@@ -26,6 +26,8 @@ const transformer: PackageJSONTransformer<
     packageConf.scripts.prettier = 'prettier --write ' + data.files;
   }
 
+  packageConf.scripts.format = 'npm run prettier';
+
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
   packageConf.devDependencies.eslint = '^8.52.0';

@@ -72,6 +72,11 @@ const transformer: PackageJSONTransformer<
       ? 'lerna run lint'
       : packageConf.scripts.lint || 'echo "WARNING: No linter specified"';
   }
+  if (!packageConf.scripts.format) {
+    packageConf.scripts.format = data.rootPackage
+      ? 'lerna run format'
+      : packageConf.scripts.format || 'echo "WARNING: No formatter specified"';
+  }
 
   // Let's use commitizen on main packages
   if (!data.childPackage) {

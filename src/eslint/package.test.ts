@@ -68,6 +68,7 @@ describe('eslint', () => {
     "trailingComma": "all",
   },
   "scripts": {
+    "format": "npm run prettier",
     "lint": "eslint src/*.js src/**/*.js",
     "prettier": "prettier --write src/*.js src/**/*.js",
   },
@@ -134,6 +135,7 @@ describe('eslint', () => {
     "trailingComma": "all",
   },
   "scripts": {
+    "format": "npm run prettier",
     "lint": "eslint src/*.js src/**/*.js",
     "prettier": "prettier --write src/*.js src/**/*.js",
   },
@@ -209,6 +211,7 @@ describe('eslint', () => {
     "trailingComma": "all",
   },
   "scripts": {
+    "format": "npm run prettier",
     "lint": "eslint src/*.js src/**/*.js",
     "prettier": "prettier --write src/*.js src/**/*.js",
   },
