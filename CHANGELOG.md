@@ -1,3 +1,12 @@
+# [17.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v16.0.1...v17.0.0) (2024-02-25)
+
+
+### Bug Fixes
+
+* **main config:** fix NodeJS version in github actions ([ddcd766](https://github.com/nfroidure/metapak-nfroidure/commit/ddcd766052ef0dd513a58b482a1a178dc21914f2))
+
+
+
 ## [16.0.1](https://github.com/nfroidure/metapak-nfroidure/compare/v16.0.0...v16.0.1) (2024-02-24)
 
 
