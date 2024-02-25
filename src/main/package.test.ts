@@ -29,7 +29,7 @@ describe('Package transformer', () => {
     "cz-conventional-changelog": "^3.3.0",
   },
   "engines": {
-    "node": ">=18.16.0",
+    "node": ">=20.11.1",
   },
   "files": [
     "src",
@@ -96,7 +96,7 @@ describe('Package transformer', () => {
     "cz-conventional-changelog": "^3.3.0",
   },
   "engines": {
-    "node": ">=18.16.0",
+    "node": ">=20.11.1",
   },
   "files": [
     "src",
@@ -154,7 +154,7 @@ describe('Package transformer', () => {
   },
   "contributors": [],
   "engines": {
-    "node": ">=18.16.0",
+    "node": ">=20.11.1",
   },
   "files": [
     "src",
@@ -205,7 +205,7 @@ describe('Package transformer', () => {
   },
   "contributors": [],
   "engines": {
-    "node": ">=18.16.0",
+    "node": ">=20.11.1",
   },
   "files": [
     "src",

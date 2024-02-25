@@ -1,7 +1,7 @@
 // DRY, set here vars that may be used several times
 // in your metapak module
 export default {
-  lastNodeLTS: '18.16.0',
-  lastNode: '20.2.0',
+  lastNodeLTS: '20.11.1',
+  lastNode: '21.6.2',
   apiPath: 'API.md',
 };

@@ -61,7 +61,7 @@
     "metapak": "^5.0.0"
   },
   "engines": {
-    "node": ">=18.16.0"
+    "node": ">=20.11.1"
   },
   "bugs": {
     "url": "https://github.com/nfroidure/metapak-nfroidure/issues"
