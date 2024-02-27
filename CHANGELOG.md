@@ -1,3 +1,7 @@
+# [18.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v17.0.0...v18.0.0) (2024-02-27)
+
+
+
 # [17.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v16.0.1...v17.0.0) (2024-02-25)
 
 
