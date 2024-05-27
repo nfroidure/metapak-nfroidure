@@ -74,7 +74,7 @@ const transformer: PackageJSONTransformer<
     delete packageConf.devDependencies['ts-jest'];
     delete packageConf.devDependencies['esbuild'];
     delete packageConf.devDependencies['esbuild-jest'];
-    packageConf.devDependencies['@swc/jest'] = '^0.2.29';
+    packageConf.devDependencies['@swc/jest'] = '^0.2.36';
   }
 
   if (configs.includes('typescript')) {
