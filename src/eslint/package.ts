@@ -1,11 +1,9 @@
 import type { PackageJSONTransformer } from 'metapak';
-import type { ESLint } from 'eslint';
 
 const transformer: PackageJSONTransformer<
   { childPackage?: boolean; rootPackage?: boolean; files?: string },
   {
     greenkeeper?: { ignore?: string[] };
-    eslintConfig?: ESLint.ConfigData;
   }
 > = (packageConf) => {
   const {
@@ -30,30 +28,16 @@ const transformer: PackageJSONTransformer<
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.eslint = '^8.57.0';
-  packageConf.devDependencies.prettier = '^3.2.5';
-  packageConf.devDependencies['eslint-config-prettier'] = '^8.10.0';
+  packageConf.devDependencies.eslint = '^9.7.0';
+  packageConf.devDependencies['@eslint/js'] = '^9.7.0';
+  packageConf.devDependencies.prettier = '^3.3.3';
+  packageConf.devDependencies['eslint-config-prettier'] = '^9.1.0';
   packageConf.devDependencies['eslint-plugin-prettier'] = '^5.1.3';
-
-  packageConf.eslintConfig = {
-    extends: ['eslint:recommended', 'plugin:prettier/recommended'],
-    parserOptions: {
-      ecmaVersion: 2018,
-      sourceType: 'script',
-      modules: true,
-    },
-    env: {
-      es6: true,
-      node: true,
-      jest: true,
-      mocha: true,
-    },
-    plugins: ['prettier'],
-    rules: {
-      'prettier/prettier': 'error',
-    },
+  packageConf.devDependencies['eslint-plugin-jest'] = '^28.6.0';
+  packageConf.overrides = {
+    ...(typeof packageConf.overrides === 'object' ? packageConf.overrides : {}),
+    eslint: '^9.7.0',
   };
-
   packageConf.prettier = {
     semi: true,
     printWidth: 80,
@@ -62,22 +46,13 @@ const transformer: PackageJSONTransformer<
     proseWrap: 'always',
   };
 
+  delete packageConf.eslintConfig;
+  delete packageConf.devDependencies['@typescript-eslint/eslint-plugin'];
+  delete packageConf.devDependencies['@typescript-eslint/parser'];
+
   // Special configuration for TypeScript
   if (configs.includes('typescript') || configs.includes('tsesm')) {
-    packageConf.devDependencies['@typescript-eslint/eslint-plugin'] = '^7.10.0';
-    packageConf.devDependencies['@typescript-eslint/parser'] = '^7.10.0';
-    packageConf.eslintConfig = packageConf.eslintConfig || {};
-    packageConf.eslintConfig.parser = '@typescript-eslint/parser';
-    packageConf.eslintConfig.extends = [
-      ...(packageConf.eslintConfig.extends instanceof Array
-        ? packageConf.eslintConfig.extends
-        : packageConf.eslintConfig.extends
-          ? [packageConf.eslintConfig.extends]
-          : []),
-      'plugin:@typescript-eslint/eslint-recommended',
-      'plugin:@typescript-eslint/recommended',
-    ];
-    packageConf.eslintConfig.ignorePatterns = ['*.d.ts'];
+    packageConf.devDependencies['typescript-eslint'] = '^7.16.0';
   }
 
   if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
@@ -90,8 +65,7 @@ const transformer: PackageJSONTransformer<
               'prettier',
               'eslint-config-prettier',
               'eslint-plugin-prettier',
-              '@typescript-eslint/eslint-plugin',
-              '@typescript-eslint/parser',
+              'typescript-eslint',
             ])
             .filter((dependency) => packageConf?.devDependencies?.[dependency]),
         ),
