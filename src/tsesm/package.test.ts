@@ -14,11 +14,11 @@ describe('private', () => {
       ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "@swc/cli": "^0.3.12",
-    "@swc/core": "^1.5.7",
-    "@swc/helpers": "^0.5.11",
-    "rimraf": "^5.0.7",
-    "typescript": "^5.4.5",
+    "@swc/cli": "^0.4.0",
+    "@swc/core": "^1.6.13",
+    "@swc/helpers": "^0.5.12",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.3",
   },
   "greenkeeper": {
     "ignore": [

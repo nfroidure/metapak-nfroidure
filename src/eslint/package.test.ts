@@ -16,33 +16,12 @@ describe('eslint', () => {
       ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^8.10.0",
+    "@eslint/js": "^9.7.0",
+    "eslint": "^9.7.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jest": "^28.6.0",
     "eslint-plugin-prettier": "^5.1.3",
-    "prettier": "^3.2.5",
-  },
-  "eslintConfig": {
-    "env": {
-      "es6": true,
-      "jest": true,
-      "mocha": true,
-      "node": true,
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:prettier/recommended",
-    ],
-    "parserOptions": {
-      "ecmaVersion": 2018,
-      "modules": true,
-      "sourceType": "script",
-    },
-    "plugins": [
-      "prettier",
-    ],
-    "rules": {
-      "prettier/prettier": "error",
-    },
+    "prettier": "^3.3.3",
   },
   "greenkeeper": {
     "ignore": [
@@ -59,6 +38,9 @@ describe('eslint', () => {
     "data": {
       "files": "src/*.js src/**/*.js",
     },
+  },
+  "overrides": {
+    "eslint": "^9.7.0",
   },
   "prettier": {
     "printWidth": 80,
@@ -90,33 +72,12 @@ describe('eslint', () => {
       ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^8.10.0",
+    "@eslint/js": "^9.7.0",
+    "eslint": "^9.7.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jest": "^28.6.0",
     "eslint-plugin-prettier": "^5.1.3",
-    "prettier": "^3.2.5",
-  },
-  "eslintConfig": {
-    "env": {
-      "es6": true,
-      "jest": true,
-      "mocha": true,
-      "node": true,
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:prettier/recommended",
-    ],
-    "parserOptions": {
-      "ecmaVersion": 2018,
-      "modules": true,
-      "sourceType": "script",
-    },
-    "plugins": [
-      "prettier",
-    ],
-    "rules": {
-      "prettier/prettier": "error",
-    },
+    "prettier": "^3.3.3",
   },
   "metapak": {
     "configs": [
@@ -126,6 +87,9 @@ describe('eslint', () => {
       "childPackage": true,
       "files": "src/*.js src/**/*.js",
     },
+  },
+  "overrides": {
+    "eslint": "^9.7.0",
   },
   "prettier": {
     "printWidth": 80,
@@ -157,41 +121,13 @@ describe('eslint', () => {
       ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.10.0",
-    "@typescript-eslint/parser": "^7.10.0",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^8.10.0",
+    "@eslint/js": "^9.7.0",
+    "eslint": "^9.7.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jest": "^28.6.0",
     "eslint-plugin-prettier": "^5.1.3",
-    "prettier": "^3.2.5",
-  },
-  "eslintConfig": {
-    "env": {
-      "es6": true,
-      "jest": true,
-      "mocha": true,
-      "node": true,
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:prettier/recommended",
-      "plugin:@typescript-eslint/eslint-recommended",
-      "plugin:@typescript-eslint/recommended",
-    ],
-    "ignorePatterns": [
-      "*.d.ts",
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "ecmaVersion": 2018,
-      "modules": true,
-      "sourceType": "script",
-    },
-    "plugins": [
-      "prettier",
-    ],
-    "rules": {
-      "prettier/prettier": "error",
-    },
+    "prettier": "^3.3.3",
+    "typescript-eslint": "^7.16.0",
   },
   "metapak": {
     "configs": [
@@ -202,6 +138,9 @@ describe('eslint', () => {
       "childPackage": true,
       "files": "src/*.js src/**/*.js",
     },
+  },
+  "overrides": {
+    "eslint": "^9.7.0",
   },
   "prettier": {
     "printWidth": 80,
