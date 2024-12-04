@@ -44,7 +44,7 @@ const transformer: PackageJSONTransformer<
 
   // Add jsarch dep
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jsarch = '^6.0.3';
+  packageConf.devDependencies.jsarch = '^6.1.0';
 
   // Avoid GreenKeeper to update automatically added modules
   if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {

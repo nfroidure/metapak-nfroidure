@@ -16,10 +16,10 @@ const transformer: PackageJSONTransformer<
 
   // Add the dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.typescript = '^5.5.3';
+  packageConf.devDependencies.typescript = '^5.7.2';
   packageConf.devDependencies.rimraf = '^6.0.1';
-  packageConf.devDependencies['@swc/core'] = '^1.6.13';
-  packageConf.devDependencies['@swc/helpers'] = '^0.5.12';
+  packageConf.devDependencies['@swc/core'] = '^1.10.0';
+  packageConf.devDependencies['@swc/helpers'] = '^0.5.15';
 
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.types = data.rootPackage

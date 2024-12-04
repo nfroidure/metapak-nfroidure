@@ -42,7 +42,7 @@ const transformer: PackageJSONTransformer<
 
   // Add doc deps
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies['jsdoc-to-markdown'] = '^8.0.0';
+  packageConf.devDependencies['jsdoc-to-markdown'] = '^9.1.1';
 
   // Avoid GreenKeeper to update automatically added modules
   if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {

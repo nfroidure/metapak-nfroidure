@@ -15,7 +15,7 @@ const transformer: PackageJSONTransformer<
   } = packageConf;
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.karma = '^6.4.3';
+  packageConf.devDependencies.karma = '^6.4.4';
   packageConf.devDependencies['karma-chrome-launcher'] = '^3.2.0';
   packageConf.devDependencies['karma-firefox-launcher'] = '^2.1.3';
 

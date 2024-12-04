@@ -28,15 +28,15 @@ const transformer: PackageJSONTransformer<
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.eslint = '^9.7.0';
-  packageConf.devDependencies['@eslint/js'] = '^9.7.0';
-  packageConf.devDependencies.prettier = '^3.3.3';
+  packageConf.devDependencies.eslint = '^9.16.0';
+  packageConf.devDependencies['@eslint/js'] = '^9.16.0';
+  packageConf.devDependencies.prettier = '^3.4.2';
   packageConf.devDependencies['eslint-config-prettier'] = '^9.1.0';
-  packageConf.devDependencies['eslint-plugin-prettier'] = '^5.1.3';
-  packageConf.devDependencies['eslint-plugin-jest'] = '^28.6.0';
+  packageConf.devDependencies['eslint-plugin-prettier'] = '^5.2.1';
+  packageConf.devDependencies['eslint-plugin-jest'] = '^28.9.0';
   packageConf.overrides = {
     ...(typeof packageConf.overrides === 'object' ? packageConf.overrides : {}),
-    eslint: '^9.7.0',
+    eslint: '^9.16.0',
   };
   packageConf.prettier = {
     semi: true,
@@ -52,7 +52,7 @@ const transformer: PackageJSONTransformer<
 
   // Special configuration for TypeScript
   if (configs.includes('typescript') || configs.includes('tsesm')) {
-    packageConf.devDependencies['typescript-eslint'] = '^7.16.0';
+    packageConf.devDependencies['typescript-eslint'] = '^8.17.0';
   }
 
   if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {

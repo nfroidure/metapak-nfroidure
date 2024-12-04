@@ -16,30 +16,30 @@ describe('Package transformer for jsdocs', () => {
         },
       }),
     ).toMatchInlineSnapshot(`
-      {
-        "devDependencies": {
-          "jsdoc-to-markdown": "^8.0.0",
-        },
-        "greenkeeper": {
-          "ignore": [
-            "jsdoc-to-markdown",
-          ],
-        },
-        "metapak": {
-          "configs": [
-            "jsdocs",
-          ],
-          "data": {
-            "files": "yolo.js",
-          },
-        },
-        "scripts": {
-          "doc": "echo "# API" > API.md; jsdoc2md yolo.js >> API.md && git add API.md",
-          "precz": "npm run doc",
-          "preversion": "npm run doc",
-        },
-      }
-    `);
+{
+  "devDependencies": {
+    "jsdoc-to-markdown": "^9.1.1",
+  },
+  "greenkeeper": {
+    "ignore": [
+      "jsdoc-to-markdown",
+    ],
+  },
+  "metapak": {
+    "configs": [
+      "jsdocs",
+    ],
+    "data": {
+      "files": "yolo.js",
+    },
+  },
+  "scripts": {
+    "doc": "echo "# API" > API.md; jsdoc2md yolo.js >> API.md && git add API.md",
+    "precz": "npm run doc",
+    "preversion": "npm run doc",
+  },
+}
+`);
   });
 
   test('should work with a typescript setup', () => {
@@ -57,31 +57,31 @@ describe('Package transformer for jsdocs', () => {
         },
       }),
     ).toMatchInlineSnapshot(`
-      {
-        "devDependencies": {
-          "jsdoc-to-markdown": "^8.0.0",
-        },
-        "greenkeeper": {
-          "ignore": [
-            "jsdoc-to-markdown",
-          ],
-        },
-        "metapak": {
-          "configs": [
-            "jsdocs",
-            "typescript",
-          ],
-          "data": {
-            "distFiles": "yolo.js",
-            "files": "yolo.ts",
-          },
-        },
-        "scripts": {
-          "doc": "echo "# API" > API.md; jsdoc2md yolo.js >> API.md && git add API.md",
-          "precz": "npm run doc",
-          "preversion": "npm run doc",
-        },
-      }
-    `);
+{
+  "devDependencies": {
+    "jsdoc-to-markdown": "^9.1.1",
+  },
+  "greenkeeper": {
+    "ignore": [
+      "jsdoc-to-markdown",
+    ],
+  },
+  "metapak": {
+    "configs": [
+      "jsdocs",
+      "typescript",
+    ],
+    "data": {
+      "distFiles": "yolo.js",
+      "files": "yolo.ts",
+    },
+  },
+  "scripts": {
+    "doc": "echo "# API" > API.md; jsdoc2md yolo.js >> API.md && git add API.md",
+    "precz": "npm run doc",
+    "preversion": "npm run doc",
+  },
+}
+`);
   });
 });

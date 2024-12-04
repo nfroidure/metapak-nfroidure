@@ -19,7 +19,7 @@ describe('Karma', () => {
       ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "karma": "^6.4.3",
+    "karma": "^6.4.4",
     "karma-chrome-launcher": "^3.2.0",
     "karma-firefox-launcher": "^2.1.3",
   },
@@ -62,7 +62,7 @@ describe('Karma', () => {
       ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "karma": "^6.4.3",
+    "karma": "^6.4.4",
     "karma-chrome-launcher": "^3.2.0",
     "karma-firefox-launcher": "^2.1.3",
     "karma-mocha": "^2.0.1",

@@ -19,8 +19,8 @@ describe('mocha', () => {
       ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "mocha": "^10.6.0",
-    "nyc": "^17.0.0",
+    "mocha": "^11.0.1",
+    "nyc": "^17.1.0",
   },
   "greenkeeper": {
     "ignore": [
@@ -66,8 +66,8 @@ describe('mocha', () => {
       ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "mocha": "^10.6.0",
-    "nyc": "^17.0.0",
+    "mocha": "^11.0.1",
+    "nyc": "^17.1.0",
   },
   "greenkeeper": {
     "ignore": [
