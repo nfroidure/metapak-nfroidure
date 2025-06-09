@@ -41,7 +41,6 @@ describe('private', () => {
     "precz": "node --run build",
     "preversion": "node --run build",
     "rebuild": "swc ./src -s -d dist -C jsc.target=es2022",
-    "type-check": "tsc --pretty --noEmit",
   },
   "type": "module",
   "types": "dist/index.d.ts",

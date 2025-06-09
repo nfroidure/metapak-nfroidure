@@ -35,9 +35,10 @@ const transformer: PackageJSONTransformer<
   if (!data.rootPackage) {
     packageConf.scripts.rebuild = 'swc ./src -s -d dist -C jsc.target=es2022';
   }
-  packageConf.scripts['type-check'] = data.rootPackage
+  packageConf.scripts['types'] = data.rootPackage
     ? 'lerna run type-check'
     : 'tsc --pretty --noEmit';
+  delete packageConf.scripts['type-check'];
 
   // Install mandatory scripts
   if (!data.childPackage) {
