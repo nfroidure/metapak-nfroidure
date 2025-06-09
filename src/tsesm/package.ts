@@ -1,7 +1,7 @@
 import { ensureScript } from '../lib.js';
 import type { PackageJSONTransformer } from 'metapak';
 
-const BUILD_COMMAND = 'npm run build';
+const BUILD_COMMAND = 'node --run build';
 
 const transformer: PackageJSONTransformer<
   { childPackage?: boolean; rootPackage?: boolean },
@@ -20,11 +20,11 @@ const transformer: PackageJSONTransformer<
 
   // Add the dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.typescript = '^5.7.2';
+  packageConf.devDependencies.typescript = '^5.8.3';
   packageConf.devDependencies.rimraf = '^6.0.1';
-  packageConf.devDependencies['@swc/cli'] = '^0.5.2';
-  packageConf.devDependencies['@swc/core'] = '^1.10.0';
-  packageConf.devDependencies['@swc/helpers'] = '^0.5.15';
+  packageConf.devDependencies['@swc/cli'] = '^0.7.7';
+  packageConf.devDependencies['@swc/core'] = '^1.11.31';
+  packageConf.devDependencies['@swc/helpers'] = '^0.5.17';
 
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.build = data.rootPackage
@@ -44,10 +44,12 @@ const transformer: PackageJSONTransformer<
     packageConf.scripts.precz = ensureScript(
       packageConf.scripts.precz,
       BUILD_COMMAND,
+      'npm run build',
     );
     packageConf.scripts.preversion = ensureScript(
       packageConf.scripts.preversion,
       BUILD_COMMAND,
+      'npm run build',
     );
   }
 

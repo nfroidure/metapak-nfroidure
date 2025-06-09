@@ -45,9 +45,9 @@ describe('mocha', () => {
     "data": {},
   },
   "scripts": {
-    "cover": "npm run jest -- --coverage",
+    "cover": "node --run jest -- --coverage",
     "jest": "NODE_ENV=test jest",
-    "test": "npm run jest",
+    "test": "node --run jest",
   },
 }
 `);
@@ -75,7 +75,7 @@ describe('mocha', () => {
 {
   "dependencies": {},
   "devDependencies": {
-    "@swc/jest": "^0.2.37",
+    "@swc/jest": "^0.2.38",
     "jest": "^29.7.0",
   },
   "jest": {
@@ -116,9 +116,9 @@ describe('mocha', () => {
     },
   },
   "scripts": {
-    "cover": "npm run jest -- --coverage",
+    "cover": "node --run jest -- --coverage",
     "jest": "NODE_OPTIONS=--experimental-vm-modules NODE_ENV=test jest",
-    "test": "npm run jest",
+    "test": "node --run jest",
   },
 }
 `);

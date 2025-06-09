@@ -1,7 +1,7 @@
 import { ensureScript } from '../lib.js';
 import type { PackageJSONTransformer } from 'metapak';
 
-const ARCHITECTURE_SCRIPT = 'npm run architecture';
+const ARCHITECTURE_SCRIPT = 'node --run architecture';
 
 const transformer: PackageJSONTransformer<
   { childPackage?: boolean; rootPackage?: boolean; files: string },
@@ -23,10 +23,12 @@ const transformer: PackageJSONTransformer<
     packageConf.scripts.precz = ensureScript(
       packageConf.scripts.precz,
       ARCHITECTURE_SCRIPT,
+      'npm run architecture',
     );
     packageConf.scripts.preversion = ensureScript(
       packageConf.scripts.preversion,
       ARCHITECTURE_SCRIPT,
+      'npm run architecture',
     );
   }
 

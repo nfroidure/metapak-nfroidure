@@ -19,7 +19,7 @@ describe('mocha', () => {
       ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "mocha": "^11.0.1",
+    "mocha": "^11.6.0",
     "nyc": "^17.1.0",
   },
   "greenkeeper": {
@@ -44,7 +44,7 @@ describe('mocha', () => {
   "scripts": {
     "cover": "nyc npm test && nyc report --reporter=html --reporter=text",
     "mocha": "mocha src/*.js src/**/*.js",
-    "test": "npm run mocha",
+    "test": "node --run mocha",
   },
 }
 `);
@@ -66,7 +66,7 @@ describe('mocha', () => {
       ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "mocha": "^11.0.1",
+    "mocha": "^11.6.0",
     "nyc": "^17.1.0",
   },
   "greenkeeper": {
@@ -92,7 +92,7 @@ describe('mocha', () => {
   "scripts": {
     "cover": "nyc npm test && nyc report --reporter=html --reporter=text",
     "mocha": "mocha --require '@babel/register' src/*.js src/**/*.js",
-    "test": "npm run mocha",
+    "test": "node --run mocha",
   },
 }
 `);

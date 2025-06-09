@@ -4,18 +4,18 @@ import packageTransformer from './package.js';
 describe('Package transformer for jsdocs', () => {
   test('should work with an empty package.json', () => {
     expect(
-  packageTransformer({
-    metapak: {
-      configs: ['jsarch'],
-      data: {
-        files: 'yolo.js'
-      }
-    },
-    greenkeeper: {
-      ignore: []
-    }
-  })
-).toMatchInlineSnapshot(`
+      packageTransformer({
+        metapak: {
+          configs: ['jsarch'],
+          data: {
+            files: 'yolo.js',
+          },
+        },
+        greenkeeper: {
+          ignore: [],
+        },
+      }),
+    ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
     "jsarch": "^6.1.2",
@@ -35,8 +35,8 @@ describe('Package transformer for jsdocs', () => {
   },
   "scripts": {
     "architecture": "jsarch yolo.js > ARCHITECTURE.md && git add ARCHITECTURE.md",
-    "precz": "npm run architecture",
-    "preversion": "npm run architecture",
+    "precz": "node --run architecture",
+    "preversion": "node --run architecture",
   },
 }
 `);
@@ -44,19 +44,19 @@ describe('Package transformer for jsdocs', () => {
 
   test('should work with child package', () => {
     expect(
-  packageTransformer({
-    metapak: {
-      configs: ['jsarch'],
-      data: {
-        childPackage: true,
-        files: 'yolo.js'
-      }
-    },
-    greenkeeper: {
-      ignore: []
-    }
-  })
-).toMatchInlineSnapshot(`
+      packageTransformer({
+        metapak: {
+          configs: ['jsarch'],
+          data: {
+            childPackage: true,
+            files: 'yolo.js',
+          },
+        },
+        greenkeeper: {
+          ignore: [],
+        },
+      }),
+    ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
     "jsarch": "^6.1.2",
@@ -82,19 +82,19 @@ describe('Package transformer for jsdocs', () => {
 
   test('should work with typescrit configs', () => {
     expect(
-  packageTransformer({
-    metapak: {
-      configs: ['jsarch', 'typescript'],
-      data: {
-        childPackage: true,
-        files: 'yolo.js'
-      }
-    },
-    greenkeeper: {
-      ignore: []
-    }
-  })
-).toMatchInlineSnapshot(`
+      packageTransformer({
+        metapak: {
+          configs: ['jsarch', 'typescript'],
+          data: {
+            childPackage: true,
+            files: 'yolo.js',
+          },
+        },
+        greenkeeper: {
+          ignore: [],
+        },
+      }),
+    ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
     "jsarch": "^6.1.2",
