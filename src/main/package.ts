@@ -4,11 +4,11 @@ import type { PackageJSONTransformer } from 'metapak';
 
 const GITHUB_REPOSITORY_REGEXP =
   /git\+https:\/\/github.com\/([a-zA-Z0-9-]+)\/([a-zA-Z0-9-]+)\.git/;
-const TEST_SCRIPT = 'npm t';
-const LINT_SCRIPT = 'npm run lint';
-const METAPAK_SCRIPT = 'npm run metapak -- -s';
-const METAPAK_LERNA_SCRIPT = `${METAPAK_SCRIPT} && npm run lerna -- run --parallel metapak -- -- -s`;
-const CHANGELOG_SCRIPT = 'npm run changelog';
+const TEST_SCRIPT = 'node --run test';
+const LINT_SCRIPT = 'node --run lint';
+const METAPAK_SCRIPT = 'node --run metapak -- -s';
+const METAPAK_LERNA_SCRIPT = `node --run lerna -- run --parallel metapak -- -- -s`;
+const CHANGELOG_SCRIPT = 'node --run changelog';
 
 const transformer: PackageJSONTransformer<
   {
@@ -84,15 +84,23 @@ const transformer: PackageJSONTransformer<
     packageConf.scripts.precz = ensureScript(
       packageConf.scripts.precz,
       TEST_SCRIPT,
+      'npm t',
     );
     packageConf.scripts.precz = ensureScript(
       packageConf.scripts.precz,
       LINT_SCRIPT,
+      'npm run lint',
     );
     packageConf.scripts.precz = ensureScript(
       packageConf.scripts.precz,
-      data.rootPackage ? METAPAK_LERNA_SCRIPT : METAPAK_SCRIPT,
+      data.rootPackage
+        ? `${METAPAK_LERNA_SCRIPT} && ${METAPAK_SCRIPT}`
+        : METAPAK_SCRIPT,
+      data.rootPackage
+        ? 'npm run metapak -- -s && npm run lerna -- run --parallel metapak'
+        : 'npm run metapak -- -s',
     );
+
     packageConf.config = {
       commitizen: {
         path: './node_modules/cz-conventional-changelog',
@@ -106,22 +114,31 @@ const transformer: PackageJSONTransformer<
     packageConf.scripts.version = ensureScript(
       packageConf.scripts.version,
       CHANGELOG_SCRIPT,
+      'node --run changelog',
     );
     packageConf.scripts.version = ensureScript(
       packageConf.scripts.version,
       CHANGELOG_SCRIPT,
+      'node --run changelog',
     );
     packageConf.scripts.preversion = ensureScript(
       packageConf.scripts.preversion,
       TEST_SCRIPT,
+      'npm t',
     );
     packageConf.scripts.preversion = ensureScript(
       packageConf.scripts.preversion,
       LINT_SCRIPT,
+      'npm run lint',
     );
     packageConf.scripts.preversion = ensureScript(
       packageConf.scripts.preversion,
-      data.rootPackage ? METAPAK_LERNA_SCRIPT : METAPAK_SCRIPT,
+      data.rootPackage
+        ? `${METAPAK_LERNA_SCRIPT} && ${METAPAK_SCRIPT}`
+        : METAPAK_SCRIPT,
+      data.rootPackage
+        ? 'npm run metapak -- -s && npm run lerna -- run --parallel metapak'
+        : 'npm run metapak -- -s',
     );
 
     // Add the MUST HAVE dev dependencies

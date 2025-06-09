@@ -29,7 +29,7 @@ describe('Package transformer', () => {
     "cz-conventional-changelog": "^3.3.0",
   },
   "engines": {
-    "node": ">=20.11.1",
+    "node": ">=22.16.0",
   },
   "files": [
     "src",
@@ -57,10 +57,10 @@ describe('Package transformer', () => {
     "cz": "env NODE_ENV=\${NODE_ENV:-cli} git cz",
     "format": "echo "WARNING: No formatter specified"",
     "lint": "echo "WARNING: No linter specified"",
-    "precz": "npm t && npm run lint && npm run metapak -- -s",
-    "preversion": "npm t && npm run lint && npm run metapak -- -s",
+    "precz": "node --run test && node --run lint && node --run metapak -- -s",
+    "preversion": "node --run test && node --run lint && node --run metapak -- -s",
     "test": "echo "WARNING: No tests specified"",
-    "version": "npm run changelog",
+    "version": "node --run changelog",
   },
   "version": "0.0.0",
 }
@@ -96,7 +96,7 @@ describe('Package transformer', () => {
     "cz-conventional-changelog": "^3.3.0",
   },
   "engines": {
-    "node": ">=20.11.1",
+    "node": ">=22.16.0",
   },
   "files": [
     "src",
@@ -126,10 +126,10 @@ describe('Package transformer', () => {
     "cz": "env NODE_ENV=\${NODE_ENV:-cli} git cz",
     "format": "lerna run format",
     "lint": "lerna run lint",
-    "precz": "npm t && npm run lint && npm run metapak -- -s && npm run lerna -- run --parallel metapak -- -- -s",
-    "preversion": "npm t && npm run lint && npm run metapak -- -s && npm run lerna -- run --parallel metapak -- -- -s",
+    "precz": "node --run test && node --run lint && node --run lerna -- run --parallel metapak -- -- -s && node --run metapak -- -s",
+    "preversion": "node --run test && node --run lint && node --run lerna -- run --parallel metapak -- -- -s && node --run metapak -- -s",
     "test": "lerna run test",
-    "version": "npm run changelog",
+    "version": "node --run changelog",
   },
 }
 `);
@@ -154,7 +154,7 @@ describe('Package transformer', () => {
   },
   "contributors": [],
   "engines": {
-    "node": ">=20.11.1",
+    "node": ">=22.16.0",
   },
   "files": [
     "src",
@@ -205,7 +205,7 @@ describe('Package transformer', () => {
   },
   "contributors": [],
   "engines": {
-    "node": ">=20.11.1",
+    "node": ">=22.16.0",
   },
   "files": [
     "src",

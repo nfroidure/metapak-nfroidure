@@ -16,12 +16,12 @@ describe('eslint', () => {
       ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "@eslint/js": "^9.16.0",
-    "eslint": "^9.16.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-jest": "^28.9.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "prettier": "^3.4.2",
+    "@eslint/js": "^9.28.0",
+    "eslint": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-jest": "^28.13.0",
+    "eslint-plugin-prettier": "^5.4.1",
+    "prettier": "^3.5.3",
   },
   "greenkeeper": {
     "ignore": [
@@ -40,7 +40,7 @@ describe('eslint', () => {
     },
   },
   "overrides": {
-    "eslint": "^9.16.0",
+    "eslint": "^9.28.0",
   },
   "prettier": {
     "printWidth": 80,
@@ -72,12 +72,12 @@ describe('eslint', () => {
       ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "@eslint/js": "^9.16.0",
-    "eslint": "^9.16.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-jest": "^28.9.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "prettier": "^3.4.2",
+    "@eslint/js": "^9.28.0",
+    "eslint": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-jest": "^28.13.0",
+    "eslint-plugin-prettier": "^5.4.1",
+    "prettier": "^3.5.3",
   },
   "metapak": {
     "configs": [
@@ -89,7 +89,7 @@ describe('eslint', () => {
     },
   },
   "overrides": {
-    "eslint": "^9.16.0",
+    "eslint": "^9.28.0",
   },
   "prettier": {
     "printWidth": 80,
@@ -121,13 +121,13 @@ describe('eslint', () => {
       ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "@eslint/js": "^9.16.0",
-    "eslint": "^9.16.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-jest": "^28.9.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "prettier": "^3.4.2",
-    "typescript-eslint": "^8.17.0",
+    "@eslint/js": "^9.28.0",
+    "eslint": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-jest": "^28.13.0",
+    "eslint-plugin-prettier": "^5.4.1",
+    "prettier": "^3.5.3",
+    "typescript-eslint": "^8.33.1",
   },
   "metapak": {
     "configs": [
@@ -140,7 +140,7 @@ describe('eslint', () => {
     },
   },
   "overrides": {
-    "eslint": "^9.16.0",
+    "eslint": "^9.28.0",
   },
   "prettier": {
     "printWidth": 80,

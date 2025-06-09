@@ -2,8 +2,6 @@ import { ensureScript } from '../lib.js';
 import type { PackageJSONTransformer } from 'metapak';
 import type { Config } from 'jest';
 
-const JEST_SCRIPT = 'npm run jest';
-
 const transformer: PackageJSONTransformer<
   { childPackage?: boolean; rootPackage?: boolean; jestRoots?: string[] },
   {
@@ -22,9 +20,10 @@ const transformer: PackageJSONTransformer<
     : 'NODE_ENV=test jest';
   packageConf.scripts.test = ensureScript(
     packageConf.scripts.test,
-    JEST_SCRIPT,
+    'node --run jest',
+    'npm run jest',
   );
-  packageConf.scripts.cover = `npm run jest -- --coverage`;
+  packageConf.scripts.cover = `node --run jest -- --coverage`;
 
   packageConf.devDependencies = packageConf.devDependencies || {};
   packageConf.devDependencies.jest = '^29.7.0';
@@ -74,7 +73,7 @@ const transformer: PackageJSONTransformer<
     delete packageConf.devDependencies['ts-jest'];
     delete packageConf.devDependencies['esbuild'];
     delete packageConf.devDependencies['esbuild-jest'];
-    packageConf.devDependencies['@swc/jest'] = '^0.2.37';
+    packageConf.devDependencies['@swc/jest'] = '^0.2.38';
   }
 
   if (configs.includes('typescript')) {

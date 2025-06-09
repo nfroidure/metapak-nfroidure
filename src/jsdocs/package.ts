@@ -2,7 +2,7 @@ import { ensureScript } from '../lib.js';
 import config from '../config.js';
 import type { PackageJSONTransformer } from 'metapak';
 
-const DOCUMENTATION_SCRIPT = 'npm run doc';
+const DOCUMENTATION_SCRIPT = 'node --run doc';
 
 const transformer: PackageJSONTransformer<
   {
@@ -33,10 +33,12 @@ const transformer: PackageJSONTransformer<
     packageConf.scripts.precz = ensureScript(
       packageConf.scripts.precz,
       DOCUMENTATION_SCRIPT,
+      'npm run doc',
     );
     packageConf.scripts.preversion = ensureScript(
       packageConf.scripts.preversion,
       DOCUMENTATION_SCRIPT,
+      'npm run doc',
     );
   }
 

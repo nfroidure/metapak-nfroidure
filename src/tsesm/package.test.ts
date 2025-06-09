@@ -14,11 +14,11 @@ describe('private', () => {
       ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "@swc/cli": "^0.5.2",
-    "@swc/core": "^1.10.0",
-    "@swc/helpers": "^0.5.15",
+    "@swc/cli": "^0.7.7",
+    "@swc/core": "^1.11.31",
+    "@swc/helpers": "^0.5.17",
     "rimraf": "^6.0.1",
-    "typescript": "^5.7.2",
+    "typescript": "^5.8.3",
   },
   "greenkeeper": {
     "ignore": [
@@ -38,8 +38,8 @@ describe('private', () => {
   },
   "scripts": {
     "build": "rimraf 'dist' && tsc --outDir dist",
-    "precz": "npm run build",
-    "preversion": "npm run build",
+    "precz": "node --run build",
+    "preversion": "node --run build",
     "rebuild": "swc ./src -s -d dist -C jsc.target=es2022",
     "type-check": "tsc --pretty --noEmit",
   },

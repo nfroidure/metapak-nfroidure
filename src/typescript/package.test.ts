@@ -15,10 +15,10 @@ describe('private', () => {
       ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "@swc/core": "^1.10.0",
-    "@swc/helpers": "^0.5.15",
+    "@swc/core": "^1.11.31",
+    "@swc/helpers": "^0.5.17",
     "rimraf": "^6.0.1",
-    "typescript": "^5.7.2",
+    "typescript": "^5.8.3",
   },
   "greenkeeper": {
     "ignore": [
@@ -35,8 +35,8 @@ describe('private', () => {
     "data": {},
   },
   "scripts": {
-    "precz": "npm run types",
-    "preversion": "npm run types",
+    "precz": "node --run types",
+    "preversion": "node --run types",
     "types": "rimraf --glob 'dist/**/*.d.ts' && tsc --project . --declaration --emitDeclarationOnly --outDir dist",
   },
   "types": "index.d.ts",
