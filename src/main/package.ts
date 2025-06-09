@@ -114,12 +114,12 @@ const transformer: PackageJSONTransformer<
     packageConf.scripts.version = ensureScript(
       packageConf.scripts.version,
       CHANGELOG_SCRIPT,
-      'node --run changelog',
+      'npm run changelog',
     );
     packageConf.scripts.version = ensureScript(
       packageConf.scripts.version,
       CHANGELOG_SCRIPT,
-      'node --run changelog',
+      'npm run changelog',
     );
     packageConf.scripts.preversion = ensureScript(
       packageConf.scripts.preversion,

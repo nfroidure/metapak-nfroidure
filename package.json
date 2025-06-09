@@ -49,7 +49,7 @@
     "rebuild": "swc ./src -s -d dist -C jsc.target=es2022",
     "test": "node --run jest",
     "type-check": "tsc --pretty --noEmit",
-    "version": "npm run changelog && node --run changelog"
+    "version": "node --run changelog"
   },
   "author": {
     "name": "Nicolas Froidure",
