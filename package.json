@@ -25,7 +25,7 @@
   },
   "name": "metapak-nfroidure",
   "description": "A metapak module for my open source projects.",
-  "version": "19.0.1",
+  "version": "20.0.0",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

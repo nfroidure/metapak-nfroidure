@@ -1,3 +1,22 @@
+# [20.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v19.0.1...v20.0.0) (2025-06-09)
+
+
+### Bug Fixes
+
+* **configs:** fix changelog script replacement ([214fbf4](https://github.com/nfroidure/metapak-nfroidure/commit/214fbf44c66a2ce015df6b323271a8e24cfcbb24))
+
+
+### chore
+
+* **dependencies:** update dependencies ([9fa63c1](https://github.com/nfroidure/metapak-nfroidure/commit/9fa63c11fc0aff48c050c69a9dfe18e3b20961f4))
+
+
+### BREAKING CHANGES
+
+* **dependencies:** Drop support for Node 20
+
+
+
 ## [19.0.1](https://github.com/nfroidure/metapak-nfroidure/compare/v19.0.0...v19.0.1) (2024-12-04)
 
 
