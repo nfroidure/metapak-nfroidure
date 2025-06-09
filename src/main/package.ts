@@ -7,7 +7,7 @@ const GITHUB_REPOSITORY_REGEXP =
 const TEST_SCRIPT = 'node --run test';
 const LINT_SCRIPT = 'node --run lint';
 const METAPAK_SCRIPT = 'node --run metapak -- -s';
-const METAPAK_LERNA_SCRIPT = `node --run lerna -- run --parallel metapak -- -- -s`;
+const METAPAK_LERNA_SCRIPT = `node --run lerna -- run --parallel metapak -- -s`;
 const CHANGELOG_SCRIPT = 'node --run changelog';
 
 const transformer: PackageJSONTransformer<
