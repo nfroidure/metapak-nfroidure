@@ -33,6 +33,12 @@ const transformer: PackageJSONTransformer<
         }
       : packageConf.author;
 
+  // Why not get some funds to continue working on OSS?
+  packageConf.funding = {
+    type: 'individual',
+    url: 'https://github.com/sponsors/nfroidure',
+  };
+
   // Add an empty contributors field per default
   packageConf.contributors = packageConf.contributors || [];
 
@@ -47,7 +53,7 @@ const transformer: PackageJSONTransformer<
   // Supporting Node LTS version only
   packageConf.engines = { node: '>=' + config.lastNodeLTS };
 
-  // Only add necessar files
+  // Only add necessary files
   packageConf.files = (data.bundleFiles || ['src']).concat(
     'LICENSE',
     'README.md',

@@ -135,5 +135,9 @@
       ".ts"
     ],
     "prettierPath": null
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/nfroidure"
   }
 }
