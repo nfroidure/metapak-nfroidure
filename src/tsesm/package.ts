@@ -23,7 +23,7 @@ const transformer: PackageJSONTransformer<
   packageConf.devDependencies.typescript = '^5.8.3';
   packageConf.devDependencies.rimraf = '^6.0.1';
   packageConf.devDependencies['@swc/cli'] = '^0.7.7';
-  packageConf.devDependencies['@swc/core'] = '^1.11.31';
+  packageConf.devDependencies['@swc/core'] = '^1.12.1';
   packageConf.devDependencies['@swc/helpers'] = '^0.5.17';
 
   packageConf.scripts = packageConf.scripts || {};

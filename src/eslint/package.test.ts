@@ -5,21 +5,21 @@ describe('eslint', () => {
   describe('Package transformer', () => {
     test('should work with some files', () => {
       expect(
-        packageTransformer({
-          metapak: {
-            configs: ['eslint'],
-            data: {
-              files: 'src/*.js src/**/*.js',
-            },
-          },
-        }),
-      ).toMatchInlineSnapshot(`
+  packageTransformer({
+    metapak: {
+      configs: ['eslint'],
+      data: {
+        files: 'src/*.js src/**/*.js'
+      }
+    }
+  })
+).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "@eslint/js": "^9.28.0",
-    "eslint": "^9.28.0",
+    "@eslint/js": "^9.29.0",
+    "eslint": "^9.29.0",
     "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-jest": "^28.13.0",
+    "eslint-plugin-jest": "^28.14.0",
     "eslint-plugin-prettier": "^5.4.1",
     "prettier": "^3.5.3",
   },
@@ -39,9 +39,6 @@ describe('eslint', () => {
       "files": "src/*.js src/**/*.js",
     },
   },
-  "overrides": {
-    "eslint": "^9.28.0",
-  },
   "prettier": {
     "printWidth": 80,
     "proseWrap": "always",
@@ -60,22 +57,22 @@ describe('eslint', () => {
 
     test('should work with child packages', () => {
       expect(
-        packageTransformer({
-          metapak: {
-            configs: ['eslint'],
-            data: {
-              childPackage: true,
-              files: 'src/*.js src/**/*.js',
-            },
-          },
-        }),
-      ).toMatchInlineSnapshot(`
+  packageTransformer({
+    metapak: {
+      configs: ['eslint'],
+      data: {
+        childPackage: true,
+        files: 'src/*.js src/**/*.js'
+      }
+    }
+  })
+).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "@eslint/js": "^9.28.0",
-    "eslint": "^9.28.0",
+    "@eslint/js": "^9.29.0",
+    "eslint": "^9.29.0",
     "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-jest": "^28.13.0",
+    "eslint-plugin-jest": "^28.14.0",
     "eslint-plugin-prettier": "^5.4.1",
     "prettier": "^3.5.3",
   },
@@ -87,9 +84,6 @@ describe('eslint', () => {
       "childPackage": true,
       "files": "src/*.js src/**/*.js",
     },
-  },
-  "overrides": {
-    "eslint": "^9.28.0",
   },
   "prettier": {
     "printWidth": 80,
@@ -109,25 +103,25 @@ describe('eslint', () => {
 
     test('should work with typescript configs', () => {
       expect(
-        packageTransformer({
-          metapak: {
-            configs: ['eslint', 'typescript'],
-            data: {
-              childPackage: true,
-              files: 'src/*.js src/**/*.js',
-            },
-          },
-        }),
-      ).toMatchInlineSnapshot(`
+  packageTransformer({
+    metapak: {
+      configs: ['eslint', 'typescript'],
+      data: {
+        childPackage: true,
+        files: 'src/*.js src/**/*.js'
+      }
+    }
+  })
+).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "@eslint/js": "^9.28.0",
-    "eslint": "^9.28.0",
+    "@eslint/js": "^9.29.0",
+    "eslint": "^9.29.0",
     "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-jest": "^28.13.0",
+    "eslint-plugin-jest": "^28.14.0",
     "eslint-plugin-prettier": "^5.4.1",
     "prettier": "^3.5.3",
-    "typescript-eslint": "^8.33.1",
+    "typescript-eslint": "^8.34.0",
   },
   "metapak": {
     "configs": [
@@ -138,9 +132,6 @@ describe('eslint', () => {
       "childPackage": true,
       "files": "src/*.js src/**/*.js",
     },
-  },
-  "overrides": {
-    "eslint": "^9.28.0",
   },
   "prettier": {
     "printWidth": 80,

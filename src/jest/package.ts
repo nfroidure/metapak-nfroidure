@@ -26,7 +26,7 @@ const transformer: PackageJSONTransformer<
   packageConf.scripts.cover = `node --run jest -- --coverage`;
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jest = '^29.7.0';
+  packageConf.devDependencies.jest = '^30.0.0';
 
   // Remove old coveralls configs
   delete packageConf.scripts.coveralls;
@@ -58,12 +58,15 @@ const transformer: PackageJSONTransformer<
           globals: undefined,
         }
       : {}),
-    // Sadly, Jest is not compatible with prettier v3
-    // Let's format the files by hand after update for now
-    // by disabling prettier formatting completely
-    // https://github.com/jestjs/jest/issues/14305
-    prettierPath: null,
   };
+
+  // Jest lesser than v30 was not compatible with prettier v3
+  // Let's remove this tweak now that is is supported
+  // https://github.com/jestjs/jest/issues/14305
+  if ('prettierPath' in packageConf) {
+    delete packageConf.prettierPath;
+  }
+
   // Special configuration for TypeScript
   if (configs.includes('typescript') || configs.includes('tsesm')) {
     delete packageConf?.devDependencies?.['@types/jest'];
