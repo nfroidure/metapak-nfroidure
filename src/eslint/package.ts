@@ -17,25 +17,25 @@ const transformer: PackageJSONTransformer<
   packageConf.scripts = packageConf.scripts || {};
 
   if (data.rootPackage) {
-    packageConf.scripts.lint = 'npm run lerna -- run eslint ';
-    packageConf.scripts.prettier = 'npm run lerna -- run prettier ';
+    packageConf.scripts.lint = 'node --run lerna -- run eslint ';
+    packageConf.scripts.prettier = 'node --run lerna -- run prettier ';
   } else {
     packageConf.scripts.lint = 'eslint ' + data.files;
     packageConf.scripts.prettier = 'prettier --write ' + data.files;
   }
 
-  packageConf.scripts.format = 'npm run prettier';
+  packageConf.scripts.format = 'node --run prettier';
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.eslint = '^9.29.0';
-  packageConf.devDependencies['@eslint/js'] = '^9.29.0';
-  packageConf.devDependencies.prettier = '^3.5.3';
+  packageConf.devDependencies.eslint = '^9.30.1';
+  packageConf.devDependencies['@eslint/js'] = '^9.30.1';
+  packageConf.devDependencies.prettier = '^3.6.2';
   packageConf.devDependencies['eslint-config-prettier'] = '^10.1.5';
-  packageConf.devDependencies['eslint-plugin-prettier'] = '^5.4.1';
-  packageConf.devDependencies['eslint-plugin-jest'] = '^28.14.0';
+  packageConf.devDependencies['eslint-plugin-prettier'] = '^5.5.1';
+  packageConf.devDependencies['eslint-plugin-jest'] = '^29.0.1';
   // Remove old tweaks
-  if((packageConf.overrides as { eslint: string })?.eslint) {
+  if ((packageConf.overrides as { eslint: string })?.eslint) {
     delete packageConf.overrides;
   }
   packageConf.prettier = {
@@ -52,7 +52,7 @@ const transformer: PackageJSONTransformer<
 
   // Special configuration for TypeScript
   if (configs.includes('typescript') || configs.includes('tsesm')) {
-    packageConf.devDependencies['typescript-eslint'] = '^8.34.0';
+    packageConf.devDependencies['typescript-eslint'] = '^8.36.0';
   }
 
   if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {

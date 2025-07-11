@@ -16,40 +16,40 @@ describe('mocha', () => {
           dependencies: {},
         }),
       ).toMatchInlineSnapshot(`
-       {
-         "dependencies": {},
-         "devDependencies": {
-           "jest": "^30.0.0",
-         },
-         "greenkeeper": {
-           "ignore": [
-             "jest",
-           ],
-         },
-         "jest": {
-           "coverageReporters": [
-             "lcov",
-           ],
-           "roots": [
-             "<rootDir>/src",
-           ],
-           "testPathIgnorePatterns": [
-             "/node_modules/",
-           ],
-         },
-         "metapak": {
-           "configs": [
-             "jest",
-           ],
-           "data": {},
-         },
-         "scripts": {
-           "cover": "node --run jest -- --coverage",
-           "jest": "NODE_ENV=test jest",
-           "test": "node --run jest",
-         },
-       }
-      `);
+{
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^30.0.4",
+  },
+  "greenkeeper": {
+    "ignore": [
+      "jest",
+    ],
+  },
+  "jest": {
+    "coverageReporters": [
+      "lcov",
+    ],
+    "roots": [
+      "<rootDir>/src",
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+    ],
+  },
+  "metapak": {
+    "configs": [
+      "jest",
+    ],
+    "data": {},
+  },
+  "scripts": {
+    "cover": "node --run jest -- --coverage",
+    "jest": "NODE_ENV=test jest",
+    "test": "node --run jest",
+  },
+}
+`);
     });
 
     test('should work with child packages', () => {
@@ -71,55 +71,55 @@ describe('mocha', () => {
           },
         }),
       ).toMatchInlineSnapshot(`
-       {
-         "dependencies": {},
-         "devDependencies": {
-           "@swc/jest": "^0.2.38",
-           "jest": "^30.0.0",
-         },
-         "jest": {
-           "coverageReporters": [
-             "lcov",
-           ],
-           "extensionsToTreatAsEsm": [
-             ".ts",
-           ],
-           "globals": undefined,
-           "moduleNameMapper": {
-             "#(.*)": "<rootDir>/../../node_modules/$1",
-             "(.+)\\.js": "$1",
-           },
-           "preset": undefined,
-           "roots": [
-             "<rootDir>/src",
-           ],
-           "testEnvironment": "node",
-           "testPathIgnorePatterns": [
-             "/node_modules/",
-           ],
-           "transform": {
-             "^.+\\.tsx?$": [
-               "@swc/jest",
-               {},
-             ],
-           },
-         },
-         "metapak": {
-           "configs": [
-             "jest",
-             "tsesm",
-           ],
-           "data": {
-             "childPackage": true,
-           },
-         },
-         "scripts": {
-           "cover": "node --run jest -- --coverage",
-           "jest": "NODE_OPTIONS=--experimental-vm-modules NODE_ENV=test jest",
-           "test": "node --run jest",
-         },
-       }
-      `);
+{
+  "dependencies": {},
+  "devDependencies": {
+    "@swc/jest": "^0.2.39",
+    "jest": "^30.0.4",
+  },
+  "jest": {
+    "coverageReporters": [
+      "lcov",
+    ],
+    "extensionsToTreatAsEsm": [
+      ".ts",
+    ],
+    "globals": undefined,
+    "moduleNameMapper": {
+      "#(.*)": "<rootDir>/../../node_modules/$1",
+      "(.+)\\.js": "$1",
+    },
+    "preset": undefined,
+    "roots": [
+      "<rootDir>/src",
+    ],
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+    ],
+    "transform": {
+      "^.+\\.tsx?$": [
+        "@swc/jest",
+        {},
+      ],
+    },
+  },
+  "metapak": {
+    "configs": [
+      "jest",
+      "tsesm",
+    ],
+    "data": {
+      "childPackage": true,
+    },
+  },
+  "scripts": {
+    "cover": "node --run jest -- --coverage",
+    "jest": "NODE_OPTIONS=--experimental-vm-modules NODE_ENV=test jest",
+    "test": "node --run jest",
+  },
+}
+`);
     });
   });
 });

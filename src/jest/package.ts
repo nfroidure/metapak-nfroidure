@@ -26,7 +26,7 @@ const transformer: PackageJSONTransformer<
   packageConf.scripts.cover = `node --run jest -- --coverage`;
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jest = '^30.0.0';
+  packageConf.devDependencies.jest = '^30.0.4';
 
   // Remove old coveralls configs
   delete packageConf.scripts.coveralls;
@@ -76,7 +76,7 @@ const transformer: PackageJSONTransformer<
     delete packageConf.devDependencies['ts-jest'];
     delete packageConf.devDependencies['esbuild'];
     delete packageConf.devDependencies['esbuild-jest'];
-    packageConf.devDependencies['@swc/jest'] = '^0.2.38';
+    packageConf.devDependencies['@swc/jest'] = '^0.2.39';
   }
 
   if (configs.includes('typescript')) {

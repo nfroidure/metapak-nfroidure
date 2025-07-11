@@ -40,7 +40,7 @@ const transformer: PackageJSONTransformer<
     'nyc npm test && nyc report --reporter=html --reporter=text';
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.mocha = '^11.6.0';
+  packageConf.devDependencies.mocha = '^11.7.1';
   packageConf.devDependencies.nyc = '^17.1.0';
 
   // Ignore test files
