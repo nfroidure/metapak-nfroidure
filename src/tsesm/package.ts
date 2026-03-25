@@ -1,13 +1,11 @@
 import { ensureScript } from '../lib.js';
-import type { PackageJSONTransformer } from 'metapak';
+import { type PackageJSONTransformer } from 'metapak';
 
 const BUILD_COMMAND = 'node --run build';
 
 const transformer: PackageJSONTransformer<
   { childPackage?: boolean; rootPackage?: boolean },
-  {
-    greenkeeper?: { ignore?: string[] };
-  }
+  object
 > = (packageConf) => {
   const {
     metapak: { data },
@@ -20,11 +18,11 @@ const transformer: PackageJSONTransformer<
 
   // Add the dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.typescript = '^5.8.3';
-  packageConf.devDependencies.rimraf = '^6.0.1';
-  packageConf.devDependencies['@swc/cli'] = '^0.7.8';
-  packageConf.devDependencies['@swc/core'] = '^1.12.11';
-  packageConf.devDependencies['@swc/helpers'] = '^0.5.17';
+  packageConf.devDependencies.typescript = '^6.0.2';
+  packageConf.devDependencies.rimraf = '^6.1.3';
+  packageConf.devDependencies['@swc/cli'] = '^0.8.0';
+  packageConf.devDependencies['@swc/core'] = '^1.15.21';
+  packageConf.devDependencies['@swc/helpers'] = '^0.5.19';
 
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.build = data.rootPackage
@@ -68,23 +66,6 @@ const transformer: PackageJSONTransformer<
   delete packageConf.scripts['compile:cjs'];
   delete packageConf.scripts['compile:mjs'];
   delete packageConf.scripts.types;
-
-  // Avoid GreenKeeper to update automatically added modules
-  if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
-    packageConf.greenkeeper = {
-      ignore: [
-        ...new Set(
-          (packageConf?.greenkeeper?.ignore || []).concat([
-            'typescript',
-            'rimraf',
-            '@swc/cli',
-            '@swc/core',
-            '@swc/helpers',
-          ]),
-        ),
-      ].filter((dependency) => packageConf?.devDependencies?.[dependency]),
-    };
-  }
 
   return packageConf;
 };

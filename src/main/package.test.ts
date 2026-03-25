@@ -4,13 +4,13 @@ import packageTransformer from './package.js';
 describe('Package transformer', () => {
   test('should work with an empty package.json', () => {
     expect(
-      packageTransformer({
-        metapak: {
-          configs: ['main'],
-          data: {},
-        },
-      }),
-    ).toMatchInlineSnapshot(`
+  packageTransformer({
+    metapak: {
+      configs: ['main'],
+      data: {}
+    }
+  })
+).toMatchInlineSnapshot(`
 {
   "author": {
     "email": "nicolas.froidure@insertafter.com",
@@ -29,7 +29,7 @@ describe('Package transformer', () => {
     "cz-conventional-changelog": "^3.3.0",
   },
   "engines": {
-    "node": ">=22.16.0",
+    "node": ">=24.14.0",
   },
   "files": [
     "src",
@@ -40,13 +40,6 @@ describe('Package transformer', () => {
   "funding": {
     "type": "individual",
     "url": "https://github.com/sponsors/nfroidure",
-  },
-  "greenkeeper": {
-    "ignore": [
-      "commitizen",
-      "cz-conventional-changelog",
-      "conventional-changelog-cli",
-    ],
   },
   "license": "MIT",
   "metapak": {
@@ -73,15 +66,15 @@ describe('Package transformer', () => {
 
   test('should work with a root package', () => {
     expect(
-      packageTransformer({
-        metapak: {
-          configs: ['main'],
-          data: {
-            rootPackage: true,
-          },
-        },
-      }),
-    ).toMatchInlineSnapshot(`
+  packageTransformer({
+    metapak: {
+      configs: ['main'],
+      data: {
+        rootPackage: true
+      }
+    }
+  })
+).toMatchInlineSnapshot(`
 {
   "author": {
     "email": "nicolas.froidure@insertafter.com",
@@ -100,7 +93,7 @@ describe('Package transformer', () => {
     "cz-conventional-changelog": "^3.3.0",
   },
   "engines": {
-    "node": ">=22.16.0",
+    "node": ">=24.14.0",
   },
   "files": [
     "src",
@@ -111,13 +104,6 @@ describe('Package transformer', () => {
   "funding": {
     "type": "individual",
     "url": "https://github.com/sponsors/nfroidure",
-  },
-  "greenkeeper": {
-    "ignore": [
-      "commitizen",
-      "cz-conventional-changelog",
-      "conventional-changelog-cli",
-    ],
   },
   "license": "MIT",
   "metapak": {
@@ -145,15 +131,15 @@ describe('Package transformer', () => {
 
   test('should work with a child package.json', () => {
     expect(
-      packageTransformer({
-        metapak: {
-          configs: ['main'],
-          data: {
-            childPackage: true,
-          },
-        },
-      }),
-    ).toMatchInlineSnapshot(`
+  packageTransformer({
+    metapak: {
+      configs: ['main'],
+      data: {
+        childPackage: true
+      }
+    }
+  })
+).toMatchInlineSnapshot(`
 {
   "author": {
     "email": "nicolas.froidure@insertafter.com",
@@ -162,7 +148,7 @@ describe('Package transformer', () => {
   },
   "contributors": [],
   "engines": {
-    "node": ">=22.16.0",
+    "node": ">=24.14.0",
   },
   "files": [
     "src",
@@ -196,19 +182,19 @@ describe('Package transformer', () => {
 
   test('should let existing lin & test scripts', () => {
     expect(
-      packageTransformer({
-        scripts: {
-          test: 'echo "Testing is doubting"',
-          lint: 'echo "Linting is fearing"',
-        },
-        metapak: {
-          configs: ['main'],
-          data: {
-            childPackage: true,
-          },
-        },
-      }),
-    ).toMatchInlineSnapshot(`
+  packageTransformer({
+    scripts: {
+      test: 'echo "Testing is doubting"',
+      lint: 'echo "Linting is fearing"'
+    },
+    metapak: {
+      configs: ['main'],
+      data: {
+        childPackage: true
+      }
+    }
+  })
+).toMatchInlineSnapshot(`
 {
   "author": {
     "email": "nicolas.froidure@insertafter.com",
@@ -217,7 +203,7 @@ describe('Package transformer', () => {
   },
   "contributors": [],
   "engines": {
-    "node": ">=22.16.0",
+    "node": ">=24.14.0",
   },
   "files": [
     "src",

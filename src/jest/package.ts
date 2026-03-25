@@ -5,7 +5,6 @@ import type { Config } from 'jest';
 const transformer: PackageJSONTransformer<
   { childPackage?: boolean; rootPackage?: boolean; jestRoots?: string[] },
   {
-    greenkeeper?: { ignore?: string[] };
     jest?: Config;
   }
 > = (packageConf) => {
@@ -26,7 +25,7 @@ const transformer: PackageJSONTransformer<
   packageConf.scripts.cover = `node --run jest -- --coverage`;
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jest = '^30.0.4';
+  packageConf.devDependencies.jest = '^30.3.0';
 
   // Remove old coveralls configs
   delete packageConf.scripts.coveralls;
@@ -68,31 +67,11 @@ const transformer: PackageJSONTransformer<
   }
 
   // Special configuration for TypeScript
-  if (configs.includes('typescript') || configs.includes('tsesm')) {
-    delete packageConf?.devDependencies?.['@types/jest'];
-    delete packageConf?.dependencies?.['@types/jest'];
-  }
   if (configs.includes('tsesm')) {
     delete packageConf.devDependencies['ts-jest'];
     delete packageConf.devDependencies['esbuild'];
     delete packageConf.devDependencies['esbuild-jest'];
     packageConf.devDependencies['@swc/jest'] = '^0.2.39';
-  }
-
-  if (configs.includes('typescript')) {
-    delete packageConf.devDependencies['ts-jest'];
-  }
-
-  if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
-    packageConf.greenkeeper = {
-      ignore: [
-        ...new Set(
-          (packageConf?.greenkeeper?.ignore || [])
-            .concat(['jest', 'coveralls', '@swc/jest'])
-            .filter((dependency) => packageConf?.devDependencies?.[dependency]),
-        ),
-      ],
-    };
   }
 
   return packageConf;

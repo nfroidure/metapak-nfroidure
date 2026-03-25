@@ -1,10 +1,8 @@
-import type { PackageJSONTransformer } from 'metapak';
+import { type PackageJSONTransformer } from 'metapak';
 
 const transformer: PackageJSONTransformer<
   { childPackage?: boolean; rootPackage?: boolean; files?: string },
-  {
-    greenkeeper?: { ignore?: string[] };
-  }
+  object
 > = (packageConf) => {
   const {
     metapak: { data, configs },
@@ -28,12 +26,13 @@ const transformer: PackageJSONTransformer<
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.eslint = '^9.30.1';
-  packageConf.devDependencies['@eslint/js'] = '^9.30.1';
-  packageConf.devDependencies.prettier = '^3.6.2';
-  packageConf.devDependencies['eslint-config-prettier'] = '^10.1.5';
-  packageConf.devDependencies['eslint-plugin-prettier'] = '^5.5.1';
-  packageConf.devDependencies['eslint-plugin-jest'] = '^29.0.1';
+  packageConf.devDependencies.eslint = '^10.1.0';
+  packageConf.devDependencies['@eslint/js'] = '^10.0.1';
+  packageConf.devDependencies.prettier = '^3.8.1';
+  packageConf.devDependencies['eslint-config-prettier'] = '^10.1.8';
+  packageConf.devDependencies['eslint-plugin-prettier'] = '^5.5.5';
+  packageConf.devDependencies['eslint-plugin-jest'] = '^29.15.1';
+
   // Remove old tweaks
   if ((packageConf.overrides as { eslint: string })?.eslint) {
     delete packageConf.overrides;
@@ -51,25 +50,19 @@ const transformer: PackageJSONTransformer<
   delete packageConf.devDependencies['@typescript-eslint/parser'];
 
   // Special configuration for TypeScript
-  if (configs.includes('typescript') || configs.includes('tsesm')) {
-    packageConf.devDependencies['typescript-eslint'] = '^8.36.0';
-  }
-
-  if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
-    packageConf.greenkeeper = {
-      ignore: [
-        ...new Set(
-          (packageConf?.greenkeeper?.ignore || [])
-            .concat([
-              'eslint',
-              'prettier',
-              'eslint-config-prettier',
-              'eslint-plugin-prettier',
-              'typescript-eslint',
-            ])
-            .filter((dependency) => packageConf?.devDependencies?.[dependency]),
-        ),
-      ],
+  if (configs.includes('tsesm')) {
+    packageConf.devDependencies['typescript-eslint'] = '^8.57.2';
+    // TEMPFIX: new ts version not included yet in tooling
+    packageConf.overrides = {
+      'typescript-eslint': {
+        typescript: '^6',
+      },
+      '@typescript-eslint/eslint-plugin': {
+        typescript: '^6',
+      },
+      '@typescript-eslint/parser': {
+        typescript: '^6',
+      },
     };
   }
 

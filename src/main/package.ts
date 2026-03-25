@@ -153,18 +153,8 @@ const transformer: PackageJSONTransformer<
     packageConf.devDependencies['cz-conventional-changelog'] = '^3.3.0';
     packageConf.devDependencies['conventional-changelog-cli'] = '^5.0.0';
 
-    // Avoid GreenKeeper to update automatically added modules
-    // except for this module so that we still benefit from
-    // greenkeeper but once to avoid PR spam ;)
-    if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
-      packageConf.greenkeeper = {
-        ignore: [
-          'commitizen',
-          'cz-conventional-changelog',
-          'conventional-changelog-cli',
-        ].filter((dependency) => packageConf?.devDependencies?.[dependency]),
-      };
-    }
+    // GreenKeeper is dead
+    delete packageConf.greenkeeper;
   }
 
   // This job is already done by NPM, but once,.

@@ -5,9 +5,7 @@ const ARCHITECTURE_SCRIPT = 'node --run architecture';
 
 const transformer: PackageJSONTransformer<
   { childPackage?: boolean; rootPackage?: boolean; files: string },
-  {
-    greenkeeper?: { ignore?: string[] };
-  }
+  object
 > = (packageConf) => {
   const {
     metapak: { data, configs },
@@ -33,10 +31,7 @@ const transformer: PackageJSONTransformer<
   }
 
   // Special configuration for TypeScript
-  if (
-    (configs.includes('typescript') || configs.includes('tsesm')) &&
-    !packageConf.jsarch
-  ) {
+  if (configs.includes('tsesm') && !packageConf.jsarch) {
     packageConf.jsarch = {
       parserOptions: {
         plugins: ['typescript'],
@@ -46,16 +41,7 @@ const transformer: PackageJSONTransformer<
 
   // Add jsarch dep
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jsarch = '^6.2.1';
-
-  // Avoid GreenKeeper to update automatically added modules
-  if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
-    packageConf.greenkeeper = {
-      ignore: [
-        ...new Set((packageConf?.greenkeeper?.ignore || []).concat(['jsarch'])),
-      ].filter((dependency) => packageConf?.devDependencies?.[dependency]),
-    };
-  }
+  packageConf.devDependencies.jsarch = '^6.2.2';
 
   return packageConf;
 };

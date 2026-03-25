@@ -1,7 +1,11 @@
 import path from 'path';
 import config from '../config.js';
 import { printStackTrace } from 'yerror';
-import type { FSService, LogService, PackageAssetsTransformer } from 'metapak';
+import {
+  type FSService,
+  type LogService,
+  type PackageAssetsTransformer,
+} from 'metapak';
 
 const USERNAME = 'nfroidure';
 const README_CONTENTS_START_TAG = `[//]: # (::contents:start)`;
@@ -20,7 +24,7 @@ const transformer: PackageAssetsTransformer<
     metapak: { data, configs },
   } = packageConf;
   const ghPath = getGitHubPathFromModuleName(
-    packageConf.name,
+    packageConf.name as string,
     data.childPackage,
   );
 
@@ -130,7 +134,10 @@ async function _getAPIContents({
   return content.toString();
 }
 
-function getGitHubPathFromModuleName(packageName, childPackage = false) {
+function getGitHubPathFromModuleName(
+  packageName: string,
+  childPackage = false,
+) {
   if (!packageName.startsWith('@')) {
     return `/${packageName}/blob/main`;
   }
@@ -141,7 +148,7 @@ function getGitHubPathFromModuleName(packageName, childPackage = false) {
     : `/${scope}-${name}/blob/main`;
 }
 
-function getGitHubProjectFromRepoURL(repoURL) {
+function getGitHubProjectFromRepoURL(repoURL: string) {
   return repoURL.replace(
     /^(?:git\+|)(?:https|ssh):\/\/(?:git@|)github.com\/([^/]+\/[^.]+)\.git$/,
     '$1',

@@ -4,26 +4,24 @@ import packageTransformer from './package.js';
 describe('Package transformer for jsdocs', () => {
   test('should work with an empty package.json', () => {
     expect(
-      packageTransformer({
-        metapak: {
-          configs: ['jsdocs'],
-          data: {
-            files: 'yolo.js',
-          },
-        },
-        greenkeeper: {
-          ignore: [],
-        },
-      }),
-    ).toMatchInlineSnapshot(`
+  packageTransformer({
+    metapak: {
+      configs: ['jsdocs'],
+      data: {
+        files: 'yolo.js'
+      }
+    },
+    greenkeeper: {
+      ignore: []
+    }
+  })
+).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "jsdoc-to-markdown": "^9.1.1",
+    "jsdoc-to-markdown": "^9.1.3",
   },
   "greenkeeper": {
-    "ignore": [
-      "jsdoc-to-markdown",
-    ],
+    "ignore": [],
   },
   "metapak": {
     "configs": [
@@ -44,27 +42,25 @@ describe('Package transformer for jsdocs', () => {
 
   test('should work with a typescript setup', () => {
     expect(
-      packageTransformer({
-        metapak: {
-          configs: ['jsdocs', 'typescript'],
-          data: {
-            files: 'yolo.ts',
-            distFiles: 'yolo.js',
-          },
-        },
-        greenkeeper: {
-          ignore: [],
-        },
-      }),
-    ).toMatchInlineSnapshot(`
+  packageTransformer({
+    metapak: {
+      configs: ['jsdocs', 'typescript'],
+      data: {
+        files: 'yolo.ts',
+        distFiles: 'yolo.js'
+      }
+    },
+    greenkeeper: {
+      ignore: []
+    }
+  })
+).toMatchInlineSnapshot(`
 {
   "devDependencies": {
-    "jsdoc-to-markdown": "^9.1.1",
+    "jsdoc-to-markdown": "^9.1.3",
   },
   "greenkeeper": {
-    "ignore": [
-      "jsdoc-to-markdown",
-    ],
+    "ignore": [],
   },
   "metapak": {
     "configs": [
@@ -77,7 +73,7 @@ describe('Package transformer for jsdocs', () => {
     },
   },
   "scripts": {
-    "doc": "echo "# API" > API.md; jsdoc2md yolo.js >> API.md && git add API.md",
+    "doc": "echo "# API" > API.md; jsdoc2md yolo.ts >> API.md && git add API.md",
     "precz": "node --run doc",
     "preversion": "node --run doc",
   },

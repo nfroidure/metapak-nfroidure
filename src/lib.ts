@@ -1,5 +1,3 @@
-import escapeStringRegexp from 'escape-string-regexp';
-
 export function ensureScript(
   baseScript = '',
   addedScript: string,
@@ -11,18 +9,18 @@ export function ensureScript(
 
   if (
     typeof oldScript === 'string' &&
-    new RegExp(`(^| && )${escapeStringRegexp(oldScript)}($| && )`).test(
+    new RegExp(`(^| && )${RegExp.escape(oldScript)}($| && )`).test(
       baseScript,
     )
   ) {
     return baseScript.replace(
-      new RegExp(`(^| && )(${escapeStringRegexp(oldScript)})($| && )`),
+      new RegExp(`(^| && )(${RegExp.escape(oldScript)})($| && )`),
       `$1${addedScript}$3`,
     );
   }
 
   if (
-    new RegExp(`(^| && )${escapeStringRegexp(addedScript)}($| && )`).test(
+    new RegExp(`(^| && )${RegExp.escape(addedScript)}($| && )`).test(
       baseScript,
     )
   ) {

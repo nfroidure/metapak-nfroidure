@@ -11,9 +11,7 @@ const transformer: PackageJSONTransformer<
     distFiles?: string;
     files?: string;
   },
-  {
-    greenkeeper?: { ignore?: string[] };
-  }
+  object
 > = (packageConf) => {
   const {
     metapak: { data, configs },
@@ -24,9 +22,7 @@ const transformer: PackageJSONTransformer<
   packageConf.scripts.doc = data.rootPackage
     ? 'lerna run doc'
     : `echo "# API" > ${config.apiPath}; jsdoc2md ${
-        configs.includes('typescript') || configs.includes('tsesm')
-          ? data.distFiles
-          : data.files
+        configs.includes('tsesm') ? data.distFiles : data.files
       } >> ${config.apiPath} && git add ${config.apiPath}`;
 
   if (!data.childPackage) {
@@ -44,20 +40,7 @@ const transformer: PackageJSONTransformer<
 
   // Add doc deps
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies['jsdoc-to-markdown'] = '^9.1.1';
-
-  // Avoid GreenKeeper to update automatically added modules
-  if ('metapak-nfroidure' !== packageConf.name && !data.childPackage) {
-    packageConf.greenkeeper = {
-      ignore: [
-        ...new Set(
-          (packageConf?.greenkeeper?.ignore || []).concat([
-            'jsdoc-to-markdown',
-          ]),
-        ),
-      ].filter((dependency) => packageConf?.devDependencies?.[dependency]),
-    };
-  }
+  packageConf.devDependencies['jsdoc-to-markdown'] = '^9.1.3';
 
   return packageConf;
 };

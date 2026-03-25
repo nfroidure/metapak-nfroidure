@@ -5,26 +5,21 @@ describe('mocha', () => {
   describe('Package transformer', () => {
     test('should work with some files', () => {
       expect(
-        packageTransformer({
-          metapak: {
-            configs: ['jest'],
-            data: {},
-          },
-          scripts: {
-            test: '',
-          },
-          dependencies: {},
-        }),
-      ).toMatchInlineSnapshot(`
+  packageTransformer({
+    metapak: {
+      configs: ['jest'],
+      data: {}
+    },
+    scripts: {
+      test: ''
+    },
+    dependencies: {}
+  })
+).toMatchInlineSnapshot(`
 {
   "dependencies": {},
   "devDependencies": {
-    "jest": "^30.0.4",
-  },
-  "greenkeeper": {
-    "ignore": [
-      "jest",
-    ],
+    "jest": "^30.3.0",
   },
   "jest": {
     "coverageReporters": [
@@ -54,28 +49,30 @@ describe('mocha', () => {
 
     test('should work with child packages', () => {
       expect(
-        packageTransformer({
-          metapak: {
-            configs: ['jest', 'tsesm'],
-            data: {
-              childPackage: true,
-            },
-          },
-          jest: {
-            moduleNameMapper: {
-              '#(.*)': '<rootDir>/../../node_modules/$1',
-            },
-          },
-          dependencies: {
-            '@types/jest': '^28.1.1',
-          },
-        }),
-      ).toMatchInlineSnapshot(`
+  packageTransformer({
+    metapak: {
+      configs: ['jest', 'tsesm'],
+      data: {
+        childPackage: true
+      }
+    },
+    jest: {
+      moduleNameMapper: {
+        '#(.*)': '<rootDir>/../../node_modules/$1'
+      }
+    },
+    dependencies: {
+      '@types/jest': '^28.1.1'
+    }
+  })
+).toMatchInlineSnapshot(`
 {
-  "dependencies": {},
+  "dependencies": {
+    "@types/jest": "^28.1.1",
+  },
   "devDependencies": {
     "@swc/jest": "^0.2.39",
-    "jest": "^30.0.4",
+    "jest": "^30.3.0",
   },
   "jest": {
     "coverageReporters": [
