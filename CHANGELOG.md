@@ -1,3 +1,10 @@
+## [21.1.2](https://github.com/nfroidure/metapak-nfroidure/compare/v21.1.1...v21.1.2) (2026-03-25)
+
+
+### Bug Fixes
+
+* fix vscode deprecation warning ([568ed86](https://github.com/nfroidure/metapak-nfroidure/commit/568ed861c6e83f2bef8c774d9c597064ec857fce))
+
 ## [21.1.1](https://github.com/nfroidure/metapak-nfroidure/compare/v21.1.0...v21.1.1) (2026-03-25)
 
 
