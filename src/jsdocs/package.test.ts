@@ -33,7 +33,7 @@ describe('Package transformer for jsdocs', () => {
   },
   "scripts": {
     "doc": "echo "# API" > API.md; jsdoc2md yolo.js >> API.md && git add API.md",
-    "precz": "node --run doc",
+    "precommit": "node --run doc",
     "preversion": "node --run doc",
   },
 }
@@ -74,7 +74,7 @@ describe('Package transformer for jsdocs', () => {
   },
   "scripts": {
     "doc": "echo "# API" > API.md; jsdoc2md yolo.ts >> API.md && git add API.md",
-    "precz": "node --run doc",
+    "precommit": "node --run doc",
     "preversion": "node --run doc",
   },
 }

@@ -26,8 +26,8 @@ const transformer: PackageJSONTransformer<
       } >> ${config.apiPath} && git add ${config.apiPath}`;
 
   if (!data.childPackage) {
-    packageConf.scripts.precz = ensureScript(
-      packageConf.scripts.precz,
+    packageConf.scripts.precommit = ensureScript(
+      packageConf.scripts.precommit,
       DOCUMENTATION_SCRIPT,
       'npm run doc',
     );

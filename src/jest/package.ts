@@ -62,8 +62,8 @@ const transformer: PackageJSONTransformer<
   // Jest lesser than v30 was not compatible with prettier v3
   // Let's remove this tweak now that is is supported
   // https://github.com/jestjs/jest/issues/14305
-  if ('prettierPath' in packageConf) {
-    delete packageConf.prettierPath;
+  if ('prettierPath' in packageConf.jest) {
+    delete packageConf.jest.prettierPath;
   }
 
   // Special configuration for TypeScript

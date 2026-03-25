@@ -33,7 +33,7 @@ describe('Package transformer for jsdocs', () => {
   },
   "scripts": {
     "architecture": "jsarch yolo.js > ARCHITECTURE.md && git add ARCHITECTURE.md",
-    "precz": "node --run architecture",
+    "precommit": "node --run architecture",
     "preversion": "node --run architecture",
   },
 }

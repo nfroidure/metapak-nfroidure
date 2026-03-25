@@ -15,28 +15,33 @@ describe('main', () => {
           },
         ),
       ).toMatchInlineSnapshot(`
-        {
-          "commit-msg": [
-            "
-        if [ "$NODE_ENV" != "cli" ] ; then
-          if grep -q '^[0-9]\\+.[0-9]\\+.[0-9]\\+$' "$1" ; then
-            exit 0;
-          else
-            echo "⚠️ - Please commit with \\\`npm run cz -- (usual commit args)\\\`"
-            echo "💊 - To bypass commitizen add \\\`NODE_ENV=cli\\\` to your command"
-            echo "💡 - You may want to set an alias: \\\`alias gicz='npm run cz -- '\\\`"
-            exit 1;
-          fi
-        fi",
-          ],
-          "pre-commit": [
-            "
-        if ! git diff-files --quiet --ignore-submodules ; then
-          echo "⚠️ - Unstaged files found:"
-          echo $(git diff-files --shortstat)
-        fi",
-          ],
-        }
+       {
+         "commit-msg": [
+           "
+       if [ "$NODE_ENV" != "cli" ] ; then
+         if grep -q '^[0-9]\\+.[0-9]\\+.[0-9]\\+$' "$1" ; then
+           exit 0;
+         else
+           node --run commitlint -- --edit "$1" || FAILURE=1;
+           if [ "$FAILURE" = 1 ]; then
+             exit 1;
+           fi
+         fi
+       fi",
+         ],
+         "pre-commit": [
+           "
+       node --run precommit || FAILURE=1;
+       if [ "$FAILURE" = 1 ]; then
+         exit 1;
+       fi",
+           "
+       if ! git diff-files --quiet --ignore-submodules ; then
+         echo "⚠️ - Unstaged files found:"
+         echo $(git diff-files --shortstat)
+       fi",
+         ],
+       }
       `);
     });
 
@@ -52,28 +57,33 @@ describe('main', () => {
           },
         ),
       ).toMatchInlineSnapshot(`
-        {
-          "commit-msg": [
-            "
-        if [ "$NODE_ENV" != "cli" ] ; then
-          if grep -q '^[0-9]\\+.[0-9]\\+.[0-9]\\+$' "$1" ; then
-            exit 0;
-          else
-            echo "⚠️ - Please commit with \\\`npm run cz -- (usual commit args)\\\`"
-            echo "💊 - To bypass commitizen add \\\`NODE_ENV=cli\\\` to your command"
-            echo "💡 - You may want to set an alias: \\\`alias gicz='npm run cz -- '\\\`"
-            exit 1;
-          fi
-        fi",
-          ],
-          "pre-commit": [
-            "
-        if ! git diff-files --quiet --ignore-submodules ; then
-          echo "⚠️ - Unstaged files found:"
-          echo $(git diff-files --shortstat)
-        fi",
-          ],
-        }
+       {
+         "commit-msg": [
+           "
+       if [ "$NODE_ENV" != "cli" ] ; then
+         if grep -q '^[0-9]\\+.[0-9]\\+.[0-9]\\+$' "$1" ; then
+           exit 0;
+         else
+           node --run commitlint -- --edit "$1" || FAILURE=1;
+           if [ "$FAILURE" = 1 ]; then
+             exit 1;
+           fi
+         fi
+       fi",
+         ],
+         "pre-commit": [
+           "
+       node --run precommit || FAILURE=1;
+       if [ "$FAILURE" = 1 ]; then
+         exit 1;
+       fi",
+           "
+       if ! git diff-files --quiet --ignore-submodules ; then
+         echo "⚠️ - Unstaged files found:"
+         echo $(git diff-files --shortstat)
+       fi",
+         ],
+       }
       `);
     });
   });

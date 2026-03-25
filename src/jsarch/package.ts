@@ -18,8 +18,8 @@ const transformer: PackageJSONTransformer<
     : 'jsarch ' + data.files + ' > ARCHITECTURE.md && git add ARCHITECTURE.md';
 
   if (!data.childPackage) {
-    packageConf.scripts.precz = ensureScript(
-      packageConf.scripts.precz,
+    packageConf.scripts.precommit = ensureScript(
+      packageConf.scripts.precommit,
       ARCHITECTURE_SCRIPT,
       'npm run architecture',
     );

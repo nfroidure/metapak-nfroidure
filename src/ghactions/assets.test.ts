@@ -90,8 +90,10 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
+      - name: Validate commit messages
+        run: node --run commitlint -- --from=HEAD~1
       - name: Run pre-commit tests
-        run: npm run precz
+        run: node --run precommit
 ",
   "dir": "/home/whoami/project/dir",
   "name": ".github/workflows/test.yml",

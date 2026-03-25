@@ -28,7 +28,7 @@ describe('private', () => {
   },
   "scripts": {
     "build": "rimraf 'dist' && tsc --outDir dist",
-    "precz": "node --run build",
+    "precommit": "node --run build",
     "preversion": "node --run build",
     "rebuild": "swc ./src -s -d dist -C jsc.target=es2022",
   },

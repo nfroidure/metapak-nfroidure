@@ -40,8 +40,8 @@ const transformer: PackageJSONTransformer<
 
   // Install mandatory scripts
   if (!data.childPackage) {
-    packageConf.scripts.precz = ensureScript(
-      packageConf.scripts.precz,
+    packageConf.scripts.precommit = ensureScript(
+      packageConf.scripts.precommit,
       BUILD_COMMAND,
       'npm run build',
     );

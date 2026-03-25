@@ -1,6 +1,6 @@
 import { ensureScript } from '../lib.js';
 import config from '../config.js';
-import type { PackageJSONTransformer } from 'metapak';
+import { type PackageJSONTransformer } from 'metapak';
 
 const GITHUB_REPOSITORY_REGEXP =
   /git\+https:\/\/github.com\/([a-zA-Z0-9-]+)\/([a-zA-Z0-9-]+)\.git/;
@@ -84,21 +84,23 @@ const transformer: PackageJSONTransformer<
       : packageConf.scripts.format || 'echo "WARNING: No formatter specified"';
   }
 
-  // Let's use commitizen on main packages
+  // Let's use commitlint on main packages
   if (!data.childPackage) {
-    packageConf.scripts.cz = 'env NODE_ENV=${NODE_ENV:-cli} git cz';
-    packageConf.scripts.precz = ensureScript(
-      packageConf.scripts.precz,
+    delete packageConf.scripts.cz;
+    delete packageConf.scripts.precz;
+    packageConf.scripts.commitlint = 'commitlint';
+    packageConf.scripts.precommit = ensureScript(
+      packageConf.scripts.precommit,
       TEST_SCRIPT,
       'npm t',
     );
-    packageConf.scripts.precz = ensureScript(
-      packageConf.scripts.precz,
+    packageConf.scripts.precommit = ensureScript(
+      packageConf.scripts.precommit,
       LINT_SCRIPT,
       'npm run lint',
     );
-    packageConf.scripts.precz = ensureScript(
-      packageConf.scripts.precz,
+    packageConf.scripts.precommit = ensureScript(
+      packageConf.scripts.precommit,
       data.rootPackage
         ? `${METAPAK_LERNA_SCRIPT} && ${METAPAK_SCRIPT}`
         : METAPAK_SCRIPT,
@@ -107,11 +109,7 @@ const transformer: PackageJSONTransformer<
         : 'npm run metapak -- -s',
     );
 
-    packageConf.config = {
-      commitizen: {
-        path: './node_modules/cz-conventional-changelog',
-      },
-    };
+    packageConf.config = {};
 
     // Add the changelog stuffs
     packageConf.scripts.changelog = data.rootPackage
@@ -149,9 +147,13 @@ const transformer: PackageJSONTransformer<
 
     // Add the MUST HAVE dev dependencies
     packageConf.devDependencies = packageConf.devDependencies || {};
-    packageConf.devDependencies.commitizen = '^4.3.1';
-    packageConf.devDependencies['cz-conventional-changelog'] = '^3.3.0';
+
+    packageConf.devDependencies['@commitlint/cli'] = '^20.5.0';
+    packageConf.devDependencies['@commitlint/config-conventional'] = '^20.5.0';
     packageConf.devDependencies['conventional-changelog'] = '^7.2.0';
+
+    delete packageConf.devDependencies.commitizen;
+    delete packageConf.devDependencies['cz-conventional-changelog'];
     delete packageConf.devDependencies['conventional-changelog-cli'];
 
     // GreenKeeper is dead

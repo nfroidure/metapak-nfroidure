@@ -38,12 +38,12 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "cli": "env NODE_ENV=${NODE_ENV:-cli}",
     "cover": "node --run jest -- --coverage",
-    "cz": "env NODE_ENV=${NODE_ENV:-cli} git cz",
     "format": "node --run prettier",
     "jest": "NODE_OPTIONS=--experimental-vm-modules NODE_ENV=test jest",
     "lint": "eslint 'src/**/*.ts'",
     "metapak": "metapak",
-    "precz": "node --run test && node --run lint && node --run build && node --run metapak -- -s",
+    "commitlint": "commitlint",
+    "precommit": "node --run test && node --run lint && node --run metapak -- -s && node --run build",
     "prettier": "prettier --write 'src/**/*.ts'",
     "preversion": "node --run test && node --run lint && node --run build && node --run metapak -- -s",
     "rebuild": "swc ./src -s -d dist -C jsc.target=es2022",
@@ -67,14 +67,14 @@
   },
   "homepage": "https://github.com/nfroidure/metapak-nfroidure#readme",
   "devDependencies": {
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
     "@eslint/js": "^10.0.1",
     "@swc/cli": "^0.8.0",
     "@swc/core": "^1.15.21",
     "@swc/jest": "^0.2.39",
     "@types/eslint": "^9.6.1",
-    "commitizen": "^4.3.1",
     "conventional-changelog": "^7.2.0",
-    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^10.1.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jest": "^29.15.1",
@@ -86,11 +86,7 @@
     "typescript": "^6.0.2",
     "typescript-eslint": "^8.57.2"
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
+  "config": {},
   "dependencies": {
     "yerror": "^8.0.0"
   },
@@ -142,8 +138,7 @@
     },
     "extensionsToTreatAsEsm": [
       ".ts"
-    ],
-    "prettierPath": null
+    ]
   },
   "funding": {
     "type": "individual",
