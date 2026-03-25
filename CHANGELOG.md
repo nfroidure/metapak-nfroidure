@@ -1,3 +1,10 @@
+## [21.1.1](https://github.com/nfroidure/metapak-nfroidure/compare/v21.1.0...v21.1.1) (2026-03-25)
+
+
+### Bug Fixes
+
+* properly lint version commits ([05f9f3c](https://github.com/nfroidure/metapak-nfroidure/commit/05f9f3c6a9e9aef6e2c3d1c2bf3271c8d498d1ca))
+
 # [21.1.0](https://github.com/nfroidure/metapak-nfroidure/compare/v21.0.0...v21.1.0) (2026-03-25)
 
 
