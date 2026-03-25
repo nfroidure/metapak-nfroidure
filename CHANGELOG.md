@@ -1,3 +1,15 @@
+# [21.1.0](https://github.com/nfroidure/metapak-nfroidure/compare/v21.0.0...v21.1.0) (2026-03-25)
+
+
+### Bug Fixes
+
+* **build:** fix typescript config ([043648a](https://github.com/nfroidure/metapak-nfroidure/commit/043648a100783ebe30b824d38dbc8f161f3feaf0))
+
+
+### Features
+
+* add commit lint support ([95e35ae](https://github.com/nfroidure/metapak-nfroidure/commit/95e35ae0944333632151aaed5d3e96b1e2059b40))
+
 # [21.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v20.0.5...v21.0.0) (2026-03-25)
 ## [20.0.5](https://github.com/nfroidure/metapak-nfroidure/compare/v20.0.4...v20.0.5) (2025-07-11)
 
