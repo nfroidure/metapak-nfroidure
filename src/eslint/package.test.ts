@@ -5,15 +5,15 @@ describe('eslint', () => {
   describe('Package transformer', () => {
     test('should work with some files', () => {
       expect(
-  packageTransformer({
-    metapak: {
-      configs: ['eslint'],
-      data: {
-        files: 'src/*.js src/**/*.js'
-      }
-    }
-  })
-).toMatchInlineSnapshot(`
+        packageTransformer({
+          metapak: {
+            configs: ['eslint'],
+            data: {
+              files: 'src/*.js src/**/*.js',
+            },
+          },
+        }),
+      ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -49,16 +49,16 @@ describe('eslint', () => {
 
     test('should work with child packages', () => {
       expect(
-  packageTransformer({
-    metapak: {
-      configs: ['eslint'],
-      data: {
-        childPackage: true,
-        files: 'src/*.js src/**/*.js'
-      }
-    }
-  })
-).toMatchInlineSnapshot(`
+        packageTransformer({
+          metapak: {
+            configs: ['eslint'],
+            data: {
+              childPackage: true,
+              files: 'src/*.js src/**/*.js',
+            },
+          },
+        }),
+      ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -95,16 +95,16 @@ describe('eslint', () => {
 
     test('should work with typescript configs', () => {
       expect(
-  packageTransformer({
-    metapak: {
-      configs: ['eslint', 'typescript'],
-      data: {
-        childPackage: true,
-        files: 'src/*.js src/**/*.js'
-      }
-    }
-  })
-).toMatchInlineSnapshot(`
+        packageTransformer({
+          metapak: {
+            configs: ['eslint', 'typescript'],
+            data: {
+              childPackage: true,
+              files: 'src/*.js src/**/*.js',
+            },
+          },
+        }),
+      ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
     "@eslint/js": "^10.0.1",

@@ -9,9 +9,7 @@ export function ensureScript(
 
   if (
     typeof oldScript === 'string' &&
-    new RegExp(`(^| && )${RegExp.escape(oldScript)}($| && )`).test(
-      baseScript,
-    )
+    new RegExp(`(^| && )${RegExp.escape(oldScript)}($| && )`).test(baseScript)
   ) {
     return baseScript.replace(
       new RegExp(`(^| && )(${RegExp.escape(oldScript)})($| && )`),
@@ -20,9 +18,7 @@ export function ensureScript(
   }
 
   if (
-    new RegExp(`(^| && )${RegExp.escape(addedScript)}($| && )`).test(
-      baseScript,
-    )
+    new RegExp(`(^| && )${RegExp.escape(addedScript)}($| && )`).test(baseScript)
   ) {
     return baseScript;
   }

@@ -4,18 +4,18 @@ import packageTransformer from './package.js';
 describe('Package transformer for jsdocs', () => {
   test('should work with an empty package.json', () => {
     expect(
-  packageTransformer({
-    metapak: {
-      configs: ['jsdocs'],
-      data: {
-        files: 'yolo.js'
-      }
-    },
-    greenkeeper: {
-      ignore: []
-    }
-  })
-).toMatchInlineSnapshot(`
+      packageTransformer({
+        metapak: {
+          configs: ['jsdocs'],
+          data: {
+            files: 'yolo.js',
+          },
+        },
+        greenkeeper: {
+          ignore: [],
+        },
+      }),
+    ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
     "jsdoc-to-markdown": "^9.1.3",
@@ -42,19 +42,19 @@ describe('Package transformer for jsdocs', () => {
 
   test('should work with a typescript setup', () => {
     expect(
-  packageTransformer({
-    metapak: {
-      configs: ['jsdocs', 'typescript'],
-      data: {
-        files: 'yolo.ts',
-        distFiles: 'yolo.js'
-      }
-    },
-    greenkeeper: {
-      ignore: []
-    }
-  })
-).toMatchInlineSnapshot(`
+      packageTransformer({
+        metapak: {
+          configs: ['jsdocs', 'typescript'],
+          data: {
+            files: 'yolo.ts',
+            distFiles: 'yolo.js',
+          },
+        },
+        greenkeeper: {
+          ignore: [],
+        },
+      }),
+    ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
     "jsdoc-to-markdown": "^9.1.3",

@@ -5,18 +5,17 @@ describe('private', () => {
   describe('Package transformer', () => {
     test('should work', () => {
       expect(
-  packageTransformer({
-    metapak: {
-      configs: ['tsesm'],
-      data: {}
-    }
-  })
-).toMatchInlineSnapshot(`
+        packageTransformer({
+          metapak: {
+            configs: ['tsesm'],
+            data: {},
+          },
+        }),
+      ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
     "@swc/cli": "^0.8.0",
     "@swc/core": "^1.15.21",
-    "@swc/helpers": "^0.5.19",
     "rimraf": "^6.1.3",
     "typescript": "^6.0.2",
   },

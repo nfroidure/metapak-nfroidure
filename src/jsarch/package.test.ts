@@ -4,18 +4,18 @@ import packageTransformer from './package.js';
 describe('Package transformer for jsdocs', () => {
   test('should work with an empty package.json', () => {
     expect(
-  packageTransformer({
-    metapak: {
-      configs: ['jsarch'],
-      data: {
-        files: 'yolo.js'
-      }
-    },
-    greenkeeper: {
-      ignore: []
-    }
-  })
-).toMatchInlineSnapshot(`
+      packageTransformer({
+        metapak: {
+          configs: ['jsarch'],
+          data: {
+            files: 'yolo.js',
+          },
+        },
+        greenkeeper: {
+          ignore: [],
+        },
+      }),
+    ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
     "jsarch": "^6.2.2",
@@ -42,19 +42,19 @@ describe('Package transformer for jsdocs', () => {
 
   test('should work with child package', () => {
     expect(
-  packageTransformer({
-    metapak: {
-      configs: ['jsarch'],
-      data: {
-        childPackage: true,
-        files: 'yolo.js'
-      }
-    },
-    greenkeeper: {
-      ignore: []
-    }
-  })
-).toMatchInlineSnapshot(`
+      packageTransformer({
+        metapak: {
+          configs: ['jsarch'],
+          data: {
+            childPackage: true,
+            files: 'yolo.js',
+          },
+        },
+        greenkeeper: {
+          ignore: [],
+        },
+      }),
+    ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
     "jsarch": "^6.2.2",
@@ -80,19 +80,19 @@ describe('Package transformer for jsdocs', () => {
 
   test('should work with typescrit configs', () => {
     expect(
-  packageTransformer({
-    metapak: {
-      configs: ['jsarch', 'typescript'],
-      data: {
-        childPackage: true,
-        files: 'yolo.js'
-      }
-    },
-    greenkeeper: {
-      ignore: []
-    }
-  })
-).toMatchInlineSnapshot(`
+      packageTransformer({
+        metapak: {
+          configs: ['jsarch', 'typescript'],
+          data: {
+            childPackage: true,
+            files: 'yolo.js',
+          },
+        },
+        greenkeeper: {
+          ignore: [],
+        },
+      }),
+    ).toMatchInlineSnapshot(`
 {
   "devDependencies": {
     "jsarch": "^6.2.2",

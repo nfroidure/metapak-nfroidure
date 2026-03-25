@@ -22,7 +22,7 @@ const transformer: PackageJSONTransformer<
   packageConf.devDependencies.rimraf = '^6.1.3';
   packageConf.devDependencies['@swc/cli'] = '^0.8.0';
   packageConf.devDependencies['@swc/core'] = '^1.15.21';
-  packageConf.devDependencies['@swc/helpers'] = '^0.5.19';
+  delete packageConf.devDependencies['@swc/helpers'];
 
   packageConf.scripts = packageConf.scripts || {};
   packageConf.scripts.build = data.rootPackage

@@ -5,17 +5,17 @@ describe('mocha', () => {
   describe('Package transformer', () => {
     test('should work with some files', () => {
       expect(
-  packageTransformer({
-    metapak: {
-      configs: ['jest'],
-      data: {}
-    },
-    scripts: {
-      test: ''
-    },
-    dependencies: {}
-  })
-).toMatchInlineSnapshot(`
+        packageTransformer({
+          metapak: {
+            configs: ['jest'],
+            data: {},
+          },
+          scripts: {
+            test: '',
+          },
+          dependencies: {},
+        }),
+      ).toMatchInlineSnapshot(`
 {
   "dependencies": {},
   "devDependencies": {
@@ -49,23 +49,23 @@ describe('mocha', () => {
 
     test('should work with child packages', () => {
       expect(
-  packageTransformer({
-    metapak: {
-      configs: ['jest', 'tsesm'],
-      data: {
-        childPackage: true
-      }
-    },
-    jest: {
-      moduleNameMapper: {
-        '#(.*)': '<rootDir>/../../node_modules/$1'
-      }
-    },
-    dependencies: {
-      '@types/jest': '^28.1.1'
-    }
-  })
-).toMatchInlineSnapshot(`
+        packageTransformer({
+          metapak: {
+            configs: ['jest', 'tsesm'],
+            data: {
+              childPackage: true,
+            },
+          },
+          jest: {
+            moduleNameMapper: {
+              '#(.*)': '<rootDir>/../../node_modules/$1',
+            },
+          },
+          dependencies: {
+            '@types/jest': '^28.1.1',
+          },
+        }),
+      ).toMatchInlineSnapshot(`
 {
   "dependencies": {
     "@types/jest": "^28.1.1",

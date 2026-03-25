@@ -151,7 +151,8 @@ const transformer: PackageJSONTransformer<
     packageConf.devDependencies = packageConf.devDependencies || {};
     packageConf.devDependencies.commitizen = '^4.3.1';
     packageConf.devDependencies['cz-conventional-changelog'] = '^3.3.0';
-    packageConf.devDependencies['conventional-changelog-cli'] = '^5.0.0';
+    packageConf.devDependencies['conventional-changelog'] = '^7.2.0';
+    delete packageConf.devDependencies['conventional-changelog-cli'];
 
     // GreenKeeper is dead
     delete packageConf.greenkeeper;
