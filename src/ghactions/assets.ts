@@ -21,7 +21,7 @@ const transformer: PackageAssetsTransformer<unknown, unknown> = async (
         versions.push(lastNodeLTSMajorPart + i);
       }
     }
-    file.data = file.data.replace(
+    file.data = file.data?.replace(
       'node-version: []',
       `node-version: [${versions.map((version) => version + '.x').join(', ')}]`,
     );

@@ -14,7 +14,7 @@ const transformer: PackageAssetsTransformer<
     } = packageConf;
 
     if (data.files) {
-      file.data = file.data.replace(/\*\*\.js/gm, data.files);
+      file.data = file.data?.replace(/\*\*\.js/gm, data.files);
     }
     if (data.testsFiles) {
       file.data += `## Exclude test files.

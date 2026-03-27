@@ -20,7 +20,7 @@ const transformer: PackageAssetsTransformer<
 
   // Add author to the license
   if ('LICENSE' === file.name) {
-    file.data = file.data.replace(
+    file.data = file.data?.replace(
       /<copyright holders>/gm,
       packageConf.author &&
         typeof packageConf.author === 'object' &&
@@ -32,7 +32,7 @@ const transformer: PackageAssetsTransformer<
 
   // Add NodeJS LTS where needed
   if (['.github/ISSUE_TEMPLATE'].includes(file.name)) {
-    file.data = file.data.replace(/<lastNodeLTS>/gm, config.lastNodeLTS);
+    file.data = file.data?.replace(/<lastNodeLTS>/gm, config.lastNodeLTS);
   }
 
   // Add .gitignore additionnal files

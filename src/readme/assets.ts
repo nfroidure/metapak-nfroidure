@@ -105,7 +105,7 @@ async function _getReadmeContents({
   log: LogService;
 }) {
   const filePath = path.join(PROJECT_DIR, 'README.md');
-  const contents = await fs.readFileAsync(filePath).catch((err) => {
+  const contents = await fs.readFileAsync(filePath).catch((err: Error) => {
     log('error', 'Cannot read the README.md file contents:', filePath);
     log('debug-stack', printStackTrace(err));
     throw err;
@@ -125,7 +125,7 @@ async function _getAPIContents({
 }) {
   const filePath = path.join(PROJECT_DIR, config.apiPath);
 
-  const content = await fs.readFileAsync(filePath).catch((err) => {
+  const content = await fs.readFileAsync(filePath).catch((err: Error) => {
     log('debug', 'Cannot read the API.md file contents:', filePath);
     log('debug-stack', printStackTrace(err));
     return '';
