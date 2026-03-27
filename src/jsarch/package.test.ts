@@ -16,28 +16,28 @@ describe('Package transformer for jsdocs', () => {
         },
       }),
     ).toMatchInlineSnapshot(`
-{
-  "devDependencies": {
-    "jsarch": "^6.2.2",
-  },
-  "greenkeeper": {
-    "ignore": [],
-  },
-  "metapak": {
-    "configs": [
-      "jsarch",
-    ],
-    "data": {
-      "files": "yolo.js",
-    },
-  },
-  "scripts": {
-    "architecture": "jsarch yolo.js > ARCHITECTURE.md && git add ARCHITECTURE.md",
-    "precommit": "node --run architecture",
-    "preversion": "node --run architecture",
-  },
-}
-`);
+     {
+       "devDependencies": {
+         "jsarch": "^7.0.0",
+       },
+       "greenkeeper": {
+         "ignore": [],
+       },
+       "metapak": {
+         "configs": [
+           "jsarch",
+         ],
+         "data": {
+           "files": "yolo.js",
+         },
+       },
+       "scripts": {
+         "architecture": "jsarch yolo.js > ARCHITECTURE.md && git add ARCHITECTURE.md",
+         "precommit": "node --run architecture",
+         "preversion": "node --run architecture",
+       },
+     }
+    `);
   });
 
   test('should work with child package', () => {
@@ -55,27 +55,27 @@ describe('Package transformer for jsdocs', () => {
         },
       }),
     ).toMatchInlineSnapshot(`
-{
-  "devDependencies": {
-    "jsarch": "^6.2.2",
-  },
-  "greenkeeper": {
-    "ignore": [],
-  },
-  "metapak": {
-    "configs": [
-      "jsarch",
-    ],
-    "data": {
-      "childPackage": true,
-      "files": "yolo.js",
-    },
-  },
-  "scripts": {
-    "architecture": "jsarch yolo.js > ARCHITECTURE.md && git add ARCHITECTURE.md",
-  },
-}
-`);
+     {
+       "devDependencies": {
+         "jsarch": "^7.0.0",
+       },
+       "greenkeeper": {
+         "ignore": [],
+       },
+       "metapak": {
+         "configs": [
+           "jsarch",
+         ],
+         "data": {
+           "childPackage": true,
+           "files": "yolo.js",
+         },
+       },
+       "scripts": {
+         "architecture": "jsarch yolo.js > ARCHITECTURE.md && git add ARCHITECTURE.md",
+       },
+     }
+    `);
   });
 
   test('should work with typescrit configs', () => {
@@ -93,27 +93,27 @@ describe('Package transformer for jsdocs', () => {
         },
       }),
     ).toMatchInlineSnapshot(`
-{
-  "devDependencies": {
-    "jsarch": "^6.2.2",
-  },
-  "greenkeeper": {
-    "ignore": [],
-  },
-  "metapak": {
-    "configs": [
-      "jsarch",
-      "typescript",
-    ],
-    "data": {
-      "childPackage": true,
-      "files": "yolo.js",
-    },
-  },
-  "scripts": {
-    "architecture": "jsarch yolo.js > ARCHITECTURE.md && git add ARCHITECTURE.md",
-  },
-}
-`);
+     {
+       "devDependencies": {
+         "jsarch": "^7.0.0",
+       },
+       "greenkeeper": {
+         "ignore": [],
+       },
+       "metapak": {
+         "configs": [
+           "jsarch",
+           "typescript",
+         ],
+         "data": {
+           "childPackage": true,
+           "files": "yolo.js",
+         },
+       },
+       "scripts": {
+         "architecture": "jsarch yolo.js > ARCHITECTURE.md && git add ARCHITECTURE.md",
+       },
+     }
+    `);
   });
 });
