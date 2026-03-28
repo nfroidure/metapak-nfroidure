@@ -109,7 +109,7 @@ const transformer: PackageJSONTransformer<
         : 'npm run metapak -- -s',
     );
 
-    packageConf.config = {};
+    delete packageConf.config;
 
     // Add the changelog stuffs
     packageConf.scripts.changelog = data.rootPackage

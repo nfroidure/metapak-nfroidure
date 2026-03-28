@@ -17,7 +17,6 @@ describe('Package transformer', () => {
          "name": "Nicolas Froidure",
          "url": "https://insertafter.com/en/index.html",
        },
-       "config": {},
        "contributors": [],
        "devDependencies": {
          "@commitlint/cli": "^20.5.0",
@@ -77,7 +76,6 @@ describe('Package transformer', () => {
          "name": "Nicolas Froidure",
          "url": "https://insertafter.com/en/index.html",
        },
-       "config": {},
        "contributors": [],
        "devDependencies": {
          "@commitlint/cli": "^20.5.0",

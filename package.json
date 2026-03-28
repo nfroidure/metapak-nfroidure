@@ -86,7 +86,6 @@
     "typescript": "^6.0.2",
     "typescript-eslint": "^8.57.2"
   },
-  "config": {},
   "dependencies": {
     "yerror": "^9.0.0"
   },
