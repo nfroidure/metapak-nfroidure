@@ -1,3 +1,10 @@
+## [22.0.2](https://github.com/nfroidure/metapak-nfroidure/compare/v22.0.1...v22.0.2) (2026-03-28)
+
+
+### Bug Fixes
+
+* **esm:** fix monorepo config for esm ([aeb6830](https://github.com/nfroidure/metapak-nfroidure/commit/aeb68309752fc9046be93f83880e4d20f716cfa7))
+
 ## [22.0.1](https://github.com/nfroidure/metapak-nfroidure/compare/v22.0.0...v22.0.1) (2026-03-27)
 
 # [22.0.0](https://github.com/nfroidure/metapak-nfroidure/compare/v21.1.3...v22.0.0) (2026-03-27)
