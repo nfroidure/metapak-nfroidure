@@ -18,7 +18,7 @@ describe('Package transformer for jsdocs', () => {
     ).toMatchInlineSnapshot(`
      {
        "devDependencies": {
-         "jsarch": "^7.0.0",
+         "jsarch": "^7.1.0",
        },
        "greenkeeper": {
          "ignore": [],
@@ -57,7 +57,7 @@ describe('Package transformer for jsdocs', () => {
     ).toMatchInlineSnapshot(`
      {
        "devDependencies": {
-         "jsarch": "^7.0.0",
+         "jsarch": "^7.1.0",
        },
        "greenkeeper": {
          "ignore": [],
@@ -95,7 +95,7 @@ describe('Package transformer for jsdocs', () => {
     ).toMatchInlineSnapshot(`
      {
        "devDependencies": {
-         "jsarch": "^7.0.0",
+         "jsarch": "^7.1.0",
        },
        "greenkeeper": {
          "ignore": [],
