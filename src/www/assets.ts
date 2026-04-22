@@ -1,4 +1,4 @@
-import type { PackageAssetsTransformer } from 'metapak';
+import { type PackageAssetsTransformer } from 'metapak';
 
 const transformer: PackageAssetsTransformer<unknown, unknown> = async (
   file,

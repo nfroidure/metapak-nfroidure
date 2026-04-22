@@ -1,4 +1,4 @@
-import type { PackageAssetsTransformer } from 'metapak';
+import { type PackageAssetsTransformer } from 'metapak';
 
 // TODO: Use a YAML parser instead?
 const COVERALLS_SCRIPT = `      - name: Run coverage

@@ -1,8 +1,8 @@
 import { describe, beforeEach, jest, test, expect } from '@jest/globals';
-import _fs, { constants } from 'fs';
-import path from 'path';
+import _fs, { constants } from 'node:fs';
+import path from 'node:path';
 import assetsTransformer from './assets.js';
-import type { LogService, FSService } from 'metapak';
+import { type LogService, type FSService } from 'metapak';
 
 describe('TravisCI', () => {
   const fs = {

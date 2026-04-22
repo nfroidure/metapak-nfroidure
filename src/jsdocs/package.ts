@@ -1,6 +1,6 @@
 import { ensureScript } from '../lib.js';
 import config from '../config.js';
-import type { PackageJSONTransformer } from 'metapak';
+import { type PackageJSONTransformer } from 'metapak';
 
 const DOCUMENTATION_SCRIPT = 'node --run doc';
 

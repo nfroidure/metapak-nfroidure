@@ -1,7 +1,7 @@
 import { describe, beforeEach, jest, test, expect } from '@jest/globals';
 import assetsTransformer from './assets.js';
-import { constants } from 'fs';
-import type { LogService, FSService } from 'metapak';
+import { constants } from 'node:fs';
+import { type LogService, type FSService } from 'metapak';
 
 describe('Assets transformer for vscode extensions', () => {
   const fs = {

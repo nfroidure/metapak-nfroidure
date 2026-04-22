@@ -26,12 +26,12 @@ const transformer: PackageJSONTransformer<
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.eslint = '^10.2.0';
+  packageConf.devDependencies.eslint = '^10.2.1';
   packageConf.devDependencies['@eslint/js'] = '^10.0.1';
-  packageConf.devDependencies.prettier = '^3.8.1';
+  packageConf.devDependencies.prettier = '^3.8.3';
   packageConf.devDependencies['eslint-config-prettier'] = '^10.1.8';
   packageConf.devDependencies['eslint-plugin-prettier'] = '^5.5.5';
-  packageConf.devDependencies['eslint-plugin-jest'] = '^29.15.1';
+  packageConf.devDependencies['eslint-plugin-jest'] = '^29.15.2';
 
   // Remove old tweaks
   if ((packageConf.overrides as { eslint: string })?.eslint) {
@@ -51,7 +51,7 @@ const transformer: PackageJSONTransformer<
 
   // Special configuration for TypeScript
   if (configs.includes('tsesm')) {
-    packageConf.devDependencies['typescript-eslint'] = '^8.58.0';
+    packageConf.devDependencies['typescript-eslint'] = '^8.59.0';
     // TEMPFIX: new ts version not included yet in tooling
     packageConf.overrides = {
       'typescript-eslint': {

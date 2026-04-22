@@ -1,5 +1,5 @@
 import { ensureScript } from '../lib.js';
-import type { PackageJSONTransformer } from 'metapak';
+import { type PackageJSONTransformer } from 'metapak';
 
 const ARCHITECTURE_SCRIPT = 'node --run architecture';
 
@@ -41,7 +41,7 @@ const transformer: PackageJSONTransformer<
 
   // Add jsarch dep
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jsarch = '^7.1.0';
+  packageConf.devDependencies.jsarch = '^7.1.1';
 
   return packageConf;
 };

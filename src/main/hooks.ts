@@ -1,4 +1,4 @@
-import type { GitHooksTransformer } from 'metapak';
+import { type GitHooksTransformer } from 'metapak';
 
 const COMMIT_MSG_LINT = `
 if [ "$NODE_ENV" != "cli" ] ; then

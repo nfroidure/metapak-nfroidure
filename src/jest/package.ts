@@ -1,6 +1,6 @@
 import { ensureScript } from '../lib.js';
-import type { PackageJSONTransformer } from 'metapak';
-import type { Config } from 'jest';
+import { type PackageJSONTransformer } from 'metapak';
+import { type Config } from 'jest';
 
 const transformer: PackageJSONTransformer<
   { childPackage?: boolean; rootPackage?: boolean; jestRoots?: string[] },

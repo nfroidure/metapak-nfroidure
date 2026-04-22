@@ -1,4 +1,4 @@
-import type { PackageAssetsTransformer } from 'metapak';
+import { type PackageAssetsTransformer } from 'metapak';
 
 const VSCODE_ESLINT_PLUGIN = 'dbaeumer.vscode-eslint';
 const VSCODE_PRETTIER_PLUGIN = 'esbenp.prettier-vscode';
