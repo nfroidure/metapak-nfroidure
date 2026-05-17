@@ -41,7 +41,7 @@ const transformer: PackageJSONTransformer<
 
   // Add jsarch dep
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jsarch = '^7.1.1';
+  packageConf.devDependencies.jsarch = '^7.1.2';
 
   return packageConf;
 };

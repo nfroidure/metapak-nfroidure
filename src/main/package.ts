@@ -148,8 +148,8 @@ const transformer: PackageJSONTransformer<
     // Add the MUST HAVE dev dependencies
     packageConf.devDependencies = packageConf.devDependencies || {};
 
-    packageConf.devDependencies['@commitlint/cli'] = '^20.5.0';
-    packageConf.devDependencies['@commitlint/config-conventional'] = '^20.5.0';
+    packageConf.devDependencies['@commitlint/cli'] = '^21.0.1';
+    packageConf.devDependencies['@commitlint/config-conventional'] = '^21.0.1';
     packageConf.devDependencies['conventional-changelog'] = '^7.2.0';
 
     delete packageConf.devDependencies.commitizen;

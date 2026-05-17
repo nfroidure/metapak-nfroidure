@@ -19,8 +19,8 @@ describe('Package transformer', () => {
        },
        "contributors": [],
        "devDependencies": {
-         "@commitlint/cli": "^20.5.0",
-         "@commitlint/config-conventional": "^20.5.0",
+         "@commitlint/cli": "^21.0.1",
+         "@commitlint/config-conventional": "^21.0.1",
          "conventional-changelog": "^7.2.0",
        },
        "engines": {
@@ -78,8 +78,8 @@ describe('Package transformer', () => {
        },
        "contributors": [],
        "devDependencies": {
-         "@commitlint/cli": "^20.5.0",
-         "@commitlint/config-conventional": "^20.5.0",
+         "@commitlint/cli": "^21.0.1",
+         "@commitlint/config-conventional": "^21.0.1",
          "conventional-changelog": "^7.2.0",
        },
        "engines": {

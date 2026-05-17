@@ -25,7 +25,7 @@ const transformer: PackageJSONTransformer<
   packageConf.scripts.cover = `node --run jest -- --coverage`;
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jest = '^30.3.0';
+  packageConf.devDependencies.jest = '^30.4.2';
 
   // Remove old coveralls configs
   delete packageConf.scripts.coveralls;
