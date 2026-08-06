@@ -113,8 +113,8 @@ const transformer: PackageJSONTransformer<
 
     // Add the changelog stuffs
     packageConf.scripts.changelog = data.rootPackage
-      ? `conventional-changelog -p angular -i CHANGELOG.md -s -k packages/${packageConf.name}/package.json && git add CHANGELOG.md`
-      : 'conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md';
+      ? `conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -k packages/${packageConf.name}/package.json && git add CHANGELOG.md`
+      : 'conventional-changelog -p conventionalcommits -i CHANGELOG.md -s && git add CHANGELOG.md';
     packageConf.scripts.version = ensureScript(
       packageConf.scripts.version,
       CHANGELOG_SCRIPT,
@@ -150,7 +150,11 @@ const transformer: PackageJSONTransformer<
 
     packageConf.devDependencies['@commitlint/cli'] = '^21.2.1';
     packageConf.devDependencies['@commitlint/config-conventional'] = '^21.2.0';
-    packageConf.devDependencies['conventional-changelog'] = '^8.1.1';
+    // TEMPFIX: pinning the version until issue gets resolved
+    // https://github.com/conventional-changelog/conventional-changelog/commit/41f708ddd02f6bf423f62f41999c30131975e046#r195253029
+    packageConf.devDependencies['conventional-changelog'] = '8.1.0';
+    packageConf.devDependencies['conventional-changelog-conventionalcommits'] =
+      '^10.2.1';
 
     delete packageConf.devDependencies.commitizen;
     delete packageConf.devDependencies['cz-conventional-changelog'];

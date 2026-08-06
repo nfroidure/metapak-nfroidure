@@ -35,7 +35,7 @@
   },
   "scripts": {
     "build": "rimraf 'dist' && tsc --outDir dist",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s && git add CHANGELOG.md",
     "cli": "env NODE_ENV=${NODE_ENV:-cli}",
     "commitlint": "commitlint",
     "cover": "node --run jest -- --coverage",
@@ -74,7 +74,8 @@
     "@swc/core": "^1.15.47",
     "@swc/jest": "^0.2.39",
     "@types/eslint": "^9.6.1",
-    "conventional-changelog": "^8.1.1",
+    "conventional-changelog": "8.1.0",
+    "conventional-changelog-conventionalcommits": "^10.2.1",
     "eslint": "^10.8.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jest": "^29.16.0",

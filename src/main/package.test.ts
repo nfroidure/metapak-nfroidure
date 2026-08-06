@@ -21,7 +21,8 @@ describe('Package transformer', () => {
        "devDependencies": {
          "@commitlint/cli": "^21.2.1",
          "@commitlint/config-conventional": "^21.2.0",
-         "conventional-changelog": "^8.1.1",
+         "conventional-changelog": "8.1.0",
+         "conventional-changelog-conventionalcommits": "^10.2.1",
        },
        "engines": {
          "node": ">=24.14.0",
@@ -44,7 +45,7 @@ describe('Package transformer', () => {
          "data": {},
        },
        "scripts": {
-         "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+         "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s && git add CHANGELOG.md",
          "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
          "commitlint": "commitlint",
          "format": "echo "WARNING: No formatter specified"",
@@ -80,7 +81,8 @@ describe('Package transformer', () => {
        "devDependencies": {
          "@commitlint/cli": "^21.2.1",
          "@commitlint/config-conventional": "^21.2.0",
-         "conventional-changelog": "^8.1.1",
+         "conventional-changelog": "8.1.0",
+         "conventional-changelog-conventionalcommits": "^10.2.1",
        },
        "engines": {
          "node": ">=24.14.0",
@@ -105,7 +107,7 @@ describe('Package transformer', () => {
          },
        },
        "scripts": {
-         "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -k packages/undefined/package.json && git add CHANGELOG.md",
+         "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -k packages/undefined/package.json && git add CHANGELOG.md",
          "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
          "commitlint": "commitlint",
          "format": "lerna run format",
