@@ -17,9 +17,9 @@ describe('eslint', () => {
        {
          "devDependencies": {
            "@eslint/js": "^10.0.1",
-           "eslint": "^10.8.0",
+           "eslint": "^10.8.1",
            "eslint-config-prettier": "^10.1.8",
-           "eslint-plugin-jest": "^29.16.0",
+           "eslint-plugin-jest": "^29.16.1",
            "eslint-plugin-prettier": "^5.5.6",
            "prettier": "^3.9.6",
          },
@@ -62,9 +62,9 @@ describe('eslint', () => {
        {
          "devDependencies": {
            "@eslint/js": "^10.0.1",
-           "eslint": "^10.8.0",
+           "eslint": "^10.8.1",
            "eslint-config-prettier": "^10.1.8",
-           "eslint-plugin-jest": "^29.16.0",
+           "eslint-plugin-jest": "^29.16.1",
            "eslint-plugin-prettier": "^5.5.6",
            "prettier": "^3.9.6",
          },
@@ -108,9 +108,9 @@ describe('eslint', () => {
        {
          "devDependencies": {
            "@eslint/js": "^10.0.1",
-           "eslint": "^10.8.0",
+           "eslint": "^10.8.1",
            "eslint-config-prettier": "^10.1.8",
-           "eslint-plugin-jest": "^29.16.0",
+           "eslint-plugin-jest": "^29.16.1",
            "eslint-plugin-prettier": "^5.5.6",
            "prettier": "^3.9.6",
          },
