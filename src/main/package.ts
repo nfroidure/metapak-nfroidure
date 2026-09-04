@@ -148,11 +148,11 @@ const transformer: PackageJSONTransformer<
     // Add the MUST HAVE dev dependencies
     packageConf.devDependencies = packageConf.devDependencies || {};
 
-    packageConf.devDependencies['@commitlint/cli'] = '^21.2.1';
-    packageConf.devDependencies['@commitlint/config-conventional'] = '^21.2.0';
+    packageConf.devDependencies['@commitlint/cli'] = '^21.2.2';
+    packageConf.devDependencies['@commitlint/config-conventional'] = '^21.2.2';
     // TEMPFIX: pinning the version until issue gets resolved
     // https://github.com/conventional-changelog/conventional-changelog/commit/41f708ddd02f6bf423f62f41999c30131975e046#r195253029
-    packageConf.devDependencies['conventional-changelog'] = '8.1.0';
+    packageConf.devDependencies['conventional-changelog'] = '8.1.3';
     packageConf.devDependencies['conventional-changelog-conventionalcommits'] =
       '^10.2.1';
 

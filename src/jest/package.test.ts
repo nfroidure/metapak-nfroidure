@@ -19,7 +19,7 @@ describe('mocha', () => {
        {
          "dependencies": {},
          "devDependencies": {
-           "jest": "^30.4.2",
+           "jest": "^30.5.1",
          },
          "jest": {
            "coverageReporters": [
@@ -72,7 +72,7 @@ describe('mocha', () => {
          },
          "devDependencies": {
            "@swc/jest": "^0.2.39",
-           "jest": "^30.4.2",
+           "jest": "^30.5.1",
          },
          "jest": {
            "coverageReporters": [
