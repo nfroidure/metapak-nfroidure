@@ -1,3 +1,5 @@
+## [22.2.1](https://github.com/nfroidure/metapak-nfroidure/compare/v22.2.0...v22.2.1) (2026-09-04)
+
 ## [22.2.0](https://github.com/nfroidure/metapak-nfroidure/compare/v22.1.4...v22.2.0) (2026-08-18)
 
 ## [22.1.4](https://github.com/nfroidure/metapak-nfroidure/compare/v22.1.3...v22.1.4) (2026-08-06)
