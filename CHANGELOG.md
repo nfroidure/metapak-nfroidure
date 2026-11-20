@@ -1,3 +1,9 @@
+## [22.3.1](https://github.com/nfroidure/metapak-nfroidure/compare/v22.3.0...v22.3.1) (2026-11-20)
+
+### Bug Fixes
+
+* fix exports ([483b091](https://github.com/nfroidure/metapak-nfroidure/commit/483b09105df993979df06de6a8ea48a01300fa50))
+
 ## [22.3.0](https://github.com/nfroidure/metapak-nfroidure/compare/v22.2.1...v22.3.0) (2026-11-20)
 
 ### Features
