@@ -1,5 +1,5 @@
 import { describe, test, expect } from '@jest/globals';
-import { ensureScript } from './lib.js';
+import { ensureScript, ensureVersion } from './lib.js';
 
 describe('ensureScript', () => {
   test('should replace old script', () => {
@@ -43,5 +43,19 @@ describe('ensureScript', () => {
     ).toMatchInlineSnapshot(
       `"node --run jest && node --run types && node --run test"`,
     );
+  });
+});
+
+describe('ensureVersion', () => {
+  test('should replace bad version', () => {
+    expect(ensureVersion('~1.0.0', '~2.0.0')).toMatchInlineSnapshot(`"~1.0.0"`);
+    expect(ensureVersion('~1.0.0', '~1.1.0')).toMatchInlineSnapshot(`"~1.0.0"`);
+  });
+
+  test('should leave good version unchanged', () => {
+    expect(ensureVersion('~1.0.0', '~1.0.0')).toMatchInlineSnapshot(`"~1.0.0"`);
+    expect(ensureVersion('~1.0.0', '~1.0.1')).toMatchInlineSnapshot(`"~1.0.1"`);
+    expect(ensureVersion('^1.0.0', '~1.0.0')).toMatchInlineSnapshot(`"~1.0.0"`);
+    expect(ensureVersion('^1.0.0', '^1.2.0')).toMatchInlineSnapshot(`"^1.2.0"`);
   });
 });
