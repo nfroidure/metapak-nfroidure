@@ -17,11 +17,11 @@ describe('eslint', () => {
        {
          "devDependencies": {
            "@eslint/js": "^10.0.1",
-           "eslint": "^10.9.1",
+           "eslint": "^10.15.0",
            "eslint-config-prettier": "^10.1.8",
-           "eslint-plugin-jest": "^29.16.6",
-           "eslint-plugin-prettier": "^5.5.6",
-           "prettier": "^3.9.6",
+           "eslint-plugin-jest": "^29.17.1",
+           "eslint-plugin-prettier": "^5.5.7",
+           "prettier": "^3.10.1",
          },
          "metapak": {
            "configs": [
@@ -62,11 +62,11 @@ describe('eslint', () => {
        {
          "devDependencies": {
            "@eslint/js": "^10.0.1",
-           "eslint": "^10.9.1",
+           "eslint": "^10.15.0",
            "eslint-config-prettier": "^10.1.8",
-           "eslint-plugin-jest": "^29.16.6",
-           "eslint-plugin-prettier": "^5.5.6",
-           "prettier": "^3.9.6",
+           "eslint-plugin-jest": "^29.17.1",
+           "eslint-plugin-prettier": "^5.5.7",
+           "prettier": "^3.10.1",
          },
          "metapak": {
            "configs": [
@@ -108,11 +108,11 @@ describe('eslint', () => {
        {
          "devDependencies": {
            "@eslint/js": "^10.0.1",
-           "eslint": "^10.9.1",
+           "eslint": "^10.15.0",
            "eslint-config-prettier": "^10.1.8",
-           "eslint-plugin-jest": "^29.16.6",
-           "eslint-plugin-prettier": "^5.5.6",
-           "prettier": "^3.9.6",
+           "eslint-plugin-jest": "^29.17.1",
+           "eslint-plugin-prettier": "^5.5.7",
+           "prettier": "^3.10.1",
          },
          "metapak": {
            "configs": [

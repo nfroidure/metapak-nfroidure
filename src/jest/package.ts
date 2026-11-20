@@ -1,4 +1,4 @@
-import { ensureScript } from '../lib.js';
+import { ensureScript, ensureVersion } from '../lib.js';
 import { type PackageJSONTransformer } from 'metapak';
 import { type Config } from 'jest';
 
@@ -25,7 +25,10 @@ const transformer: PackageJSONTransformer<
   packageConf.scripts.cover = `node --run jest -- --coverage`;
 
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.jest = '^30.5.1';
+  packageConf.devDependencies.jest = ensureVersion(
+    '^30.5.2',
+    packageConf.devDependencies.jest,
+  );
 
   // Remove old coveralls configs
   delete packageConf.scripts.coveralls;
@@ -71,7 +74,10 @@ const transformer: PackageJSONTransformer<
     delete packageConf.devDependencies['ts-jest'];
     delete packageConf.devDependencies['esbuild'];
     delete packageConf.devDependencies['esbuild-jest'];
-    packageConf.devDependencies['@swc/jest'] = '^0.2.39';
+    packageConf.devDependencies['@swc/jest'] = ensureVersion(
+      '^0.2.39',
+      packageConf.devDependencies['@swc/jest'],
+    );
   }
 
   return packageConf;

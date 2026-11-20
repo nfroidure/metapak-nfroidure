@@ -28,14 +28,16 @@ export function ensureScript(
   return `${baseScript ? `${baseScript} && ` : baseScript}${addedScript}`;
 }
 
-export function ensureVersion(version: string, currentVersion: string) {
-  const currentSemver = minVersion(currentVersion);
-
-  if(!currentSemver ) {
+export function ensureVersion(version: string, currentVersion?: string) {
+  if (!currentVersion) {
     return version;
   }
 
-  return satisfies(currentSemver.version, version)
-    ? currentVersion
-    : version;
+  const currentSemver = minVersion(currentVersion);
+
+  if (!currentSemver) {
+    return version;
+  }
+
+  return satisfies(currentSemver.version, version) ? currentVersion : version;
 }

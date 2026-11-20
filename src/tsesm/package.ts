@@ -1,4 +1,4 @@
-import { ensureScript } from '../lib.js';
+import { ensureScript, ensureVersion } from '../lib.js';
 import { type PackageJSONTransformer } from 'metapak';
 
 const BUILD_COMMAND = 'node --run build';
@@ -25,12 +25,21 @@ const transformer: PackageJSONTransformer<
 
   // Switch progressively to the native TypeScript compiler
   packageConf.devDependencies.typescript =
-    packageConf.devDependencies?.typescript?.startsWith('^7')
+    packageConf.devDependencies.typescript?.startsWith('^7')
       ? packageConf.devDependencies.typescript
-      : '^6.0.3';
-  packageConf.devDependencies.rimraf = '^6.1.3';
-  packageConf.devDependencies['@swc/cli'] = '^0.8.1';
-  packageConf.devDependencies['@swc/core'] = '^1.16.1';
+      : ensureVersion('^6.0.3', packageConf.devDependencies.typescript);
+  packageConf.devDependencies.rimraf = ensureVersion(
+    '^6.1.3',
+    packageConf.devDependencies.rimraf,
+  );
+  packageConf.devDependencies['@swc/cli'] = ensureVersion(
+    '^0.8.1',
+    packageConf.devDependencies['@swc/cli'],
+  );
+  packageConf.devDependencies['@swc/core'] = ensureVersion(
+    '^1.16.1',
+    packageConf.devDependencies['@swc/core'],
+  );
   delete packageConf.devDependencies['@swc/helpers'];
 
   packageConf.scripts = packageConf.scripts || {};

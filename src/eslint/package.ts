@@ -1,4 +1,5 @@
 import { type PackageJSONTransformer } from 'metapak';
+import { ensureVersion } from '../lib.js';
 
 const transformer: PackageJSONTransformer<
   { childPackage?: boolean; rootPackage?: boolean; files?: string },
@@ -26,12 +27,30 @@ const transformer: PackageJSONTransformer<
 
   // Add the MUST HAVE dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies.eslint = '^10.9.1';
-  packageConf.devDependencies['@eslint/js'] = '^10.0.1';
-  packageConf.devDependencies.prettier = '^3.9.6';
-  packageConf.devDependencies['eslint-config-prettier'] = '^10.1.8';
-  packageConf.devDependencies['eslint-plugin-prettier'] = '^5.5.6';
-  packageConf.devDependencies['eslint-plugin-jest'] = '^29.16.6';
+  packageConf.devDependencies.eslint = ensureVersion(
+    '^10.15.0',
+    packageConf.devDependencies.eslint,
+  );
+  packageConf.devDependencies['@eslint/js'] = ensureVersion(
+    '^10.0.1',
+    packageConf.devDependencies['@eslint/js'],
+  );
+  packageConf.devDependencies.prettier = ensureVersion(
+    '^3.10.1',
+    packageConf.devDependencies.prettier,
+  );
+  packageConf.devDependencies['eslint-config-prettier'] = ensureVersion(
+    '^10.1.8',
+    packageConf.devDependencies['eslint-config-prettier'],
+  );
+  packageConf.devDependencies['eslint-plugin-prettier'] = ensureVersion(
+    '^5.5.7',
+    packageConf.devDependencies['eslint-plugin-prettier'],
+  );
+  packageConf.devDependencies['eslint-plugin-jest'] = ensureVersion(
+    '^29.17.1',
+    packageConf.devDependencies['eslint-plugin-jest'],
+  );
 
   // Remove old tweaks
   if ((packageConf.overrides as { eslint: string })?.eslint) {
@@ -51,7 +70,10 @@ const transformer: PackageJSONTransformer<
 
   // Special configuration for TypeScript
   if (configs.includes('tsesm')) {
-    packageConf.devDependencies['typescript-eslint'] = '^8.69.0';
+    packageConf.devDependencies['typescript-eslint'] = ensureVersion(
+      '^8.73.0',
+      packageConf.devDependencies['typescript-eslint'],
+    );
     // Overrides not required anymore
     packageConf.overrides = undefined;
   }

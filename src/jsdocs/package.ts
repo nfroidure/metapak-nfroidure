@@ -1,4 +1,4 @@
-import { ensureScript } from '../lib.js';
+import { ensureScript, ensureVersion } from '../lib.js';
 import config from '../config.js';
 import { type PackageJSONTransformer } from 'metapak';
 
@@ -40,7 +40,10 @@ const transformer: PackageJSONTransformer<
 
   // Add doc deps
   packageConf.devDependencies = packageConf.devDependencies || {};
-  packageConf.devDependencies['jsdoc-to-markdown'] = '^9.1.3';
+  packageConf.devDependencies['jsdoc-to-markdown'] = ensureVersion(
+    '^9.1.3',
+    packageConf.devDependencies['jsdoc-to-markdown'],
+  );
 
   return packageConf;
 };

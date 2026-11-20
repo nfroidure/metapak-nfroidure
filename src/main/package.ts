@@ -1,4 +1,4 @@
-import { ensureScript } from '../lib.js';
+import { ensureScript, ensureVersion } from '../lib.js';
 import config from '../config.js';
 import { type PackageJSONTransformer } from 'metapak';
 
@@ -147,13 +147,28 @@ const transformer: PackageJSONTransformer<
     // Add the MUST HAVE dev dependencies
     packageConf.devDependencies = packageConf.devDependencies || {};
 
-    packageConf.devDependencies['@commitlint/cli'] = '^21.2.2';
-    packageConf.devDependencies['@commitlint/config-conventional'] = '^21.2.2';
+    packageConf.devDependencies['@commitlint/cli'] = ensureVersion(
+      '^21.2.2',
+      packageConf.devDependencies['@commitlint/cli'],
+    );
+    packageConf.devDependencies['@commitlint/config-conventional'] =
+      ensureVersion(
+        '^21.2.2',
+        packageConf.devDependencies['@commitlint/config-conventional'],
+      );
     // TEMPFIX: pinning the version until issue gets resolved
     // https://github.com/conventional-changelog/conventional-changelog/commit/41f708ddd02f6bf423f62f41999c30131975e046#r195253029
-    packageConf.devDependencies['conventional-changelog'] = '8.1.3';
+    packageConf.devDependencies['conventional-changelog'] = ensureVersion(
+      '8.1.3',
+      packageConf.devDependencies['conventional-changelog'],
+    );
     packageConf.devDependencies['conventional-changelog-conventionalcommits'] =
-      '^10.2.1';
+      ensureVersion(
+        '^10.2.1',
+        packageConf.devDependencies[
+          'conventional-changelog-conventionalcommits'
+        ],
+      );
 
     delete packageConf.devDependencies.commitizen;
     delete packageConf.devDependencies['cz-conventional-changelog'];
