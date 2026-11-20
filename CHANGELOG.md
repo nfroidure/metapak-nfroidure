@@ -1,3 +1,9 @@
+## [22.3.0](https://github.com/nfroidure/metapak-nfroidure/compare/v22.2.1...v22.3.0) (2026-11-20)
+
+### Features
+
+* add better script update ([bbee645](https://github.com/nfroidure/metapak-nfroidure/commit/bbee64582fd13e2aaeac4c488815bf49a1f42e8b))
+
 ## [22.2.1](https://github.com/nfroidure/metapak-nfroidure/compare/v22.2.0...v22.2.1) (2026-09-04)
 
 ## [22.2.0](https://github.com/nfroidure/metapak-nfroidure/compare/v22.1.4...v22.2.0) (2026-08-18)
