@@ -63,9 +63,8 @@ const transformer: PackageJSONTransformer<
   // Let's add my handy scripts
   packageConf.scripts = packageConf.scripts || {};
 
-  // I like this, it enable me to run arbitrary npm binary
-  // without having global modules
-  packageConf.scripts.cli = 'env NODE_ENV=${NODE_ENV:-cli}';
+  // Not necessary anymore, use npx
+  delete packageConf.scripts.cli;
 
   // Add default scripts to warn they should be there
   if (!packageConf.scripts.test) {

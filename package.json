@@ -27,8 +27,7 @@
   "description": "A metapak module for my open source projects.",
   "version": "22.2.1",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nfroidure/metapak-nfroidure.git"
@@ -36,7 +35,6 @@
   "scripts": {
     "build": "rimraf 'dist' && tsc --outDir dist",
     "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s && git add CHANGELOG.md",
-    "cli": "env NODE_ENV=${NODE_ENV:-cli}",
     "commitlint": "commitlint",
     "cover": "node --run jest -- --coverage",
     "format": "node --run prettier",
@@ -132,5 +130,6 @@
   "funding": {
     "type": "individual",
     "url": "https://github.com/sponsors/nfroidure"
-  }
+  },
+  "exports": "./dist/index.js"
 }

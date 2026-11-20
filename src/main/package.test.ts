@@ -46,7 +46,6 @@ describe('Package transformer', () => {
        },
        "scripts": {
          "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s && git add CHANGELOG.md",
-         "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
          "commitlint": "commitlint",
          "format": "echo "WARNING: No formatter specified"",
          "lint": "echo "WARNING: No linter specified"",
@@ -108,7 +107,6 @@ describe('Package transformer', () => {
        },
        "scripts": {
          "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -k packages/undefined/package.json && git add CHANGELOG.md",
-         "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
          "commitlint": "commitlint",
          "format": "lerna run format",
          "lint": "lerna run lint",
@@ -162,7 +160,6 @@ describe('Package transformer', () => {
          },
        },
        "scripts": {
-         "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
          "format": "echo "WARNING: No formatter specified"",
          "lint": "echo "WARNING: No linter specified"",
          "test": "echo "WARNING: No tests specified"",
@@ -217,7 +214,6 @@ describe('Package transformer', () => {
          },
        },
        "scripts": {
-         "cli": "env NODE_ENV=\${NODE_ENV:-cli}",
          "format": "echo "WARNING: No formatter specified"",
          "lint": "echo "Linting is fearing"",
          "test": "echo "Testing is doubting"",

@@ -13,8 +13,12 @@ const transformer: PackageJSONTransformer<
 
   // Declare an ESM module
   packageConf.type = 'module';
-  packageConf.main = 'dist/index.js';
-  packageConf.types = 'dist/index.d.ts';
+  packageConf.exports =
+    typeof packageConf.exports === 'object'
+      ? packageConf.exports
+      : './dist/index.js';
+  delete packageConf.main;
+  packageConf.types = './dist/index.d.ts';
 
   // Add the dev dependencies
   packageConf.devDependencies = packageConf.devDependencies || {};

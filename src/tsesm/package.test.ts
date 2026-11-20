@@ -19,7 +19,7 @@ describe('private', () => {
            "rimraf": "^6.1.3",
            "typescript": "^6.0.3",
          },
-         "main": "dist/index.js",
+         "exports": "./dist/index.js",
          "metapak": {
            "configs": [
              "tsesm",
@@ -33,7 +33,7 @@ describe('private', () => {
            "rebuild": "swc ./src -s -d dist -C jsc.target=es2022",
          },
          "type": "module",
-         "types": "dist/index.d.ts",
+         "types": "./dist/index.d.ts",
        }
       `);
     });
