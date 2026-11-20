@@ -19,7 +19,12 @@
       ],
       "bundleFiles": [
         "dist",
-        "src"
+        "!dist/**/*.test.js",
+        "!dist/**/*.test.js.map",
+        "!dist/**/*.test.d.ts",
+        "src",
+        "!src/**/*.test.ts",
+        "!src/**/__snapshots__"
       ]
     }
   },
@@ -28,6 +33,10 @@
   "version": "22.3.0",
   "type": "module",
   "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./dist/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nfroidure/metapak-nfroidure.git"
@@ -93,7 +102,12 @@
   "contributors": [],
   "files": [
     "dist",
+    "!dist/**/*.test.js",
+    "!dist/**/*.test.js.map",
+    "!dist/**/*.test.d.ts",
     "src",
+    "!src/**/*.test.ts",
+    "!src/**/__snapshots__",
     "LICENSE",
     "README.md",
     "CHANGELOG.md"
@@ -132,6 +146,5 @@
   "funding": {
     "type": "individual",
     "url": "https://github.com/sponsors/nfroidure"
-  },
-  "exports": "./dist/index.js"
+  }
 }
